@@ -1,5 +1,5 @@
 ---
-title: "cole_press"
+title: "cole rehbein"
 ---
 
 This is a Quarto website. Specifically, it is Cole's Quarto website.

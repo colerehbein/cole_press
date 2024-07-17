@@ -7,11 +7,14 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: blog/index.qmd
+        text: Blog
 
 format:
   html:
-    theme: default
+    theme: litera
     css: styles.css
     toc: true
 
