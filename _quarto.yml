@@ -26,7 +26,7 @@ website:
 format:
   html:
     theme: litera
-    # css: styles.css
+    css: styles.css
     toc: true
     code-fold: true
     code-summary: "Show code"
