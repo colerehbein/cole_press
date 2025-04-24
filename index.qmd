@@ -1,11 +1,25 @@
 ---
-title: "cole rehbein"
+title: "Cole Rehbein"
+title-block-banner: true
+page-layout: full
 ---
 
-This is a Quarto website. Specifically, it is Cole's Quarto website.
+## Welcome
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I'm Cole Rehbein. Welcome to my personal corner of the web!
 
-```{r}
-1 + 1
-```
+### Navigation
+
+::: {.card .h-100}
+{{< fa regular newspaper >}} [Blog](/blog)
+
+Dive into my latest articles, analyses, and reflections.
+:::
+
+::: {.card .h-100}
+{{< fa regular file-lines >}} [CV & Resume](/cv)
+
+Explore my professional background and experience.
+:::
+
+Feel free to look around!

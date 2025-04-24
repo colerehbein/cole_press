@@ -1,26 +1,75 @@
 /* Main SCSS file for the Light Monospace Theme */
 
+/*-- scss:uses --*/
+// This section is for Sass @use rules. It's processed first.
+// Use this to load external Sass libraries or your own Sass modules
+// before any functions, variables, or mixins are defined or used.
+// Example:
+// @use 'sass:math'; // Make Sass math functions available
+// @use 'path/to/my-internal-module' as internal; // Load a custom module
+// For this theme, we might use it if we broke our theme into modules:
+// @use 'theme-modules/colors' as colors;
+// @use 'theme-modules/typography' as typography;
+
+/*-- scss:functions --*/
+// Define custom Sass functions here. These are processed after @use
+// rules but before variable defaults and mixins.
+// Functions are useful for calculations, color manipulations, etc.
+// Example: Function to convert pixels to rems based on $font-size-base
+// @function px-to-rem($px-value) {
+// @if unitless($px-value) {
+// @return math.div($px-value, 16) * 1rem;
+// Assuming 16px base if $font-size-base not available yet
+// } @else {
+// @error "Function px-to-rem expects a unitless number.";
+// }
+// }
+// Example: Function to slightly darken a color for hover states
+// @function subtle-darken($color, $amount: 5%) {
+// @return darken($color, $amount);
+// }
+// For this theme, potential functions could:
+// - Calculate line heights or margins based on font metrics for grid alignment.
+// - Generate slightly varied background colors for UI elements based on $mono-bg.
+
 /*-- scss:defaults --*/
+// Define default values for Sass variables here.
+// These are processed *after* functions but *before* Bootstrap's variables,
+// allowing you to override Bootstrap defaults effectively.
+// Variables defined later in the Quarto theme list override earlier ones.
 
 // 1. Font Integration
 
-
 // Method B: Self-Hosted (Requires _fonts.scss partial, see below)
-$web-font-path: ""!default; // Prevent default Bootswatch fonts
+$web-font-path: "" !default; // Prevent default Bootswatch fonts
 
 // 2. Define Custom Color Palette (Light)
 $mono-bg: #ffffff;
 $mono-text: #212529; // Bootstrap default dark text
 $mono-accent: #0d6efd; // Bootstrap default blue
 $mono-secondary: #6c757d; // Bootstrap default secondary
-$mono-code-bg: #f8f9fa;   // Bootstrap default light gray
+$mono-code-bg: #f8f9fa; // Bootstrap default light gray
 $mono-border: #dee2e6; // Bootstrap default border color
+$mono-header: #333333; // A dark gray example
 
 // 3. Bootstrap & Quarto Variable Overrides
-$font-family-base: "Anonymous Pro", monospace!default;
-$font-family-monospace: "Anonymous Pro", monospace!default;
-$font-size-base: 0.95rem!default; // Slightly smaller base size
-$line-height-base: 1.45!default; // Slightly tighter line height
+$font-family-base: "Anonymous Pro", monospace !default;
+$font-family-monospace: "Anonymous Pro", monospace !default;
+$font-size-base: 0.95rem !default; // Slightly smaller base size
+$line-height-base: 1.45 !default; // Slightly tighter line height
+
+// Assign your color to the navbar background variable
+// $navbar-bg: $mono-header; // Replaced with dynamic gradient below
+
+// You might also want to adjust the foreground (text/link) color
+// for better contrast against the new background.
+// Quarto often computes this automatically, but you can override it:
+//$my-header-text-color: #f0f0f0; // A light gray example
+//$navbar-fg: $my-header-text-color;
+
+// Optionally, adjust the hover/highlight color for navbar links
+//$my-header-highlight: #cccccc; // A lighter gray for hover
+//$navbar-hl: $my-header-highlight;
 
 $body-bg: $mono-bg;
 $body-color: $mono-text;
@@ -29,17 +78,17 @@ $primary: $mono-accent; // Align primary color with links
 $secondary: $mono-secondary;
 $border-color: $mono-border;
 
-$headings-font-family: inherit!default; // Use base font
-$headings-font-weight: 700!default;     // Use bold weight
-$headings-color: inherit!default;       // Use body text color
+$headings-font-family: inherit !default; // Use base font
+$headings-font-weight: 700 !default; // Use bold weight
+$headings-color: inherit !default; // Use body text color
 
-$border-radius: 0!default; // Remove rounded corners globally
+$border-radius: 0 !default; // Remove rounded corners globally
 
 // Quarto Code Block Variables
 $code-block-bg: $mono-code-bg;
 $code-color: $mono-text;
-$code-block-border-left: false!default; // No left border
-$code-block-bg-padding: 1em!default;    // Generous padding
+$code-block-border-left: false !default; // No left border
+$code-block-bg-padding: 1em !default; // Generous padding
 
 // Quarto Inline Code Variables
 $code-bg: darken($mono-bg, 3%); // Subtle background difference
@@ -49,15 +98,98 @@ $code-color: $mono-text;
 $callout-color-note: $mono-accent;
 $callout-border-width: 3px;
 
+/*-- scss:mixins --*/
+// Define custom Sass mixins here. Processed after variables but before rules.
+// Mixins allow you to encapsulate reusable blocks of CSS styles.
+// Example: Mixin for consistent button styling
+// @mixin mono-button-style {
+// border-radius: $border-radius; // Use our theme variable
+// padding: 0.5em 1em;
+// font-weight: 700;
+// text-decoration: none;
+// border: 1px solid transparent; // Base border
+// &:hover, &:focus {
+// text-decoration: underline;
+// }
+// }
+// Example: Mixin for applying focus styles consistently
+// @mixin focus-style($outline-color: $mono-accent) {
+// &:focus {
+// outline: 2px solid $outline-color;
+// outline-offset: 2px;
+// box-shadow: 0 0 0 3px rgba($outline-color, 0.25);
+// Optional softer glow
+// }
+// }
+// For this theme, potential mixins could:
+// - Apply the blockquote style defined in rules.
+// - Create consistent styling for cards or other components (zero radius, borders).
+// - Define responsive typography adjustments.
+// - Encapsulate the heading styles (margins, border).
+
 /*-- scss:rules --*/
+// Define standard CSS rules here. Processed last, after Bootstrap's rules
+// and any rules from themes listed earlier in the YAML.
+// Use this for specific element styling not covered by variables or mixins.
 
 // Import @font-face rules if self-hosting (Method B)
-@import 'fonts'; // Assumes _fonts.scss exists
+@import "fonts"; // Assumes _fonts.scss exists
+
+// Keyframes for the dynamic rainbow background
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Apply dynamic background to the navbar
+.navbar {
+  background: linear-gradient(
+    270deg,
+    #8a6bbd,
+    // Muted purple
+    #b388ff,
+    // Soft violet
+    #e0b0ff,
+    // Pale orchid
+    #ffd1dc,
+    // Pastel pink
+    #ffc4a3,
+    // Muted peach
+    #ffe55c,
+    // Soft gold
+    #c1f0c1,
+    // Pale mint
+    #c6e2ff // Light powder blue
+  );
+  background-size: 1800% 1800%; // Make the gradient large enough to animate smoothly
+  animation: rainbow-flow 18s ease infinite;
+  // Ensure text color contrasts well
+  .navbar-brand,
+  .nav-link {
+    color: #ffffff !important; // Force white text for contrast
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #e0e0e0 !important; // Slightly dimmer white on hover/focus
+  }
+}
 
 // Custom CSS Rules for Light Theme
 
 // Basic heading spacing and bottom border
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 1.8em;
   margin-bottom: 0.6em;
   padding-bottom: 0.2em;
@@ -73,8 +205,12 @@ blockquote {
   font-style: italic;
   color: $mono-secondary;
 
-  p { margin-bottom: 0.5em; }
-  p:last-child { margin-bottom: 0; }
+  p {
+    margin-bottom: 0.5em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
 
   footer {
     margin-top: 0.8em;
@@ -97,7 +233,8 @@ a {
   text-decoration: none; // Cleaner look
   font-weight: 700; // Make links slightly bolder
 }
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: underline;
   // Add outline for focus visibility if needed
   // outline: 2px solid $mono_accent;
@@ -110,7 +247,8 @@ a:hover, a:focus {
   width: 100%;
   margin-bottom: 1rem;
 }
-.table th,.table td {
+.table th,
+.table td {
   border: 1px solid $mono-border;
   padding: 0.6em 0.8em;
   text-align: left;
@@ -121,3 +259,16 @@ a:hover, a:focus {
   border-bottom-width: 2px;
   font-weight: 700;
 }
+
+// Example of using a button mixin (if defined above)
+// .btn-custom {
+// @include mono-button-style;
+// background-color: $mono-accent;
+// color: $mono-bg;
+// border-color: $mono-accent;
+//
+// &:hover, &:focus {
+// background-color: darken($mono-accent, 8%);
+// border-color: darken($mono-accent, 10%);
+// }
+// }
