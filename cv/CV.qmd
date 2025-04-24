@@ -1,0 +1,278 @@
+---
+title: CV
+format:
+  quarto-cv-pdf: default
+author: Cole Rehbein
+date: last-modified
+phone: 505-429-8744
+address: "618 12th St., Las Vegas, New Mexico, 87701"
+email: cole.rehbein@gmail.com
+fontsize: 11pt
+#github: github # github account
+#orcid: 0000-0002-1825-0097 # orcid identifier
+#osf: ymqui # osf five character id
+#twitter: twitter # twitter handle
+#web: quarto.org
+fontawesome: yes
+nocite: '@*'
+bibliography: 
+  bookChapter: references/bookChapter.bib
+  underReview: references/underReview.bib
+  underPrep: references/underPrep.bib
+  presentations: references/presentations.bib
+  posters: references/posters.bib
+validate-yaml: false
+csl: apa-annotated-bibliography.csl
+---
+
+# Education
+
+-   *New Mexico Highlands University*, M.S. Clinical Psychology \hfill 2024 (anticipated)
+    -   **Thesis**: The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression
+    -   **Advisor**: Dr. David Pan \vspace{5mm}
+-   *St. John's College, Santa Fe*, B.A. Philosophy and History of Math and Science \hfill 2019
+    -   **Minors**: Classical Studies, Comparative Literature
+    -   **Senior Paper**: The Internally Determined Self: Spinoza's *Ethics* as a remedy for postmodernity's identity crisis \vspace{5mm}
+
+\hrule
+
+# Research Experience
+
+*Book Chapter*
+
+::: {#refs-bookChapter}
+:::
+
+*Article Under Review*
+
+::: {#refs-underReview}
+:::
+
+*Articles Under Preparation*
+
+::: {#refs-underPrep}
+:::
+
+*Presentations and Lectures*
+
+::: {#refs-presentations}
+:::
+
+*Posters*
+
+::: {#refs-posters}
+:::
+
+\vspace{5mm}
+\hrule
+
+# Clinical Experience
+
+*New Mexico Behavioral Health Institute*
+
+Clinical Psychology Practicum Student \hfill 2022-Current
+
+-   **Responsibilities**: Conducting cognitive, neuropsychological, and intelligence tests as part of intakes and treatment planning. Assisting with group and individual therapies using brief, acceptance and commitment therapy and mindfulness interventions, with a focus on people with schizophrenia-spectrum disorders.
+-   **Supervisor**: Dr. Mathias Stricherz
+
+\vspace{1mm}
+
+*New Mexico Highlands University*
+
+Intervention work for thesis \hfill Fall 2023
+
+-   **Responsibilities**: Recruting for and conducting a brief, mindfulness-based behavioral activation intervention for college students with depression.
+-   **Supervisor**: Dr. David Pan
+
+\vspace{5mm}
+\hrule
+
+# Employment
+
+## Relevant Work Experience
+
+\vspace{3mm}
+
+*New Mexico Highlands University*
+
+\vspace{1mm}
+
+\begin{itemize}
+\item[] Graduate Assistant for Memory and Cognition Class \hfill Fall 2023
+\item[] \hspace{5mm} \textit{Responsibilities:} Assisted with seminars.
+\item[] \hspace{5mm} \textit{Supervisor:} Dr. Thomas R. Brooks
+
+\vspace{1mm}
+
+\item[] Graduate Assistant for Undergraduate Research Methods Class \hfill Fall 2023
+\item[] \hspace{5mm} \textit{Responsibilities:} Assisted with undergraduate writing and research design.
+\item[] \hspace{5mm} \textit{Supervisor:} Dr. Daniel Chadborn
+
+\vspace{1mm}
+
+\item[] Graduate Assistant for Human Connections Lab \hfill Spring 2022
+\item[] \hspace{5mm} \textit{Responsibilities:} Managed a section of Dr. Brooks' Human Connections Lab that developed several studies investigating the relationships between video game exposure and various social psych factors.
+\item[] \hspace{5mm} \textit{Supervisor:} Dr. Thomas R. Brooks
+
+\vspace{1mm}
+
+\item[] Teaching Assistant for First-Year Learning Community \hfill Fall 2022
+\item[] \hspace{5mm} \textit{Responsibilities:} Focused on the psychology part of a combo intro to psych and intro to American history class. Ran two lab sections on Fridays.
+\item[] \hspace{5mm} \textit{Supervisor:} Dr. Thomas R. Brooks
+
+\vspace{1mm}
+
+\item[] Graduate Assistant for Dr. Lara Heflin \hfill Fall 2022
+\item[] \hspace{5mm} \textit{Responsibilities:} Ran an extracurricular neuroanatomy tutorial using sheep brain dissections. PI for EEG study investigating chronic cannabis use and stress responses on emotional Stroop task. Acquired new EEG equipment.
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{Rio Grande Sun}
+
+\vspace{1mm}
+\begin{itemize}
+\item[] City Reporter \hfill Aug 2020 - May 2021
+\item[] \hspace{5mm} \textit{Responsibilities:} Covered city politics, council meetings, local events.
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{Santa Fe Reporter}
+
+\vspace{1mm}
+
+\begin{itemize}
+\item[] Calendar Editor, Copy Editor, Culture Contributor \hfill Aug 2019 - March 2020
+\item[] \hspace{5mm} \textit{Responsibilities:} Community event calendar management for both online and print presentation, copyediting, culture writing. Focus on restaurant reviews, food writing, and gallery openings.
+
+\vspace{1mm}
+
+\item[] Editorial Intern \hfill Sept 2015 - March 2016
+\item[] \hspace{5mm} \textit{Responsibilities:} Editorial tasks, content creation.
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{Breakthrough Santa Fe}
+
+\vspace{1mm}
+
+\begin{itemize}
+\item[] Tutor \hfill Sept 2018 - May 2019
+\item[] \hspace{5mm} \textit{Responsibilities:} Regular one-on-one tutoring for at-risk and disadvantaged high school students.
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{St. John's College}
+
+\vspace{1mm}
+
+\begin{itemize}
+\item[] Assistant Editor, The Moon (student newspaper) \hfill Jan 2016 - May 2016
+\item[] \hspace{5mm} \textit{Responsibilities:} Responsible for the quality of layout, graphic design, and content curation. Engaged personally with writers to offer support, supervised non-editorial assistant staff. Conducted meetings with contributors for editing and made material ready for publication. Copyediting.
+
+\vspace{1mm}
+
+\item[]Administrative Assistant to Student Life Office \hfill First Semester 2016
+\item[] \hspace{5mm} \textit{Responsibilities:} Administrative tasks, student assistance.
+\end{itemize}
+
+\vspace{3mm}
+
+\pagebreak
+
+## Other Work Experience
+
+Server, Bartender, Bar Castañeda \textit{Las Vegas, NM} \hfill June 2023 - Nov. 2023
+
+Barista, Stella's Cafe \textit{Las Vegas, NM} \hfill Nov 2022 - June 2023
+
+Server, Bartender, The Skillet \textit{Las Vegas, NM} \hfill Sept 2021 - Nov 2022
+
+Barista, Atalaya Cafe \textit{Santa Fe, NM} \hfill May 2019 - Aug 2019
+
+Barista, Capitol Coffee Company \textit{Santa Fe, NM} \hfill Fall 2017 - June 2018
+
+Backcountry Counselor, Philmont Scout Ranch \textit{Cimarron, NM} \hfill Summer 2016
+
+Outfitting Services, Philmont Scout Ranch \textit{Cimarron, NM} \hfill Summer 2015
+
+Barista, Starbucks \textit{Des Moines, IA} \hfill 2013-2015
+
+\vspace{5mm}
+
+\hrule
+
+# Leadership and Volunteer Experience
+
+\textit{New Mexico Highlands University}
+
+\begin{itemize}
+\item[] Psychology Department 
+\item[] \hspace{3mm} Graduate Liaison Psychology Department \hfill Fall 2023
+\item[] Psi Chi Honor Society 
+\item[] \hspace{3mm} President \hfill 2022-present
+\item[] Associated Students of New Mexico Highlands University 
+\item[] \hspace{3mm} Vice President \& President Pro-Tempore \hfill 2022-2023
+\item[]Campus Advisory Committee on Finance
+\item[] \hspace{3mm} Graduate Representative \hfill 2022-2023
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{Walk the Talk Santa Fe}
+
+\begin{itemize}
+\item[] Co-founder \hfill Summer 2020
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{St. John's College, Santa Fe}
+
+\begin{itemize}
+\item[]Polity (SJC student government) 
+\item[] \hspace{3mm} Voting Member \hfill 2016-2019
+\item[]Student Committee on Instruction 
+\item[] \hspace{3mm} President \hfill 2017-2018
+\end{itemize}
+
+\vspace{3mm}
+
+\textit{Scouting, BSA}
+
+\begin{itemize}
+\item[]Eagle Scout \hfill 2015
+\end{itemize}
+\vspace{5mm}
+\hrule
+
+# Skills and Professional Development
+
+-   *Statistical Analysis with R*
+    -   Competent in data manipulation, analysis, and visualization using R software.
+    -   2-day workshop attended in November 2022.
+-   *Technical Publishing*
+    -   Experienced in developing Quarto documents for technical and academic publishing.
+    -   Most class assignments, papers, and thesis written in Quarto markdown and rendered to docx or pdf.
+-   *Third-Wave Behavioral Therapies (ACT)*
+    -   clinical training in mindfulness-based CBT and ACT, experienced in patient assessment and treatment planning.
+    -   Relevant coursework: Intro to Counseling, Group Therapy, Multicultural Therapy, Behavior Therapy and Assessment
+-   *Psychological Assessment*
+    -   Skilled in conducting cognitive, neuropsychological, and intelligence tests as part of clinical intakes and treatment planning.
+    -   Relevant coursework: Neuropsychological Assessment, IQ Assessment, Behavior Therapy and Assessment
+-   *Multicultural Competence*
+    -   Culturally aware and competent in diverse clinical settings with a focus on New Mexican populations including historic Hispanic, Latinx, Indigenous, and immigrant communities. Additionally experienced in working with LGBTQ+ populations.
+    -   Relevant coursework: Multicultural Therapy
+-   *Conflict De-Escalation*
+    -   Work at NMBHI including 1-day training in Conflict Prevention Institute's Nonviolent Crisis Intervention.
+-   *Leadership and Governance*
+    -   Experienced in student governance, community organizing, and leading academic societies.
+-   *Copyediting and Journalism*
+    -   Strong background in editorial roles, including copyediting and culture writing.
+-   *Public Speaking and Presentation*
+    -   Experienced in presenting research findings at academic conferences.
+-   *Project Management*
+    -   Track record of successfully managing and completing academic and journalistic projects.

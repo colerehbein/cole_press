@@ -1,6 +1,8 @@
 project:
   type: website
   title: "cole.press"
+  resources:
+    - fonts/
 
 website:
   title: "cole.press"
@@ -25,9 +27,11 @@ website:
 
 format:
   html:
-    theme: litera
-    css: styles.css
+    theme:
+      light: monospatial-light.scss
+      dark: monospatial-dark.scss
     toc: true
+    include-in-header: _includes/preload-fonts.html
     code-fold: true
     code-summary: "Show code"
     code-tools: true
@@ -35,8 +39,14 @@ format:
       cache: true
       echo: true
       warning: false
-    highlight-style: "github"
+    highlight-style:
+      light: github
+      dark: monokai
     html-math-method: katex
+    grid:
+      sidebar-width: 250px
+      body-width: 900px
+      margin-width: 250px
 
 params:
   author: "Cole Rehbein"

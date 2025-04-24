@@ -1,0 +1,123 @@
+/* Main SCSS file for the Light Monospace Theme */
+
+/*-- scss:defaults --*/
+
+// 1. Font Integration
+
+
+// Method B: Self-Hosted (Requires _fonts.scss partial, see below)
+$web-font-path: ""!default; // Prevent default Bootswatch fonts
+
+// 2. Define Custom Color Palette (Light)
+$mono-bg: #ffffff;
+$mono-text: #212529; // Bootstrap default dark text
+$mono-accent: #0d6efd; // Bootstrap default blue
+$mono-secondary: #6c757d; // Bootstrap default secondary
+$mono-code-bg: #f8f9fa;   // Bootstrap default light gray
+$mono-border: #dee2e6; // Bootstrap default border color
+
+// 3. Bootstrap & Quarto Variable Overrides
+$font-family-base: "Anonymous Pro", monospace!default;
+$font-family-monospace: "Anonymous Pro", monospace!default;
+$font-size-base: 0.95rem!default; // Slightly smaller base size
+$line-height-base: 1.45!default; // Slightly tighter line height
+
+$body-bg: $mono-bg;
+$body-color: $mono-text;
+$link-color: $mono-accent;
+$primary: $mono-accent; // Align primary color with links
+$secondary: $mono-secondary;
+$border-color: $mono-border;
+
+$headings-font-family: inherit!default; // Use base font
+$headings-font-weight: 700!default;     // Use bold weight
+$headings-color: inherit!default;       // Use body text color
+
+$border-radius: 0!default; // Remove rounded corners globally
+
+// Quarto Code Block Variables
+$code-block-bg: $mono-code-bg;
+$code-color: $mono-text;
+$code-block-border-left: false!default; // No left border
+$code-block-bg-padding: 1em!default;    // Generous padding
+
+// Quarto Inline Code Variables
+$code-bg: darken($mono-bg, 3%); // Subtle background difference
+$code-color: $mono-text;
+
+// Quarto Callout Variables (Example: Note)
+$callout-color-note: $mono-accent;
+$callout-border-width: 3px;
+
+/*-- scss:rules --*/
+
+// Import @font-face rules if self-hosting (Method B)
+@import 'fonts'; // Assumes _fonts.scss exists
+
+// Custom CSS Rules for Light Theme
+
+// Basic heading spacing and bottom border
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid $mono-border;
+}
+
+// Custom blockquote style inspired by Terminal CSS
+blockquote {
+  border-left: 4px solid $mono-accent;
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+  background-color: $mono-code-bg;
+  font-style: italic;
+  color: $mono-secondary;
+
+  p { margin-bottom: 0.5em; }
+  p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 0.8em;
+    font-style: normal;
+    font-size: 0.9em;
+    color: lighten($mono-secondary, 15%);
+  }
+}
+
+// Custom horizontal rule
+hr {
+  border: none;
+  border-top: 2px solid $mono-border;
+  margin: 2.5em 0;
+  height: 0;
+}
+
+// Ensure links are clearly interactive
+a {
+  text-decoration: none; // Cleaner look
+  font-weight: 700; // Make links slightly bolder
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  // Add outline for focus visibility if needed
+  // outline: 2px solid $mono_accent;
+  // outline-offset: 2px;
+}
+
+// Basic table styling for consistency
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.table th,.table td {
+  border: 1px solid $mono-border;
+  padding: 0.6em 0.8em;
+  text-align: left;
+  vertical-align: top;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
+  font-weight: 700;
+}

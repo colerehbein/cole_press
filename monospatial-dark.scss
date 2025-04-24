@@ -1,0 +1,81 @@
+/* Main SCSS file for the Dark Monospace Theme */
+
+/*-- scss:defaults --*/
+
+// 1. Define Custom Color Palette (Dark)
+$mono-bg-dark: #1a1d21;         // Dark gray, not pure black
+$mono-text-dark: #ced4da;       // Light gray, not pure white
+$mono-accent-dark: #4dabf7;     // Lighter blue for contrast
+$mono-secondary-dark: #adb5bd;  // Slightly lighter secondary text
+$mono-code-bg-dark: #212529;    // Slightly darker than bg
+$mono-border-dark: #495057;     // Darker border
+
+// 2. Bootstrap & Quarto Variable Overrides (Dark)
+// Inherit font settings from light theme or redefine if needed
+$font-family-base: "Anonymous Pro", monospace!default;
+$font-family-monospace: "Anonymous Pro", monospace!default;
+
+$body-bg: $mono-bg-dark;
+$body-color: $mono-text-dark;
+$link-color: $mono-accent-dark;
+$primary: $mono-accent-dark;
+$secondary: $mono-secondary-dark;
+$border-color: $mono-border-dark;
+
+// Ensure component backgrounds adapt (may need more Bootstrap vars)
+$card-bg: lighten($mono-bg-dark, 5%);
+$dropdown-bg: lighten($mono-bg-dark, 7%);
+$input-bg: lighten($mono-bg-dark, 3%);
+$input-color: $mono-text-dark;
+$input-border-color: $mono-border-dark;
+//... other component background/color overrides
+
+$headings-color: inherit!default; // Use body text color
+
+// Quarto Code Block Variables (Dark)
+$code-block-bg: $mono-code-bg-dark;
+$code-color: $mono-text-dark;
+
+// Quarto Inline Code Variables (Dark)
+$code-bg: lighten($mono-bg-dark, 5%);
+$code-color: $mono-text-dark;
+
+// Quarto Callout Variables (Dark - Example: Note)
+$callout-color-note: $mono-accent-dark;
+
+/*-- scss:rules --*/
+
+// Custom CSS Rules for Dark Theme
+
+// Adjust rule colors if needed
+h1, h2, h3, h4, h5, h6 {
+  border-bottom-color: $mono-border-dark;
+}
+
+blockquote {
+  border-left-color: $mono-accent-dark;
+  background-color: $mono-code-bg-dark;
+  color: $mono-secondary-dark;
+
+  footer {
+    color: lighten($mono-secondary-dark, 15%);
+  }
+}
+
+hr {
+  border-top-color: $mono-border-dark;
+}
+
+// Table borders for dark mode
+.table th,.table td {
+  border-color: $mono-border-dark;
+}
+.table thead th {
+  border-bottom-color: $mono-border-dark;
+}
+
+// Ensure text selection contrast is good in dark mode
+::selection {
+  background: $mono-accent-dark;
+  color: $mono-bg-dark; // Dark background for selected text
+}

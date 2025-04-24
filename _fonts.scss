@@ -1,0 +1,33 @@
+// _fonts.scss - Place @font-face rules here if self-hosting
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: normal;
+  font-weight: 400; // Regular
+  font-display: swap;
+  src: url('fonts/anonymous-pro.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: 400; // Italic
+  font-display: swap;
+  src: url('fonts/anonymous-pro-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: normal;
+  font-weight: 700; // Bold
+  font-display: swap;
+  src: url('fonts/anonymous-pro-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: 700; // Bold Italic
+  font-display: swap;
+  src: url('fonts/anonymous-pro-bold-italic.woff2') format('woff2');
+}
