@@ -1,8 +1,14 @@
 project:
   type: website
+  title: "cole.press"
 
 website:
-  title: "cole_press"
+  title: "cole.press"
+  description: "A personal website by Cole, with thoughts on tech, AI, psychology, and politics."
+  site-url: "https://cole.press"
+  repo-url: "https://github.com/colerehbein/cole_press"
+  search: true
+  open-graph: true
   navbar:
     left:
       - href: index.qmd
@@ -11,12 +17,30 @@ website:
         text: About
       - href: blog/index.qmd
         text: Blog
+    right:
+      - icon: fab fa-github
+        href: https://github.com/colerehbein
+      - icon: fab fa-twitter
+        href: https://twitter.com/colerehbein
 
 format:
   html:
     theme: litera
     css: styles.css
     toc: true
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+    execute:
+      cache: true
+      echo: true
+      warning: false
+    highlight-style: "github"
+    html-math-method: katex
+
+params:
+  author: "Cole Rehbein"
+  date_format: "MMM D, YYYY"
 
 editor: visual
 
