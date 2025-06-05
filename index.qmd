@@ -36,15 +36,19 @@ sidebar:
     ╚██████╗╚██████╔╝███████╗███████╗
      ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
 
-                .-""""""-.
-              .'          '.
-             /   O      O   \
-            :                :
-            |                |
-            :     \____/     :
-             \                /
-              '.  \______/  .'
-                '-.........-'
+          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
+        ░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░
+       ░▒▒▓▓████████████████▓▓▒▒░
+      ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
+      ▒▓████▓▓██      ██▓▓████▓▒
+     ▒▓████▓▓██  ●●  ●●  ██▓▓████▓▒
+     ▒▓████▓▓██    ◡    ██▓▓████▓▒
+     ▒▓████▓▓██          ██▓▓████▓▒
+      ▒▓████▓▓██  ～～～  ██▓▓████▓▒
+       ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
+        ░▒▒▓▓████████████▓▓▒▒░
+          ░░▒▒▒▓▓▓▓▓▓▓▓▒▒▒░░
+             ░░░▒▒▒▒▒░░░
 ```
 :::
 
@@ -75,22 +79,30 @@ sidebar:
 {
   "development": {
     "proficiency": "90%",
-    "languages": ["TypeScript", "Python", "R", "Go"],
+    "languages": ["TypeScript", "Python", "R", "Go", "SQL"],
+    "frameworks": ["React", "Quarto", "Flask", "Shiny"],
     "focus": "Full-stack applications"
   },
   "ai_research": {
     "proficiency": "85%", 
-    "areas": ["Machine Learning", "Automation", "Data Science"],
+    "areas": ["Machine Learning", "Automation", "Data Science", "NLP"],
+    "tools": ["TensorFlow", "PyTorch", "Pandas", "scikit-learn"],
     "focus": "Real-world applications"
+  },
+  "data_visualization": {
+    "proficiency": "88%",
+    "tools": ["ggplot2", "D3.js", "Plotly", "Observable"],
+    "focus": "Interactive dashboards"
   },
   "writing": {
     "proficiency": "80%",
     "topics": ["Technology", "AI Ethics", "Digital Culture"], 
+    "platforms": ["Blog", "Newsletter", "Technical docs"],
     "focus": "Thoughtful analysis"
   },
   "open_source": {
     "proficiency": "88%",
-    "contributions": "Active",
+    "contributions": "Active maintainer",
     "philosophy": "Building in public"
   }
 }
@@ -101,30 +113,27 @@ sidebar:
 :::::: {.projects-section}
 ::::: project-grid
 ::: {.project-item .blog}
-**drwxr-xr-x** **blog/** \> Deep dives into technology trends\
-\> AI development insights\
-\> Digital culture analysis\
-\> **23** articles published
+**Blog**
 
-[**cd blog/**](/blog){.project-link}
+Deep dives into technology trends, AI development insights, and digital culture analysis. **23** articles published covering the intersection of code and society.
+
+[**Visit Blog →**](/blog){.project-link}
 :::
 
 ::: {.project-item .cv}
-**drwxr-xr-x** **cv/** \> Professional journey documentation\
-\> Skills & certifications\
-\> Research publications\
-\> PDF download available
+**Resume**
 
-[**cat cv/resume.pdf**](/cv){.project-link}
+Professional journey documentation including skills & certifications, research publications, and career highlights. Available for download.
+
+[**View Resume →**](/cv){.project-link}
 :::
 
 ::: {.project-item .portfolio}
-**drwxr-xr-x** **portfolio/** \> AI automation tools\
-\> Open source contributions\
-\> Web applications\
-\> Research experiments
+**Portfolio**
 
-[**ls portfolio/**](/projects){.project-link}
+AI automation tools, open source contributions, web applications, and research experiments. Building in public.
+
+[**Explore Projects →**](/projects){.project-link}
 :::
 :::::
 ::::::
