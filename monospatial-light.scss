@@ -1,4 +1,4 @@
-/* Main SCSS file for the Light Monospace Theme */
+/* Main SCSS file for the Light Monospace Theme - Professional Edition */
 
 /*-- scss:uses --*/
 // This section is for Sass @use rules. It's processed first.
@@ -45,58 +45,86 @@ $web-font-path: "" !default; // Prevent default Bootswatch fonts
 
 // 2. Define Custom Color Palette (Light)
 $mono-bg: #ffffff;
-$mono-text: #212529; // Bootstrap default dark text
-$mono-accent: #0d6efd; // Bootstrap default blue
-$mono-secondary: #6c757d; // Bootstrap default secondary
-$mono-code-bg: #f8f9fa; // Bootstrap default light gray
-$mono-border: #dee2e6; // Bootstrap default border color
-$mono-header: #333333; // A dark gray example
+$mono-text: #0f172a; // Slate-900 equivalent
+$mono-text-secondary: #475569; // Slate-600 equivalent
+$mono-text-muted: #64748b; // Slate-500 equivalent
+$mono-accent: #3b82f6; // Blue-500 equivalent
+$mono-accent-hover: #2563eb; // Blue-600 equivalent
+$mono-success: #22c55e; // Green-500 equivalent
+$mono-warning: #f59e0b; // Amber-500 equivalent
+$mono-danger: #ef4444; // Red-500 equivalent
+$mono-border: #e2e8f0; // Slate-200 equivalent
+$mono-border-subtle: #f1f5f9; // Slate-100 equivalent
+$mono-surface: #f8fafc; // Slate-50 equivalent
+$mono-surface-elevated: #ffffff;
 
 // 3. Bootstrap & Quarto Variable Overrides
-$font-family-base: "Anonymous Pro", monospace !default;
-$font-family-monospace: "Anonymous Pro", monospace !default;
-$font-size-base: 0.95rem !default; // Slightly smaller base size
-$line-height-base: 1.45 !default; // Slightly tighter line height
+$font-family-base: "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata",
+  "Roboto Mono", "Source Code Pro", monospace !default;
+$font-family-monospace: "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata",
+  "Roboto Mono", "Source Code Pro", monospace !default;
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 0.95rem; // 15.2px - optimized for readability
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
 
-// Assign your color to the navbar background variable
-// $navbar-bg: $mono-header; // Replaced with dynamic gradient below
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
 
-// You might also want to adjust the foreground (text/link) color
-// for better contrast against the new background.
-// Quarto often computes this automatically, but you can override it:
-//$my-header-text-color: #f0f0f0; // A light gray example
-//$navbar-fg: $my-header-text-color;
+// Enhanced Spacing System (8px base)
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-3: 0.75rem; // 12px
+$spacing-4: 1rem; // 16px
+$spacing-5: 1.25rem; // 20px
+$spacing-6: 1.5rem; // 24px
+$spacing-8: 2rem; // 32px
+$spacing-10: 2.5rem; // 40px
+$spacing-12: 3rem; // 48px
+$spacing-16: 4rem; // 64px
+$spacing-20: 5rem; // 80px
 
-// Optionally, adjust the hover/highlight color for navbar links
-//$my-header-highlight: #cccccc; // A lighter gray for hover
-//$navbar-hl: $my-header-highlight;
+// Shadow System
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
+// Border Radius System
+$radius-sm: 0.25rem; // 4px
+$radius-base: 0.375rem; // 6px
+$radius-md: 0.5rem; // 8px
+$radius-lg: 0.75rem; // 12px
+$radius-xl: 1rem; // 16px
+
+// Bootstrap Variable Overrides
 $body-bg: $mono-bg;
 $body-color: $mono-text;
 $link-color: $mono-accent;
-$primary: $mono-accent; // Align primary color with links
-$secondary: $mono-secondary;
+$link-hover-color: $mono-accent-hover;
+$primary: $mono-accent;
+$secondary: $mono-text-secondary;
 $border-color: $mono-border;
+$border-radius: $radius-base;
 
-$headings-font-family: inherit !default; // Use base font
-$headings-font-weight: 700 !default; // Use bold weight
-$headings-color: inherit !default; // Use body text color
+$headings-font-family: inherit;
+$headings-font-weight: 600;
+$headings-color: $mono-text;
 
-$border-radius: 0 !default; // Remove rounded corners globally
-
-// Quarto Code Block Variables
-$code-block-bg: $mono-code-bg;
-$code-color: $mono-text;
-$code-block-border-left: false !default; // No left border
-$code-block-bg-padding: 1em !default; // Generous padding
-
-// Quarto Inline Code Variables
-$code-bg: darken($mono-bg, 3%); // Subtle background difference
-$code-color: $mono-text;
-
-// Quarto Callout Variables (Example: Note)
-$callout-color-note: $mono-accent;
-$callout-border-width: 3px;
+// Enhanced code styling
+$code-color: $mono-accent;
+$code-bg: $mono-surface;
+$pre-color: $mono-text;
 
 /*-- scss:mixins --*/
 // Define custom Sass mixins here. Processed after variables but before rules.
@@ -135,127 +163,669 @@ $callout-border-width: 3px;
 // Import @font-face rules if self-hosting (Method B)
 @import "fonts"; // Assumes _fonts.scss exists
 
-// ------------------------------------------------------------------
-// Navbar styling
-// ------------------------------------------------------------------
-// Instead of a fully animated rainbow, give the navbar a subtle monochrome
-// appearance with a thin accent strip at the bottom.
+// CSS Custom Properties for Dynamic Theming
+:root {
+  --spacing-unit: 1rem;
+  --border-radius: #{$radius-base};
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
 
-// Subtle gradient strip
+// Reset and Base Styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Enhanced Navbar with Glassmorphism Effect
 .navbar {
-  background-color: #000;
-  border-bottom: 4px solid transparent;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid transparent;
   background-image: linear-gradient(
-    to right,
+    90deg,
     #ff6b6b,
     #f8e71c,
     #00c9a7,
     #4dabf7,
     #a66dd4
   );
-  background-size: 100% 4px;
+  background-size: 100% 2px;
   background-position: bottom;
   background-repeat: no-repeat;
+  transition: all var(--transition-normal);
 
-  .navbar-brand,
-  .nav-link {
-    color: #ffffff !important; // Ensure contrast
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.025em;
+    color: #ffffff !important;
   }
 
-  .nav-link:hover,
-  .nav-link:focus {
-    color: #e0e0e0 !important;
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+
+    &:hover,
+    &:focus {
+      color: #ffffff !important;
+      transform: translateY(-1px);
+    }
   }
 }
 
-// Custom CSS Rules for Light Theme
+// Hero Section - Modern & Compelling
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    $mono-surface 0%,
+    lighten($mono-surface, 2%) 100%
+  );
+  padding: $spacing-20 0 $spacing-16;
+  text-align: center;
+  border-bottom: 1px solid $mono-border-subtle;
 
-// Basic heading spacing and bottom border
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: $spacing-4;
+    background: linear-gradient(
+      135deg,
+      $mono-text 0%,
+      lighten($mono-text, 20%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: $font-size-xl;
+    color: $mono-text-secondary;
+    margin-bottom: $spacing-6;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    color: $mono-text-muted;
+    max-width: 600px;
+    margin: 0 auto $spacing-8;
+    line-height: $line-height-relaxed;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: $spacing-4;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .btn {
+      padding: $spacing-3 $spacing-6;
+      font-weight: 600;
+      border-radius: $radius-lg;
+      transition: all var(--transition-normal);
+      text-decoration: none;
+
+      &.btn-primary {
+        background: $mono-accent;
+        border-color: $mono-accent;
+        box-shadow: $shadow-md;
+
+        &:hover {
+          background: $mono-accent-hover;
+          border-color: $mono-accent-hover;
+          transform: translateY(-2px);
+          box-shadow: $shadow-lg;
+        }
+      }
+
+      &.btn-outline-secondary {
+        color: $mono-text-secondary;
+        border-color: $mono-border;
+        background: $mono-surface-elevated;
+
+        &:hover {
+          background: $mono-text;
+          color: $mono-surface-elevated;
+          transform: translateY(-2px);
+          box-shadow: $shadow-md;
+        }
+      }
+    }
+  }
+}
+
+// Main Content Container
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-16 $spacing-6;
+}
+
+// Enhanced Section Titles
+.section-title {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  color: $mono-text;
+  margin-bottom: $spacing-12;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -$spacing-3;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4dabf7);
+    border-radius: $radius-base;
+  }
+}
+
+// Services Grid - Professional Cards
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-8;
+  margin-bottom: $spacing-20;
+
+  .service-card {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-xl;
+    padding: $spacing-8;
+    text-align: center;
+    transition: all var(--transition-normal);
+    box-shadow: $shadow-sm;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-xl;
+      border-color: rgba($mono-accent, 0.3);
+    }
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(
+        135deg,
+        $mono-accent,
+        lighten($mono-accent, 15%)
+      );
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto $spacing-5;
+      color: white;
+      font-size: $font-size-xl;
+    }
+
+    strong {
+      display: block;
+      font-size: $font-size-xl;
+      font-weight: 600;
+      color: $mono-text;
+      margin-bottom: $spacing-3;
+    }
+
+    p {
+      color: $mono-text-secondary;
+      line-height: $line-height-relaxed;
+      margin: 0;
+    }
+  }
+}
+
+// Navigation Grid - Enhanced Cards
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-6;
+  margin-bottom: $spacing-20;
+
+  .nav-card {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    box-shadow: $shadow-base;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: $shadow-lg;
+      border-color: rgba($mono-accent, 0.4);
+    }
+
+    .nav-card-header {
+      padding: $spacing-6 $spacing-6 $spacing-4;
+      border-bottom: 1px solid $mono-border-subtle;
+
+      i {
+        color: $mono-accent;
+        margin-right: $spacing-3;
+        font-size: $font-size-lg;
+      }
+
+      strong {
+        font-size: $font-size-lg;
+        font-weight: 600;
+        color: $mono-text;
+      }
+    }
+
+    .nav-card-body {
+      padding: $spacing-4 $spacing-6;
+      color: $mono-text-secondary;
+      line-height: $line-height-relaxed;
+    }
+
+    .nav-card-footer {
+      padding: $spacing-4 $spacing-6 $spacing-6;
+
+      .card-link {
+        color: $mono-accent;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: $font-size-sm;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all var(--transition-fast);
+
+        &:hover {
+          color: $mono-accent-hover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// Activity Section
+.activity-section {
+  margin-bottom: $spacing-20;
+
+  .activity-card {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-base;
+    transition: all var(--transition-normal);
+
+    &:hover {
+      box-shadow: $shadow-md;
+    }
+
+    .activity-header {
+      padding: $spacing-6;
+      background: $mono-surface;
+      border-bottom: 1px solid $mono-border;
+
+      i {
+        color: $mono-text;
+        margin-right: $spacing-3;
+      }
+
+      strong {
+        font-size: $font-size-lg;
+        font-weight: 600;
+        color: $mono-text;
+      }
+    }
+
+    .activity-body {
+      padding: $spacing-6;
+
+      .github-activity {
+        .activity-stats {
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: $spacing-5;
+
+          .stat-item {
+            text-align: center;
+
+            strong {
+              display: block;
+              font-size: $font-size-2xl;
+              font-weight: 700;
+              color: $mono-accent;
+              margin-bottom: $spacing-1;
+            }
+
+            br + text {
+              color: $mono-text-secondary;
+              font-size: $font-size-sm;
+            }
+          }
+        }
+
+        .activity-note {
+          text-align: center;
+          color: $mono-text-muted;
+          font-style: italic;
+          padding: $spacing-4;
+          background: $mono-surface;
+          border-radius: $radius-base;
+          border: 1px solid $mono-border-subtle;
+        }
+      }
+    }
+
+    .activity-footer {
+      padding: $spacing-4 $spacing-6 $spacing-6;
+
+      .activity-link {
+        color: $mono-accent;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: $font-size-sm;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        &:hover {
+          color: $mono-accent-hover;
+        }
+      }
+    }
+  }
+}
+
+// Insights Grid
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-6;
+  margin-bottom: $spacing-20;
+
+  .insight-card {
+    background: linear-gradient(
+      135deg,
+      $mono-surface 0%,
+      lighten($mono-surface, 1%) 100%
+    );
+    border: 1px solid $mono-border-subtle;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    transition: all var(--transition-normal);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+      border-color: rgba($mono-accent, 0.3);
+    }
+
+    strong {
+      display: block;
+      font-size: $font-size-lg;
+      font-weight: 600;
+      color: $mono-text;
+      margin-bottom: $spacing-3;
+    }
+
+    text {
+      color: $mono-text-secondary;
+      line-height: $line-height-relaxed;
+    }
+  }
+}
+
+// Connect Section
+.connect-section {
+  .newsletter-card {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    padding: $spacing-8;
+    margin-bottom: $spacing-8;
+    box-shadow: $shadow-base;
+
+    .newsletter-header {
+      margin-bottom: $spacing-5;
+
+      i {
+        color: $mono-accent;
+        margin-right: $spacing-3;
+        font-size: $font-size-lg;
+      }
+
+      strong {
+        font-size: $font-size-xl;
+        font-weight: 600;
+        color: $mono-text;
+      }
+    }
+
+    .newsletter-body {
+      p {
+        color: $mono-text-secondary;
+        line-height: $line-height-relaxed;
+        margin-bottom: $spacing-6;
+      }
+
+      .newsletter-form {
+        .input-group {
+          margin-bottom: $spacing-3;
+
+          .newsletter-input {
+            border: 1px solid $mono-border;
+            border-radius: $radius-base 0 0 $radius-base;
+            padding: $spacing-3 $spacing-4;
+            font-size: $font-size-base;
+
+            &:focus {
+              border-color: $mono-accent;
+              box-shadow: 0 0 0 3px rgba($mono-accent, 0.1);
+              outline: none;
+            }
+          }
+
+          .newsletter-btn {
+            border-radius: 0 $radius-base $radius-base 0;
+            padding: $spacing-3 $spacing-5;
+            font-weight: 600;
+            background: $mono-accent;
+            border-color: $mono-accent;
+
+            &:hover {
+              background: $mono-accent-hover;
+              border-color: $mono-accent-hover;
+            }
+          }
+        }
+
+        .form-text {
+          color: $mono-text-muted;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: $spacing-4;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-2;
+      padding: $spacing-3 $spacing-5;
+      background: $mono-surface-elevated;
+      border: 1px solid $mono-border;
+      border-radius: $radius-lg;
+      color: $mono-text-secondary;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all var(--transition-normal);
+      box-shadow: $shadow-sm;
+
+      &:hover {
+        background: $mono-accent;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+        text-decoration: none;
+      }
+
+      i {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+}
+
+// Enhanced Typography
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.8em;
-  margin-bottom: 0.6em;
-  padding-bottom: 0.2em;
-  border-bottom: 1px solid $mono-border;
+  margin-top: $spacing-10;
+  margin-bottom: $spacing-5;
+  font-weight: 600;
+  line-height: $line-height-tight;
+  letter-spacing: -0.025em;
+  color: $mono-text;
+  border-bottom: none; // Remove default border
 }
 
-// Custom blockquote style inspired by Terminal CSS
+h1 {
+  font-size: $font-size-4xl;
+}
+h2 {
+  font-size: $font-size-3xl;
+}
+h3 {
+  font-size: $font-size-2xl;
+}
+h4 {
+  font-size: $font-size-xl;
+}
+h5 {
+  font-size: $font-size-lg;
+}
+h6 {
+  font-size: $font-size-base;
+}
+
+// Enhanced paragraph styling
+p {
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-4;
+  color: $mono-text-secondary;
+}
+
+// Enhanced link styling
+a {
+  color: $mono-accent;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    color: $mono-accent-hover;
+    text-decoration: underline;
+  }
+}
+
+// Enhanced blockquote
 blockquote {
   border-left: 4px solid $mono-accent;
-  padding: 0.8em 1.2em;
-  margin: 1.5em 0;
-  background-color: $mono-code-bg;
+  padding: $spacing-5 $spacing-6;
+  margin: $spacing-8 0;
+  background: $mono-surface;
+  border-radius: 0 $radius-base $radius-base 0;
   font-style: italic;
-  color: $mono-secondary;
+  color: $mono-text-secondary;
+  box-shadow: $shadow-sm;
 
-  p {
-    margin-bottom: 0.5em;
-  }
   p:last-child {
     margin-bottom: 0;
   }
+}
 
-  footer {
-    margin-top: 0.8em;
-    font-style: normal;
-    font-size: 0.9em;
-    color: lighten($mono-secondary, 15%);
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-section {
+    padding: $spacing-12 0 $spacing-10;
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  }
+
+  .main-content {
+    padding: $spacing-10 $spacing-4;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: $spacing-6;
+  }
+
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-// Custom horizontal rule
-hr {
-  border: none;
-  border-top: 2px solid $mono-border;
-  margin: 2.5em 0;
-  height: 0;
+// Utility Classes
+.text-gradient {
+  background: linear-gradient(135deg, $mono-accent, lighten($mono-accent, 20%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-// Ensure links are clearly interactive
-a {
-  text-decoration: none; // Cleaner look
-  font-weight: 700; // Make links slightly bolder
-}
-a:hover,
-a:focus {
-  text-decoration: underline;
-  // Add outline for focus visibility if needed
-  // outline: 2px solid $mono_accent;
-  // outline-offset: 2px;
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-// Basic table styling for consistency
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-.table th,
-.table td {
-  border: 1px solid $mono-border;
-  padding: 0.6em 0.8em;
-  text-align: left;
-  vertical-align: top;
-}
-.table thead th {
-  vertical-align: bottom;
-  border-bottom-width: 2px;
-  font-weight: 700;
+// Animation Classes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-// Example of using a button mixin (if defined above)
-// .btn-custom {
-// @include mono-button-style;
-// background-color: $mono-accent;
-// color: $mono-bg;
-// border-color: $mono-accent;
-//
-// &:hover, &:focus {
-// background-color: darken($mono-accent, 8%);
-// border-color: darken($mono-accent, 10%);
-// }
-// }
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}

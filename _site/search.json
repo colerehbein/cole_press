@@ -67,28 +67,42 @@
     "href": "index.html",
     "title": "Cole Rehbein",
     "section": "",
-    "text": "I’m Cole Rehbein. Welcome to my personal corner of the web! Here you’ll find my latest writing, projects, and other musings.\n\n\n\n\n Blog\nDive into my latest articles, analyses and reflections.\n\n\n CV & Resume\nExplore my professional background and experience.\n\n\n Projects\nA look at what I’m currently building and exploring.\n\n\n Newsletter\nSign up to receive occasional updates."
+    "text": "Full-Stack Developer & AI Researcher {.hero-subtitle}\nBuilding the future with code, data, and thoughtful design. Welcome to my corner of the digital world.\n\nView My Work Get In Touch"
   },
   {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
+    "objectID": "index.html#what-i-do",
+    "href": "index.html#what-i-do",
     "title": "Cole Rehbein",
-    "section": "",
-    "text": "I’m Cole Rehbein. Welcome to my personal corner of the web! Here you’ll find my latest writing, projects, and other musings.\n\n\n\n\n Blog\nDive into my latest articles, analyses and reflections.\n\n\n CV & Resume\nExplore my professional background and experience.\n\n\n Projects\nA look at what I’m currently building and exploring.\n\n\n Newsletter\nSign up to receive occasional updates."
+    "section": "What I Do",
+    "text": "What I Do\n\n\n\n\n\nDevelopment Building robust applications with modern technologies and best practices.\n\n\n\n\n\nAI & Research Exploring machine learning, automation, and data-driven solutions.\n\n\n\n\n\nWriting Sharing insights on technology, AI, psychology, and digital culture."
   },
   {
-    "objectID": "index.html#github-activity",
-    "href": "index.html#github-activity",
+    "objectID": "index.html#quick-navigation",
+    "href": "index.html#quick-navigation",
     "title": "Cole Rehbein",
-    "section": "GitHub Activity",
-    "text": "GitHub Activity\n\n\n\nGitHub stats"
+    "section": "Quick Navigation",
+    "text": "Quick Navigation\n\n\n\n\nBlog\n\n\nDeep dives into technology, AI developments, and thoughtful analysis of our digital world.\n\n\nRead Articles →\n\n\n\n\n\nCV & Resume\n\n\nMy professional journey, skills, and experience in technology and research.\n\n\nView Credentials →\n\n\n\n\n\nProjects\n\n\nCurrent builds, experiments, and open-source contributions across various domains.\n\n\nExplore Work →"
   },
   {
-    "objectID": "index.html#newsletter",
-    "href": "index.html#newsletter",
+    "objectID": "index.html#recent-activity",
+    "href": "index.html#recent-activity",
     "title": "Cole Rehbein",
-    "section": "Newsletter",
-    "text": "Newsletter\nStay up to date by joining the mailing list.\n\n Subscribe"
+    "section": "Recent Activity",
+    "text": "Recent Activity\n\n\n\n GitHub Contributions\n\n\n\n\n\n\n\n127\n\nContributions this year\n\n\n23\n\nPublic repositories\n\n\n8\n\nRecent commits\n\n\nBuilding in public • Open source advocate • Always learning\n\n\n\n\n\nView GitHub Profile →"
+  },
+  {
+    "objectID": "index.html#latest-insights",
+    "href": "index.html#latest-insights",
+    "title": "Cole Rehbein",
+    "section": "Latest Insights",
+    "text": "Latest Insights\n\n\nAI in Practice Real-world applications and ethical considerations in modern AI development.\n\n\nCode & Culture How technology shapes society and how we can build more thoughtfully.\n\n\nFuture of Work Automation, human-AI collaboration, and the evolving tech landscape."
+  },
+  {
+    "objectID": "index.html#stay-connected",
+    "href": "index.html#stay-connected",
+    "title": "Cole Rehbein",
+    "section": "Stay Connected",
+    "text": "Stay Connected\n\n\n\n Newsletter\n\n\nGet occasional updates on new projects, insights, and interesting discoveries. No spam, just thoughtful content.\n\n\n\n&lt;input type=\"email\" name=\"email\" placeholder=\"your@email.com\" required class=\"form-control newsletter-input\"&gt;\n&lt;button type=\"submit\" class=\"btn btn-primary newsletter-btn\"&gt;Subscribe&lt;/button&gt;\n\nI respect your privacy. Unsubscribe anytime.\n\n\n\n\n\n GitHub  Twitter  Email"
   },
   {
     "objectID": "projects.html",
