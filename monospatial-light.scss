@@ -135,49 +135,36 @@ $callout-border-width: 3px;
 // Import @font-face rules if self-hosting (Method B)
 @import "fonts"; // Assumes _fonts.scss exists
 
-// Keyframes for the dynamic rainbow background
-@keyframes rainbow-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+// ------------------------------------------------------------------
+// Navbar styling
+// ------------------------------------------------------------------
+// Instead of a fully animated rainbow, give the navbar a subtle monochrome
+// appearance with a thin accent strip at the bottom.
 
-// Apply dynamic background to the navbar
+// Subtle gradient strip
 .navbar {
-  background: linear-gradient(
-    270deg,
-    #8a6bbd,
-    // Muted purple
-    #b388ff,
-    // Soft violet
-    #e0b0ff,
-    // Pale orchid
-    #ffd1dc,
-    // Pastel pink
-    #ffc4a3,
-    // Muted peach
-    #ffe55c,
-    // Soft gold
-    #c1f0c1,
-    // Pale mint
-    #c6e2ff // Light powder blue
+  background-color: #000;
+  border-bottom: 4px solid transparent;
+  background-image: linear-gradient(
+    to right,
+    #ff6b6b,
+    #f8e71c,
+    #00c9a7,
+    #4dabf7,
+    #a66dd4
   );
-  background-size: 1800% 1800%; // Make the gradient large enough to animate smoothly
-  animation: rainbow-flow 18s ease infinite;
-  // Ensure text color contrasts well
+  background-size: 100% 4px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
   .navbar-brand,
   .nav-link {
-    color: #ffffff !important; // Force white text for contrast
+    color: #ffffff !important; // Ensure contrast
   }
+
   .nav-link:hover,
   .nav-link:focus {
-    color: #e0e0e0 !important; // Slightly dimmer white on hover/focus
+    color: #e0e0e0 !important;
   }
 }
 
