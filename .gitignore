@@ -8,8 +8,9 @@
 
 /.quarto/
 
-# Build output
-_site/
-_freeze/
-about_cache/
-index_cache/
+
+/_site/
+/_freeze/
+/about_cache/
+/index_cache/
+

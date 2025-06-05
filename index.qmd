@@ -4,10 +4,12 @@ title-block-banner: true
 page-layout: full
 ---
 
+
 ::: {.hero}
 # Hello, I'm Cole
 Welcome to my personal corner of the web! Here you'll find my latest writing, projects and other musings.
 :::
+
 
 ### Navigation
 
