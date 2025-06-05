@@ -47,6 +47,33 @@ $callout-color-note: $mono-accent-dark;
 
 // Custom CSS Rules for Dark Theme
 
+// Navbar
+.navbar {
+  background-color: #000;
+  border-bottom: 4px solid transparent;
+  background-image: linear-gradient(
+    to right,
+    #ff6b6b,
+    #f8e71c,
+    #00c9a7,
+    #4dabf7,
+    #a66dd4
+  );
+  background-size: 100% 4px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  .navbar-brand,
+  .nav-link {
+    color: #ffffff !important;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    color: lighten(#ffffff, 15%) !important;
+  }
+}
+
 // Adjust rule colors if needed
 h1, h2, h3, h4, h5, h6 {
   border-bottom-color: $mono-border-dark;
@@ -78,4 +105,25 @@ hr {
 ::selection {
   background: $mono-accent-dark;
   color: $mono-bg-dark; // Dark background for selected text
+
+}
+
+.card {
+  border-radius: 0;
+  border: 1px solid $mono-border-dark;
+  background-color: $mono-code-bg-dark;
+}
+
+#navcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.hero {
+  background-color: $mono-code-bg-dark;
+  border: 1px solid $mono-border-dark;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }

@@ -1,0 +1,10 @@
+---
+title: "Projects"
+page-layout: full
+---
+
+A showcase of work in progress and experiments.
+
+- **ai tools** – exploring open-source language models.
+- **research automation** – building reproducible pipelines in R and Python.
+- **web experiments** – small sites and apps hosted on [GitHub](https://github.com/colerehbein).

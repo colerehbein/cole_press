@@ -19,6 +19,10 @@ website:
         text: About
       - href: blog/index.qmd
         text: Blog
+      - href: projects.qmd
+        text: Projects
+      - href: cv/index.qmd
+        text: CV
     right:
       - icon: fab fa-github
         href: https://github.com/colerehbein
