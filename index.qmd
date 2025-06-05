@@ -22,10 +22,8 @@ sidebar:
         href: "/blog"
 ---
 
-::: cli-header
-```         
-cole@press:~$ neofetch --config custom
-```
+::: {.cli-prompt}
+`cole@press:~$ neofetch --config custom`
 :::
 
 ::::: neofetch-style
@@ -38,19 +36,15 @@ cole@press:~$ neofetch --config custom
     ╚██████╗╚██████╔╝███████╗███████╗
      ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
 
-          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
-        ░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░
-       ░▒▒▓▓████████████████▓▓▒▒░
-      ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
-      ▒▓████▓▓██      ██▓▓████▓▒
-     ▒▓████▓▓██  ●●  ●●  ██▓▓████▓▒
-     ▒▓████▓▓██    ◡    ██▓▓████▓▒
-     ▒▓████▓▓██          ██▓▓████▓▒
-      ▒▓████▓▓██  ～～～  ██▓▓████▓▒
-       ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
-        ░▒▒▓▓████████████▓▓▒▒░
-          ░░▒▒▒▓▓▓▓▓▓▓▓▒▒▒░░
-             ░░░▒▒▒▒▒░░░
+                .-""""""-.
+              .'          '.
+             /   O      O   \
+            :                :
+            |                |
+            :     \____/     :
+             \                /
+              '.  \______/  .'
+                '-.........-'
 ```
 :::
 
@@ -70,7 +64,9 @@ cole@press:~$ neofetch --config custom
 :::
 :::::
 
-**cole@press:~$** `cat skills.json | jq '.expertise'`
+::: {.cli-prompt}
+`cole@press:~$ cat skills.json | jq '.expertise'`
+:::
 
 ::: skills-json
 ``` json
@@ -99,7 +95,9 @@ cole@press:~$ neofetch --config custom
 ```
 :::
 
-**cole@press:~$** `ls -la ~/projects/`
+::: {.cli-prompt}
+`cole@press:~$ ls -la ~/projects/`
+:::
 
 ::::::: project-listing
 :::::: project-grid
@@ -132,7 +130,9 @@ cole@press:~$ neofetch --config custom
 ::::::
 :::::::
 
-**cole@press:~$** `git log --oneline --graph | head -10`
+::: {.cli-prompt}
+`cole@press:~$ git log --oneline --graph | head -10`
+:::
 
 ::: git-activity
 ```{r}
@@ -160,7 +160,9 @@ div(class = "git-log",
 ```
 :::
 
-**cole@press:~$** `cat thoughts/latest.txt`
+::: {.cli-prompt}
+`cole@press:~$ cat thoughts/latest.txt`
+:::
 
 :::::: thoughts-section
 ::: {.thought-item .ai}
@@ -179,7 +181,9 @@ Automation, human-AI collaboration, and evolving tech landscape
 :::
 ::::::
 
-**cole@press:~$** `./connect.sh --all`
+::: {.cli-prompt}
+`cole@press:~$ ./connect.sh --all`
+:::
 
 ::::::: connect-section
 ::::: newsletter-box
@@ -243,18 +247,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Subtle fade-in animation for sections
+    // Typewriter effect for CLI prompts when they scroll into view
+    const cliPrompts = document.querySelectorAll('.cli-prompt code');
+    const typewriterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const code = entry.target;
+                const text = code.textContent;
+                code.textContent = '';
+                code.style.opacity = '1';
+                
+                // Start typewriter after a short delay
+                setTimeout(() => {
+                    let i = 0;
+                    function type() {
+                        if (i < text.length) {
+                            code.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(type, 30); // Faster typing speed
+                        }
+                    }
+                    type();
+                }, 200);
+                
+                // Stop observing this element
+                typewriterObserver.unobserve(code);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    // Set up typewriter for CLI prompts
+    cliPrompts.forEach(code => {
+        code.style.opacity = '0';
+        typewriterObserver.observe(code);
+    });
+    
+    // Fade-in animation for sections (after typewriter completes)
     const sections = document.querySelectorAll('.neofetch-style, .skills-json, .project-listing, .git-activity, .thoughts-section, .connect-section');
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '50px'
     };
     
-    const observer = new IntersectionObserver((entries) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                // Delay the section fade-in to happen after typewriter
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, 800);
             }
         });
     }, observerOptions);
@@ -262,8 +304,8 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach((section, index) => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
-        section.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-        observer.observe(section);
+        section.style.transition = `opacity 0.6s ease-out, transform 0.6s ease-out`;
+        sectionObserver.observe(section);
     });
     
     // Newsletter form functionality

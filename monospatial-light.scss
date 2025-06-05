@@ -919,7 +919,7 @@ a {
   }
 
   .system-info {
-    color: lighten($terminal-text, 10%);
+    color: lighten($terminal-text, 35%);
     font-family: $font-family-monospace;
     font-size: $font-size-sm;
     line-height: 1.4;
@@ -933,7 +933,8 @@ a {
 
     // Better contrast for readability
     strong {
-      color: lighten($terminal-text, 20%);
+      color: lighten($terminal-text, 45%);
+      font-weight: 600;
     }
   }
 }
@@ -1049,17 +1050,19 @@ h6 {
       }
 
       strong {
-        color: $mono-text;
+        color: darken($mono-text, 10%);
         font-family: $font-family-monospace;
         font-size: $font-size-base;
         margin-bottom: $spacing-2;
         display: block;
+        font-weight: 600;
       }
 
       p {
         margin-bottom: $spacing-3;
         font-size: $font-size-sm;
         line-height: 1.4;
+        color: darken($mono-text, 5%);
       }
 
       .project-link {
@@ -1081,7 +1084,7 @@ h6 {
 // Git activity log - more compact
 .git-activity {
   background: $cli-bg;
-  color: $terminal-text;
+  color: lighten($terminal-text, 30%);
   padding: $spacing-5;
   border-radius: $radius-lg;
   margin-bottom: $spacing-6;
