@@ -6,20 +6,45 @@ page-layout: full
 
 ## Welcome
 
-I'm Cole Rehbein. Welcome to my personal corner of the web!
+I'm Cole Rehbein. Welcome to my personal corner of the web! Here you'll find my latest writing, projects, and other musings.
 
 ### Navigation
 
-::: {.card .h-100}
+::: {#navcards .card-columns}
+::: {.card}
 {{< fa regular newspaper >}} [Blog](/blog)
 
-Dive into my latest articles, analyses, and reflections.
+Dive into my latest articles, analyses and reflections.
 :::
 
-::: {.card .h-100}
+::: {.card}
 {{< fa regular file-lines >}} [CV & Resume](/cv)
 
 Explore my professional background and experience.
 :::
 
-Feel free to look around!
+::: {.card}
+{{< fa solid folder-open >}} [Projects](/projects)
+
+A look at what I'm currently building and exploring.
+:::
+
+::: {.card}
+{{< fa solid envelope >}} [Newsletter](#newsletter)
+
+Sign up to receive occasional updates.
+:::
+:::
+
+## GitHub Activity
+
+![GitHub stats](https://ghchart.rshah.org/colerehbein){alt="GitHub contribution chart"}
+
+## Newsletter {#newsletter}
+
+Stay up to date by joining the mailing list.
+
+<form action="https://example.com" method="post" class="mb-5">
+  <input type="email" name="email" placeholder="you@example.com" required class="form-control mb-2">
+  <button type="submit" class="btn btn-primary">Subscribe</button>
+</form>
