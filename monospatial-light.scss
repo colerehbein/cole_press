@@ -958,6 +958,30 @@ a {
   }
 }
 
+// Inline CLI prompts - for the new subtle style
+p strong + code {
+  background: rgba($cli-rainbow-cyan, 0.1);
+  color: $cli-rainbow-cyan;
+  padding: $spacing-1 $spacing-2;
+  border-radius: $radius-sm;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+  margin-left: $spacing-2;
+}
+
+// Better spacing for inline prompts
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  & + p strong {
+    color: $cli-rainbow-green;
+    font-family: $font-family-monospace;
+  }
+}
+
 // Skills JSON with syntax highlighting - more readable
 .skills-json {
   background: $cli-bg;
@@ -1185,56 +1209,80 @@ a {
     }
 
     .newsletter-form {
-      .cli-input-group {
-        display: flex;
-        align-items: center;
-        background: $mono-surface;
-        border: 1px solid $mono-border;
-        border-radius: $radius-base;
-        padding: $spacing-2;
-        margin-bottom: $spacing-2;
-
-        .prompt {
-          color: $cli-rainbow-green;
-          font-family: $font-family-monospace;
-          margin-right: $spacing-2;
-          font-weight: bold;
-        }
-
-        .cli-input {
-          flex: 1;
-          border: none;
-          background: transparent;
-          font-family: $font-family-monospace;
-          font-size: $font-size-sm;
-
-          &:focus {
-            outline: none;
-          }
-        }
-
-        .cli-button {
-          background: $cli-rainbow-blue;
-          color: white;
-          border: none;
-          padding: $spacing-2 $spacing-3;
-          border-radius: $radius-sm;
-          font-family: $font-family-monospace;
-          font-size: $font-size-xs;
-          font-weight: bold;
-          cursor: pointer;
+      .cli-form {
+        .cli-input-wrapper {
+          display: flex;
+          align-items: center;
+          background: $mono-surface;
+          border: 1px solid $mono-border;
+          border-radius: $radius-base;
+          padding: $spacing-2;
+          margin-bottom: $spacing-2;
           transition: all var(--transition-normal);
 
-          &:hover {
-            background: $cli-rainbow-cyan;
+          &:focus-within {
+            border-color: $cli-rainbow-cyan;
+            box-shadow: 0 0 0 2px rgba($cli-rainbow-cyan, 0.2);
+          }
+
+          .cli-prompt-small {
+            color: $cli-rainbow-green;
+            font-family: $font-family-monospace;
+            margin-right: $spacing-2;
+            font-weight: bold;
+            font-size: $font-size-sm;
+          }
+
+          .cli-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-family: $font-family-monospace;
+            font-size: $font-size-sm;
+            color: $mono-text;
+            padding: $spacing-1;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              color: $mono-text-secondary;
+              opacity: 0.8;
+            }
+          }
+
+          .cli-button {
+            background: $cli-rainbow-blue;
+            color: white;
+            border: none;
+            padding: $spacing-2 $spacing-3;
+            border-radius: $radius-sm;
+            font-family: $font-family-monospace;
+            font-size: $font-size-xs;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            margin-left: $spacing-2;
+
+            &:hover {
+              background: $cli-rainbow-cyan;
+              transform: translateY(-1px);
+            }
+
+            &:active {
+              transform: translateY(0);
+            }
           }
         }
-      }
 
-      .cli-note {
-        color: $mono-text-secondary;
-        font-size: $font-size-xs;
-        font-family: $font-family-monospace;
+        .cli-note {
+          color: $mono-text-secondary;
+          font-size: $font-size-xs;
+          font-family: $font-family-monospace;
+          margin: 0;
+          opacity: 0.8;
+        }
       }
     }
   }

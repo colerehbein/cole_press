@@ -37,6 +37,20 @@ cole@press:~$ neofetch --config custom
     ██║     ██║   ██║██║     ██╔══╝  
     ╚██████╗╚██████╔╝███████╗███████╗
      ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
+
+          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
+        ░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░
+       ░▒▒▓▓████████████████▓▓▒▒░
+      ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
+      ▒▓████▓▓██      ██▓▓████▓▒
+     ▒▓████▓▓██  ●●  ●●  ██▓▓████▓▒
+     ▒▓████▓▓██    ◡    ██▓▓████▓▒
+     ▒▓████▓▓██          ██▓▓████▓▒
+      ▒▓████▓▓██  ～～～  ██▓▓████▓▒
+       ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
+        ░▒▒▓▓████████████▓▓▒▒░
+          ░░▒▒▒▓▓▓▓▓▓▓▓▒▒▒░░
+             ░░░▒▒▒▒▒░░░
 ```
 :::
 
@@ -56,9 +70,7 @@ cole@press:~$ neofetch --config custom
 :::
 :::::
 
-::: {.cli-prompt}
-`cole@press:~$ cat skills.json | jq '.expertise'`
-:::
+**cole@press:~$** `cat skills.json | jq '.expertise'`
 
 ::: skills-json
 ``` json
@@ -87,9 +99,7 @@ cole@press:~$ neofetch --config custom
 ```
 :::
 
-::: {.cli-prompt}
-`cole@press:~$ ls -la ~/projects/`
-:::
+**cole@press:~$** `ls -la ~/projects/`
 
 ::::::: project-listing
 :::::: project-grid
@@ -122,9 +132,7 @@ cole@press:~$ neofetch --config custom
 ::::::
 :::::::
 
-::: {.cli-prompt}
-`cole@press:~$ git log --oneline --graph | head -10`
-:::
+**cole@press:~$** `git log --oneline --graph | head -10`
 
 ::: git-activity
 ```{r}
@@ -152,9 +160,7 @@ div(class = "git-log",
 ```
 :::
 
-::: {.cli-prompt}
-`cole@press:~$ cat thoughts/latest.txt`
-:::
+**cole@press:~$** `cat thoughts/latest.txt`
 
 :::::: thoughts-section
 ::: {.thought-item .ai}
@@ -173,9 +179,7 @@ Automation, human-AI collaboration, and evolving tech landscape
 :::
 ::::::
 
-::: {.cli-prompt}
-`cole@press:~$ ./connect.sh --all`
-:::
+**cole@press:~$** `./connect.sh --all`
 
 ::::::: connect-section
 ::::: newsletter-box
@@ -187,18 +191,13 @@ $ curl -X POST https://cole.press/newsletter \
 ```
 
 :::: newsletter-form
-<form action="#" method="post" onsubmit="return false;">
-
-::: cli-input-group
-```         
-<span class="prompt">$</span>
+<form action="#" method="post" onsubmit="return false;" class="cli-form">
+<div class="cli-input-wrapper">
+<span class="cli-prompt-small">$</span>
 <input type="email" name="email" placeholder="your@email.com" required class="cli-input">
 <button type="submit" class="cli-button">SEND</button>
-```
-:::
-
+</div>
 <small class="cli-note">No spam, just thoughtful content</small>
-
 </form>
 ::::
 :::::
@@ -229,43 +228,46 @@ Thanks for visiting! ☕
 ```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Subtle typewriter effect only on prompts
-    const prompts = document.querySelectorAll('.cli-prompt code');
-    prompts.forEach((prompt, index) => {
-        // Only apply to first few prompts, with delay
-        if (index < 3) {
-            const text = prompt.textContent;
-            prompt.textContent = '';
-            
-            setTimeout(() => {
-                let i = 0;
-                function type() {
-                    if (i < text.length) {
-                        prompt.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(type, 50); // Faster typing
-                    }
-                }
-                type();
-            }, index * 1000);
-        }
-    });
-    
-    // Enhanced hover effects
+    // Enhanced hover effects with smooth transitions
     const interactiveElements = document.querySelectorAll('.project-item, .thought-item, .newsletter-box');
     interactiveElements.forEach(el => {
+        el.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        
         el.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
+            this.style.transform = 'translateY(-2px) scale(1.02)';
             this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
         });
         el.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.transform = 'translateY(0) scale(1)';
             this.style.boxShadow = '';
         });
     });
     
+    // Subtle fade-in animation for sections
+    const sections = document.querySelectorAll('.neofetch-style, .skills-json, .project-listing, .git-activity, .thoughts-section, .connect-section');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '50px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
+        observer.observe(section);
+    });
+    
     // Newsletter form functionality
-    const newsletterForm = document.querySelector('.newsletter-form form');
+    const newsletterForm = document.querySelector('.cli-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -273,23 +275,49 @@ document.addEventListener('DOMContentLoaded', function() {
             const input = this.querySelector('.cli-input');
             
             button.textContent = 'SENDING...';
-            button.style.background = '#f59e0b';
+            button.style.background = 'var(--cli-yellow)';
+            button.style.transform = 'scale(0.95)';
             
             setTimeout(() => {
                 button.textContent = '✓ SENT';
-                button.style.background = '#22c55e';
+                button.style.background = 'var(--cli-green)';
+                button.style.transform = 'scale(1)';
                 input.value = 'Thank you for subscribing!';
                 input.disabled = true;
-            }, 1500);
+                input.style.color = 'var(--cli-green)';
+            }, 1200);
             
             setTimeout(() => {
                 button.textContent = 'SEND';
                 button.style.background = '';
+                button.style.transform = '';
                 input.value = '';
                 input.disabled = false;
+                input.style.color = '';
                 input.placeholder = 'your@email.com';
             }, 4000);
         });
+    }
+    
+    // Add a subtle cursor blink to the ASCII art section
+    const asciiArt = document.querySelector('.ascii-art');
+    if (asciiArt) {
+        const cursor = document.createElement('span');
+        cursor.textContent = '▋';
+        cursor.style.color = 'var(--cli-cyan)';
+        cursor.style.animation = 'blink 1s infinite';
+        cursor.style.marginLeft = '5px';
+        asciiArt.appendChild(cursor);
+        
+        // Add keyframes for blink animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
     }
 });
 </script>
