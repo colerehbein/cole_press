@@ -4,7 +4,9 @@ This is a website published with Quarto and Netlify. It can be found [here](http
 
 ## Setup
 
-Run `./setup.sh` to install R and Quarto before building the site:
+
+Before building locally, run the setup script to install R and the Quarto CLI:
+
 
 ```bash
 ./setup.sh

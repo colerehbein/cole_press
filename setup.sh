@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
-# Install R
-sudo apt-get update
-sudo apt-get install -y r-base
+set -e
+apt-get update
+apt-get install -y r-base
+curl -L -o quarto.deb https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.31/quarto-1.7.31-linux-amd64.deb
+apt-get install -y ./quarto.deb
+rm quarto.deb
 
-# Install Quarto
-QUARTO_VERSION="1.7.31"
-DEB="quarto-${QUARTO_VERSION}-linux-amd64.deb"
-wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/${DEB}"
-sudo dpkg -i "$DEB"
-rm "$DEB"
