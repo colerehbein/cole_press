@@ -983,100 +983,95 @@ h6 {
   }
 }
 
-// Skills JSON with syntax highlighting - more readable
-.skills-json {
-  background: $cli-bg;
-  color: $terminal-text;
-  padding: $spacing-5;
-  border-radius: $radius-lg;
+// Skills and Projects side-by-side layout
+.skills-and-projects {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: $spacing-6;
   margin-bottom: $spacing-6;
-  box-shadow: $shadow-md;
-  border: 1px solid rgba($cli-rainbow-cyan, 0.2);
 
-  pre {
-    margin: 0;
-    font-size: $font-size-sm;
+  .skills-section {
+    .skills-json {
+      background: $cli-bg;
+      color: $terminal-text;
+      padding: $spacing-5;
+      border-radius: $radius-lg;
+      box-shadow: $shadow-md;
+      border: 1px solid rgba($cli-rainbow-cyan, 0.2);
+      height: fit-content;
+
+      pre {
+        margin: 0;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+
+  .projects-section {
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-4;
+    }
   }
 }
 
-// Project listing with colorful accents - better spacing
-.project-listing {
-  margin-bottom: $spacing-6;
+// Project items styling (now used within skills-and-projects)
+.project-item {
+  background: $mono-surface-elevated;
+  border: 1px solid $mono-border;
+  border-radius: $radius-lg;
+  padding: $spacing-5;
+  transition: all var(--transition-normal);
+  box-shadow: $shadow-base;
+  position: relative;
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: $spacing-4;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: $radius-lg $radius-lg 0 0;
+  }
 
-    .project-item {
-      background: $mono-surface-elevated;
-      border: 1px solid $mono-border;
-      border-radius: $radius-lg;
-      padding: $spacing-5;
-      transition: all var(--transition-normal);
-      box-shadow: $shadow-base;
-      position: relative;
+  &.blog::before {
+    background: linear-gradient(90deg, $cli-rainbow-red, $cli-rainbow-orange);
+  }
+  &.cv::before {
+    background: linear-gradient(90deg, $cli-rainbow-blue, $cli-rainbow-cyan);
+  }
+  &.portfolio::before {
+    background: linear-gradient(90deg, $cli-rainbow-purple, $cli-rainbow-pink);
+  }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        border-radius: $radius-lg $radius-lg 0 0;
-      }
+  strong {
+    color: darken($mono-text, 10%);
+    font-family: $font-family-monospace;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-2;
+    display: block;
+    font-weight: 600;
+  }
 
-      &.blog::before {
-        background: linear-gradient(
-          90deg,
-          $cli-rainbow-red,
-          $cli-rainbow-orange
-        );
-      }
-      &.cv::before {
-        background: linear-gradient(
-          90deg,
-          $cli-rainbow-blue,
-          $cli-rainbow-cyan
-        );
-      }
-      &.portfolio::before {
-        background: linear-gradient(
-          90deg,
-          $cli-rainbow-purple,
-          $cli-rainbow-pink
-        );
-      }
+  p {
+    margin-bottom: $spacing-3;
+    font-size: $font-size-sm;
+    line-height: 1.4;
+    color: darken($mono-text, 5%);
+  }
 
-      strong {
-        color: darken($mono-text, 10%);
-        font-family: $font-family-monospace;
-        font-size: $font-size-base;
-        margin-bottom: $spacing-2;
-        display: block;
-        font-weight: 600;
-      }
+  .project-link {
+    color: $cli-rainbow-blue;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: $font-family-monospace;
+    font-size: $font-size-sm;
 
-      p {
-        margin-bottom: $spacing-3;
-        font-size: $font-size-sm;
-        line-height: 1.4;
-        color: darken($mono-text, 5%);
-      }
-
-      .project-link {
-        color: $cli-rainbow-blue;
-        text-decoration: none;
-        font-weight: 600;
-        font-family: $font-family-monospace;
-        font-size: $font-size-sm;
-
-        &:hover {
-          color: $cli-rainbow-cyan;
-          text-decoration: underline;
-        }
-      }
+    &:hover {
+      color: $cli-rainbow-cyan;
+      text-decoration: underline;
     }
   }
 }
@@ -1355,8 +1350,13 @@ h6 {
     }
   }
 
-  .project-grid {
+  .skills-and-projects {
     grid-template-columns: 1fr;
+    gap: $spacing-4;
+
+    .projects-section .project-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .connect-section {

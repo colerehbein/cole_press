@@ -65,9 +65,11 @@ sidebar:
 :::::
 
 ::: {.cli-prompt}
-`cole@press:~$ cat skills.json | jq '.expertise'`
+`cole@press:~$ cat skills.json | jq '.expertise' && ls -la ~/projects/`
 :::
 
+::::::: skills-and-projects
+:::::: {.skills-section}
 ::: skills-json
 ``` json
 {
@@ -94,13 +96,10 @@ sidebar:
 }
 ```
 :::
+::::::
 
-::: {.cli-prompt}
-`cole@press:~$ ls -la ~/projects/`
-:::
-
-::::::: project-listing
-:::::: project-grid
+:::::: {.projects-section}
+::::: project-grid
 ::: {.project-item .blog}
 **drwxr-xr-x** **blog/** \> Deep dives into technology trends\
 \> AI development insights\
@@ -127,6 +126,7 @@ sidebar:
 
 [**ls portfolio/**](/projects){.project-link}
 :::
+:::::
 ::::::
 :::::::
 
@@ -249,11 +249,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Typewriter effect for CLI prompts when they scroll into view
     const cliPrompts = document.querySelectorAll('.cli-prompt code');
+    const completedPrompts = new Set();
+    
     const typewriterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const code = entry.target;
                 const text = code.textContent;
+                const typingSpeed = 30;
+                const totalTypingTime = text.length * typingSpeed + 200; // 200ms initial delay
+                
                 code.textContent = '';
                 code.style.opacity = '1';
                 
@@ -264,7 +269,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (i < text.length) {
                             code.textContent += text.charAt(i);
                             i++;
-                            setTimeout(type, 30); // Faster typing speed
+                            setTimeout(type, typingSpeed);
+                        } else {
+                            // Mark this prompt as completed
+                            completedPrompts.add(code);
+                            
+                            // Trigger any dependent sections to fade in
+                            const nextSection = code.closest('.cli-prompt').nextElementSibling;
+                            if (nextSection && (nextSection.classList.contains('neofetch-style') || 
+                                               nextSection.classList.contains('skills-and-projects') || 
+                                               nextSection.classList.contains('git-activity') || 
+                                               nextSection.classList.contains('thoughts-section') || 
+                                               nextSection.classList.contains('connect-section'))) {
+                                setTimeout(() => {
+                                    nextSection.style.opacity = '1';
+                                    nextSection.style.transform = 'translateY(0)';
+                                }, 200);
+                            }
                         }
                     }
                     type();
@@ -282,30 +303,13 @@ document.addEventListener('DOMContentLoaded', function() {
         typewriterObserver.observe(code);
     });
     
-    // Fade-in animation for sections (after typewriter completes)
-    const sections = document.querySelectorAll('.neofetch-style, .skills-json, .project-listing, .git-activity, .thoughts-section, .connect-section');
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '50px'
-    };
-    
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Delay the section fade-in to happen after typewriter
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, 800);
-            }
-        });
-    }, observerOptions);
+    // Fade-in animation for sections (triggered by typewriter completion)
+    const sections = document.querySelectorAll('.neofetch-style, .skills-and-projects, .git-activity, .thoughts-section, .connect-section');
     
     sections.forEach((section, index) => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
         section.style.transition = `opacity 0.6s ease-out, transform 0.6s ease-out`;
-        sectionObserver.observe(section);
     });
     
     // Newsletter form functionality
