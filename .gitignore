@@ -7,3 +7,9 @@
 .DS_Store
 
 /.quarto/
+
+# Build output
+_site/
+_freeze/
+about_cache/
+index_cache/
