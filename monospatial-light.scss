@@ -61,6 +61,18 @@ $terminal-red: #ff6b6b;
 $terminal-purple: #a66dd4;
 $terminal-orange: #f8e71c;
 
+// Additional CLI Rainbow Colors (inspired by neofetch/btop)
+$cli-bg: #0f1419;
+$cli-bg-lighter: #1a1f24;
+$cli-rainbow-red: #ff6b6b;
+$cli-rainbow-orange: #ff9500;
+$cli-rainbow-yellow: #ffd23f;
+$cli-rainbow-green: #30e000;
+$cli-rainbow-cyan: #00e5ff;
+$cli-rainbow-blue: #3b82f6;
+$cli-rainbow-purple: #a855f7;
+$cli-rainbow-pink: #ec4899;
+
 // More vibrant accent colors
 $success: #22c55e;
 $warning: #f59e0b;
@@ -850,4 +862,435 @@ a {
   pointer-events: none;
   z-index: -1;
   opacity: 0.03;
+}
+
+// ======== NEW CLI COMPONENTS (Colorful neofetch/btop inspired) ========
+
+// CLI Header
+.cli-header {
+  background: linear-gradient(135deg, $cli-bg 0%, $cli-bg-lighter 100%);
+  color: $cli-rainbow-green;
+  padding: $spacing-4 $spacing-6;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-6;
+  box-shadow: $shadow-md;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+
+  pre {
+    margin: 0;
+    color: $cli-rainbow-green;
+  }
+}
+
+// Neofetch-style display with rainbow ASCII
+.neofetch-style {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: $spacing-8;
+  background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 8%) 100%);
+  padding: $spacing-8;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-8;
+  box-shadow: $shadow-lg;
+
+  .ascii-art {
+    pre {
+      font-size: $font-size-sm;
+      line-height: 1.2;
+      margin: 0;
+      // Rainbow gradient text
+      background: linear-gradient(
+        45deg,
+        $cli-rainbow-red,
+        $cli-rainbow-orange,
+        $cli-rainbow-yellow,
+        $cli-rainbow-green,
+        $cli-rainbow-cyan,
+        $cli-rainbow-blue,
+        $cli-rainbow-purple
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: bold;
+    }
+  }
+
+  .system-info {
+    color: $terminal-text;
+    font-family: $font-family-monospace;
+    font-size: $font-size-sm;
+    line-height: 1.5;
+
+    strong:first-child {
+      color: $cli-rainbow-cyan;
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+// CLI prompts
+.cli-prompt {
+  color: $cli-rainbow-cyan;
+  background: $cli-bg-lighter;
+  padding: $spacing-3 $spacing-4;
+  border-radius: $radius-base;
+  margin: $spacing-6 0 $spacing-4;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+  border-left: 3px solid $cli-rainbow-cyan;
+  box-shadow: $shadow-sm;
+}
+
+// Skills JSON with syntax highlighting
+.skills-json {
+  background: $cli-bg;
+  color: $terminal-text;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-8;
+  box-shadow: $shadow-md;
+  border: 1px solid $cli-bg-lighter;
+
+  pre {
+    margin: 0;
+    font-size: $font-size-sm;
+  }
+}
+
+// Project listing with colorful accents
+.project-listing {
+  margin-bottom: $spacing-8;
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-5;
+
+    .project-item {
+      background: $mono-surface-elevated;
+      border: 1px solid $mono-border;
+      border-radius: $radius-lg;
+      padding: $spacing-6;
+      transition: all var(--transition-normal);
+      box-shadow: $shadow-base;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        border-radius: $radius-lg $radius-lg 0 0;
+      }
+
+      &.blog::before {
+        background: linear-gradient(
+          90deg,
+          $cli-rainbow-red,
+          $cli-rainbow-orange
+        );
+      }
+      &.cv::before {
+        background: linear-gradient(
+          90deg,
+          $cli-rainbow-blue,
+          $cli-rainbow-cyan
+        );
+      }
+      &.portfolio::before {
+        background: linear-gradient(
+          90deg,
+          $cli-rainbow-purple,
+          $cli-rainbow-pink
+        );
+      }
+
+      strong {
+        color: $mono-text;
+        font-family: $font-family-monospace;
+        font-size: $font-size-base;
+        margin-bottom: $spacing-3;
+        display: block;
+      }
+
+      .project-link {
+        color: $cli-rainbow-blue;
+        text-decoration: none;
+        font-weight: 600;
+        font-family: $font-family-monospace;
+
+        &:hover {
+          color: $cli-rainbow-cyan;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Git activity log
+.git-activity {
+  background: $cli-bg;
+  color: $terminal-text;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  margin-bottom: $spacing-8;
+  box-shadow: $shadow-md;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+
+  .git-log {
+    .git-line {
+      color: $cli-rainbow-yellow;
+      margin-bottom: $spacing-2;
+
+      &::before {
+        content: "●";
+        color: $cli-rainbow-green;
+        margin-right: $spacing-3;
+      }
+    }
+
+    .git-separator {
+      color: rgba($terminal-text, 0.6);
+      margin: $spacing-4 0;
+    }
+
+    .git-status {
+      color: $cli-rainbow-cyan;
+      margin-bottom: $spacing-1;
+
+      &.active::before {
+        content: "●";
+        color: $cli-rainbow-green;
+        margin-right: $spacing-2;
+      }
+    }
+
+    .git-remote {
+      color: $cli-rainbow-purple;
+      text-decoration: none;
+
+      &:hover {
+        color: $cli-rainbow-pink;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Thoughts section with colorful borders
+.thoughts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-4;
+  margin-bottom: $spacing-8;
+
+  .thought-item {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    padding: $spacing-5;
+    transition: all var(--transition-normal);
+    box-shadow: $shadow-base;
+
+    &.ai {
+      border-left: 4px solid $cli-rainbow-cyan;
+      background: linear-gradient(
+        135deg,
+        $mono-surface-elevated 0%,
+        rgba($cli-rainbow-cyan, 0.1) 100%
+      );
+    }
+
+    &.code {
+      border-left: 4px solid $cli-rainbow-yellow;
+      background: linear-gradient(
+        135deg,
+        $mono-surface-elevated 0%,
+        rgba($cli-rainbow-yellow, 0.1) 100%
+      );
+    }
+
+    &.future {
+      border-left: 4px solid $cli-rainbow-purple;
+      background: linear-gradient(
+        135deg,
+        $mono-surface-elevated 0%,
+        rgba($cli-rainbow-purple, 0.1) 100%
+      );
+    }
+
+    strong {
+      font-size: $font-size-base;
+      margin-bottom: $spacing-2;
+      display: block;
+    }
+  }
+}
+
+// Connect section
+.connect-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-6;
+  margin-bottom: $spacing-8;
+
+  .newsletter-box {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    box-shadow: $shadow-base;
+
+    strong {
+      color: $mono-text;
+      margin-bottom: $spacing-4;
+      display: block;
+    }
+
+    pre {
+      background: $cli-bg;
+      color: $cli-rainbow-green;
+      padding: $spacing-3;
+      border-radius: $radius-base;
+      margin-bottom: $spacing-4;
+      font-size: $font-size-xs;
+    }
+
+    .newsletter-form {
+      .cli-input-group {
+        display: flex;
+        align-items: center;
+        background: $mono-surface;
+        border: 1px solid $mono-border;
+        border-radius: $radius-base;
+        padding: $spacing-2;
+        margin-bottom: $spacing-2;
+
+        .prompt {
+          color: $cli-rainbow-green;
+          font-family: $font-family-monospace;
+          margin-right: $spacing-2;
+          font-weight: bold;
+        }
+
+        .cli-input {
+          flex: 1;
+          border: none;
+          background: transparent;
+          font-family: $font-family-monospace;
+          font-size: $font-size-sm;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .cli-button {
+          background: $cli-rainbow-blue;
+          color: white;
+          border: none;
+          padding: $spacing-2 $spacing-3;
+          border-radius: $radius-sm;
+          font-family: $font-family-monospace;
+          font-size: $font-size-xs;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all var(--transition-normal);
+
+          &:hover {
+            background: $cli-rainbow-cyan;
+          }
+        }
+      }
+
+      .cli-note {
+        color: $mono-text-secondary;
+        font-size: $font-size-xs;
+        font-family: $font-family-monospace;
+      }
+    }
+  }
+
+  .social-links {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-lg;
+    padding: $spacing-6;
+    box-shadow: $shadow-base;
+
+    strong {
+      color: $mono-text;
+      margin-bottom: $spacing-4;
+      display: block;
+    }
+
+    pre {
+      background: $cli-bg;
+      color: $terminal-text;
+      padding: $spacing-4;
+      border-radius: $radius-base;
+      font-size: $font-size-xs;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+}
+
+// CLI footer
+.cli-footer {
+  background: $cli-bg;
+  color: $terminal-text;
+  padding: $spacing-6;
+  border-radius: $radius-lg;
+  margin-top: $spacing-8;
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+  box-shadow: $shadow-md;
+
+  pre {
+    margin: 0;
+    line-height: 1.6;
+  }
+}
+
+// Enhanced hover effects for new components
+.project-item:hover,
+.thought-item:hover,
+.newsletter-box:hover {
+  transform: translateY(-2px);
+  box-shadow: $shadow-lg;
+}
+
+// Responsive adjustments for new components
+@media (max-width: 768px) {
+  .neofetch-style {
+    grid-template-columns: 1fr;
+    gap: $spacing-4;
+
+    .ascii-art {
+      text-align: center;
+
+      pre {
+        font-size: $font-size-xs;
+      }
+    }
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .connect-section {
+    grid-template-columns: 1fr;
+  }
+
+  .thoughts-section {
+    grid-template-columns: 1fr;
+  }
 }

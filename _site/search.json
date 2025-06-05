@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "cv/CV.html",
-    "href": "cv/CV.html",
-    "title": "CV",
-    "section": "",
-    "text": "New Mexico Highlands University, M.S. Clinical Psychology 2024 (anticipated)\n\nThesis: The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression\nAdvisor: Dr. David Pan \n\nSt. John’s College, Santa Fe, B.A. Philosophy and History of Math and Science 2019\n\nMinors: Classical Studies, Comparative Literature\nSenior Paper: The Internally Determined Self: Spinoza’s Ethics as a remedy for postmodernity’s identity crisis"
-  },
-  {
-    "objectID": "cv/CV.html#relevant-work-experience",
-    "href": "cv/CV.html#relevant-work-experience",
-    "title": "CV",
-    "section": "Relevant Work Experience",
-    "text": "Relevant Work Experience\nNew Mexico Highlands University"
-  },
-  {
-    "objectID": "cv/CV.html#other-work-experience",
-    "href": "cv/CV.html#other-work-experience",
-    "title": "CV",
-    "section": "Other Work Experience",
-    "text": "Other Work Experience\nServer, Bartender, Bar Castañeda June 2023 - Nov. 2023\nBarista, Stella’s Cafe Nov 2022 - June 2023\nServer, Bartender, The Skillet Sept 2021 - Nov 2022\nBarista, Atalaya Cafe May 2019 - Aug 2019\nBarista, Capitol Coffee Company Fall 2017 - June 2018\nBackcountry Counselor, Philmont Scout Ranch Summer 2016\nOutfitting Services, Philmont Scout Ranch Summer 2015\nBarista, Starbucks 2013-2015"
-  },
-  {
     "objectID": "cv/LICENSE.html",
     "href": "cv/LICENSE.html",
     "title": "",
@@ -67,14 +46,7 @@
     "href": "index.html",
     "title": "Cole Rehbein",
     "section": "",
-    "text": "╭─ cole@press.dev ~/portfolio\n╰─$ whoami"
-  },
-  {
-    "objectID": "index.html#navigation-hub",
-    "href": "index.html#navigation-hub",
-    "title": "Cole Rehbein",
-    "section": "Navigation Hub",
-    "text": "Navigation Hub\n\n\n\n\n blog.sh\n\n\n$ ./blog --list --recent\n&gt; Deep dives into technology trends\n&gt; AI development insights  \n&gt; Digital culture analysis\n&gt; 23 articles published\nRead Articles →{.terminal-link}\n\n\n\n\n\n\n resume.pdf\n\n\n$ cat ./cv/experience.txt\n&gt; Professional journey in tech\n&gt; Skills & certifications\n&gt; Research publications\n&gt; Download available\nView Credentials →{.terminal-link}\n\n\n\n\n\n\n projects/\n\n\n$ ls -la ./projects/\n&gt; AI automation tools\n&gt; Open source contributions\n&gt; Web applications\n&gt; Research experiments\nExplore Work →{.terminal-link}\n\n\n\n\n\ncole@dev:~$ git status –activity\n\n\n\n\n\n github-activity.log\n\n\n\n\n\n📊 GITHUB_ACTIVITY_REPORT\n─────────────────────────────\n\n\n127\ncommits_this_year\n\n\n23\npublic_repos\n\n\n8\nrecent_pushes\n\n\n─────────────────────────────\n✓ Building in public\n✓ Open source advocate\n⚡ Always learning\n\n\n\nView GitHub Profile →{.terminal-link}\n\n\n\n\n\ncole@dev:~$ cat ./insights/latest.md\n\n\n\n&gt; AI_INSIGHTS.log Real-world applications and ethical considerations in modern AI development\n\n\n&gt; CODE_CULTURE.md\nHow technology shapes society and building more thoughtfully\n\n\n&gt; FUTURE_WORK.txt Automation, human-AI collaboration, and evolving tech landscape\n\n\n\ncole@dev:~$ ./connect –social –newsletter\n\n\n\n\n\n newsletter-signup.sh\n\n\n$ echo \"Stay updated with my latest insights\"\n&gt; No spam, just thoughtful content\n&gt; Unsubscribe anytime with ease\n\n\n\n&lt;span class=\"terminal-prompt-char\"&gt;$&lt;/span&gt;\n&lt;input type=\"email\" name=\"email\" placeholder=\"your-email@domain.com\" required class=\"terminal-input\"&gt;\n&lt;button type=\"submit\" class=\"terminal-submit\"&gt;SUBMIT&lt;/button&gt;\n\n\n\n\n\n\n\n╭─ SOCIAL_LINKS.config ─╮\n│ github: @colerehbein   │\n│ twitter: @colerehbein  │  \n│ email: cole@cole.press │\n╰────────────────────────╯\n\ngithub.com/colerehbein @colerehbein cole@cole.press"
+    "text": "cole@press:~$ neofetch --config custom\n\n\n\n     ██████╗ ██████╗ ██╗     ███████╗\n    ██╔════╝██╔═══██╗██║     ██╔════╝\n    ██║     ██║   ██║██║     █████╗  \n    ██║     ██║   ██║██║     ██╔══╝  \n    ╚██████╗╚██████╔╝███████╗███████╗\n     ╚═════╝ ╚═════╝ ╚══════╝╚══════╝\n\n\nCole Rehbein @ cole.press ────────────────────────────────── OS: Full-Stack Developer & AI Researcher\nKernel: Building the future with code and data\nUptime: Available for interesting projects\nShell: TypeScript, Python, R, Go\nResolution: Problems → Solutions\nDE: Creative & Technical\nWM: Remote-friendly\nTheme: Open Source Advocate\nIcons: ✨ Always learning\nTerminal: Currently coding\nCPU: Ideas/sec: ∞\nMemory: Caffeinated\n\n\n\ncole@press:~$ cat skills.json | jq '.expertise'\n\n\n{\n  \"development\": {\n    \"proficiency\": \"90%\",\n    \"languages\": [\"TypeScript\", \"Python\", \"R\", \"Go\"],\n    \"focus\": \"Full-stack applications\"\n  },\n  \"ai_research\": {\n    \"proficiency\": \"85%\", \n    \"areas\": [\"Machine Learning\", \"Automation\", \"Data Science\"],\n    \"focus\": \"Real-world applications\"\n  },\n  \"writing\": {\n    \"proficiency\": \"80%\",\n    \"topics\": [\"Technology\", \"AI Ethics\", \"Digital Culture\"], \n    \"focus\": \"Thoughtful analysis\"\n  },\n  \"open_source\": {\n    \"proficiency\": \"88%\",\n    \"contributions\": \"Active\",\n    \"philosophy\": \"Building in public\"\n  }\n}\n\n\ncole@press:~$ ls -la ~/projects/\n\n\n\n\ndrwxr-xr-x blog/ &gt; Deep dives into technology trends\n&gt; AI development insights\n&gt; Digital culture analysis\n&gt; 23 articles published\ncd blog/\n\n\ndrwxr-xr-x cv/ &gt; Professional journey documentation\n&gt; Skills & certifications\n&gt; Research publications\n&gt; PDF download available\ncat cv/resume.pdf\n\n\ndrwxr-xr-x portfolio/ &gt; AI automation tools\n&gt; Open source contributions\n&gt; Web applications\n&gt; Research experiments\nls portfolio/\n\n\n\n\ncole@press:~$ git log --oneline --graph | head -10\n\n\n\n\n\n* 127 commits this year\n* 23 public repositories\n* 8 recent pushes\n────────────────────────\n● Building in public\n● Open source advocate\n● Always learning\n\norigin/main → github.com/colerehbein\n\n\n\n\n\n\ncole@press:~$ cat thoughts/latest.txt\n\n\n\n📊 AI_in_Practice.md\nReal-world applications and ethical considerations in modern AI development\n\n\n🔧 Code_and_Culture.py\nHow technology shapes society and building more thoughtfully\n\n\n🚀 Future_of_Work.rs\nAutomation, human-AI collaboration, and evolving tech landscape\n\n\n\ncole@press:~$ ./connect.sh --all\n\n\n\n📬 Newsletter Signup\n$ curl -X POST https://cole.press/newsletter \\\n  --data \"email=your@email.com\"\n\n\n\n&lt;span class=\"prompt\"&gt;$&lt;/span&gt;\n&lt;input type=\"email\" name=\"email\" placeholder=\"your@email.com\" required class=\"cli-input\"&gt;\n&lt;button type=\"submit\" class=\"cli-button\"&gt;SEND&lt;/button&gt;\n\nNo spam, just thoughtful content\n\n\n\n\n🔗 Social Links\ngithub    : https://github.com/colerehbein\ntwitter   : https://twitter.com/colerehbein  \nemail     : cole@cole.press\nwebsite   : https://cole.press\n\n\n\n$ uptime\n 10:35AM  up 365 days, building cool things\n$ whoami\nCole Rehbein - Full-Stack Developer & AI Researcher\n$ echo \"Thanks for visiting! ☕\"\nThanks for visiting! ☕"
   },
   {
     "objectID": "projects.html",

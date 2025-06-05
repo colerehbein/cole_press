@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://cole.press/cv/CV.html</loc>
-    <lastmod>2025-06-05T07:51:55.313Z</lastmod>
-  </url>
-  <url>
     <loc>https://cole.press/cv/LICENSE.html</loc>
     <lastmod>2023-11-02T12:54:53.000Z</lastmod>
   </url>
@@ -18,7 +14,7 @@
   </url>
   <url>
     <loc>https://cole.press/index.html</loc>
-    <lastmod>2025-06-05T07:49:44.303Z</lastmod>
+    <lastmod>2025-06-05T08:01:33.651Z</lastmod>
   </url>
   <url>
     <loc>https://cole.press/projects.html</loc>

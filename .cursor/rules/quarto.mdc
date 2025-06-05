@@ -1,0 +1,3171 @@
+---
+description: 
+globs: *.qmd
+alwaysApply: false
+---
+TITLE: Enabling and Setting TOC Depth in Quarto YAML
+DESCRIPTION: This YAML snippet demonstrates how to enable the Table of Contents and specify the maximum heading level (depth) to include in the TOC. The 'toc: true' option activates the TOC generation, and 'toc-depth: 2' limits the TOC to include only level-1 and level-2 headings.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-toc.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+toc: true
+toc-depth: 2
+```
+
+----------------------------------------
+
+TITLE: Configuring Navbar Search in Quarto Website (YAML)
+DESCRIPTION: This snippet enables a search bar in the Quarto website's top navbar via the YAML configuration file. The 'search' key is set to true under the 'navbar' section of the project type. Requires a properly set up Quarto project file (such as _quarto.yml) and references to the correct project type. No parameters are needed other than enabling search; search bar appears as part of the site's navigation UI.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  navbar:
+    search: true
+```
+
+----------------------------------------
+
+TITLE: Creating Sidebar Filters and Reactive Data Filtering in Python (Shiny)
+DESCRIPTION: Generates dynamic UI checkbox groups for 'species' and 'islands' based on unique values in the dataset. It defines a reactive calculation function `filtered_penguins` decorated with `@reactive.calc`. This function filters the `penguins` DataFrame based on the current selections in the 'species' and 'islands' input controls (`input.species()`, `input.islands()`) and returns the filtered subset. This function automatically re-executes when its input dependencies change.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+species = list(penguins["species"].value_counts().index) # <4>
+ui.input_checkbox_group(
+    "species", "Species:",
+    species, selected = species
+)
+
+islands = list(penguins["island"].value_counts().index)
+ui.input_checkbox_group(
+    "islands", "Islands:",
+    islands, selected = islands
+) # <4>
+
+@reactive.calc # <5>
+def filtered_penguins():
+    data = penguins[penguins["species"].isin(input.species())]
+    data = data[data["island"].isin(input.islands())]
+    return data
+```
+
+----------------------------------------
+
+TITLE: Loading Penguin Dataset with Seaborn in Python
+DESCRIPTION: Python code snippet that imports the Seaborn visualization library and uses its `load_dataset` function to load the built-in 'penguins' dataset into a pandas DataFrame named `penguins`. This data is used for plotting in the dashboard.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-sidebar.md#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+import seaborn as sns
+penguins = sns.load_dataset("penguins")
+```
+
+----------------------------------------
+
+TITLE: Enabling Giscus Comments in Quarto Website (YAML)
+DESCRIPTION: Integrates Giscus comments into the Quarto website, leveraging GitHub Discussions as a comment backend. Configured by providing the 'repo' value under the 'giscus' key. Requires an existing GitHub repository with Giscus installed and permissions for public discussions. Allows for lightweight, social login comments.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_13
+
+LANGUAGE: yaml
+CODE:
+```
+website:
+  comments:
+    giscus:
+      repo: quarto-dev/quarto-web
+```
+
+----------------------------------------
+
+TITLE: Defining Basic Slides with Level 2 Headings in Quarto (Markdown)
+DESCRIPTION: This snippet demonstrates creating a simple Quarto slide show using Markdown. Each level 2 heading (`##`) defines a new slide. The YAML front matter specifies the presentation title, author, and output format.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides-reveal.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Adding Quarto Output to .gitignore - Bash
+DESCRIPTION: This snippet adds the Quarto project's output directories to the .gitignore file.  This ensures that these generated files (/.quarto/ and /_site/) are not tracked by Git, preventing clutter in the repository and simplifying diffs. The file is expected to be named .gitignore and must be in the root directory of the project. No dependencies are directly required, this is a configuration file for git.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_ignoring-output.md#_snippet_0
+
+LANGUAGE: Bash
+CODE:
+```
+/.quarto/
+/_site/
+
+```
+
+----------------------------------------
+
+TITLE: Enabling Hypothesis Comments in Quarto Website (YAML)
+DESCRIPTION: Activates Hypothesis web-annotation comments for a Quarto website. Under the 'comments' key, set 'hypothesis' options like 'theme' and 'openSidebar'. Additional custom options are available in the Hypothesis publisher documentation. Integrates directly into Quarto-compatible websites with no further coding.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_11
+
+LANGUAGE: yaml
+CODE:
+```
+website:
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: false
+```
+
+----------------------------------------
+
+TITLE: Enabling Simple Directory Listing for Quarto Website Page (YAML)
+DESCRIPTION: Activates the listing feature for a document, which automatically generates a list of all Quarto documents in the same directory. Set 'listing: default' in the document's front matter. Useful for index pages or content hubs; ignores the current document by default.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_14
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "Listing Example"
+listing: default
+---
+```
+
+----------------------------------------
+
+TITLE: Importing Data Analysis and Visualization Libraries
+DESCRIPTION: This code snippet imports necessary Python libraries for data analysis and visualization. It imports pandas for data manipulation, altair for interactive visualizations, seaborn for statistical data visualization, and matplotlib for plotting.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+import pandas as pd
+import altair as alt
+import seaborn as sns
+from matplotlib import pyplot as plt
+```
+
+----------------------------------------
+
+TITLE: Configuring Incremental Lists in Quarto Presentations with YAML
+DESCRIPTION: This YAML snippet sets the 'incremental' option to true in a Quarto presentation, causing all bullet and number lists within the slides to be displayed one item at a time by default. Requires a Quarto project and a compatible slide format (e.g., revealjs or similar). The 'incremental' key is set under the chosen slide format; true means list items appear incrementally, false means all at once. No additional parameters are needed unless custom slide formats are used.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists-reveal.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+title: "My Presentation"
+format:
+  {{< meta slide-format >}}:
+    incremental: true   
+```
+
+----------------------------------------
+
+TITLE: Rendering Bill Length Distribution Plot in Python (Shiny + Seaborn)
+DESCRIPTION: Defines another Shiny plot output function named `length` using `@render.plot`. It functions similarly to the 'depth' plot, generating a seaborn `displot` for 'bill_length_mm' based on the `filtered_penguins()` reactive data. It uses the same `input.dist()` and `input.rug()` inputs to control plot appearance and updates reactively.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_4
+
+LANGUAGE: python
+CODE:
+```
+@render.plot
+def length():
+    return sns.displot(
+        filtered_penguins(), x = "bill_length_mm",
+        hue = "species", kind = input.dist(),
+        fill = True, rug=input.rug()
+    )
+```
+
+----------------------------------------
+
+TITLE: Creating Plotly Scatter Plot
+DESCRIPTION: This snippet demonstrates how to create an interactive scatter plot using Plotly Express. It loads the Gapminder dataset, filters it to the year 2007, and then uses `px.scatter` to create the plot. The plot visualizes the relationship between GDP per capita and life expectancy, colored by continent and sized by population, with hover information for each country. `fig.show()` displays the interactive plot.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_computations.ipynb#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+import plotly.express as px
+import plotly.io as pio
+gapminder = px.data.gapminder()
+gapminder2007 = gapminder.query("year == 2007")
+fig = px.scatter(gapminder2007, 
+                 x="gdpPercap", y="lifeExp", color="continent", 
+                 size="pop", size_max=60,
+                 hover_name="country")
+fig.show()
+```
+
+----------------------------------------
+
+TITLE: Counting Species (Python)
+DESCRIPTION: Groups the penguins dataset by species and counts the number of instances for each species. The result is then transformed into a DataFrame for potential display or further use. Requires the pandas library.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+#| label: species-counts
+penguins.groupby("species").size().reset_index(name = "count")
+```
+
+----------------------------------------
+
+TITLE: Creating a Grid of Plots with Individual Colorbars in Matplotlib
+DESCRIPTION: This snippet demonstrates how to create a 2x2 grid of subplots with individual colorbars attached to each axes. It uses random data with different magnitudes and applies different color maps (RdBu_r and viridis) to the plots in different columns.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_notebooks/layout.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(2, 2)
+fig.set_size_inches(20, 8)
+cmaps = ['RdBu_r', 'viridis']
+for col in range(2):
+    for row in range(2):
+        ax = axs[row, col]
+        pcm = ax.pcolormesh(np.random.random((20, 20)) * (col + 1),
+                            cmap=cmaps[col])
+        fig.colorbar(pcm, ax=ax)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Creating Altair Scatterplot of Bill Dimensions
+DESCRIPTION: This code snippet creates an interactive scatterplot of bill dimensions using Altair. It uses `alt.Chart()` to create a chart from the 'penguins' DataFrame. `mark_circle()` creates circular markers with a specified size. `encode()` maps 'bill_length_mm' to the x-axis, 'bill_depth_mm' to the y-axis, 'species' to the color (using the defined color scale), and adds tooltips for species, sex, and island. The `zero=False` argument on the scales ensures that the axes do not start at zero.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_7
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-bill-scatter
+#| fig-cap: >
+#|   A scatterplot of bill dimensions for 
+#|   penguins, made with Altair.
+alt.Chart(penguins).mark_circle(size=60).encode(
+    alt.X('bill_length_mm',
+        scale=alt.Scale(zero=False)
+    ),
+    alt.Y('bill_depth_mm',
+        scale=alt.Scale(zero=False)
+    ),
+    color = alt.Color('species', scale = scale),
+    tooltip=['species', 'sex', 'island']
+)
+```
+
+----------------------------------------
+
+TITLE: Defining Sidebar UI Controls with Shiny Express in Python
+DESCRIPTION: Python code using the `shiny.express` module to define interactive UI elements within a Quarto dashboard sidebar (`## {.sidebar}`). It creates two dropdown select inputs (`ui.input_select`) for choosing a variable and distribution type, and a checkbox (`ui.input_checkbox`) to toggle rug marks. User interactions update the reactive `input` object.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-sidebar.md#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+from shiny.express import render, ui
+ui.input_select("x", "Variable:",   # <3>
+                choices=["bill_length_mm", "bill_depth_mm"])
+ui.input_select("dist", "Distribution:", choices=["hist", "kde"])
+ui.input_checkbox("rug", "Show rug marks", value = False)  # <3>
+```
+
+----------------------------------------
+
+TITLE: Rendering Interactive Seaborn Plot with Shiny Express in Python
+DESCRIPTION: Python function `displot` decorated with `@render.plot` from `shiny.express`. This function dynamically generates and updates a Seaborn distribution plot (`sns.displot`) based on the current values selected by the user via the Shiny input controls (`input.x()`, `input.rug()`, `input.dist()`). The plot visualizes the penguins dataset, colored by species.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-sidebar.md#_snippet_3
+
+LANGUAGE: python
+CODE:
+```
+@render.plot # <4>
+def displot():
+    sns.displot(
+        data=penguins, hue="species", multiple="stack",
+        x=input.x(), rug=input.rug(), kind=input.dist()) # <4>
+```
+
+----------------------------------------
+
+TITLE: Adding Speaker Notes to a Slide - Markdown
+DESCRIPTION: This Markdown snippet demonstrates how to add speaker notes to a slide. The speaker notes are placed within a div with the class `.notes`. The slide content is written before the speaker notes div. This allows the presentation engine to separate slide content and speaker notes for display.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_speaker-notes.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+```{.markdown}
+## Slide with speaker notes
+
+Slide content
+
+::: {.notes}
+Speaker notes go here.
+:::
+```
+```
+
+----------------------------------------
+
+TITLE: Creating a Simple Matplotlib Plot in Python with Quarto Figure Attributes
+DESCRIPTION: This Python snippet generates a simple line plot using matplotlib and includes Quarto-specific cell attributes for figure labeling and captioning that enable cross-referencing within the document.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_notebooks/crossref.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-simple
+#| fig-cap: Simple Plot
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Adding Announcement Banner to Quarto Website (YAML)
+DESCRIPTION: This snippet displays an announcement message at the top (or below the navbar) of the Quarto site. It utilizes the 'announcement' key with configurable 'content' and 'position'. Place this in document front matter or in the main project YAML, and adjust content as needed for your announcement. Requires Quarto 1.3+ for full support.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_4
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  announcement: 
+    content: "**New** - this is an announcement" 
+    position: below-navbar
+```
+
+----------------------------------------
+
+TITLE: Setting Default Knitr Chunk Options in YAML for R (yaml)
+DESCRIPTION: This snippet defines default Knitr chunk options within the YAML front matter of a Quarto document. It configures chunk options such as collapsing output, customizing comment prefixes, and setting R options temporarily for the code chunks. Dependencies include having the Knitr engine enabled in the document's execution environment. The snippet is intended to be placed in the YAML header of the document to control all code chunks' behavior consistently.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_knitr-options.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "My Document"
+format: html
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+---
+```
+
+----------------------------------------
+
+TITLE: Organizing Slides into Sections with Level 1 Headings in Quarto Markdown
+DESCRIPTION: Shows how to organize Quarto slides into sections using Markdown headings. Level 1 headings (`#`) create section title slides, while level 2 headings (`##`) define content slides within those sections. This provides a hierarchical structure to the presentation.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Creating Matplotlib Errorbar Plot
+DESCRIPTION: This example showcases how to create an errorbar plot using Matplotlib. It generates sample data using `np.arange` and `np.sin`, defines error values, and then uses `plt.errorbar` to create the plot with various configurations of upper and lower limits. Finally, it displays the plot using `plt.show()`.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_computations.ipynb#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+x = np.arange(10)
+y = 2.5 * np.sin(x / 20 * np.pi)
+yerr = np.linspace(0.05, 0.2, 10)
+
+plt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')
+plt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')
+plt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,
+             label='uplims=True, lolims=True')
+
+upperlimits = [True, False] * 5
+lowerlimits = [False, True] * 5
+plt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,
+             label='subsets of uplims and lolims')
+
+plt.legend(loc='lower right')
+plt.show(fig)
+```
+
+----------------------------------------
+
+TITLE: Defining Parameters in Jupyter Notebooks with Python
+DESCRIPTION: Defines computational parameters in a Jupyter notebook cell by tagging the cell with 'parameters' and assigning default values to variables. Parameters are injected at runtime to override defaults as needed. This uses Papermill-compatible syntax for parameterization.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+#| tags: [parameters]
+
+alpha = 0.1
+ratio = 0.1
+```
+
+----------------------------------------
+
+TITLE: Rendering Quarto Documents with Parameters Using CLI
+DESCRIPTION: Illustrates how to render a Quarto document from the command line while passing parameter overrides directly using the '-P' flag. This works for both Jupyter '.ipynb' and Quarto '.qmd' files.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_4
+
+LANGUAGE: bash
+CODE:
+```
+quarto render {{< meta document >}}.ipynb -P alpha:0.2 -P ratio:0.3
+```
+
+----------------------------------------
+
+TITLE: Configuring Quarto Dashboard with Shiny Server (YAML)
+DESCRIPTION: YAML front matter for a Quarto document, setting the title to 'Penguin Bills', specifying the output format as 'dashboard', and crucially enabling interactivity by instructing Quarto to run a Shiny server (`server: shiny`).
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-sidebar.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "Penguin Bills"
+format: dashboard
+server: shiny # <1>
+---
+```
+
+----------------------------------------
+
+TITLE: Creating a Quarto Presentation without a Title Slide (Markdown)
+DESCRIPTION: This example demonstrates how to create a Quarto presentation that omits the automatically generated title slide. This is achieved by excluding the `title` and `author` fields from the YAML front matter. Slides are defined using level 2 headings (`##`).
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides-reveal.md#_snippet_3
+
+LANGUAGE: markdown
+CODE:
+```
+---
+format: {{< meta slide-format >}}
+---
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Controlling Caching Behavior with Quarto Render CLI - Bash
+DESCRIPTION: Demonstrates how to use the 'quarto render' command with different caching options to control caching behavior during document rendering. The '--cache' flag forces the use of caching even if not enabled in the document options. The '--no-cache' flag disables caching irrespective of the document settings. The '--cache-refresh' flag forces a refresh of the cache even if it has not been invalidated. These commands depend on the Quarto CLI and appropriate project setup with QMD files.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_caching-more.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+# use a cache (even if not enabled in options)
+quarto render example.qmd --cache 
+
+# don't use a cache (even if enabled in options)
+quarto render example.qmd --no-cache 
+
+# use a cache and force a refresh 
+quarto render example.qmd --cache-refresh 
+```
+
+----------------------------------------
+
+TITLE: Freeze Execution: Re-render on Source Change
+DESCRIPTION: This YAML snippet demonstrates configuring a Quarto project to only re-render a computational document when its source file has been modified.  Setting `freeze: auto` under the `execute` option ensures that the document is only re-executed when changes are detected in the source file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_freeze-basics.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  freeze: auto  # re-render only when source changes
+```
+
+----------------------------------------
+
+TITLE: Delineating Slides with Horizontal Rules in Quarto Markdown
+DESCRIPTION: Illustrates using horizontal rules (`---`) in Markdown to separate slides in a Quarto presentation. This method is particularly useful for creating slides that do not have an explicit title defined by a heading. Each horizontal rule signifies the start of a new slide.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+- Turn off alarm
+- Get out of bed
+
+---
+
+- Get in bed
+- Count sheep
+
+```
+
+----------------------------------------
+
+TITLE: Configuring Search Location and Type in Quarto Website (YAML)
+DESCRIPTION: Configures advanced search options by specifying both where the search appears ('location' key) and its presentation style ('type') under the 'search' section. Options include 'navbar', and 'overlay' for different site behaviors. Place this under the correct project type in the YAML. Requires Quarto's default or extended search plugin.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_6
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  search:
+    location: navbar
+    type: overlay
+```
+
+----------------------------------------
+
+TITLE: Enabling Project-Wide Page Navigation in Quarto YAML Configuration
+DESCRIPTION: Configures page navigation for an entire Quarto project by adding the page-navigation setting to the _quarto.yml file. This allows users to navigate between pages using next/previous navigation at the bottom of pages.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_page-navigation.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-navigation: true
+```
+
+----------------------------------------
+
+TITLE: Defining Slides with Horizontal Rules in Quarto (Markdown)
+DESCRIPTION: This snippet illustrates using horizontal rules (`---`) in Markdown to delineate slides in a Quarto presentation, particularly useful for slides without titles. The YAML front matter sets the title, author, and format.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides-reveal.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+- Turn off alarm
+- Get out of bed
+
+---
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Configuring Bootstrap Themes with YAML in Quarto
+DESCRIPTION: This snippet demonstrates how to specify multiple themes in a Quarto project's YAML front matter or configuration file. It shows how to include a base Bootstrap theme ('cosmo') and then apply a custom Sass file ('custom.scss') to override default styling. This allows users to layer their own styles on top of existing themes.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_theme-options.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+theme:
+  - cosmo
+  - custom.scss
+```
+
+----------------------------------------
+
+TITLE: Generating Polar Line Plot with Matplotlib (Python)
+DESCRIPTION: This Python snippet uses NumPy to generate data for a spiral pattern (radius `r` and angle `theta`) and Matplotlib to create a figure with a polar projection subplot. It then plots the generated data on the polar axis, customizes the radial ticks, adds a grid for better readability, and displays the plot.
+
+Dependencies: numpy, matplotlib.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/hello/_hello.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Using YAML Syntax for Chunk Options
+DESCRIPTION: This example illustrates how chunk options can be specified using YAML syntax, offering improved readability and compatibility. It supports values like `fig-cap` and `fig-subcap`, enabling complex configurations. This method also allows for the inclusion of R expressions via the !expr tag, facilitating dynamic option values.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/tools/_chunk-options.md#_snippet_2
+
+LANGUAGE: YAML
+CODE:
+```
+fig-cap: !expr 'paste("Air", "Quality")'
+```
+
+----------------------------------------
+
+TITLE: Rendering Bill Depth Distribution Plot in Python (Shiny + Seaborn)
+DESCRIPTION: Defines a Shiny plot output function named `depth` using the `@render.plot` decorator. It generates a distribution plot (using seaborn's `displot`) of 'bill_depth_mm' from the reactively filtered data provided by `filtered_penguins()`. Plot appearance (distribution kind and rug marks) is controlled by the `input.dist()` and `input.rug()` values. The plot automatically updates when the filtered data or these display inputs change.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_3
+
+LANGUAGE: python
+CODE:
+```
+@render.plot
+def depth():
+    return sns.displot(  # <8>
+        filtered_penguins(), x = "bill_depth_mm",
+        hue = "species", kind = input.dist(),
+        fill = True, rug=input.rug()
+    ) # <8>
+```
+
+----------------------------------------
+
+TITLE: Configuring Jupyter Notebook Cell Execution with YAML Front Matter in Quarto
+DESCRIPTION: Demonstrates how to enable cell execution in a Jupyter notebook by adding execute configuration in the YAML front matter. This provides a file-specific way to control execution behavior without command line flags.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-execute.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "My Notebook"
+execute: 
+  enabled: true
+---
+```
+
+----------------------------------------
+
+TITLE: Publishing to Netlify via Shell Script
+DESCRIPTION: This shell script publishes a Quarto project to Netlify using the `quarto publish netlify` command. It requires the `NETLIFY_AUTH_TOKEN` environment variable to be set with your Netlify authentication token. The script relies on the `_publish.yml` file for the Netlify site ID.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_netlify-ci-example.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+# credentials from https://app.netlify.com/user/applications
+export NETLIFY_AUTH_TOKEN="45fd6ae56c"
+
+# publish to the netlify site id provided within _publish.yml
+quarto publish netlify
+```
+
+----------------------------------------
+
+TITLE: Rendering and Running Shiny Interactive Documents with Quarto CLI and Python
+DESCRIPTION: This snippet demonstrates how to render a Quarto document into a Shiny interactive application using the 'quarto render' command and then run the generated Shiny Python application with 'shiny run'. It assumes that you have the 'quarto' CLI and the 'shiny' package installed with Python support. The commands are intended to be run in a bash shell. Inputs include the Quarto file 'example.qmd'. The output is the generation of both HTML and an 'app.py' file for the Shiny app, which can be executed locally. Note that Quarto is not mandatory for serving the app after rendering.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-deployment.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+quarto render example.qmd
+shiny run app.py
+```
+
+----------------------------------------
+
+TITLE: Disabling Automatic Rendering in Quarto GitHub Publish Action with YAML
+DESCRIPTION: This YAML snippet demonstrates how to disable the default pre-publish rendering in a Quarto GitHub Action workflow. By setting the 'render' input to 'false', the publish action will skip re-rendering the project and only publish the existing rendered output. This is useful when rendered output is stored in version control and re-rendering is unnecessary, potentially saving workflow runtime. This snippet requires the 'quarto-dev/quarto-actions/publish@v2' action and a valid 'target' for publishing.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_github-action-options.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+- name: Render and Publish
+  uses: quarto-dev/quarto-actions/publish@v2
+  with:
+    target: {{< meta provider >}}
+    render: false
+```
+
+----------------------------------------
+
+TITLE: Loading Data (Python)
+DESCRIPTION: Loads the Palmer Penguins dataset from a specified URL into a pandas DataFrame. This makes the data available for subsequent analysis and visualization steps.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+penguins = pd.read_csv("https://pos.it/palmer-penguins-github-csv")
+```
+
+----------------------------------------
+
+TITLE: Configuring Global Incremental Lists in Quarto YAML
+DESCRIPTION: This YAML snippet demonstrates how to enable incremental display for all lists within a Quarto presentation by setting the `incremental` option to `true` under the format configuration. This overrides the default behavior where lists are displayed all at once.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+title: "My Presentation"
+format:
+  {{< meta slide-format >}}:
+    incremental: true
+```
+
+----------------------------------------
+
+TITLE: Specifying Custom Project Path in Quarto GitHub Actions using YAML
+DESCRIPTION: This YAML snippet shows how to configure the Quarto GitHub Action 'publish' to target a Quarto project located in a subdirectory rather than the root of a repository. The key 'path' input is specified with the relative path to the subdirectory containing the Quarto project. This enables workflows in large repositories to correctly locate and operate on the Quarto content. Requires the 'quarto-dev/quarto-actions/publish@v2' action and a 'target' specifying the publish destination.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_github-action-options.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+- name: Render and Publish
+  uses: quarto-dev/quarto-actions/publish@v2
+  with:
+    target: {{< meta provider >}}
+    path: subdirectory-to-use
+```
+
+----------------------------------------
+
+TITLE: Freeze Execution: Never Re-render
+DESCRIPTION: This YAML snippet demonstrates how to configure a Quarto project to prevent the re-rendering of a computational document during a global project render. By setting `freeze: true` under the `execute` option, the document will not be re-executed when the entire project is rendered.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_freeze-basics.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  freeze: true  # never re-render during project render
+```
+
+----------------------------------------
+
+TITLE: Rendering Filtered Data Table in Python (Shiny)
+DESCRIPTION: Defines a Shiny data frame output function named `dataview` using the `@render.data_frame` decorator. It displays the reactively filtered data provided by `filtered_penguins()` in an interactive table format using `render.DataGrid`. The data table automatically updates whenever the underlying filtered data changes due to user interaction with the sidebar filters.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_5
+
+LANGUAGE: python
+CODE:
+```
+@render.data_frame
+def dataview():
+    return render.DataGrid(filtered_penguins()) # <9>
+```
+
+----------------------------------------
+
+TITLE: Explicitly Enabling Quarto Kernel Daemon on Windows via YAML
+DESCRIPTION: Forces the use of the Jupyter kernel daemon on Windows systems, where it is disabled by default due to potential socket connection issues. Set the `daemon` key within the `execute` block of the document's YAML front matter to `true`.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  daemon: true
+```
+
+----------------------------------------
+
+TITLE: Enabling Cache for a Single Quarto Document
+DESCRIPTION: YAML front matter example showing how to enable caching for a single Quarto document by setting the cache option to true in the execute configuration.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-cache.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "My Document"
+format: html
+execute: 
+  cache: true
+---
+```
+
+----------------------------------------
+
+TITLE: Installing Jupyter Cache on Windows
+DESCRIPTION: Terminal command to install the jupyter-cache package on Windows systems using pip.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-cache.md#_snippet_1
+
+LANGUAGE: powershell
+CODE:
+```
+py -m pip install jupyter-cache
+```
+
+----------------------------------------
+
+TITLE: Enabling Section Numbering in Quarto (YAML)
+DESCRIPTION: This snippet demonstrates how to enable section numbering in a Quarto document using the `number-sections` option in a YAML configuration file. The `number-sections` option, set to `true`, instructs the rendering engine to automatically number all section headings in the output document. No other dependencies are required for this functionality.  The output will include numbered section headings.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-section-numbering.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+number-sections: true
+```
+
+----------------------------------------
+
+TITLE: Alternative Syntax for Chunk Options in Quarto
+DESCRIPTION: This snippet demonstrates the traditional method of including chunk options inline within the code chunk's opening line, using the syntax ```` ```{r, echo = FALSE}`````. It serves as a comparison to the comment-based approach, highlighting the recommended practice for portability and editor compatibility.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/tools/_chunk-options.md#_snippet_1
+
+LANGUAGE: Markdown
+CODE:
+```
+```{r, echo = FALSE}
+# R code here
+```
+```
+
+----------------------------------------
+
+TITLE: Applying Incremental Display to Specific List in Quarto Markdown
+DESCRIPTION: This Markdown snippet shows how to make a specific list incremental by wrapping it in a div with the class `incremental`. This local setting overrides the global `incremental` option, ensuring the list items are revealed one by one.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+::: {.incremental}
+
+- Eat spaghetti
+- Drink wine
+
+:::
+```
+
+----------------------------------------
+
+TITLE: Defining a Custom Theme in YAML
+DESCRIPTION: This code snippet demonstrates how to define a custom theme for a Quarto project by specifying an SCSS file in the YAML configuration. The custom theme will inherit from the default Bootstrap theme. The file `custom.scss` should contain the custom theme definitions.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_theme-custom.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+theme: custom.scss
+```
+
+----------------------------------------
+
+TITLE: Defining Plot Display Input Controls in Python (Shiny)
+DESCRIPTION: Creates Shiny UI input elements within the sidebar. `ui.input_select` generates a dropdown menu allowing users to choose the plot distribution type ('kde' or 'hist'). `ui.input_checkbox` creates a checkbox for toggling the display of rug marks on the plots. These inputs primarily control plot appearance.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+ui.input_select("dist", "Distribution:", choices=["kde", "hist"]) # <6>
+ui.input_checkbox("rug", "Show rug marks", value = False) # <6>
+```
+
+----------------------------------------
+
+TITLE: Configuring Social Metadata with Open Graph and Twitter Card (YAML)
+DESCRIPTION: Enables social metadata generation by setting 'open-graph: true' and configures Twitter cards using the 'twitter-card' subkey. Customize further via Open Graph properties or Twitter handle. Enhances the appearance of site links shared on social media platforms. Requires corresponding meta tag support in Quarto's output.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_8
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  open-graph: true
+  twitter-card: 
+    site: "@sitehandle"
+```
+
+----------------------------------------
+
+TITLE: Publishing to Netlify via CLI with ID
+DESCRIPTION: This shell script publishes a Quarto project to Netlify using the `quarto publish netlify` command, specifying the Netlify site ID directly on the command line using the `--id` flag.  This eliminates the need for a `_publish.yml` file or environment variables.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_netlify-ci-example.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+quarto publish netlify --id 5f3abafe-68f9-4c1d-835b-9d668b892001
+```
+
+----------------------------------------
+
+TITLE: Setting Data Frame Print Option to Paged in YAML
+DESCRIPTION: This YAML snippet demonstrates how to set the `df-print` option to `paged` within a Quarto document's YAML header. This configures Quarto to use `rmarkdown::paged_table()` for rendering data frames, adding pagination for handling row and column overflow.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_knitr-df-print.md#_snippet_0
+
+LANGUAGE: YAML
+CODE:
+```
+---
+title: "Document"
+format: 
+   html:
+     df-print: paged
+---
+```
+
+----------------------------------------
+
+TITLE: Using the "quarto publish" Bash Command for Deployment
+DESCRIPTION: This code snippet demonstrates executing the `quarto publish` command in the terminal to publish content to a specified provider. It prompts for authentication if not previously authenticated, renders the content, deploys it, and opens a browser to view the site. Dependencies include Quarto CLI installed and configured in the environment.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_publish-command.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+quarto publish {{< meta provider >}}
+```
+
+----------------------------------------
+
+TITLE: Accessing Parameters in Jupyter Notebook Python Code
+DESCRIPTION: Shows retrieval of a previously defined parameter in the top-level environment of a Jupyter notebook. The variable 'alpha' is expected to be available after parameter initialization or injection during execution.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+alpha
+```
+
+----------------------------------------
+
+TITLE: Defining Parameters in Knitr YAML Front Matter
+DESCRIPTION: Defines parameters for Quarto documents using Knitr engine by specifying a 'params' list in the YAML front matter. Each parameter is assigned a default value for use during rendering.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+---
+params:
+  alpha: 0.1
+  ratio: 0.1
+---
+```
+
+----------------------------------------
+
+TITLE: Configuring Publishing Destination Using YAML in _publish.yml
+DESCRIPTION: This snippet illustrates the structure of `_publish.yml` which defines the target publish source, including service, id, and URL fields. It enables reproducible publishing setups and is automatically created or updated during the `quarto publish` process. The file should contain the appropriate values for your publishing target.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_publish-command.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+- source: project
+  {{< meta provider >}}:
+    - id: "5f3abafe-68f9-4c1d-835b-9d668b892001"
+      url: "{{< meta provider-publish-url >}}"
+```
+
+----------------------------------------
+
+TITLE: Forcing Non-Incremental List Display with Markdown Div Class in Quarto
+DESCRIPTION: This Markdown snippet ensures that the enclosed list is displayed all at once, overriding any global incremental setting. It uses a div block with the class 'nonincremental' to prevent incremental animation for list items in a Quarto presentation. Useful when only specific lists should be exempt from incremental display; ensure the block contains a list for proper effect.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists-reveal.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+::: {.nonincremental}
+- Eat spaghetti
+- Drink wine
+:::
+```
+
+----------------------------------------
+
+TITLE: Configuring Twitter Card Metadata in Quarto Website (YAML)
+DESCRIPTION: Sets Twitter card options specifically, including associating the site with a Twitter handle. Defined under the 'twitter-card' key. Produces appropriate meta tags for Twitter previews when documents are shared. Supported fields include 'site', 'card', and other Twitter-specific values.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_9
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  twitter-card: 
+    site: "@sitehandle"
+```
+
+----------------------------------------
+
+TITLE: Disabling Execution in Quarto Documents - YAML
+DESCRIPTION: Shows how to disable code execution entirely within a Quarto document by setting the 'execute: enabled' option to false in the YAML front matter. This is useful for documents containing only prose or markdown. The snippet includes document-level metadata such as title and output format. Note that this setting differs from Jupyter notebooks (.ipynb), where execution does not happen during rendering by default.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_caching-more.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "My Document"
+format: html
+execute: 
+  enabled: false
+---
+```
+
+----------------------------------------
+
+TITLE: Rendering and Executing Jupyter Notebooks with Quarto (Bash)
+DESCRIPTION: This snippet details how to render a Jupyter notebook (.ipynb) and execute all of its code cells during the rendering process, using the Quarto CLI with the --execute flag in Bash. This ensures notebook outputs are fresh and up-to-date when the document is generated. Dependencies include the Quarto CLI and a valid .ipynb file. The main input is the notebook filename, and the output depends on the specified rendering format. Use this command when it's necessary to re-run computations as part of document generation.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-rendering.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+quarto render notebook.ipynb --execute
+```
+
+----------------------------------------
+
+TITLE: Defining CSS Rules for Bootstrap Customization using SCSS
+DESCRIPTION: This SCSS snippet defines custom CSS rules for Bootstrap headings (h1 through h6). It demonstrates adding a subtle text shadow effect to all heading levels to adjust the visual appearance. The rules section is separated from variables by the /*-- scss:rules --*/ comment, indicating that these styles are applied directly rather than setting Sass variables.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_theme-options.md#_snippet_2
+
+LANGUAGE: css
+CODE:
+```
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
+}
+```
+
+----------------------------------------
+
+TITLE: Customizing TOC Title in Quarto YAML
+DESCRIPTION: This YAML snippet shows how to change the default title displayed for the Table of Contents. The 'toc-title' option allows you to provide a custom string that will appear above the generated TOC list in the output document.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-toc.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+toc-title: Contents
+```
+
+----------------------------------------
+
+TITLE: Executing Jupyter Notebook Cells via Command Line in Quarto
+DESCRIPTION: Shows how to use the --execute flag with the quarto render command to execute cells in a Jupyter notebook during rendering. This overrides the default behavior where Quarto does not execute cells.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-execute.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+quarto render notebook.ipynb --execute
+```
+
+----------------------------------------
+
+TITLE: Markdown Example: Embedding Inline LaTeX Equations as Images
+DESCRIPTION: Demonstrates how inline LaTeX math expressions in markdown are automatically converted into image URLs requesting rendered equations from an external service, allowing equations to display as images in web pages.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_webtex-detail.md#_snippet_0
+
+LANGUAGE: Markdown
+CODE:
+```
+``` markdown
+$x + 1$
+```
+```
+
+LANGUAGE: Markdown
+CODE:
+```
+``` markdown
+![](https://latex.codecogs.com/svg.latex?x%20%2B%201)
+```
+```
+
+----------------------------------------
+
+TITLE: Adding Navbar Right-Aligned Icon Link in Quarto Website (YAML)
+DESCRIPTION: This snippet demonstrates how to add a right-aligned icon link to the website's navbar using YAML. The icon, href, and aria-label can be customized, and additional entries can be added as needed. Dependencies include a valid Quarto configuration file and relevant icon support via Quarto. Inputs are the icon name, URL, and accessibility label; outputs are navigation bar links with icons.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  navbar:
+    right:
+      - icon: github
+        href: https://github.com/
+        aria-label: GitHub
+```
+
+----------------------------------------
+
+TITLE: Listing Extension - YAML Configuration
+DESCRIPTION: This YAML snippet defines the metadata for a specific extension. It includes the name, path to the GitHub repository, author, and a description of the extension's functionality. The description uses Markdown formatting and includes links to related resources.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/extensions/listings/README.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+- name: lightbox
+  path: https://github.com/quarto-ext/lightbox
+  author: "[quarto-ext](mdc:https:/github.com/quarto-ext)"
+  description: |
+    Create [lightbox](mdc:(https:/biati-digital.github.io/glightbox))
+    treatments for images in your HTML documents.
+```
+
+----------------------------------------
+
+TITLE: Accessing Parameters in Knitr R Code
+DESCRIPTION: Demonstrates how to access a parameter value defined in YAML front matter via the 'params' list in an R code chunk within a Quarto document using Knitr.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_3
+
+LANGUAGE: r
+CODE:
+```
+params$alpha
+```
+
+----------------------------------------
+
+TITLE: Creating a Multi-Region Footer with Icons in Quarto
+DESCRIPTION: Shows how to create a more complex footer with different content in left and right regions, including social media icons with hyperlinks.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_footer.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-footer: 
+    left: "Copyright 2021, Norah Jones" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter 
+        href: https://twitter.com/
+```
+
+----------------------------------------
+
+TITLE: Specifying Bibliography with Local CSL File in Typst
+DESCRIPTION: This YAML snippet demonstrates how to specify a bibliography file and a custom citation style using a local CSL file when using Typst's citation processing system in Quarto. The `bibliography` option points to the .bib file, and `bibliographystyle` specifies the path to the custom .csl file, allowing for specific formatting of citations. Typst handles parsing and applying the CSL style.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_typst-citations.md#_snippet_1
+
+LANGUAGE: YAML
+CODE:
+```
+bibliography: refs.bib
+bibliographystyle: my-csl-style.csl
+```
+
+----------------------------------------
+
+TITLE: Rendering Jupyter Notebooks with Quarto without Execution (Bash)
+DESCRIPTION: This snippet shows how to render a Jupyter notebook (.ipynb) to the output format(s) using the Quarto CLI from the Bash terminal without executing notebook cells. By default, quarto render does not execute notebook cells, assuming prior execution during editing. The required dependency is the Quarto CLI and an existing .ipynb file. The notebook filename is the required argument, and output is determined by the notebook's configuration or CLI options. This approach is best used when notebooks are already executed and outputs preserved.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-rendering.md#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+quarto render document.ipynb
+```
+
+----------------------------------------
+
+TITLE: Rendering Quarto Documents with Parameters via YAML File
+DESCRIPTION: Shows an alternative method to pass parameter values by specifying a YAML file containing parameters with the '--execute-params' flag during render. This enables batch or predefined parameter values to be used.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_parameters.md#_snippet_5
+
+LANGUAGE: bash
+CODE:
+```
+quarto render {{< meta document >}}.qmd --execute-params params.yml
+```
+
+----------------------------------------
+
+TITLE: Creating Error Bar Plots with Matplotlib in Python
+DESCRIPTION: Illustrates different configurations of error bars using Matplotlib. The example creates a figure with four different error bar styles, demonstrating how to customize upper and lower limits for error bars and add a legend to explain the different configurations.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_notebooks/computations.ipynb#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+x = np.arange(10)
+y = 2.5 * np.sin(x / 20 * np.pi)
+yerr = np.linspace(0.05, 0.2, 10)
+
+plt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')
+plt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')
+plt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,
+             label='uplims=True, lolims=True')
+
+upperlimits = [True, False] * 5
+lowerlimits = [False, True] * 5
+plt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,
+             label='subsets of uplims and lolims')
+
+plt.legend(loc='lower right')
+```
+
+----------------------------------------
+
+TITLE: Using Wildcards for Render Targets in Quarto Project YAML
+DESCRIPTION: Demonstrates using wildcards (`*`) within the `project.render` list in the Quarto project configuration (`_quarto.yml`). This example renders all `.qmd` files starting with "section".
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_render-targets.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+project:
+  render:
+    - section*.qmd
+```
+
+----------------------------------------
+
+TITLE: Disabling Quarto Kernel Daemon via Command Line
+DESCRIPTION: Renders a Quarto document (`document.qmd`) using the command line while preventing the use of the Jupyter kernel daemon via the `--no-execute-daemon` flag. This forces a new kernel start for the render.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_5
+
+LANGUAGE: bash
+CODE:
+```
+# prevent use of a daemon
+quarto render document.qmd --no-execute-daemon
+```
+
+----------------------------------------
+
+TITLE: Implementing a Slide Pause in Quarto Markdown
+DESCRIPTION: This example shows the syntax for adding a pause within a slide in Quarto presentations. The three dots separated by spaces (. . .) create a pause point that hides the content below it until the presentation is advanced to the next step.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-pause-reveal.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+## Slide with a pause
+
+content before the pause
+
+. . .
+
+content after the pause
+```
+
+----------------------------------------
+
+TITLE: Render Single Document (Always Execute)
+DESCRIPTION: This bash command shows how to render a single Quarto document named `document.qmd`. It's important to note that regardless of the `freeze` setting, rendering a single document will always execute the code within it.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_freeze-basics.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+# render single document (always executes code)
+quarto render document.qmd
+```
+
+----------------------------------------
+
+TITLE: Generating Quarto Reference Pages (Bash)
+DESCRIPTION: Executes a TypeScript script (`tools/reference.ts`) via `quarto run` to automatically generate JSON reference documentation from the Quarto CLI schema. Assumes `quarto-cli/` is parallel to `quarto-web/`. Requires Quarto CLI and Node.js.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/README.md#_snippet_3
+
+LANGUAGE: Bash
+CODE:
+```
+quarto run tools/reference.ts
+```
+
+----------------------------------------
+
+TITLE: Initializing Interactive World Map with ipyleaflet in Python
+DESCRIPTION: This Python snippet uses the ipyleaflet library to create an interactive world map centered on the coordinates latitude 48 and longitude 350 with a zoom level of 2. It imports necessary components like Map, basemaps, and basemap_to_tiles, constructs the map using OpenStreetMap tiles, sets the center location, and then displays the map. The snippet also prints a map title indicating the central coordinates. Prerequisites include having the ipyleaflet package installed. The snippet expects no input and produces a rendered interactive map output.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/_dynamic-title.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+from ipyleaflet import Map, basemaps, basemap_to_tiles
+
+lat = 48
+long = 350
+
+print("title=", f"World Map at {lat}, {long}")
+
+Map(basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
+    center=(lat, long), zoom=2)
+```
+
+----------------------------------------
+
+TITLE: Configuring Quarto Freeze Feature in YAML
+DESCRIPTION: This YAML snippet defines the Quarto project configuration that sets the 'execute.freeze' option to 'auto'. This enables the freeze feature which runs R, Python, and Julia code locally and caches results in a _freeze directory. The configuration must be placed in the _quarto.yml file at the project root. This setup requires Quarto installed and a project containing executable code blocks; it prevents remote execution by freezing computation outputs locally.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_freeze-basics.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  freeze: auto
+```
+
+----------------------------------------
+
+TITLE: Disabling Quarto Kernel Daemon via YAML
+DESCRIPTION: Disables the Jupyter kernel daemon for document rendering by setting the `daemon` key within the `execute` block of the document's YAML front matter to `false`. This forces Quarto to start a new kernel for each render.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  daemon: false
+```
+
+----------------------------------------
+
+TITLE: Applying Incremental List Display with Markdown Div Class in Quarto
+DESCRIPTION: This Markdown code marks a list as incremental, ensuring its items are revealed one at a time during a Quarto presentation, regardless of the global setting. The list is wrapped in a div block with the class 'incremental'. No additional dependencies are required beyond Quarto's standard Markdown processing. The block should contain only lists to be affected; improper placement may cause rendering issues.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists-reveal.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+::: {.incremental}
+- Eat spaghetti
+- Drink wine
+:::
+```
+
+----------------------------------------
+
+TITLE: Installing Jupyter Cache on Mac/Linux
+DESCRIPTION: Terminal command to install the jupyter-cache package on Mac or Linux systems using pip.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-cache.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+python3 -m pip install jupyter-cache
+```
+
+----------------------------------------
+
+TITLE: Create Equal-Width Columns - Quarto Markdown
+DESCRIPTION: This snippet demonstrates how to create a two-column layout in Quarto markdown where the columns have equal width. This snippet is hidden unless the metadata `is_pptx` is set.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_columns.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+:::: {.columns}
+
+::: {.column}
+contents...
+:::
+
+::: {.column}
+contents...
+:::
+
+::::
+```
+
+----------------------------------------
+
+TITLE: Syncing Python Environment with pipenv (Bash)
+DESCRIPTION: Synchronizes the local Python virtual environment with dependencies in `Pipfile.lock` by installing exact package versions. Ensures a consistent Python environment for Jupyter or Knitr (via reticulate) execution. Requires `pipenv` installed and run from the project root.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/README.md#_snippet_2
+
+LANGUAGE: Bash
+CODE:
+```
+pipenv sync
+```
+
+----------------------------------------
+
+TITLE: Rendering Quarto Documents to Multiple Formats Using Bash
+DESCRIPTION: This snippet demonstrates how to render a markdown (.qmd) document using the Quarto command-line interface in Bash. It illustrates rendering the document into all formats specified in the YAML header by default, as well as targeting specific formats such as PDF and DOCX using the --to argument. The quarto CLI and a valid .qmd file are required dependencies. The input is the source markdown filename provided as the first argument, and outputs can be HTML, PDF, DOCX, or other formats as configured in the document YAML. Ensure the Quarto CLI is installed and the document exists before running.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-rendering.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+quarto render document.qmd # all formats
+quarto render document.qmd --to pdf
+quarto render document.qmd --to docx
+```
+
+----------------------------------------
+
+TITLE: Plotting Bill Ratio Distribution (Seaborn, Python)
+DESCRIPTION: Calculates the bill ratio (bill length / bill depth) for each penguin and then generates a kernel density estimate (KDE) plot of this ratio, separated and colored by species using seaborn's displot. This visualizes the distribution of bill shapes across species. Requires pandas, seaborn, and matplotlib.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_4
+
+LANGUAGE: python
+CODE:
+```
+#| fig-alt: A density plot of bill ratio by species. 
+penguins["bill_ratio"] = (
+   penguins["bill_length_mm"] / penguins["bill_depth_mm"] 
+)
+sns.displot(penguins, 
+            x = "bill_ratio", 
+            hue = "species", 
+            kind = "kde", fill = True, aspect = 2, height = 3)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Defining Color Scale (Altair, Python)
+DESCRIPTION: Creates an explicit color scale for use with Altair plots, mapping the specific names of the three penguin species to the predefined custom colors. This ensures consistency when encoding species by color in Altair visualizations.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_6
+
+LANGUAGE: python
+CODE:
+```
+scale = alt.Scale(domain = ['Adelie', 'Chinstrap', 'Gentoo'],
+                  range = colors)
+```
+
+----------------------------------------
+
+TITLE: Creating Basic Slides with Level 2 Headings in Quarto Markdown
+DESCRIPTION: Demonstrates a simple Quarto slide show structure using Markdown. Level 2 headings (`##`) define individual slides, and the YAML front matter sets the title, author, and format (using a Quarto variable `{{< meta slide-format >}}`). Each `##` heading starts a new slide.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Rendering Quarto Project Using Command Line Interface in Bash
+DESCRIPTION: This bash command snippet shows how to fully re-render the Quarto site after configuring the freeze feature. The 'quarto render' command processes all .qmd files, executes code chunks locally if freeze is enabled, and updates the _freeze directory with the latest computation results. This command must be run in the terminal within the project directory where the _quarto.yml file is located. It requires Quarto installed and properly configured.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_freeze-basics.md#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+quarto render
+```
+
+----------------------------------------
+
+TITLE: Creating and Reshaping NumPy Arrays in Python
+DESCRIPTION: Demonstrates how to import NumPy, create a sequential array using arange(), and reshape it into a 3x5 matrix. The code creates an array with values 0-14 and displays it in a 3x5 grid format.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_notebooks/computations.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+import numpy as np
+a = np.arange(15).reshape(3, 5)
+a
+```
+
+----------------------------------------
+
+TITLE: Adding Sidebar Tools (Action Buttons) in Quarto Website (YAML)
+DESCRIPTION: This example configures sidebar tools, such as action buttons with icons and external links, by defining them under the 'tools' key in 'sidebar'. Each tool can specify an icon and a href. Make sure the icon value is supported by Quarto. Properly position within the sidebar settings of a YAML configuration file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_3
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  sidebar:
+    tools:
+      - icon: github
+        href: https://github.com/
+```
+
+----------------------------------------
+
+TITLE: Specifying Explicit Render Targets in Quarto Project YAML
+DESCRIPTION: Defines a list of specific Quarto files (`section1.qmd`, `section2.qmd`) to be rendered within a project using the `project.render` key in the `_quarto.yml` (or `_quarto.yaml`) configuration file. This overrides the default behavior of rendering all valid Quarto files.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_render-targets.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+project:
+  render:
+    - section1.qmd
+    - section2.qmd
+```
+
+----------------------------------------
+
+TITLE: Defining Page Footer with Links in Quarto Website (YAML)
+DESCRIPTION: Configures the page footer by adding navigation links under the 'page-footer' key. Each link can have 'text' and 'href', organized under sections like 'center'. Supported in _quarto.yml or document front matter. Ensure links point to valid site resources (e.g., .qmd or .md files).
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_5
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-footer:
+    center: 
+      - text: "About"
+        href: about.qmd
+      - text: "License"
+        href: license.md
+      - text: "Trademark"
+        href: trademark.qmd
+```
+
+----------------------------------------
+
+TITLE: Configuring About Page Layout for Individuals or Organizations (YAML)
+DESCRIPTION: Sets up an 'About' page with a specific layout template, image, and custom links. All configuration occurs under the 'about' key in the document front matter. Suitable for personal or organizational profile pages in Quarto websites; ensure images and links are accessible.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_17
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: About
+about:
+  template: jolla
+  image: profile.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+---
+```
+
+----------------------------------------
+
+TITLE: Enabling Utterances Comments in Quarto Website (YAML)
+DESCRIPTION: Sets up Utterances comments—GitHub-powered commenting—by specifying the 'repo' under the 'utterances' section of 'comments'. Requires a GitHub repository set up for Utterances and appropriate OAuth permissions. Once configured, site visitors can comment using their GitHub accounts.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_12
+
+LANGUAGE: yaml
+CODE:
+```
+website:
+  comments: 
+    utterances:
+      repo: quarto-dev/quarto-web
+```
+
+----------------------------------------
+
+TITLE: Customizing Listings Layout and Contents in Quarto Website (YAML)
+DESCRIPTION: Customizes the behavior and appearance of a listing by specifying 'contents', 'type', and 'grid-columns' under the 'listing' key. Place in document front matter to tailor what is listed and how it is displayed, supporting advanced layouts like grids. Values should reference subdirectories or content types present in the project.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_15
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "Listing Example"
+listing: 
+  contents: posts
+  type: grid
+  grid-columns: 2
+---
+```
+
+----------------------------------------
+
+TITLE: Configuring Open Graph Metadata in Quarto Website (YAML)
+DESCRIPTION: Defines Open Graph properties to improve link previews and SEO when site pages are shared on social networks. Configured under 'open-graph', supporting keys like 'title'. Customize as needed for your content strategy. Output requires Quarto templates to render Open Graph tags.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_10
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  open-graph: 
+    title: "Title for Open Graph"
+```
+
+----------------------------------------
+
+TITLE: Creating Bill Dimensions Scatter Plot (Altair, Python)
+DESCRIPTION: Generates an interactive scatter plot using Altair to visualize the relationship between bill length and bill depth. Points are colored by species using the previously defined Altair scale, and tooltips display additional information on hover. Requires the altair library and the 'scale' object.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_7
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-bill-scatter
+#| fig-cap: >
+#|   A scatterplot of bill dimensions for 
+#|   penguins, made with Altair.
+alt.Chart(penguins).mark_circle(size=60).encode(
+    alt.X('bill_length_mm',
+        scale=alt.Scale(zero=False)
+    ),
+    alt.Y('bill_depth_mm',
+        scale=alt.Scale(zero=False)
+    ),
+    color = alt.Color('species', scale = scale),
+    tooltip=['species', 'sex', 'island']
+)
+```
+
+----------------------------------------
+
+TITLE: Enabling Sidebar Search in Quarto Website (YAML)
+DESCRIPTION: Enables a search functionality within the sidebar by setting the 'search' key to true under 'sidebar' in the Quarto YAML configuration. This allows users to filter or find content within the sidebar. Requires proper placement within the YAML structure and a Quarto project using a compatible sidebar layout.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  sidebar:
+    search: true
+```
+
+----------------------------------------
+
+TITLE: Defining Basic Project Settings (YAML)
+DESCRIPTION: This YAML snippet shows the basic project configuration, defining the project type and output directory. The `project` key is used to group these settings.  The `{{< meta ... >}}` syntax is used as placeholders for metadata, likely populated during the build process.  No dependencies are explicitly defined in this snippet. The output is used by Quarto's build process.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_options.md#_snippet_0
+
+LANGUAGE: YAML
+CODE:
+```
+project:
+  type: {{< meta project-type >}}
+  output-dir: {{< meta project-output-dir >}}
+```
+
+----------------------------------------
+
+TITLE: Configuring Preview Options (YAML)
+DESCRIPTION: This YAML snippet extends the basic project settings to include `preview` options.  It sets the port and browser behavior for the `quarto preview` command. The `project` and `preview` keys are used to organize the configuration. The `project-type` and `project-output-dir` are still being declared here, but can be overriden later.  No specific dependencies beyond Quarto itself are defined in this snippet.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_options.md#_snippet_1
+
+LANGUAGE: YAML
+CODE:
+```
+project:
+  type: {{< meta project-type >}}
+  output-dir: {{< meta project-output-dir >}}
+  preview:
+    port: 4200
+    browser: false
+```
+
+----------------------------------------
+
+TITLE: Setting Quarto Kernel Daemon Timeout via YAML
+DESCRIPTION: Configures the idle timeout for the Jupyter kernel daemon in seconds. In this example, the daemon will shut down after 60 seconds of inactivity. This is set using the `daemon` key within the `execute` block of the document's YAML front matter. The default timeout is 300 seconds.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+execute:
+  daemon: 60
+```
+
+----------------------------------------
+
+TITLE: Creating a Basic Centered Footer in Quarto
+DESCRIPTION: Demonstrates how to add a simple centered footer with copyright text to all pages in a Quarto project using the page-footer option in _quarto.yml.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_footer.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-footer: "Copyright 2021, Norah Jones"
+```
+
+----------------------------------------
+
+TITLE: Creating Composite Tables with Sub-Tables in Quarto Markdown
+DESCRIPTION: This example shows how to create a panel of multiple tables using a div with identifiers. It demonstrates creating two side-by-side tables with individual captions, a main caption, and cross-references to both the entire panel and specific sub-tables.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/_table-crossrefs-subtables.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+::: {#tbl-panel layout-ncol=2}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: First Table {#tbl-first}
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| A    | B    | C    |
+| E    | F    | G    |
+| A    | G    | G    |
+
+: Second Table {#tbl-second}
+
+Main Caption
+:::
+
+See @tbl-panel for details, especially @tbl-second.
+```
+
+----------------------------------------
+
+TITLE: Setting a Light Background for the Footer in Quarto
+DESCRIPTION: Demonstrates how to apply a light background color to the page footer, which can be useful for matching the footer style with a navigation bar.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_footer.md#_snippet_3
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-footer:
+    background: light
+```
+
+----------------------------------------
+
+TITLE: Forcing Quarto Kernel Daemon Restart via Command Line
+DESCRIPTION: Renders a Quarto document (`document.qmd`) and forces any existing Jupyter kernel daemon associated with it to restart before execution, using the `--execute-daemon-restart` flag. This is useful for troubleshooting potential errors caused by session reuse.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_6
+
+LANGUAGE: bash
+CODE:
+```
+quarto render document.qmd --execute-daemon-restart
+```
+
+----------------------------------------
+
+TITLE: Removing the Footer Border in Quarto
+DESCRIPTION: Shows how to disable the default top border of the page footer by setting the border property to false.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_footer.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  page-footer:
+    border: false
+```
+
+----------------------------------------
+
+TITLE: Creating Marginal Distribution Plots of Bill Dimensions
+DESCRIPTION: This code snippet generates marginal distribution plots of bill depth and bill length by species using seaborn. It uses `sns.displot()` with `kind='kde'` to create density plots for both bill dimensions, mapping 'bill_depth_mm' and 'bill_length_mm' to the x-axis respectively, 'species' to the hue, and setting the `fill` parameter to `True` to fill the density curves. `plt.show()` displays the plot.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_5
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-bill-marginal
+#| fig-cap: Marginal distributions of bill dimensions
+#| fig-subcap: 
+#|   - Gentoo penguins tend to have thinner bills,
+#|   - and Adelie penguins tend to have shorter bills.
+#| fig-alt:
+#|   - Density plot of bill depth by species.
+#|   - Density plot of bill length by species.
+#| layout-ncol: 2
+
+sns.displot(penguins, 
+            x = "bill_depth_mm", 
+            hue = "species", 
+            kind = "kde", fill = True, 
+            aspect = 2, height = 3)
+plt.show()
+sns.displot(penguins, 
+            x = "bill_length_mm", 
+            hue = "species", 
+            kind = "kde", fill = True, 
+            aspect = 2, height = 3)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Disabling Page Navigation for a Specific Quarto Page
+DESCRIPTION: Demonstrates how to disable page navigation for a single page by adding the page-navigation setting to the YAML front matter of the page file. This overrides the project-level setting.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_page-navigation.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+---
+page-navigation: false
+---
+```
+
+----------------------------------------
+
+TITLE: Enabling Quarto Kernel Daemon with Specific Timeout (CLI)
+DESCRIPTION: Renders a Quarto document (`document.qmd`) using the command line, explicitly enabling the Jupyter kernel daemon and setting its idle timeout to 60 seconds via the `--execute-daemon 60` flag.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_4
+
+LANGUAGE: bash
+CODE:
+```
+# use a daemon w/ an explicit timeout
+quarto render document.qmd --execute-daemon 60
+```
+
+----------------------------------------
+
+TITLE: Inserting a Pause in Quarto Slides Using Markdown
+DESCRIPTION: This snippet demonstrates how to use the Quarto markdown syntax to create a pause within a slide, allowing content after the '...' line to appear after a user interaction. Requires a Quarto project configured to use slides and content must be placed beneath slide headings (e.g., '##'). The three dots ('. . .') indicate the pause point; all content after them remains hidden until advanced by the presenter. This is specific to Quarto slides and may not be supported in generic markdown processors.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-pause.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+## Slide with a pause
+
+content before the pause
+
+. . .
+
+content after the pause
+```
+
+----------------------------------------
+
+TITLE: Create Columns with Defined Widths - Quarto Markdown
+DESCRIPTION: This snippet demonstrates how to create a two-column layout in Quarto markdown where each column has a specified width using the `width` attribute. The snippet is visible unless the metadata `is_pptx` is set.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_columns.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+:::: {.columns}
+
+::: {.column width="40%"}
+contents...
+:::
+
+::: {.column width="60%"}
+contents...
+:::
+
+::::
+```
+
+----------------------------------------
+
+TITLE: Initializing Reveal.js with Chalkboard Plugin and Custom Controls - JavaScript
+DESCRIPTION: This snippet shows how to initialize reveal.js with the Chalkboard plugin and Custom Controls plugin enabled. It configures UI controls for toggling the chalkboard and notes canvas modes by defining buttons with Font Awesome icons, titles, and corresponding toggle actions via the RevealChalkboard API. It also registers these plugins with reveal.js and provides a placeholder for additional chalkboard configuration options. This setup enables interactivity and annotation capabilities within reveal.js presentations.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/_freeze/site_libs/revealjs/plugin/reveal-chalkboard/README.md#_snippet_1
+
+LANGUAGE: javascript
+CODE:
+```
+Reveal.initialize({
+  customcontrols: {
+    controls: [
+      { icon: '<i class="fa fa-pen-square"></i>',
+        title: 'Toggle chalkboard (B)',
+        action: 'RevealChalkboard.toggleChalkboard();'
+      },
+      { icon: '<i class="fa fa-pen"></i>',
+        title: 'Toggle notes canvas (C)',
+        action: 'RevealChalkboard.toggleNotesCanvas();'
+      }
+    ]
+  },
+  chalkboard: {
+    // add configuration here
+  },
+  // ...
+  plugins: [ RevealChalkboard, RevealCustomControls ],
+  // ...
+});
+```
+
+----------------------------------------
+
+TITLE: Netlify Publish Configuration (YAML)
+DESCRIPTION: This YAML file (`_publish.yml`) configures the Netlify publishing target for Quarto. It specifies the source as 'project' and provides the Netlify site ID and URL.  The `id` is used to identify the Netlify site to publish to, and the `url` provides the published URL.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_netlify-ci-example.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+- source: project
+  netlify:
+    - id: "5f3abafe-68f9-4c1d-835b-9d668b892001"
+      url: "https://tubular-unicorn-97bb3c.netlify.app"
+```
+
+----------------------------------------
+
+TITLE: Implementing Multi-Column Layout Using Quarto Markdown
+DESCRIPTION: This code snippet demonstrates how to create a multi-column layout within a Quarto document using Markdown syntax. It uses a container with class `.columns` and nested `.column` elements with specified widths to display content side-by-side. This approach relies on Quarto’s Markdown extensions for layout management and requires the Quarto rendering environment to interpret the syntax correctly.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_columns-reveal.md#_snippet_0
+
+LANGUAGE: Markdown
+CODE:
+```
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
+```
+
+----------------------------------------
+
+TITLE: Enabling Algolia Search Integration in Quarto Website (YAML)
+DESCRIPTION: Demonstrates integration of Algolia as the search backend. Configured under 'algolia' in 'search', it requires 'index-name', 'application-id', and 'search-only-api-key'. These credentials must be obtained from the Algolia dashboard for your project. Ensures powerful, external search functionality for large or complex sites.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_7
+
+LANGUAGE: yaml
+CODE:
+```
+{{< meta project-type >}}:
+  search:
+    algolia:
+      index-name: <my-index-name>
+      application-id: <my-application-id>
+      search-only-api-key: <my-search-only-api-key>
+```
+
+----------------------------------------
+
+TITLE: Managing Active Tab State and Saving Selection - JavaScript
+DESCRIPTION: This JavaScript code dynamically manages the active state of the tabs based on the current page and saves the selected tool in local storage. It waits for the DOM to be fully loaded. It retrieves the current filename from the URL, finds the corresponding tab link, and adds the "active" class to highlight it. Finally, it saves the selected filename into local storage, enabling persistent tab selection on refresh or subsequent visits.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/_tool-chooser.md#_snippet_1
+
+LANGUAGE: JavaScript
+CODE:
+```
+document.addEventListener("DOMContentLoaded", function() {
+  // get file name
+  const filename = window.location.pathname.split("/").slice(-1)[0];
+  
+  // latch active
+  const toolLinks = window.document.querySelectorAll("#choose-your-tool a");
+  for (const tool of toolLinks) {
+    if (tool.href.endsWith(filename)) {
+      tool.classList.add("active");
+      break;
+    }
+  }
+  
+   // save in local storage
+  window.localStorage.setItem("tutorialToolGetStarted", filename);
+});
+```
+
+----------------------------------------
+
+TITLE: Verify Quarto Jupyter configuration via Quarto CLI
+DESCRIPTION: Runs a Quarto command to check if the installed Jupyter kernel is correctly detected and configured for use with Quarto. This helps confirm that the installation steps were successful.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-install.md#_snippet_3
+
+LANGUAGE: Bash
+CODE:
+```
+quarto check jupyter
+```
+
+----------------------------------------
+
+TITLE: Setting Reveal.js Theme via YAML
+DESCRIPTION: This YAML snippet demonstrates how to specify the theme for a Reveal.js presentation. The `theme` option is placed under the `revealjs` format within the `format` section. The value of `theme` specifies the desired theme from the available options, like 'dark' in this case. This example sets the theme to 'dark'.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/_theme-basics.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: dark
+---
+```
+
+----------------------------------------
+
+TITLE: Excluding Heading from TOC using Markdown Attributes
+DESCRIPTION: This Markdown snippet illustrates how to prevent a specific heading from appearing in the generated Table of Contents. By adding the '.unnumbered' and '.unlisted' classes as attributes directly after the heading text, you signal to Quarto to exclude it from the TOC and numbering.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-toc.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+### More Options {.unnumbered .unlisted}
+```
+
+----------------------------------------
+
+TITLE: Specifying Code Highlight Style in Quarto using YAML
+DESCRIPTION: This snippet shows how to configure the syntax highlighting theme for code blocks in a Quarto project using the YAML header. Setting the 'highlight-style' key to 'github' instructs Quarto to use the GitHub highlighting theme across the rendered document. This configuration requires no additional dependencies and expects a supported theme name as the value. The output is a document where code blocks are styled according to the selected theme, and the theme can be customized by replacing 'github' with another from the list of supported themes.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-syntax-highlighting.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+highlight-style: github
+```
+
+----------------------------------------
+
+TITLE: Setting Default Sass Variables in Custom Bootstrap Themes using SCSS
+DESCRIPTION: This SCSS snippet illustrates defining default Sass variables for Bootstrap theme customization. The variables control typography aspects such as heading font sizes and weights. Using the !default flag ensures that these values only apply if they have not been previously set, enabling safe overrides within the theme hierarchy. The variables section is demarcated by the comment /*-- scss:defaults --*/ to distinguish variable declarations from rule definitions.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_theme-options.md#_snippet_1
+
+LANGUAGE: scss
+CODE:
+```
+/*-- scss:defaults --*/
+$h2-font-size:          1.6rem !default;
+$headings-font-weight:  500 !default;
+```
+
+----------------------------------------
+
+TITLE: Install Jupyter package via Pip on Mac/Linux Bash
+DESCRIPTION: Installs the `jupyter` package using the `pip` package manager specifically for macOS and Linux systems. This command uses the `python3 -m pip` pattern to ensure the package is installed into the environment associated with the `python3` executable.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-install.md#_snippet_0
+
+LANGUAGE: Bash
+CODE:
+```
+python3 -m pip install jupyter
+```
+
+----------------------------------------
+
+TITLE: Evaluating Simple Arithmetic with Pandoc Syntax Highlighting in Python
+DESCRIPTION: This snippet demonstrates how to mark a Python code block within Quarto/Pandoc documentation to enable language-aware syntax highlighting. The code block contains a basic arithmetic operation, showcasing Pandoc's ability to highlight code in fenced blocks when a language is specified. No external dependencies are required, but the language identifier ("python") is necessary for highlighting. The expected input is standard Python code, and the output is rendered with syntax highlighting in the generated document.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-syntax-highlighting.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+1 + 1
+```
+
+----------------------------------------
+
+TITLE: Specifying Bibliography Style with Typst
+DESCRIPTION: This YAML snippet shows how to specify a bibliography file and a built-in bibliography style (e.g., "apa") when using Typst's citation processing system in Quarto. The `bibliography` option specifies the path to the .bib file, and the `bibliographystyle` option specifies the desired style. No external dependencies are directly managed within this snippet; Typst handles the styling.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_typst-citations.md#_snippet_0
+
+LANGUAGE: YAML
+CODE:
+```
+bibliography: refs.bib
+bibliographystyle: apa
+```
+
+----------------------------------------
+
+TITLE: Install Jupyter package via Conda on Terminal
+DESCRIPTION: Installs the `jupyter` package using the `conda` package manager. This is an alternative method for environments managed by Anaconda or Miniconda.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-install.md#_snippet_2
+
+LANGUAGE: Bash
+CODE:
+```
+conda install jupyter
+```
+
+----------------------------------------
+
+TITLE: Configuring WebTeX Math Rendering using YAML
+DESCRIPTION: This YAML snippet demonstrates the configuration required to enable WebTeX for math rendering in a Quarto document. It sets the `html-math-method` to `webtex` within the format's configuration. This tells Pandoc to use WebTeX for rendering LaTeX equations instead of the default method. The input is the format name, which is specified by `{{< meta format-name >}}`. The output is HTML with correctly rendered math equations.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_webtex.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+format:
+  {{< meta format-name >}}:
+    html-math-method: webtex
+```
+
+----------------------------------------
+
+TITLE: Rendered Equation Display: Visual Output
+DESCRIPTION: Shows the rendered output of the LaTeX inline math expression as an image, which visually represents the equation in the document. This ensures equations are displayed correctly across browsers.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_webtex-detail.md#_snippet_1
+
+LANGUAGE: Markdown
+CODE:
+```
+![](https://latex.codecogs.com/svg.latex?x%20%2B%201)
+```
+
+----------------------------------------
+
+TITLE: Enabling Cache at the Project Level in Quarto
+DESCRIPTION: YAML configuration for enabling caching at the project level by setting the cache option to true in the execute configuration within a Quarto project file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-cache.md#_snippet_3
+
+LANGUAGE: yaml
+CODE:
+```
+project:
+  type: website
+  
+format:
+  html:
+    theme: united
+    
+execute:
+  cache: true
+```
+
+----------------------------------------
+
+TITLE: Example of Quarto Chunk with Comment-Based Options in R
+DESCRIPTION: This code snippet shows how to include chunk options such as echo and fig-cap within R code chunks using special comments at the top of the chunk. It demonstrates importing the ggplot2 library and creating a plot with specific formatting options, illustrating Quarto's comment-based syntax for chunk options.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/tools/_chunk-options.md#_snippet_0
+
+LANGUAGE: R
+CODE:
+```
+#| echo: false
+#| fig-cap: "Air Quality"
+
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess", se = FALSE)
+```
+
+----------------------------------------
+
+TITLE: Convert Quarto Document to Jupyter Notebook Using Bash
+DESCRIPTION: Demonstrates converting a Quarto markdown document into a Jupyter Notebook (.ipynb) format with the 'quarto convert' command. Useful for editing and executing the document within Jupyter Lab, maintaining interactive functionality.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-authoring-tools.md#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+quarto convert document.qmd
+```
+
+----------------------------------------
+
+TITLE: Initializing Interactive World Map with leaflet in R
+DESCRIPTION: This R code snippet utilizes the leaflet package to generate an interactive world map centered at latitude 48 and longitude 350 with a zoom level of 2. It loads the leaflet library, sets variables for latitude and longitude, prints a map title using cat, and then constructs the map by adding default map tiles (OpenStreetMap), and setting the map view with specified coordinates and zoom level. The snippet uses the pipe operator to chain leaflet functions for conciseness. It requires the leaflet package installed and configured in the R environment. The output is an interactive map displayed in an appropriate R viewer context.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/_dynamic-title.md#_snippet_1
+
+LANGUAGE: r
+CODE:
+```
+library(leaflet)
+
+lat <- 48
+long <- 350
+
+cat("title=", "World Map at", lat, long)
+leaflet() |> addTiles() |> 
+  setView(long, lat, zoom = 2)
+```
+
+----------------------------------------
+
+TITLE: Render Project Subdirectory (Always Execute)
+DESCRIPTION: This bash command demonstrates rendering a specific subdirectory (e.g., `articles`) within a Quarto project.  Similar to rendering a single document, using `quarto render` on a subdirectory will always execute the code within the documents in that directory, irrespective of the `freeze` setting.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_freeze-basics.md#_snippet_3
+
+LANGUAGE: bash
+CODE:
+```
+# render project subdirectory (always executes code)
+quarto render articles
+```
+
+----------------------------------------
+
+TITLE: Configuring BibLaTeX Citation Method in Quarto PDF
+DESCRIPTION: YAML configuration for setting BibLaTeX as the citation method for PDF output in Quarto. This changes the default citation processor from Pandoc's built-in citeproc to BibLaTeX.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_pdf-citations.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+format:
+  pdf: 
+    cite-method: biblatex
+```
+
+----------------------------------------
+
+TITLE: Defining Custom Output Filenames in Quarto Document YAML
+DESCRIPTION: Illustrates how to specify a custom output filename within the YAML front matter of a Quarto document (`.qmd`). This is particularly useful when the desired output filename starts with `.` or `_` (like `_index.md` for Hugo), which would normally prevent the source file from being rendered by default if it had the same prefix. The `output-file` key dictates the name of the generated file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_render-targets.md#_snippet_3
+
+LANGUAGE: yaml
+CODE:
+```
+---
+output-file: _index.md
+---
+```
+
+----------------------------------------
+
+TITLE: Expected Output Files from Quarto Render for Shiny Interactive Document Deployment
+DESCRIPTION: This snippet lists the directory contents and output files generated after running 'quarto render' on a Shiny interactive document. The output includes the main HTML document, a resource folder containing ancillary files, and the Python app script ('app.py') that drives the interactive server-side logic. This file structure is essential for deploying the application to various hosting environments and serves as a prerequisite for running or publishing the Shiny app.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-deployment.md#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+example.html
+example_files/
+app.py
+```
+
+----------------------------------------
+
+TITLE: Enabling RSS Feed for Listings in Quarto Website (YAML)
+DESCRIPTION: Configures an RSS feed for page listings by including a 'feed' option with parameters such as 'items' to limit number of feed entries. Must be used within a listing-enabled document's front matter. Ensures listings are syndication-ready for feed readers.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites.md#_snippet_16
+
+LANGUAGE: yaml
+CODE:
+```
+---
+title: "Listing Example"
+listing:
+  contents: posts
+  feed:
+    items: 10
+---
+```
+
+----------------------------------------
+
+TITLE: Configuring and Activating Virtual Environment with Bash Script - Bash
+DESCRIPTION: This Bash snippet runs a setup script (configure.sh) and then activates a Python virtual environment using the 'env/bin/activate' script. It assumes the existence of a configure.sh script in the current directory and requires Bash as the shell. The key parameter is the path to the activate script, which should exist after successful configuration. It outputs activated environment variables for VS Code; errors may occur if dependencies are missing or if the scripts are not present.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/README.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+./configure.sh && source env/bin/activate
+```
+
+----------------------------------------
+
+TITLE: Initializing Shiny App and Loading Penguin Data in Python
+DESCRIPTION: Imports necessary libraries (seaborn, shiny), loads the Palmer Penguins dataset using seaborn's `load_dataset` function into a pandas DataFrame. The `context: setup` option ensures this code runs once when the Shiny application starts, making it suitable for initial data loading or expensive setup tasks.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/dashboards/interactivity/shiny-python/_shiny-advanced.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+#| context: setup
+import seaborn as sns
+from shiny import reactive
+from shiny.express import render, ui
+penguins = sns.load_dataset("penguins")
+```
+
+----------------------------------------
+
+TITLE: Configuring Page Navigation for a Directory in Quarto
+DESCRIPTION: Shows how to control page navigation for all pages in a directory by setting the page-navigation option in the _metadata.yml file. This applies the setting to all pages in that directory.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/websites/_page-navigation.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+page-navigation: false
+```
+
+----------------------------------------
+
+TITLE: Rendering Quarto Website Locally (Bash)
+DESCRIPTION: Demonstrates rendering the `quarto-web` project locally. First, `quarto render <path_to_document>` updates the frozen state for a specific modified document if needed. Then, `quarto render` builds the entire website using the existing frozen state (`_freeze` directory) for other documents. Requires the Quarto CLI pre-release.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/README.md#_snippet_0
+
+LANGUAGE: Bash
+CODE:
+```
+# Update freeze state if needed
+quarto render /docs/path/to/modified-or-added-document.qmd
+# Render the whole website using freeze state for all the other docs
+quarto render
+```
+
+----------------------------------------
+
+TITLE: Restoring R Environment with renv (Bash)
+DESCRIPTION: Uses `Rscript` to execute `renv::restore()`, installing R packages specified in `renv.lock` into the project's private library (`renv` folder). This sets up the R environment for Knitr engine documents. Requires R and the `renv` package, and should be run from the project root.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/README.md#_snippet_1
+
+LANGUAGE: Bash
+CODE:
+```
+Rscript -e "renv::restore()"
+```
+
+----------------------------------------
+
+TITLE: Creating Interactive Scatter Plots with Plotly Express in Python
+DESCRIPTION: Shows how to create an interactive scatter plot using Plotly Express with the Gapminder dataset. The visualization maps GDP per capita against life expectancy, with continents represented by colors and population by bubble size, using 2007 data only.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_notebooks/computations.ipynb#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+import plotly.express as px
+gapminder = px.data.gapminder()
+gapminder2007 = gapminder.query("year == 2007")
+fig = px.scatter(gapminder2007, 
+                 x="gdpPercap", y="lifeExp", color="continent", 
+                 size="pop", size_max=60,
+                 hover_name="country")
+fig.show()
+```
+
+----------------------------------------
+
+TITLE: Configuring Chalkboard Plugin Options - JavaScript
+DESCRIPTION: This snippet provides a detailed example of configuring the Chalkboard plugin options during reveal.js initialization. It specifies drawing widths, the chalk effect intensity, session storage and pre-recorded drawing source options, read-only mode, slide transition timing, and theme selection. Additionally, it configures appearance options such as background colors/images for notes canvas and chalkboard, grid properties, eraser image and radius, as well as lists of boardmarkers and chalks with colors and cursor images. These settings customize the drawing experience, visual styling, and persistence behavior of the chalkboard and notes canvas features.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/_freeze/site_libs/revealjs/plugin/reveal-chalkboard/README.md#_snippet_2
+
+LANGUAGE: javascript
+CODE:
+```
+Reveal.initialize({
+	// ...
+    chalkboard: {
+        boardmarkerWidth: 3,
+        chalkWidth: 7,
+        chalkEffect: 1.0,
+        storage: null,
+        src: null,
+        readOnly: undefined,
+        transition: 800,
+        theme: "chalkboard",
+        background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ],
+        grid: { color: 'rgb(50,50,10,0.5)', distance: 80, width: 2},
+        eraser: { src: path + 'img/sponge.png', radius: 20},
+        boardmarkers : [
+                { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                { color: 'rgba(50,205,50,1)', cursor: 'url(' + path + 'img/boardmarker-green.png), auto'},
+                { color: 'rgba(255,140,0,1)', cursor: 'url(' + path + 'img/boardmarker-orange.png), auto'},
+                { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'},
+                { color: 'rgba(255,220,0,1)', cursor: 'url(' + path + 'img/boardmarker-yellow.png), auto'}
+        ],
+        chalks: [
+                { color: 'rgba(255,255,255,0.5)', cursor: 'url(' + path + 'img/chalk-white.png), auto'},
+                { color: 'rgba(96, 154, 244, 0.5)', cursor: 'url(' + path + 'img/chalk-blue.png), auto'},
+                { color: 'rgba(237, 20, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-red.png), auto'},
+                { color: 'rgba(20, 237, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-green.png), auto'},
+                { color: 'rgba(220, 133, 41, 0.5)', cursor: 'url(' + path + 'img/chalk-orange.png), auto'},
+                { color: 'rgba(220,0,220,0.5)', cursor: 'url(' + path + 'img/chalk-purple.png), auto'},
+                { color: 'rgba(255,220,0,0.5)', cursor: 'url(' + path + 'img/chalk-yellow.png), auto'}
+        ]
+    },
+    // ...
+
+});
+```
+
+----------------------------------------
+
+TITLE: Importing Data Science Libraries (Python)
+DESCRIPTION: Imports the necessary Python libraries for data manipulation and visualization. This includes pandas for data handling, and matplotlib, seaborn, and altair for plotting graphs.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+import pandas as pd
+import altair as alt
+import seaborn as sns
+from matplotlib import pyplot as plt
+```
+
+----------------------------------------
+
+TITLE: Specifying Number Depth in Quarto (YAML)
+DESCRIPTION: This snippet uses the `number-depth` option within a YAML configuration file to control the deepest level of headings that will be numbered in a Quarto document. By setting `number-depth` to a numerical value (e.g., 3), you specify the maximum heading level to number.  The input is a numerical value representing heading depth, and the output is numbered headings up to that depth.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-section-numbering.md#_snippet_1
+
+LANGUAGE: yaml
+CODE:
+```
+number-depth: 3
+```
+
+----------------------------------------
+
+TITLE: Setting Background Video Attributes in Quarto Slides
+DESCRIPTION: This Markdown snippet demonstrates how to set the background video, loop, and mute attributes within a Quarto slide. It uses the `{}` syntax to define these attributes directly in the slide title. The video will loop continuously with the audio muted.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/revealjs/_background-video.md#_snippet_0
+
+LANGUAGE: Markdown
+CODE:
+```
+## Slide Title {background-video="video.mp4" background-video-loop="true" background-video-muted="true"}
+
+This slides's background video will play in a loop with audio muted.
+```
+
+----------------------------------------
+
+TITLE: Enabling Pandoc Citation Processing with Remote CSL
+DESCRIPTION: This YAML snippet shows how to configure Quarto to use Pandoc's citation processing and specify a remote citation style using a URL to a CSL file.  `citeproc: true` activates Pandoc, `bibliography` specifies the .bib file, and `csl` specifies the URL to the desired CSL style. The snippet relies on Pandoc and requires a valid URL to a CSL file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_typst-citations.md#_snippet_2
+
+LANGUAGE: YAML
+CODE:
+```
+citeproc: true
+bibliography: refs.bib
+csl: https://www.zotero.org/styles/apa-with-abstract
+```
+
+----------------------------------------
+
+TITLE: Configuring Project Output with YAML
+DESCRIPTION: This YAML snippet demonstrates how to configure a project's output by specifying options under the `{{< meta project-type >}}` key.  It sets the project's title, image, and page navigation settings. The `filename` attribute indicates that the snippet will be saved in a file named `_quarto.yml`.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_websites-pre.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+```yaml
+{{< meta project-type >}}:
+  title: "My {{< meta project-type-upper >}}"
+  image: opengraph.png
+  page-navigation: true
+```
+```
+
+----------------------------------------
+
+TITLE: Disabling Incremental Display for Specific List in Quarto Markdown
+DESCRIPTION: This Markdown snippet illustrates how to prevent a specific list from being incremental by wrapping it in a div with the class `nonincremental`. This local setting overrides a global `incremental: true` option, ensuring the list appears all at once.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_incremental-lists.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+::: {.nonincremental}
+
+- Eat spaghetti
+- Drink wine
+
+:::
+```
+
+----------------------------------------
+
+TITLE: Enabling Quarto Kernel Daemon with Default Timeout (CLI)
+DESCRIPTION: Renders a Quarto document (`document.qmd`) using the command line, explicitly enabling the Jupyter kernel daemon with its default timeout (300 seconds) via the `--execute-daemon` flag.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_3
+
+LANGUAGE: bash
+CODE:
+```
+# use a daemon w/ default timeout (300 sec)
+quarto render document.qmd --execute-daemon
+```
+
+----------------------------------------
+
+TITLE: Mapping Custom Keybindings in Kitty Terminal - Shell
+DESCRIPTION: This snippet provides the necessary configuration lines to be added to the Kitty terminal's config file to customize how key combinations like ctrl+Enter and shift+Enter are interpreted. These key mappings are needed to make vim-slime or similar plugins correctly send code to Python or IPython REPLs using familiar shortcuts, such as those found in RStudio. It does not require any additional dependencies beyond Kitty, and must be placed in the Kitty configuration file.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/hello/_neovim-running-cells.md#_snippet_0
+
+LANGUAGE: Shell
+CODE:
+```
+map ctrl+shift+enter no_op
+map shift+enter send_text all \x1b[13;2u
+map ctrl+enter send_text all \x1b[13;5u
+```
+
+----------------------------------------
+
+TITLE: Including Quarto Documentation Fragments with Include Directive
+DESCRIPTION: Demonstrates the use of the Quarto include directive to embed documentation fragments from other files. This pattern allows for modular documentation that can be reused across different pages.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-begin.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+{{< include _document-options-toc.md >}}
+
+{{< include _document-options-section-numbering.md >}}
+
+{{< include _document-options-syntax-highlighting.md >}}
+
+{{< include _code-annotation.md >}}
+```
+
+----------------------------------------
+
+TITLE: Publishing a Specific Document Using Quarto with Command Line Option
+DESCRIPTION: This code shows how to publish a specific document file instead of an entire website or book by providing the document path as an argument to `quarto publish`. It allows targeted publishing and supports the same authentication and deployment process as normal publishing.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_publish-command.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+quarto publish {{< meta provider >}} document.qmd
+```
+
+----------------------------------------
+
+TITLE: Excluding Files/Directories from Rendering in Quarto Project YAML
+DESCRIPTION: Shows how to exclude specific files or directories from rendering in a Quarto project using the `!` prefix within the `project.render` list. This requires first specifying the inclusive set (e.g., `*.qmd`) and then adding exclusion patterns. This example renders all `.qmd` files except `ignored.qmd` and any files within the `ignored-dir/` directory.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/projects/_render-targets.md#_snippet_2
+
+LANGUAGE: yaml
+CODE:
+```
+project:
+  render:
+    - "*.qmd"
+    - "!ignored.qmd"
+    - "!ignored-dir/"
+```
+
+----------------------------------------
+
+TITLE: Calculating Species Counts with Pandas
+DESCRIPTION: This code snippet calculates the number of penguins for each species in the dataset. It uses the `groupby()` method to group the data by species and then uses `size()` to count the number of penguins in each group. The `reset_index()` method converts the result into a DataFrame with columns for species and count.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_2
+
+LANGUAGE: python
+CODE:
+```
+#| label: species-counts
+penguins.groupby("species").size().reset_index(name = "count")
+```
+
+----------------------------------------
+
+TITLE: Defining Altair Color Scale
+DESCRIPTION: This code snippet defines an Altair color scale that maps penguin species to specific colors. It creates an `alt.Scale` object with the domain set to the list of penguin species and the range set to the list of corresponding colors. This scale is then used in the Altair scatterplot to color the points by species.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_6
+
+LANGUAGE: python
+CODE:
+```
+scale = alt.Scale(domain = ['Adelie', 'Chinstrap', 'Gentoo'],
+                  range = colors)
+```
+
+----------------------------------------
+
+TITLE: Removing _site directory from Git - Bash
+DESCRIPTION: This snippet removes the `_site` directory from the Git repository.  This is useful if the `_site` directory was inadvertently added to version control previously.  The command `git rm -r _site` recursively removes the directory and its contents from the index. No external dependencies other than Git itself are necessary. Running this command will also require committing the change to reflect the removal.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_ignoring-output.md#_snippet_1
+
+LANGUAGE: Bash
+CODE:
+```
+git rm -r _site
+```
+
+----------------------------------------
+
+TITLE: Loading Palmer Penguins Dataset
+DESCRIPTION: This code snippet loads the Palmer Penguins dataset from a remote CSV file using pandas. It reads the data directly from a URL into a pandas DataFrame named 'penguins'.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_1
+
+LANGUAGE: python
+CODE:
+```
+penguins = pd.read_csv("https://pos.it/palmer-penguins-github-csv")
+```
+
+----------------------------------------
+
+TITLE: Setting Color Palette (Seaborn, Python)
+DESCRIPTION: Defines a list of custom hex color codes and applies this list as the default color palette for all subsequent seaborn plots. This ensures consistent color mapping across visualizations, particularly for categorical variables like species.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_3
+
+LANGUAGE: python
+CODE:
+```
+colors = ["#FF8C00", "#A020F0", "#008B8B"]
+sns.set_palette(colors, n_colors = 3)
+```
+
+----------------------------------------
+
+TITLE: Including Chalkboard Plugin Dependencies - HTML
+DESCRIPTION: This snippet demonstrates how to include the necessary external CSS and JavaScript dependencies for the Chalkboard plugin in an HTML document. It includes Font Awesome for icons, the Custom Controls plugin for UI toggles, and the Chalkboard plugin itself with their corresponding stylesheets and scripts. These inclusions must be added within the document's <head> to enable chalkboard and notes canvas functionality within reveal.js presentations.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/_freeze/site_libs/revealjs/plugin/reveal-chalkboard/README.md#_snippet_0
+
+LANGUAGE: html
+CODE:
+```
+<!-- Font awesome is required for the chalkboard plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+<!-- Chalkboard plugin -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+```
+
+----------------------------------------
+
+TITLE: Setting Seaborn Color Palette
+DESCRIPTION: This code snippet sets the color palette for seaborn plots. It defines a list of colors and uses `sns.set_palette()` to set the default color palette to these colors. The `n_colors` parameter specifies the number of colors to use from the palette.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_3
+
+LANGUAGE: python
+CODE:
+```
+colors = ["#FF8C00", "#A020F0", "#008B8B"]
+sns.set_palette(colors, n_colors = 3)
+```
+
+----------------------------------------
+
+TITLE: Customizing Preview Server Behavior (YAML)
+DESCRIPTION: This YAML snippet configures the `preview: serve` options, which allow customization of the preview server behavior, particularly for projects that integrate with other publishing systems. It specifies a command (`cmd`) to run, environment variables (`env`), and a readiness check (`ready`).  It integrates with Hugo to serve the content and displays the command to run. This snippet requires the target publishing system (e.g., Hugo) to be installed and configured correctly. The output is used for preview and serving the project.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/reference/projects/_options.md#_snippet_2
+
+LANGUAGE: YAML
+CODE:
+```
+project:
+  type: {{< meta project-type >}}
+    preview:
+      serve:
+        cmd: "hugo serve --port {port} --bind {host} --navigateToChanged"
+        env:
+          HUGO_RELATIVEURLS: "true"
+        ready: "Web Server is available at"
+```
+
+----------------------------------------
+
+TITLE: Creating Density Plot of Bill Ratio by Species using Seaborn
+DESCRIPTION: This code snippet creates a density plot of the bill ratio by species using seaborn. It first calculates the bill ratio by dividing bill length by bill depth. Then, it uses `sns.displot()` with `kind='kde'` to create the density plot, mapping 'bill_ratio' to the x-axis, 'species' to the hue, and setting the `fill` parameter to `True` to fill the density curves. `plt.show()` displays the plot.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/blog/posts/2023-03-17-jupyter-cell-embedding/penguins.ipynb#_snippet_4
+
+LANGUAGE: python
+CODE:
+```
+#| fig-alt: A density plot of bill ratio by species. 
+penguins["bill_ratio"] = (
+   penguins["bill_length_mm"] / penguins["bill_depth_mm"] 
+)
+sns.displot(penguins, 
+            x = "bill_ratio", 
+            hue = "species", 
+            kind = "kde", fill = True, aspect = 2, height = 3)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Plotting Bill Dimension Distributions (Seaborn, Python)
+DESCRIPTION: Generates two separate kernel density estimate (KDE) plots to show the marginal distributions of bill depth and bill length, each colored and separated by species. This helps visualize the typical ranges and variations of these measurements within each species. Requires seaborn and matplotlib.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/authoring/penguins.ipynb#_snippet_5
+
+LANGUAGE: python
+CODE:
+```
+#| label: fig-bill-marginal
+#| fig-cap: Marginal distributions of bill dimensions
+#| fig-subcap: 
+#|   - Gentoo penguins tend to have thinner bills,
+#|   - and Adelie penguins tend to have shorter bills.
+#| fig-alt:
+#|   - Density plot of bill depth by species.
+#|   - Density plot of bill length by species.
+#| layout-ncol: 2
+
+sns.displot(penguins, 
+            x = "bill_depth_mm", 
+            hue = "species", 
+            kind = "kde", fill = True, 
+            aspect = 2, height = 3)
+plt.show()
+sns.displot(penguins, 
+            x = "bill_length_mm", 
+            hue = "species", 
+            kind = "kde", fill = True, 
+            aspect = 2, height = 3)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Structuring Slides with Sections using Level 1 Headings in Quarto (Markdown)
+DESCRIPTION: This example shows how to divide a Quarto slide show into sections using level 1 headings (`#`) which create title slides for each section. Level 2 headings (`##`) continue to define individual slides within those sections. The YAML front matter provides document metadata.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/presentations/_creating-slides-reveal.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "Habits"
+author: "John Doe"
+format: {{< meta slide-format >}}
+---
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
+```
+
+----------------------------------------
+
+TITLE: Creating Colorbars and Figures in Quarto with Matplotlib
+DESCRIPTION: This code snippet generates a figure with four subplots, each displaying a pcolormesh plot and a colorbar. The `numpy` library is used to generate random data for the plots. The `matplotlib.pyplot` library is used to create the figure, axes, plots, and colorbars. The `code-fold: true` option enables the code to be hidden or shown, while `column: screen-inset` makes the figure span across the full screen with an inset.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_text-editor.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+#| code-fold: true
+#| column: screen-inset
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axs = plt.subplots(2, 2)
+fig.set_size_inches(20, 8)
+cmaps = ['RdBu_r', 'viridis']
+for col in range(2):
+    for row in range(2):
+        ax = axs[row, col]
+        pcm = ax.pcolormesh(
+          np.random.random((20, 20)) * (col + 1),
+          cmap=cmaps[col]
+        )
+        fig.colorbar(pcm, ax=ax)
+plt.show()
+```
+
+----------------------------------------
+
+TITLE: Configuring Quarto Publish Destination (YAML)
+DESCRIPTION: This YAML snippet illustrates the structure of the `_publish.yml` file, which records the destination for publishing a Quarto project. This file is typically created after the first manual publish and contains necessary identifiers and URLs for the GitHub Action to use. It can also be created or modified manually.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/publishing/_github-action-basics.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+- source: project
+  {{< meta provider >}}:
+    - id: "5f3abafe-68f9-4c1d-835b-9d668b892001"
+      url: "{{< meta provider-publish-url >}}"
+```
+
+----------------------------------------
+
+TITLE: Creating Callouts using Markdown in Quarto
+DESCRIPTION: This code snippet demonstrates how to create callouts in Quarto using Markdown. Callouts use a specific syntax with callout attributes, such as `note`, `tip`, `warning`, `caution`, and `important`. These callouts draw attention to specific concepts or content.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_text-editor.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+``` markdown
+::: {.callout-note}
+Note that there are five types of callouts, including:
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+```
+```
+
+----------------------------------------
+
+TITLE: Dark Mode Configuration using YAML
+DESCRIPTION: Provides a YAML snippet to configure WebTeX rendering method to PNG with a dark background for documents rendered in dark themes. It specifies parameters such as method and URL to override default SVG rendering for better appearance on dark backgrounds.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_webtex-detail.md#_snippet_2
+
+LANGUAGE: YAML
+CODE:
+```
+format:
+   {{< meta format-name >}}:
+     html-math-method: 
+       method: webtex
+       url: https://latex.codecogs.com/png.image?%5Cbg_black&space;
+```
+
+----------------------------------------
+
+TITLE: Documenting Python Code Block in Quarto Markdown - Python
+DESCRIPTION: This snippet demonstrates how to write a non-executable Python code block in Quarto documentation by enclosing the language name in triple curly braces. No dependencies are required, as this usage is limited to markdown documentation. The code block displays '1 + 1' as a static example within rendered output, and does not perform any computation or require execution environments. Input consists of manual markdown, and output is a formatted code block in the rendered document.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_unexecuted-blocks.md#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+1 + 1
+```
+
+----------------------------------------
+
+TITLE: Initializing NumPy Array
+DESCRIPTION: This code snippet demonstrates how to create a NumPy array using `np.arange` and reshape it using `reshape`. `np.arange(15)` creates a 1D array with values from 0 to 14, and `reshape(3, 5)` transforms it into a 3x5 2D array.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/computations/_computations.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+import numpy as np
+a = np.arange(15).reshape(3, 5)
+a
+```
+
+----------------------------------------
+
+TITLE: Excluding Headings from Numbering in Quarto (Markdown)
+DESCRIPTION: This snippet shows how to exclude an individual heading from being numbered in a Quarto document.  By adding the `.unnumbered` class to a heading (e.g., `### More Options {.unnumbered}`), that heading will be rendered without a number. This snippet requires the use of Markdown syntax for adding the class to the heading and will affect the output of the Quarto rendering process.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/output-formats/_document-options-section-numbering.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+### More Options {.unnumbered}
+```
+
+----------------------------------------
+
+TITLE: Preview Quarto Documents and Notebooks Using Bash Commands
+DESCRIPTION: Provides command-line examples for previewing Quarto documents (.qmd) and Jupyter notebooks (.ipynb) in HTML and PDF formats using the 'quarto preview' command. This facilitates live previewing during document editing and supports both local and notebook previews.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-authoring-tools.md#_snippet_0
+
+LANGUAGE: bash
+CODE:
+```
+# preview as html
+quarto preview document.qmd
+
+# preview as pdf
+quarto preview document.qmd --to pdf
+
+# preview a jupyter notebook
+quarto preview document.ipynb
+```
+
+----------------------------------------
+
+TITLE: Debugging Quarto Kernel Daemon Usage via Command Line
+DESCRIPTION: Renders a Quarto document (`document.qmd`) and prints extended debugging information about the Jupyter kernel daemon's lifecycle (startup, shutdown, connections) using the `--execute-debug` flag.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-daemon.md#_snippet_7
+
+LANGUAGE: bash
+CODE:
+```
+quarto render document.qmd --execute-debug
+```
+
+----------------------------------------
+
+TITLE: Preview and Update Jupyter Notebook in Jupyter Lab
+DESCRIPTION: Provides an example of previewing a Jupyter Notebook after conversion from Quarto using 'quarto preview'. The preview updates upon saving the notebook, supporting a seamless workflow between editing and rendering within Jupyter Lab environment.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-authoring-tools.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+quarto preview document.ipynb
+```
+
+----------------------------------------
+
+TITLE: Install Jupyter package via Pip on Windows PowerShell
+DESCRIPTION: Installs the `jupyter` package using the `pip` package manager specifically for Windows systems. This command uses the `py -m pip` pattern, utilizing the Python Launcher (`py`) to find the appropriate Python interpreter's pip.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_jupyter-install.md#_snippet_1
+
+LANGUAGE: PowerShell
+CODE:
+```
+py -m pip install jupyter
+```
+
+----------------------------------------
+
+TITLE: Creating Tabbed Navigation - HTML
+DESCRIPTION: This HTML snippet defines the structure for a tabbed navigation interface. It creates an unordered list with tab items, each containing a link. The links direct to different tool-specific pages (VS Code, Jupyter, RStudio, Neovim, and a generic text editor). The HTML uses Bootstrap classes for styling and includes images for visual representation. The overall purpose is to provide a user-friendly interface for tool selection.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/_tool-chooser.md#_snippet_0
+
+LANGUAGE: HTML
+CODE:
+```
+<ul id="choose-your-tool" class="nav nav-tabs" role="tablist">
+  <h3 class="no-anchor">Choose your tool</h3>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="vscode.html">
+      <img src="../images/vscode-logo.png">VS Code
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="jupyter.html">
+      <img src="../images/jupyter-logo.png">Jupyter
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="rstudio.html">
+      <img src="../images/rstudio-logo.png">RStudio
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="neovim.html">
+      <img src="../images/neovim-logo.svg">Neovim
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="text-editor.html">
+      <img src="../images/text-editor-logo.png" id="text-editor-logo">Editor
+    </a>
+  </li>
+</ul>
+```
+
+----------------------------------------
+
+TITLE: Defining Tool Selection Navigation Tabs - HTML
+DESCRIPTION: This HTML snippet defines an unordered list styled as navigation tabs for selecting different development tools: Jupyter, VS Code, and RStudio. Each list item represents a tool, containing a link (`<a>`) with an image and text, directing the user to the respective tool's documentation page.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/manuscripts/_tool-chooser.md#_snippet_0
+
+LANGUAGE: HTML
+CODE:
+```
+<ul id="choose-your-tool" class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="jupyterlab.html">
+      <img src="../images/jupyter-logo.png">Jupyter
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="vscode.html">
+      <img src="../images/vscode-logo.png">VS Code
+    </a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" href="rstudio.html">
+      <img src="../images/rstudio-logo.png">RStudio
+    </a>
+  </li>
+</ul>
+```
+
+----------------------------------------
+
+TITLE: Standard Deviation Equation in LaTeX with Quarto Equation Label
+DESCRIPTION: This LaTeX equation defines standard deviation with proper mathematical notation. It includes a Quarto reference label to enable cross-referencing within the document.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_notebooks/crossref.ipynb#_snippet_1
+
+LANGUAGE: latex
+CODE:
+```
+$$
+s = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (x_i - \overline{x})^2}
+$$ {#eq-stddev}
+```
+
+----------------------------------------
+
+TITLE: Demonstrating Complex Quarto Documentation Example - Markdown
+DESCRIPTION: This snippet shows a complete example of documenting with multiple fenced code blocks and YAML front matter in Quarto markdown. It uses quadruple backticks to enclose the entire example and triple curly braces for individual code blocks, illustrating how to combine code, markup, and metadata for teaching or demonstration. This pattern is for documentation purposes only and has no runtime dependencies, with inputs and outputs being static markdown and code formatting.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/computations/_unexecuted-blocks.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+---
+title: "My document"
+---
+
+Some markdown content.
+
+```{{{python}}}
+1 + 1
+```
+
+Some additional markdown content.
+```
+
+----------------------------------------
+
+TITLE: Activating Current Tool Link and Saving Preference - JavaScript
+DESCRIPTION: This JavaScript snippet executes when the DOM is fully loaded. It determines the current page's filename from the URL, iterates through the tool navigation links, adds the 'active' class to the link whose `href` matches the filename, and saves the filename to the browser's local storage under the key 'tutorialToolManuscript' to remember the user's tool preference.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/manuscripts/_tool-chooser.md#_snippet_1
+
+LANGUAGE: JavaScript
+CODE:
+```
+document.addEventListener("DOMContentLoaded", function() {
+  // get file name
+  const filename = window.location.pathname.split("/").slice(-1)[0];
+  
+  // latch active
+  const toolLinks = window.document.querySelectorAll("#choose-your-tool a");
+  for (const tool of toolLinks) {
+    if (tool.href.endsWith(filename)) {
+      tool.classList.add("active");
+      break;
+    }
+  }
+  
+   // save in local storage
+  window.localStorage.setItem("tutorialToolManuscript", filename);
+});
+```
+
+----------------------------------------
+
+TITLE: Simple Addition - Python
+DESCRIPTION: This Python snippet performs the addition of two integers, 1 and 1. The output of the operation is 2. No external dependencies are required for this fundamental operation.
+SOURCE: https://github.com/quarto-dev/quarto-web/blob/main/docs/get-started/authoring/_notebooks/citations.ipynb#_snippet_0
+
+LANGUAGE: python
+CODE:
+```
+1 + 1
+```

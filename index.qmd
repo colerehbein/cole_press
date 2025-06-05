@@ -1,124 +1,143 @@
 ---
 title: "Cole Rehbein"
 title-block-banner: false
-page-layout: full
+page-layout: article
 toc: true
+sidebar:
+  - title: "Quick Links"
+    contents:
+      - text: "Newsletter Signup"
+        href: "#newsletter"
+      - text: "GitHub Profile"
+        href: "https://github.com/colerehbein"
+      - text: "Contact"
+        href: "mailto:cole@cole.press"
+  - title: "Recent Posts"
+    contents:
+      - text: "AI in Practice"
+        href: "/blog"
+      - text: "Code & Culture" 
+        href: "/blog"
+      - text: "Future of Work"
+        href: "/blog"
 ---
 
-::: {.terminal-header}
+::: {.cli-header}
 ```
-╭─ cole@press.dev ~/portfolio
-╰─$ whoami
-```
-:::
-
-::: {.hero-section-compact}
-# Cole Rehbein {.hero-title .typewriter}
-
-::: {.terminal-subtitle}
-```
-> Full-Stack Developer & AI Researcher
-> Building the future with code, data, and thoughtful design
-> Status: Available for interesting projects
+cole@press:~$ neofetch --config custom
 ```
 :::
 
-::: {.hero-actions-compact}
-[View My Work](/projects){.btn .btn-primary .btn-md .me-2}
-[Get In Touch](mailto:cole@cole.press){.btn .btn-outline-secondary .btn-md}
-:::
-:::
-
-::: {.main-content-compact}
-
-::: {.terminal-prompt}
-**cole@dev**:**~**$ cat **skills.txt**
-:::
-
-::: {.skills-terminal}
+::: {.neofetch-style}
+::: {.ascii-art}
 ```
-╭─────────────────── SKILL_MATRIX.exe ───────────────────╮
-│ [████████████████] Development      ████████░░ 90%     │
-│ [████████████████] AI & Research    ███████░░░ 85%     │  
-│ [████████████████] Writing          ██████░░░░ 75%     │
-│ [████████████████] Open Source      ████████░░ 88%     │
-╰─────────────────────────────────────────────────────────╯
+     ██████╗ ██████╗ ██╗     ███████╗
+    ██╔════╝██╔═══██╗██║     ██╔════╝
+    ██║     ██║   ██║██║     █████╗  
+    ██║     ██║   ██║██║     ██╔══╝  
+    ╚██████╗╚██████╔╝███████╗███████╗
+     ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
 ```
 :::
 
-## Navigation Hub {.section-title-compact}
-
-::: {.nav-grid-compact}
-::: {.nav-card-terminal}
-::: {.terminal-window}
-::: {.terminal-header-bar}
-<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-`blog.sh`
+::: {.system-info}
+**Cole Rehbein** @ **cole.press**
+**──────────────────────────────────**
+**OS:** Full-Stack Developer & AI Researcher  
+**Kernel:** Building the future with code and data  
+**Uptime:** Available for interesting projects  
+**Shell:** TypeScript, Python, R, Go  
+**Resolution:** Problems → Solutions  
+**DE:** Creative & Technical  
+**WM:** Remote-friendly  
+**Theme:** Open Source Advocate  
+**Icons:** ✨ Always learning  
+**Terminal:** Currently coding  
+**CPU:** Ideas/sec: ∞  
+**Memory:** Caffeinated  
 :::
-::: {.terminal-body}
+:::
+
+::: {.cli-prompt}
 ```
-$ ./blog --list --recent
-> Deep dives into technology trends
+cole@press:~$ cat skills.json | jq '.expertise'
+```
+:::
+
+::: {.skills-json}
+```json
+{
+  "development": {
+    "proficiency": "90%",
+    "languages": ["TypeScript", "Python", "R", "Go"],
+    "focus": "Full-stack applications"
+  },
+  "ai_research": {
+    "proficiency": "85%", 
+    "areas": ["Machine Learning", "Automation", "Data Science"],
+    "focus": "Real-world applications"
+  },
+  "writing": {
+    "proficiency": "80%",
+    "topics": ["Technology", "AI Ethics", "Digital Culture"], 
+    "focus": "Thoughtful analysis"
+  },
+  "open_source": {
+    "proficiency": "88%",
+    "contributions": "Active",
+    "philosophy": "Building in public"
+  }
+}
+```
+:::
+
+::: {.cli-prompt}
+```
+cole@press:~$ ls -la ~/projects/
+```
+:::
+
+::: {.project-listing}
+::: {.project-grid}
+::: {.project-item .blog}
+**drwxr-xr-x** **blog/**
+> Deep dives into technology trends  
 > AI development insights  
-> Digital culture analysis
-> 23 articles published
-```
-**[Read Articles →](/blog)**{.terminal-link}
+> Digital culture analysis  
+> **23** articles published  
+
+[**cd blog/**](/blog){.project-link}
+:::
+
+::: {.project-item .cv}
+**drwxr-xr-x** **cv/**
+> Professional journey documentation  
+> Skills & certifications  
+> Research publications  
+> PDF download available  
+
+[**cat cv/resume.pdf**](/cv){.project-link}
+:::
+
+::: {.project-item .portfolio}
+**drwxr-xr-x** **portfolio/**
+> AI automation tools  
+> Open source contributions  
+> Web applications  
+> Research experiments  
+
+[**ls portfolio/**](/projects){.project-link}
 :::
 :::
 :::
 
-::: {.nav-card-terminal}
-::: {.terminal-window}
-::: {.terminal-header-bar}
-<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-`resume.pdf`
-:::
-::: {.terminal-body}
+::: {.cli-prompt}
 ```
-$ cat ./cv/experience.txt
-> Professional journey in tech
-> Skills & certifications
-> Research publications
-> Download available
+cole@press:~$ git log --oneline --graph | head -10
 ```
-**[View Credentials →](/cv)**{.terminal-link}
-:::
-:::
 :::
 
-::: {.nav-card-terminal}
-::: {.terminal-window}
-::: {.terminal-header-bar}
-<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-`projects/`
-:::
-::: {.terminal-body}
-```
-$ ls -la ./projects/
-> AI automation tools
-> Open source contributions
-> Web applications
-> Research experiments
-```
-**[Explore Work →](/projects)**{.terminal-link}
-:::
-:::
-:::
-:::
-
-::: {.terminal-prompt}
-**cole@dev**:**~**$ git **status** **--activity**
-:::
-
-::: {.activity-section-compact}
-::: {.github-terminal}
-::: {.terminal-window-large}
-::: {.terminal-header-bar}
-<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-`github-activity.log`
-:::
-::: {.terminal-body}
+::: {.git-activity}
 ```{r}
 #| echo: false
 #| warning: false
@@ -126,236 +145,156 @@ $ ls -la ./projects/
 
 library(htmltools)
 
-# Terminal-style GitHub activity
-div(class = "github-stats-terminal",
-    div(class = "stat-line", "📊 GITHUB_ACTIVITY_REPORT"),
-    div(class = "stat-line", "─────────────────────────────"),
-    div(class = "stat-grid",
-        div(class = "stat-col",
-            div(class = "stat-number", "127"),
-            div(class = "stat-label", "commits_this_year")
-        ),
-        div(class = "stat-col", 
-            div(class = "stat-number", "23"),
-            div(class = "stat-label", "public_repos")
-        ),
-        div(class = "stat-col",
-            div(class = "stat-number", "8"),
-            div(class = "stat-label", "recent_pushes")
-        )
-    ),
-    div(class = "stat-line", "─────────────────────────────"),
-    div(class = "status-line", "✓ Building in public"),
-    div(class = "status-line", "✓ Open source advocate"), 
-    div(class = "status-line", "⚡ Always learning")
+# Create a git-style activity log
+div(class = "git-log",
+    div(class = "git-line", "* 127 commits this year"),
+    div(class = "git-line", "* 23 public repositories"), 
+    div(class = "git-line", "* 8 recent pushes"),
+    div(class = "git-separator", "────────────────────────"),
+    div(class = "git-status active", "● Building in public"),
+    div(class = "git-status active", "● Open source advocate"),
+    div(class = "git-status active", "● Always learning"),
+    div(class = "git-link-container",
+        tags$a(href = "https://github.com/colerehbein", 
+               class = "git-remote", 
+               "origin/main → github.com/colerehbein")
+    )
 )
 ```
-
-**[View GitHub Profile →](https://github.com/colerehbein)**{.terminal-link}
-:::
-:::
-:::
 :::
 
-::: {.terminal-prompt}
-**cole@dev**:**~**$ cat **./insights/latest.md**
+::: {.cli-prompt}
+```
+cole@press:~$ cat thoughts/latest.txt
+```
 :::
 
-::: {.insights-matrix}
-::: {.insight-terminal .ai}
-**> AI_INSIGHTS.log**
+::: {.thoughts-section}
+::: {.thought-item .ai}
+**📊 AI_in_Practice.md**  
 Real-world applications and ethical considerations in modern AI development
 :::
 
-::: {.insight-terminal .code}
-**> CODE_CULTURE.md**  
+::: {.thought-item .code}
+**🔧 Code_and_Culture.py**  
 How technology shapes society and building more thoughtfully
 :::
 
-::: {.insight-terminal .future}
-**> FUTURE_WORK.txt**
+::: {.thought-item .future}
+**🚀 Future_of_Work.rs**  
 Automation, human-AI collaboration, and evolving tech landscape
 :::
 :::
 
-::: {.terminal-prompt}
-**cole@dev**:**~**$ ./connect **--social** **--newsletter**
+::: {.cli-prompt}
+```
+cole@press:~$ ./connect.sh --all
+```
 :::
 
-::: {.connect-terminal}
-::: {.newsletter-terminal}
-::: {.terminal-window}
-::: {.terminal-header-bar}
-<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-`newsletter-signup.sh`
-:::
-::: {.terminal-body}
-```
-$ echo "Stay updated with my latest insights"
-> No spam, just thoughtful content
-> Unsubscribe anytime with ease
+::: {.connect-section}
+::: {.newsletter-box}
+**📬 Newsletter Signup**
+```bash
+$ curl -X POST https://cole.press/newsletter \
+  --data "email=your@email.com"
 ```
 
-::: {.newsletter-form-terminal}
+::: {.newsletter-form}
 <form action="#" method="post" onsubmit="return false;">
-  <div class="terminal-input-group">
-    <span class="terminal-prompt-char">$</span>
-    <input type="email" name="email" placeholder="your-email@domain.com" required class="terminal-input">
-    <button type="submit" class="terminal-submit">SUBMIT</button>
+  <div class="cli-input-group">
+    <span class="prompt">$</span>
+    <input type="email" name="email" placeholder="your@email.com" required class="cli-input">
+    <button type="submit" class="cli-button">SEND</button>
   </div>
+  <small class="cli-note">No spam, just thoughtful content</small>
 </form>
 :::
 :::
-:::
-:::
 
-::: {.social-terminal}
+::: {.social-links}
+**🔗 Social Links**
+```bash
+github    : https://github.com/colerehbein
+twitter   : https://twitter.com/colerehbein  
+email     : cole@cole.press
+website   : https://cole.press
 ```
-╭─ SOCIAL_LINKS.config ─╮
-│ github: @colerehbein   │
-│ twitter: @colerehbein  │  
-│ email: cole@cole.press │
-╰────────────────────────╯
+:::
+:::
+
+::: {.cli-footer}
 ```
-
-::: {.social-links-terminal}
-[`github.com/colerehbein`](https://github.com/colerehbein){.social-link-terminal .github}
-[`@colerehbein`](https://twitter.com/colerehbein){.social-link-terminal .twitter}
-[`cole@cole.press`](mailto:cole@cole.press){.social-link-terminal .email}
-:::
-:::
-:::
-
-:::
-
-::: {.ascii-footer}
-```
-     ╭──────────────────────────────────────╮
-     │  Thanks for visiting cole.press!     │
-     │  Built with Quarto & lots of ☕      │
-     ╰──────────────────────────────────────╯
-          \   ^__^
-           \  (oo)\_______
-              (__)\       )\/\
-                  ||----w |
-                  ||     ||
+$ uptime
+ 10:35AM  up 365 days, building cool things
+$ whoami
+Cole Rehbein - Full-Stack Developer & AI Researcher
+$ echo "Thanks for visiting! ☕"
+Thanks for visiting! ☕
 ```
 :::
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Typewriter effect for hero title
-    const typewriterElement = document.querySelector('.typewriter');
-    if (typewriterElement) {
-        const text = typewriterElement.textContent;
-        typewriterElement.textContent = '';
-        typewriterElement.style.borderRight = '2px solid #3b82f6';
-        
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                typewriterElement.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                // Blinking cursor effect
-                setInterval(() => {
-                    typewriterElement.style.borderRight = 
-                        typewriterElement.style.borderRight === 'none' ? 
-                        '2px solid #3b82f6' : 'none';
-                }, 500);
-            }
-        }
-        setTimeout(typeWriter, 500);
-    }
-    
-    // Matrix rain effect (subtle)
-    function createMatrixRain() {
-        const matrix = document.createElement('div');
-        matrix.className = 'matrix-rain';
-        matrix.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.03;
-        `;
-        
-        const chars = '01アカサタナハマヤラワガザダバパイキシチニヒミリヰギジヂビピウクスツヌフムユルグズヅブプエケセテネヘメレヱゲゼデベペオコソトノホモヨロヲゴゾドボポヴッン';
-        
-        for (let i = 0; i < 20; i++) {
-            const column = document.createElement('div');
-            column.style.cssText = `
-                position: absolute;
-                top: -100%;
-                font-family: monospace;
-                font-size: 14px;
-                color: #00ff41;
-                animation: matrixFall ${5 + Math.random() * 10}s linear infinite;
-                left: ${Math.random() * 100}%;
-            `;
+    // Subtle typewriter effect only on prompts
+    const prompts = document.querySelectorAll('.cli-prompt code');
+    prompts.forEach((prompt, index) => {
+        // Only apply to first few prompts, with delay
+        if (index < 3) {
+            const text = prompt.textContent;
+            prompt.textContent = '';
             
-            let text = '';
-            for (let j = 0; j < 20; j++) {
-                text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
-            }
-            column.innerHTML = text;
-            matrix.appendChild(column);
+            setTimeout(() => {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        prompt.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, 50); // Faster typing
+                    }
+                }
+                type();
+            }, index * 1000);
         }
-        
-        document.body.appendChild(matrix);
-    }
+    });
     
-    // Add matrix animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes matrixFall {
-            to { transform: translateY(100vh); }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Uncomment to enable matrix effect
-    // createMatrixRain();
-    
-    // Terminal hover effects
-    const terminalCards = document.querySelectorAll('.nav-card-terminal, .github-terminal');
-    terminalCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px) scale(1.02)';
+    // Enhanced hover effects
+    const interactiveElements = document.querySelectorAll('.project-item, .thought-item, .newsletter-box');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
         });
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+        el.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
         });
     });
     
-    // Newsletter form terminal effect
-    const newsletterForm = document.querySelector('.newsletter-form-terminal form');
+    // Newsletter form functionality
+    const newsletterForm = document.querySelector('.newsletter-form form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = this.querySelector('.terminal-submit');
-            const input = this.querySelector('.terminal-input');
+            const button = this.querySelector('.cli-button');
+            const input = this.querySelector('.cli-input');
             
-            btn.textContent = 'PROCESSING...';
-            btn.style.background = '#f59e0b';
+            button.textContent = 'SENDING...';
+            button.style.background = '#f59e0b';
             
             setTimeout(() => {
-                btn.textContent = 'SUCCESS!';
-                btn.style.background = '#22c55e';
-                input.value = 'Thanks for subscribing!';
+                button.textContent = '✓ SENT';
+                button.style.background = '#22c55e';
+                input.value = 'Thank you for subscribing!';
                 input.disabled = true;
             }, 1500);
             
             setTimeout(() => {
-                btn.textContent = 'SUBMIT';
-                btn.style.background = '#3b82f6';
+                button.textContent = 'SEND';
+                button.style.background = '';
                 input.value = '';
                 input.disabled = false;
-                input.placeholder = 'your-email@domain.com';
+                input.placeholder = 'your@email.com';
             }, 4000);
         });
     }
