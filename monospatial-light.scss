@@ -883,32 +883,33 @@ a {
   }
 }
 
-// Neofetch-style display with rainbow ASCII
+// Neofetch-style display with rainbow ASCII - more readable
 .neofetch-style {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: $spacing-8;
-  background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 8%) 100%);
-  padding: $spacing-8;
+  gap: $spacing-6;
+  background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 5%) 100%);
+  padding: $spacing-6;
   border-radius: $radius-lg;
-  margin-bottom: $spacing-8;
-  box-shadow: $shadow-lg;
+  margin-bottom: $spacing-6;
+  box-shadow: $shadow-md;
+  border: 1px solid rgba($cli-rainbow-cyan, 0.2);
 
   .ascii-art {
     pre {
-      font-size: $font-size-sm;
-      line-height: 1.2;
+      font-size: $font-size-xs;
+      line-height: 1.1;
       margin: 0;
-      // Rainbow gradient text
+      // Rainbow gradient text - slightly more muted
       background: linear-gradient(
         45deg,
-        $cli-rainbow-red,
-        $cli-rainbow-orange,
-        $cli-rainbow-yellow,
+        lighten($cli-rainbow-red, 10%),
+        lighten($cli-rainbow-orange, 10%),
+        lighten($cli-rainbow-yellow, 5%),
         $cli-rainbow-green,
         $cli-rainbow-cyan,
         $cli-rainbow-blue,
-        $cli-rainbow-purple
+        lighten($cli-rainbow-purple, 10%)
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -918,40 +919,54 @@ a {
   }
 
   .system-info {
-    color: $terminal-text;
+    color: lighten($terminal-text, 10%);
     font-family: $font-family-monospace;
     font-size: $font-size-sm;
-    line-height: 1.5;
+    line-height: 1.4;
 
     strong:first-child {
       color: $cli-rainbow-cyan;
       font-size: $font-size-lg;
+      margin-bottom: $spacing-2;
+      display: block;
+    }
+
+    // Better contrast for readability
+    strong {
+      color: lighten($terminal-text, 20%);
     }
   }
 }
 
-// CLI prompts
+// CLI prompts - more subtle and compact
 .cli-prompt {
   color: $cli-rainbow-cyan;
-  background: $cli-bg-lighter;
-  padding: $spacing-3 $spacing-4;
-  border-radius: $radius-base;
-  margin: $spacing-6 0 $spacing-4;
+  background: transparent;
+  padding: $spacing-2 0;
+  margin: $spacing-4 0 $spacing-2;
   font-family: $font-family-monospace;
   font-size: $font-size-sm;
-  border-left: 3px solid $cli-rainbow-cyan;
-  box-shadow: $shadow-sm;
+  border-left: 2px solid $cli-rainbow-cyan;
+  padding-left: $spacing-3;
+
+  // Make it more like an inline prompt, less like a big block
+  code {
+    background: rgba($cli-bg-lighter, 0.1);
+    padding: $spacing-1 $spacing-2;
+    border-radius: $radius-sm;
+    color: $cli-rainbow-cyan;
+  }
 }
 
-// Skills JSON with syntax highlighting
+// Skills JSON with syntax highlighting - more readable
 .skills-json {
   background: $cli-bg;
   color: $terminal-text;
-  padding: $spacing-6;
+  padding: $spacing-5;
   border-radius: $radius-lg;
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-6;
   box-shadow: $shadow-md;
-  border: 1px solid $cli-bg-lighter;
+  border: 1px solid rgba($cli-rainbow-cyan, 0.2);
 
   pre {
     margin: 0;
@@ -959,20 +974,20 @@ a {
   }
 }
 
-// Project listing with colorful accents
+// Project listing with colorful accents - better spacing
 .project-listing {
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-6;
 
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: $spacing-5;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-4;
 
     .project-item {
       background: $mono-surface-elevated;
       border: 1px solid $mono-border;
       border-radius: $radius-lg;
-      padding: $spacing-6;
+      padding: $spacing-5;
       transition: all var(--transition-normal);
       box-shadow: $shadow-base;
       position: relative;
@@ -1013,8 +1028,14 @@ a {
         color: $mono-text;
         font-family: $font-family-monospace;
         font-size: $font-size-base;
-        margin-bottom: $spacing-3;
+        margin-bottom: $spacing-2;
         display: block;
+      }
+
+      p {
+        margin-bottom: $spacing-3;
+        font-size: $font-size-sm;
+        line-height: 1.4;
       }
 
       .project-link {
@@ -1022,6 +1043,7 @@ a {
         text-decoration: none;
         font-weight: 600;
         font-family: $font-family-monospace;
+        font-size: $font-size-sm;
 
         &:hover {
           color: $cli-rainbow-cyan;
@@ -1032,13 +1054,13 @@ a {
   }
 }
 
-// Git activity log
+// Git activity log - more compact
 .git-activity {
   background: $cli-bg;
   color: $terminal-text;
-  padding: $spacing-6;
+  padding: $spacing-5;
   border-radius: $radius-lg;
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-6;
   box-shadow: $shadow-md;
   font-family: $font-family-monospace;
   font-size: $font-size-sm;
@@ -1083,12 +1105,12 @@ a {
   }
 }
 
-// Thoughts section with colorful borders
+// Thoughts section with colorful borders - better flow
 .thoughts-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: $spacing-4;
-  margin-bottom: $spacing-8;
+  margin-bottom: $spacing-6;
 
   .thought-item {
     background: $mono-surface-elevated;
@@ -1133,12 +1155,12 @@ a {
   }
 }
 
-// Connect section
+// Connect section - better spacing
 .connect-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: $spacing-6;
-  margin-bottom: $spacing-8;
+  gap: $spacing-5;
+  margin-bottom: $spacing-6;
 
   .newsletter-box {
     background: $mono-surface-elevated;

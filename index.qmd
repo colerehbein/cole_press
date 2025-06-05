@@ -22,15 +22,15 @@ sidebar:
         href: "/blog"
 ---
 
-::: {.cli-header}
-```
+::: cli-header
+```         
 cole@press:~$ neofetch --config custom
 ```
 :::
 
-::: {.neofetch-style}
-::: {.ascii-art}
-```
+::::: neofetch-style
+::: ascii-art
+```         
      ██████╗ ██████╗ ██╗     ███████╗
     ██╔════╝██╔═══██╗██║     ██╔════╝
     ██║     ██║   ██║██║     █████╗  
@@ -40,32 +40,28 @@ cole@press:~$ neofetch --config custom
 ```
 :::
 
-::: {.system-info}
-**Cole Rehbein** @ **cole.press**
-**──────────────────────────────────**
-**OS:** Full-Stack Developer & AI Researcher  
-**Kernel:** Building the future with code and data  
-**Uptime:** Available for interesting projects  
-**Shell:** TypeScript, Python, R, Go  
-**Resolution:** Problems → Solutions  
-**DE:** Creative & Technical  
-**WM:** Remote-friendly  
-**Theme:** Open Source Advocate  
-**Icons:** ✨ Always learning  
-**Terminal:** Currently coding  
-**CPU:** Ideas/sec: ∞  
-**Memory:** Caffeinated  
+::: system-info
+**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** **OS:** Full-Stack Developer & AI Researcher\
+**Kernel:** Building the future with code and data\
+**Uptime:** Available for interesting projects\
+**Shell:** TypeScript, Python, R, Go\
+**Resolution:** Problems → Solutions\
+**DE:** Creative & Technical\
+**WM:** Remote-friendly\
+**Theme:** Open Source Advocate\
+**Icons:** ✨ Always learning\
+**Terminal:** Currently coding\
+**CPU:** Ideas/sec: ∞\
+**Memory:** Caffeinated
 :::
-:::
+:::::
 
 ::: {.cli-prompt}
-```
-cole@press:~$ cat skills.json | jq '.expertise'
-```
+`cole@press:~$ cat skills.json | jq '.expertise'`
 :::
 
-::: {.skills-json}
-```json
+::: skills-json
+``` json
 {
   "development": {
     "proficiency": "90%",
@@ -92,52 +88,45 @@ cole@press:~$ cat skills.json | jq '.expertise'
 :::
 
 ::: {.cli-prompt}
-```
-cole@press:~$ ls -la ~/projects/
-```
+`cole@press:~$ ls -la ~/projects/`
 :::
 
-::: {.project-listing}
-::: {.project-grid}
+::::::: project-listing
+:::::: project-grid
 ::: {.project-item .blog}
-**drwxr-xr-x** **blog/**
-> Deep dives into technology trends  
-> AI development insights  
-> Digital culture analysis  
-> **23** articles published  
+**drwxr-xr-x** **blog/** \> Deep dives into technology trends\
+\> AI development insights\
+\> Digital culture analysis\
+\> **23** articles published
 
 [**cd blog/**](/blog){.project-link}
 :::
 
 ::: {.project-item .cv}
-**drwxr-xr-x** **cv/**
-> Professional journey documentation  
-> Skills & certifications  
-> Research publications  
-> PDF download available  
+**drwxr-xr-x** **cv/** \> Professional journey documentation\
+\> Skills & certifications\
+\> Research publications\
+\> PDF download available
 
 [**cat cv/resume.pdf**](/cv){.project-link}
 :::
 
 ::: {.project-item .portfolio}
-**drwxr-xr-x** **portfolio/**
-> AI automation tools  
-> Open source contributions  
-> Web applications  
-> Research experiments  
+**drwxr-xr-x** **portfolio/** \> AI automation tools\
+\> Open source contributions\
+\> Web applications\
+\> Research experiments
 
 [**ls portfolio/**](/projects){.project-link}
 :::
-:::
-:::
+::::::
+:::::::
 
 ::: {.cli-prompt}
-```
-cole@press:~$ git log --oneline --graph | head -10
-```
+`cole@press:~$ git log --oneline --graph | head -10`
 :::
 
-::: {.git-activity}
+::: git-activity
 ```{r}
 #| echo: false
 #| warning: false
@@ -164,67 +153,70 @@ div(class = "git-log",
 :::
 
 ::: {.cli-prompt}
-```
-cole@press:~$ cat thoughts/latest.txt
-```
+`cole@press:~$ cat thoughts/latest.txt`
 :::
 
-::: {.thoughts-section}
+:::::: thoughts-section
 ::: {.thought-item .ai}
-**📊 AI_in_Practice.md**  
+**📊 AI_in_Practice.md**\
 Real-world applications and ethical considerations in modern AI development
 :::
 
 ::: {.thought-item .code}
-**🔧 Code_and_Culture.py**  
+**🔧 Code_and_Culture.py**\
 How technology shapes society and building more thoughtfully
 :::
 
 ::: {.thought-item .future}
-**🚀 Future_of_Work.rs**  
+**🚀 Future_of_Work.rs**\
 Automation, human-AI collaboration, and evolving tech landscape
 :::
-:::
+::::::
 
 ::: {.cli-prompt}
-```
-cole@press:~$ ./connect.sh --all
-```
+`cole@press:~$ ./connect.sh --all`
 :::
 
-::: {.connect-section}
-::: {.newsletter-box}
+::::::: connect-section
+::::: newsletter-box
 **📬 Newsletter Signup**
-```bash
+
+``` bash
 $ curl -X POST https://cole.press/newsletter \
   --data "email=your@email.com"
 ```
 
-::: {.newsletter-form}
+:::: newsletter-form
 <form action="#" method="post" onsubmit="return false;">
-  <div class="cli-input-group">
-    <span class="prompt">$</span>
-    <input type="email" name="email" placeholder="your@email.com" required class="cli-input">
-    <button type="submit" class="cli-button">SEND</button>
-  </div>
-  <small class="cli-note">No spam, just thoughtful content</small>
-</form>
-:::
+
+::: cli-input-group
+```         
+<span class="prompt">$</span>
+<input type="email" name="email" placeholder="your@email.com" required class="cli-input">
+<button type="submit" class="cli-button">SEND</button>
+```
 :::
 
-::: {.social-links}
+<small class="cli-note">No spam, just thoughtful content</small>
+
+</form>
+::::
+:::::
+
+::: social-links
 **🔗 Social Links**
-```bash
+
+``` bash
 github    : https://github.com/colerehbein
 twitter   : https://twitter.com/colerehbein  
 email     : cole@cole.press
 website   : https://cole.press
 ```
 :::
-:::
+:::::::
 
 ::: {.cli-footer}
-```
+```bash
 $ uptime
  10:35AM  up 365 days, building cool things
 $ whoami
@@ -234,6 +226,7 @@ Thanks for visiting! ☕
 ```
 :::
 
+```{=html}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Subtle typewriter effect only on prompts
@@ -300,3 +293,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+```
