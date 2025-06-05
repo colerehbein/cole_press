@@ -67,42 +67,14 @@
     "href": "index.html",
     "title": "Cole Rehbein",
     "section": "",
-    "text": "Full-Stack Developer & AI Researcher {.hero-subtitle}\nBuilding the future with code, data, and thoughtful design. Welcome to my corner of the digital world.\n\nView My Work Get In Touch"
+    "text": "╭─ cole@press.dev ~/portfolio\n╰─$ whoami"
   },
   {
-    "objectID": "index.html#what-i-do",
-    "href": "index.html#what-i-do",
+    "objectID": "index.html#navigation-hub",
+    "href": "index.html#navigation-hub",
     "title": "Cole Rehbein",
-    "section": "What I Do",
-    "text": "What I Do\n\n\n\n\n\nDevelopment Building robust applications with modern technologies and best practices.\n\n\n\n\n\nAI & Research Exploring machine learning, automation, and data-driven solutions.\n\n\n\n\n\nWriting Sharing insights on technology, AI, psychology, and digital culture."
-  },
-  {
-    "objectID": "index.html#quick-navigation",
-    "href": "index.html#quick-navigation",
-    "title": "Cole Rehbein",
-    "section": "Quick Navigation",
-    "text": "Quick Navigation\n\n\n\n\nBlog\n\n\nDeep dives into technology, AI developments, and thoughtful analysis of our digital world.\n\n\nRead Articles →\n\n\n\n\n\nCV & Resume\n\n\nMy professional journey, skills, and experience in technology and research.\n\n\nView Credentials →\n\n\n\n\n\nProjects\n\n\nCurrent builds, experiments, and open-source contributions across various domains.\n\n\nExplore Work →"
-  },
-  {
-    "objectID": "index.html#recent-activity",
-    "href": "index.html#recent-activity",
-    "title": "Cole Rehbein",
-    "section": "Recent Activity",
-    "text": "Recent Activity\n\n\n\n GitHub Contributions\n\n\n\n\n\n\n\n127\n\nContributions this year\n\n\n23\n\nPublic repositories\n\n\n8\n\nRecent commits\n\n\nBuilding in public • Open source advocate • Always learning\n\n\n\n\n\nView GitHub Profile →"
-  },
-  {
-    "objectID": "index.html#latest-insights",
-    "href": "index.html#latest-insights",
-    "title": "Cole Rehbein",
-    "section": "Latest Insights",
-    "text": "Latest Insights\n\n\nAI in Practice Real-world applications and ethical considerations in modern AI development.\n\n\nCode & Culture How technology shapes society and how we can build more thoughtfully.\n\n\nFuture of Work Automation, human-AI collaboration, and the evolving tech landscape."
-  },
-  {
-    "objectID": "index.html#stay-connected",
-    "href": "index.html#stay-connected",
-    "title": "Cole Rehbein",
-    "section": "Stay Connected",
-    "text": "Stay Connected\n\n\n\n Newsletter\n\n\nGet occasional updates on new projects, insights, and interesting discoveries. No spam, just thoughtful content.\n\n\n\n&lt;input type=\"email\" name=\"email\" placeholder=\"your@email.com\" required class=\"form-control newsletter-input\"&gt;\n&lt;button type=\"submit\" class=\"btn btn-primary newsletter-btn\"&gt;Subscribe&lt;/button&gt;\n\nI respect your privacy. Unsubscribe anytime.\n\n\n\n\n\n GitHub  Twitter  Email"
+    "section": "Navigation Hub",
+    "text": "Navigation Hub\n\n\n\n\n blog.sh\n\n\n$ ./blog --list --recent\n&gt; Deep dives into technology trends\n&gt; AI development insights  \n&gt; Digital culture analysis\n&gt; 23 articles published\nRead Articles →{.terminal-link}\n\n\n\n\n\n\n resume.pdf\n\n\n$ cat ./cv/experience.txt\n&gt; Professional journey in tech\n&gt; Skills & certifications\n&gt; Research publications\n&gt; Download available\nView Credentials →{.terminal-link}\n\n\n\n\n\n\n projects/\n\n\n$ ls -la ./projects/\n&gt; AI automation tools\n&gt; Open source contributions\n&gt; Web applications\n&gt; Research experiments\nExplore Work →{.terminal-link}\n\n\n\n\n\ncole@dev:~$ git status –activity\n\n\n\n\n\n github-activity.log\n\n\n\n\n\n📊 GITHUB_ACTIVITY_REPORT\n─────────────────────────────\n\n\n127\ncommits_this_year\n\n\n23\npublic_repos\n\n\n8\nrecent_pushes\n\n\n─────────────────────────────\n✓ Building in public\n✓ Open source advocate\n⚡ Always learning\n\n\n\nView GitHub Profile →{.terminal-link}\n\n\n\n\n\ncole@dev:~$ cat ./insights/latest.md\n\n\n\n&gt; AI_INSIGHTS.log Real-world applications and ethical considerations in modern AI development\n\n\n&gt; CODE_CULTURE.md\nHow technology shapes society and building more thoughtfully\n\n\n&gt; FUTURE_WORK.txt Automation, human-AI collaboration, and evolving tech landscape\n\n\n\ncole@dev:~$ ./connect –social –newsletter\n\n\n\n\n\n newsletter-signup.sh\n\n\n$ echo \"Stay updated with my latest insights\"\n&gt; No spam, just thoughtful content\n&gt; Unsubscribe anytime with ease\n\n\n\n&lt;span class=\"terminal-prompt-char\"&gt;$&lt;/span&gt;\n&lt;input type=\"email\" name=\"email\" placeholder=\"your-email@domain.com\" required class=\"terminal-input\"&gt;\n&lt;button type=\"submit\" class=\"terminal-submit\"&gt;SUBMIT&lt;/button&gt;\n\n\n\n\n\n\n\n╭─ SOCIAL_LINKS.config ─╮\n│ github: @colerehbein   │\n│ twitter: @colerehbein  │  \n│ email: cole@cole.press │\n╰────────────────────────╯\n\ngithub.com/colerehbein @colerehbein cole@cole.press"
   },
   {
     "objectID": "projects.html",

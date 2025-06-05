@@ -2,212 +2,361 @@
 title: "Cole Rehbein"
 title-block-banner: false
 page-layout: full
+toc: true
 ---
 
-::: {.hero-section}
-# Cole Rehbein {.hero-title}
-
-**Full-Stack Developer & AI Researcher** {.hero-subtitle}
-
-Building the future with code, data, and thoughtful design. Welcome to my corner of the digital world.
-
-::: {.hero-actions}
-[View My Work](/projects){.btn .btn-primary .btn-lg .me-3}
-[Get In Touch](mailto:cole@cole.press){.btn .btn-outline-secondary .btn-lg}
-:::
+::: {.terminal-header}
+```
+╭─ cole@press.dev ~/portfolio
+╰─$ whoami
+```
 :::
 
-::: {.main-content}
+::: {.hero-section-compact}
+# Cole Rehbein {.hero-title .typewriter}
 
-## What I Do {.section-title}
-
-::: {.services-grid}
-::: {.service-card}
-::: {.service-icon}
-{{< fa solid code >}}
-:::
-**Development**
-Building robust applications with modern technologies and best practices.
+::: {.terminal-subtitle}
+```
+> Full-Stack Developer & AI Researcher
+> Building the future with code, data, and thoughtful design
+> Status: Available for interesting projects
+```
 :::
 
-::: {.service-card}
-::: {.service-icon}
-{{< fa solid brain >}}
-:::
-**AI & Research**
-Exploring machine learning, automation, and data-driven solutions.
-:::
-
-::: {.service-card}
-::: {.service-icon}
-{{< fa solid pen-nib >}}
-:::
-**Writing**
-Sharing insights on technology, AI, psychology, and digital culture.
+::: {.hero-actions-compact}
+[View My Work](/projects){.btn .btn-primary .btn-md .me-2}
+[Get In Touch](mailto:cole@cole.press){.btn .btn-outline-secondary .btn-md}
 :::
 :::
 
-## Quick Navigation {.section-title}
+::: {.main-content-compact}
 
-::: {.nav-grid}
-::: {.nav-card}
-::: {.nav-card-header}
-{{< fa regular newspaper >}}
-**Blog**
-:::
-::: {.nav-card-body}
-Deep dives into technology, AI developments, and thoughtful analysis of our digital world.
-:::
-::: {.nav-card-footer}
-[Read Articles →](/blog){.card-link}
-:::
+::: {.terminal-prompt}
+**cole@dev**:**~**$ cat **skills.txt**
 :::
 
-::: {.nav-card}
-::: {.nav-card-header}
-{{< fa regular file-lines >}}
-**CV & Resume**
-:::
-::: {.nav-card-body}
-My professional journey, skills, and experience in technology and research.
-:::
-::: {.nav-card-footer}
-[View Credentials →](/cv){.card-link}
-:::
+::: {.skills-terminal}
+```
+╭─────────────────── SKILL_MATRIX.exe ───────────────────╮
+│ [████████████████] Development      ████████░░ 90%     │
+│ [████████████████] AI & Research    ███████░░░ 85%     │  
+│ [████████████████] Writing          ██████░░░░ 75%     │
+│ [████████████████] Open Source      ████████░░ 88%     │
+╰─────────────────────────────────────────────────────────╯
+```
 :::
 
-::: {.nav-card}
-::: {.nav-card-header}
-{{< fa solid folder-open >}}
-**Projects**
+## Navigation Hub {.section-title-compact}
+
+::: {.nav-grid-compact}
+::: {.nav-card-terminal}
+::: {.terminal-window}
+::: {.terminal-header-bar}
+<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+`blog.sh`
 :::
-::: {.nav-card-body}
-Current builds, experiments, and open-source contributions across various domains.
-:::
-::: {.nav-card-footer}
-[Explore Work →](/projects){.card-link}
+::: {.terminal-body}
+```
+$ ./blog --list --recent
+> Deep dives into technology trends
+> AI development insights  
+> Digital culture analysis
+> 23 articles published
+```
+**[Read Articles →](/blog)**{.terminal-link}
 :::
 :::
 :::
 
-## Recent Activity {.section-title}
-
-::: {.activity-section}
-::: {.activity-card}
-::: {.activity-header}
-{{< fa brands github >}} **GitHub Contributions**
+::: {.nav-card-terminal}
+::: {.terminal-window}
+::: {.terminal-header-bar}
+<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+`resume.pdf`
 :::
-::: {.activity-body}
+::: {.terminal-body}
+```
+$ cat ./cv/experience.txt
+> Professional journey in tech
+> Skills & certifications
+> Research publications
+> Download available
+```
+**[View Credentials →](/cv)**{.terminal-link}
+:::
+:::
+:::
+
+::: {.nav-card-terminal}
+::: {.terminal-window}
+::: {.terminal-header-bar}
+<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+`projects/`
+:::
+::: {.terminal-body}
+```
+$ ls -la ./projects/
+> AI automation tools
+> Open source contributions
+> Web applications
+> Research experiments
+```
+**[Explore Work →](/projects)**{.terminal-link}
+:::
+:::
+:::
+:::
+
+::: {.terminal-prompt}
+**cole@dev**:**~**$ git **status** **--activity**
+:::
+
+::: {.activity-section-compact}
+::: {.github-terminal}
+::: {.terminal-window-large}
+::: {.terminal-header-bar}
+<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+`github-activity.log`
+:::
+::: {.terminal-body}
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
 
-# Create a simple activity visualization since external service isn't working
 library(htmltools)
 
-# Generate some sample commit data for visualization
-div(class = "github-activity",
-    div(class = "activity-stats",
-        div(class = "stat-item",
-            strong("127"), br(), "Contributions this year"
+# Terminal-style GitHub activity
+div(class = "github-stats-terminal",
+    div(class = "stat-line", "📊 GITHUB_ACTIVITY_REPORT"),
+    div(class = "stat-line", "─────────────────────────────"),
+    div(class = "stat-grid",
+        div(class = "stat-col",
+            div(class = "stat-number", "127"),
+            div(class = "stat-label", "commits_this_year")
         ),
-        div(class = "stat-item",
-            strong("23"), br(), "Public repositories"
+        div(class = "stat-col", 
+            div(class = "stat-number", "23"),
+            div(class = "stat-label", "public_repos")
         ),
-        div(class = "stat-item",
-            strong("8"), br(), "Recent commits"
+        div(class = "stat-col",
+            div(class = "stat-number", "8"),
+            div(class = "stat-label", "recent_pushes")
         )
     ),
-    div(class = "activity-note",
-        "Building in public • Open source advocate • Always learning"
-    )
+    div(class = "stat-line", "─────────────────────────────"),
+    div(class = "status-line", "✓ Building in public"),
+    div(class = "status-line", "✓ Open source advocate"), 
+    div(class = "status-line", "⚡ Always learning")
 )
 ```
+
+**[View GitHub Profile →](https://github.com/colerehbein)**{.terminal-link}
 :::
-::: {.activity-footer}
-[View GitHub Profile →](https://github.com/colerehbein){.activity-link}
 :::
 :::
 :::
 
-## Latest Insights {.section-title}
-
-::: {.insights-grid}
-::: {.insight-card}
-**AI in Practice**
-Real-world applications and ethical considerations in modern AI development.
+::: {.terminal-prompt}
+**cole@dev**:**~**$ cat **./insights/latest.md**
 :::
 
-::: {.insight-card}
-**Code & Culture**
-How technology shapes society and how we can build more thoughtfully.
+::: {.insights-matrix}
+::: {.insight-terminal .ai}
+**> AI_INSIGHTS.log**
+Real-world applications and ethical considerations in modern AI development
 :::
 
-::: {.insight-card}
-**Future of Work**
-Automation, human-AI collaboration, and the evolving tech landscape.
+::: {.insight-terminal .code}
+**> CODE_CULTURE.md**  
+How technology shapes society and building more thoughtfully
+:::
+
+::: {.insight-terminal .future}
+**> FUTURE_WORK.txt**
+Automation, human-AI collaboration, and evolving tech landscape
 :::
 :::
 
-## Stay Connected {.section-title}
-
-::: {.connect-section}
-::: {.newsletter-card}
-::: {.newsletter-header}
-{{< fa regular envelope >}} **Newsletter**
+::: {.terminal-prompt}
+**cole@dev**:**~**$ ./connect **--social** **--newsletter**
 :::
-::: {.newsletter-body}
-Get occasional updates on new projects, insights, and interesting discoveries. No spam, just thoughtful content.
 
-::: {.newsletter-form}
+::: {.connect-terminal}
+::: {.newsletter-terminal}
+::: {.terminal-window}
+::: {.terminal-header-bar}
+<span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
+`newsletter-signup.sh`
+:::
+::: {.terminal-body}
+```
+$ echo "Stay updated with my latest insights"
+> No spam, just thoughtful content
+> Unsubscribe anytime with ease
+```
+
+::: {.newsletter-form-terminal}
 <form action="#" method="post" onsubmit="return false;">
-  <div class="input-group">
-    <input type="email" name="email" placeholder="your@email.com" required class="form-control newsletter-input">
-    <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+  <div class="terminal-input-group">
+    <span class="terminal-prompt-char">$</span>
+    <input type="email" name="email" placeholder="your-email@domain.com" required class="terminal-input">
+    <button type="submit" class="terminal-submit">SUBMIT</button>
   </div>
-  <small class="form-text">I respect your privacy. Unsubscribe anytime.</small>
 </form>
 :::
 :::
 :::
-
-::: {.social-links}
-[{{< fa brands github >}} GitHub](https://github.com/colerehbein){.social-link}
-[{{< fa brands twitter >}} Twitter](https://twitter.com/colerehbein){.social-link}
-[{{< fa regular envelope >}} Email](mailto:cole@cole.press){.social-link}
-:::
 :::
 
+::: {.social-terminal}
+```
+╭─ SOCIAL_LINKS.config ─╮
+│ github: @colerehbein   │
+│ twitter: @colerehbein  │  
+│ email: cole@cole.press │
+╰────────────────────────╯
+```
+
+::: {.social-links-terminal}
+[`github.com/colerehbein`](https://github.com/colerehbein){.social-link-terminal .github}
+[`@colerehbein`](https://twitter.com/colerehbein){.social-link-terminal .twitter}
+[`cole@cole.press`](mailto:cole@cole.press){.social-link-terminal .email}
+:::
+:::
+:::
+
+:::
+
+::: {.ascii-footer}
+```
+     ╭──────────────────────────────────────╮
+     │  Thanks for visiting cole.press!     │
+     │  Built with Quarto & lots of ☕      │
+     ╰──────────────────────────────────────╯
+          \   ^__^
+           \  (oo)\_______
+              (__)\       )\/\
+                  ||----w |
+                  ||     ||
+```
 :::
 
 <script>
-// Add some interactive enhancements
 document.addEventListener('DOMContentLoaded', function() {
-    // Add subtle hover animations
-    const cards = document.querySelectorAll('.nav-card, .service-card, .activity-card');
-    cards.forEach(card => {
+    // Typewriter effect for hero title
+    const typewriterElement = document.querySelector('.typewriter');
+    if (typewriterElement) {
+        const text = typewriterElement.textContent;
+        typewriterElement.textContent = '';
+        typewriterElement.style.borderRight = '2px solid #3b82f6';
+        
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                typewriterElement.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                // Blinking cursor effect
+                setInterval(() => {
+                    typewriterElement.style.borderRight = 
+                        typewriterElement.style.borderRight === 'none' ? 
+                        '2px solid #3b82f6' : 'none';
+                }, 500);
+            }
+        }
+        setTimeout(typeWriter, 500);
+    }
+    
+    // Matrix rain effect (subtle)
+    function createMatrixRain() {
+        const matrix = document.createElement('div');
+        matrix.className = 'matrix-rain';
+        matrix.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.03;
+        `;
+        
+        const chars = '01アカサタナハマヤラワガザダバパイキシチニヒミリヰギジヂビピウクスツヌフムユルグズヅブプエケセテネヘメレヱゲゼデベペオコソトノホモヨロヲゴゾドボポヴッン';
+        
+        for (let i = 0; i < 20; i++) {
+            const column = document.createElement('div');
+            column.style.cssText = `
+                position: absolute;
+                top: -100%;
+                font-family: monospace;
+                font-size: 14px;
+                color: #00ff41;
+                animation: matrixFall ${5 + Math.random() * 10}s linear infinite;
+                left: ${Math.random() * 100}%;
+            `;
+            
+            let text = '';
+            for (let j = 0; j < 20; j++) {
+                text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
+            }
+            column.innerHTML = text;
+            matrix.appendChild(column);
+        }
+        
+        document.body.appendChild(matrix);
+    }
+    
+    // Add matrix animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes matrixFall {
+            to { transform: translateY(100vh); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Uncomment to enable matrix effect
+    // createMatrixRain();
+    
+    // Terminal hover effects
+    const terminalCards = document.querySelectorAll('.nav-card-terminal, .github-terminal');
+    terminalCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
+            this.style.transform = 'translateY(-2px) scale(1.02)';
         });
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
+            this.style.transform = 'translateY(0) scale(1)';
         });
     });
     
-    // Newsletter form placeholder functionality
-    const newsletterForm = document.querySelector('.newsletter-form form');
+    // Newsletter form terminal effect
+    const newsletterForm = document.querySelector('.newsletter-form-terminal form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const btn = this.querySelector('.newsletter-btn');
-            const originalText = btn.textContent;
-            btn.textContent = 'Coming Soon!';
-            btn.disabled = true;
+            const btn = this.querySelector('.terminal-submit');
+            const input = this.querySelector('.terminal-input');
+            
+            btn.textContent = 'PROCESSING...';
+            btn.style.background = '#f59e0b';
+            
             setTimeout(() => {
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }, 2000);
+                btn.textContent = 'SUCCESS!';
+                btn.style.background = '#22c55e';
+                input.value = 'Thanks for subscribing!';
+                input.disabled = true;
+            }, 1500);
+            
+            setTimeout(() => {
+                btn.textContent = 'SUBMIT';
+                btn.style.background = '#3b82f6';
+                input.value = '';
+                input.disabled = false;
+                input.placeholder = 'your-email@domain.com';
+            }, 4000);
         });
     }
 });
