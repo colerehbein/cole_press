@@ -1,0 +1,2 @@
+/blog/*  https://blog.cole.press/:splat  200!
+/cv/*    https://cv.cole.press/:splat    200!
