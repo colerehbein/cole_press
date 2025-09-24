@@ -1,0 +1,25 @@
+*** Begin Patch
+*** Update File: _quarto.yml
+@@
+     - href: index.qmd
+       text: Home
+     - href: about.qmd
+       text: About
+-      - href: blog/index.qmd
+-        text: Blog
++      - href: /blog/
++        text: Blog
+       - href: projects.qmd
+         text: Projects
+-      - href: cv/index.qmd
+-        text: CV
++      - href: /cv/
++        text: CV
+*** End Patch
+
+*** Begin Patch
+*** Add File: _redirects
++# Proxy blog and CV requests to their respective subdomains
++/blog/*  https://blog.cole.press/:splat  200!
++/cv/*    https://cv.cole.press/:splat    200!
+*** End Patch

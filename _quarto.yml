@@ -17,11 +17,11 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: blog/index.qmd
+      - href: /blog/
         text: Blog
       - href: projects.qmd
         text: Projects
-      - href: cv/index.qmd
+      - href: /cv/
         text: CV
     right:
       - icon: fab fa-github
@@ -57,4 +57,3 @@ params:
   date_format: "MMM D, YYYY"
 
 editor: visual
-

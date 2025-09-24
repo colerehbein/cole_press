@@ -11,3 +11,6 @@
 /_freeze/
 /about_cache/
 /index_cache/
+_site/
+.DS_Store
+*.icloud
