@@ -22,7 +22,7 @@ sidebar:
         href: "/blog"
 ---
 
-::: {.cli-prompt}
+::: cli-prompt
 `cole@press:~$ neofetch --config custom`
 :::
 
@@ -68,12 +68,12 @@ sidebar:
 :::
 :::::
 
-::: {.cli-prompt}
+::: cli-prompt
 `cole@press:~$ cat skills.json | jq '.expertise' && ls -la ~/projects/`
 :::
 
-::::::: skills-and-projects
-:::::: {.skills-section}
+:::::::::: skills-and-projects
+:::: skills-section
 ::: skills-json
 ``` json
 {
@@ -108,10 +108,10 @@ sidebar:
 }
 ```
 :::
-::::::
+::::
 
-:::::: {.projects-section}
-::::: project-grid
+::::::: projects-section
+:::::: project-grid
 ::: {.project-item .blog}
 **Blog**
 
@@ -135,11 +135,11 @@ AI automation tools, open source contributions, web applications, and research e
 
 [**Explore Projects →**](/projects){.project-link}
 :::
-:::::
 ::::::
 :::::::
+::::::::::
 
-::: {.cli-prompt}
+::: cli-prompt
 `cole@press:~$ git log --oneline --graph | head -10`
 :::
 
@@ -169,7 +169,7 @@ div(class = "git-log",
 ```
 :::
 
-::: {.cli-prompt}
+::: cli-prompt
 `cole@press:~$ cat thoughts/latest.txt`
 :::
 
@@ -190,7 +190,7 @@ Automation, human-AI collaboration, and evolving tech landscape
 :::
 ::::::
 
-::: {.cli-prompt}
+::: cli-prompt
 `cole@press:~$ ./connect.sh --all`
 :::
 
@@ -205,12 +205,13 @@ $ curl -X POST https://cole.press/newsletter \
 
 :::: newsletter-form
 <form action="#" method="post" onsubmit="return false;" class="cli-form">
-<div class="cli-input-wrapper">
-<span class="cli-prompt-small">$</span>
-<input type="email" name="email" placeholder="your@email.com" required class="cli-input">
-<button type="submit" class="cli-button">SEND</button>
-</div>
+
+::: cli-input-wrapper
+[\$]{.cli-prompt-small} <input type="email" name="email" placeholder="your@email.com" required class="cli-input"> <button type="submit" class="cli-button">SEND</button>
+:::
+
 <small class="cli-note">No spam, just thoughtful content</small>
+
 </form>
 ::::
 :::::
@@ -227,8 +228,8 @@ website   : https://cole.press
 :::
 :::::::
 
-::: {.cli-footer}
-```bash
+::: cli-footer
+``` bash
 $ uptime
  10:35AM  up 365 days, building cool things
 $ whoami
