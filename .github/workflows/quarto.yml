@@ -1,0 +1,44 @@
+name: Quarto Render
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.5.1'   # match your logs; or omit to use default stable
+
+      # If your Quarto project is in a subdirectory, set working-directory on this
+      - name: Install R deps from DESCRIPTION
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          # reads DESCRIPTION in the repo root by default
+          # if you have subdir, add: working-directory: site
+          extra-packages: any::pak
+          # pak speeds installs & caching; leave as-is
+
+      - name: Render site
+        run: quarto render
+        # If subdir:
+        # working-directory: site
+
+      - name: Upload artifact (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site/
+          if-no-files-found: ignore

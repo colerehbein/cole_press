@@ -1,0 +1,11 @@
+Package: colepress
+Type: Project
+Title: Cole Press Quarto Site
+Version: 0.0.1
+Description: Quarto site with R-based rendering.
+License: MIT
+Encoding: UTF-8
+URL: https://cole.press
+Imports:
+    knitr,
+    rmarkdown
