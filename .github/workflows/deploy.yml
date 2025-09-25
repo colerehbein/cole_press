@@ -7,34 +7,47 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Install R; pin version to match your other workflow
+      # 1) R toolchain
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: "4.5.1"
+          r-version: '4.5.1'   # keep consistent with your other job
 
-      # Install R dependencies from DESCRIPTION (incl. knitr & rmarkdown)
+      # 2) System libraries needed by CRAN packages compiled from source
+      #    (curl.h for curl, plus common crypto/xml deps used widely)
+      - name: Install system libs for R packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev
+
+      # 3) Install R deps from DESCRIPTION (knitr, rmarkdown, and transitive deps)
+      #    NOTE: we do NOT force-install pak here to avoid rebuilding it from source on fresh runners.
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          # extra-packages ensures pak is available for fast installs
-          extra-packages: any::pak
+          # Read DESCRIPTION at repo root by default
+          # Avoid "extra-packages: any::pak" to skip compiling pak on new runners
+          cache-version: 1
 
-      # Install Quarto
+      # 4) Quarto CLI
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           tinytex: false
 
-      # Render the site
+      # 5) Render site
       - name: Render site
         run: quarto render
 
-      # Deploy to Netlify
+      # 6) Deploy to Netlify
       - name: Deploy
         uses: nwtgck/actions-netlify@v2
         with:
@@ -43,4 +56,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID:   ${{ secrets.NETLIFY_SITE_ID }}
