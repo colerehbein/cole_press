@@ -1,16 +1,37 @@
+# R
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 .Rdata
 .httr-oauth
-.DS_Store
 
+# Quarto
 /.quarto/
-
 /_freeze/
-/about_cache/
-/index_cache/
 _site/
+*_cache/
+*_files/
+
+# OS
 .DS_Store
 *.icloud
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.idea/
+
+# Node (for Netlify plugin)
+node_modules/
+package-lock.json
+
+# LaTeX/TinyTeX
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

@@ -3,6 +3,12 @@ project:
   title: "cole.press"
   resources:
     - fonts/
+  render:
+    - "*.qmd"
+    - "!AGENTS.md"
+    - "!CLAUDE.md"
+    - "!CONTRIBUTING.md"
+    - "!README.md"
 
 website:
   title: "cole.press"
