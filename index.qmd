@@ -23,7 +23,7 @@ sidebar:
 ---
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <span class="text-glow type-effect">neofetch --config custom</span>
+<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
 :::
 
 ::::: neofetch-style
@@ -69,7 +69,7 @@ sidebar:
 :::::
 
 ::: cli-prompt
-`cole@press:~$ cat skills.json | jq '.expertise' && ls -la ~/projects/`
+<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">cat skills.json | jq '.expertise' && ls -la ~/projects/</code>
 :::
 
 :::::::::: skills-and-projects
@@ -139,7 +139,7 @@ Research, writing samples, and things I've built. Works in progress and complete
 ::::::::::
 
 ::: cli-prompt
-`cole@press:~$ git log --oneline --graph | head -10`
+<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">git log --oneline --graph | head -10</code>
 :::
 
 ::: git-activity
@@ -190,7 +190,7 @@ div(class = "git-log",
 :::
 
 ::: cli-prompt
-`cole@press:~$ cat thoughts/latest.txt`
+<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">cat thoughts/latest.txt</code>
 :::
 
 :::::: thoughts-section
@@ -211,7 +211,7 @@ New Mexico food, culture writing, and strong opinions on chile
 ::::::
 
 ::: cli-prompt
-`cole@press:~$ ./connect.sh --all`
+<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">./connect.sh --all</code>
 :::
 
 ::::::: connect-section
