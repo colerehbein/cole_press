@@ -6,8 +6,7 @@ Description: Quarto site with R-based rendering.
 License: MIT
 Encoding: UTF-8
 URL: https://cole.press
-Imports:
-knitr,
-rmarkdown,
-gh,
-htmltools
+Imports: knitr,
+  rmarkdown,
+  gh,
+  htmltools
