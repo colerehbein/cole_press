@@ -23,7 +23,7 @@ sidebar:
 ---
 
 ::: cli-prompt
-`cole@press:~$ neofetch --config custom`
+<span class="text-terminal-green">cole@press:~$</span> <span class="text-glow type-effect">neofetch --config custom</span>
 :::
 
 ::::: neofetch-style

@@ -2,4 +2,8 @@
 title: "About"
 ---
 
+::: {.prose-content}
+
 This site houses my writings, projects and experiments. It is built with [Quarto](https://quarto.org/) along with a custom monospace theme. Expect regular updates as I continue exploring technology, AI and the social sciences.
+
+:::

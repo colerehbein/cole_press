@@ -80,6 +80,36 @@ $danger: #ef4444;
 $info: #06b6d4;
 $purple: #8b5cf6;
 
+// ============================================================================
+// SEMANTIC COLOR SYSTEM - "Living Terminal" Palette
+// Colors mapped to meaning, not just aesthetics
+// ============================================================================
+
+// Action: Things you click, type, or interact with
+$semantic-action: $terminal-cyan;
+$semantic-action-hover: lighten($terminal-cyan, 10%);
+$semantic-action-muted: rgba($terminal-cyan, 0.15);
+
+// Success: Valid data, completed tasks, positive feedback
+$semantic-success: $terminal-green;
+$semantic-success-muted: rgba($terminal-green, 0.15);
+
+// Warning: Important notes, caution, attention needed
+$semantic-warning: $cli-rainbow-yellow;
+$semantic-warning-muted: rgba($cli-rainbow-yellow, 0.15);
+
+// Error: Problems, failures, critical issues
+$semantic-error: $terminal-red;
+$semantic-error-muted: rgba($terminal-red, 0.15);
+
+// System: Meta information, OS/theory concepts, "magic"
+$semantic-system: $cli-rainbow-purple;
+$semantic-system-muted: rgba($cli-rainbow-purple, 0.15);
+
+// Output: Standard information display
+$semantic-output: $terminal-text;
+$semantic-output-muted: rgba($terminal-text, 0.7);
+
 // Surface colors
 $mono-border: #e2e8f0;
 $mono-border-subtle: #f1f5f9;
@@ -98,10 +128,23 @@ $spacing-10: 2.5rem;
 $spacing-12: 3rem;
 
 // Typography system
-$font-family-base: "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata",
-  "Roboto Mono", "Source Code Pro", monospace !default;
-$font-family-monospace: "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata",
-  "Roboto Mono", "Source Code Pro", monospace !default;
+$font-family-base:
+  "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+  "Source Code Pro", monospace !default;
+$font-family-monospace:
+  "Anonymous Pro", "SF Mono", "Monaco", "Inconsolata", "Roboto Mono",
+  "Source Code Pro", monospace !default;
+
+// Secondary font for long-form prose (improved readability)
+$font-family-prose:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
@@ -111,16 +154,23 @@ $font-size-xl: 1.25rem;
 $font-size-2xl: 1.5rem;
 $font-size-3xl: 1.875rem;
 
+// Line heights for different contexts
+$line-height-dense: 1.2; // Terminal blocks, code
 $line-height-tight: 1.25;
-$line-height-normal: 1.4; // Tighter for compact design
+$line-height-normal: 1.4; // Default UI
 $line-height-relaxed: 1.6;
+$line-height-prose: 1.75; // Long-form reading
 
 // Shadow system
 $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+$shadow-base:
+  0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
   0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+$shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
   0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
 // Border radius
@@ -147,32 +197,140 @@ $code-bg: $mono-surface;
 
 /*-- scss:mixins --*/
 // Define custom Sass mixins here. Processed after variables but before rules.
-// Mixins allow you to encapsulate reusable blocks of CSS styles.
-// Example: Mixin for consistent button styling
-// @mixin mono-button-style {
-// border-radius: $border-radius; // Use our theme variable
-// padding: 0.5em 1em;
-// font-weight: 700;
-// text-decoration: none;
-// border: 1px solid transparent; // Base border
-// &:hover, &:focus {
-// text-decoration: underline;
-// }
-// }
-// Example: Mixin for applying focus styles consistently
-// @mixin focus-style($outline-color: $mono-accent) {
-// &:focus {
-// outline: 2px solid $outline-color;
-// outline-offset: 2px;
-// box-shadow: 0 0 0 3px rgba($outline-color, 0.25);
-// Optional softer glow
-// }
-// }
-// For this theme, potential mixins could:
-// - Apply the blockquote style defined in rules.
-// - Create consistent styling for cards or other components (zero radius, borders).
-// - Define responsive typography adjustments.
-// - Encapsulate the heading styles (margins, border).
+
+// ============================================================================
+// ANIMATION SYSTEM - "Living Terminal" Effects
+// Three tiers: Essential → Contextual → Ambient
+// ============================================================================
+
+// --- ESSENTIAL: Core interactions (always on) ---
+@mixin transition-essential {
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    opacity 150ms ease-out;
+}
+
+@mixin hover-lift($distance: -2px) {
+  transition:
+    transform 200ms ease-out,
+    box-shadow 200ms ease-out;
+  &:hover {
+    transform: translateY($distance);
+  }
+}
+
+// --- CONTEXTUAL: Feedback animations (triggered by user action) ---
+@mixin glow-pulse($color: $terminal-cyan, $intensity: 0.4) {
+  animation: glow-pulse-anim 2s ease-in-out infinite;
+  @at-root {
+    @keyframes glow-pulse-anim {
+      0%,
+      100% {
+        box-shadow: 0 0 5px rgba($color, $intensity * 0.5);
+      }
+      50% {
+        box-shadow:
+          0 0 20px rgba($color, $intensity),
+          0 0 30px rgba($color, $intensity * 0.5);
+      }
+    }
+  }
+}
+
+@mixin success-flash {
+  animation: success-flash-anim 400ms ease-out;
+  @at-root {
+    @keyframes success-flash-anim {
+      0% {
+        background-color: rgba($semantic-success, 0.3);
+      }
+      100% {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@mixin typewriter-cursor($color: $terminal-green) {
+  &::after {
+    content: "▊";
+    color: $color;
+    animation: cursor-blink 1s step-end infinite;
+  }
+}
+
+// --- AMBIENT: Subtle environmental effects (optional, can be toggled) ---
+@mixin crt-scanlines($opacity: 0.03) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, $opacity) 0px,
+      rgba(0, 0, 0, $opacity) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    z-index: 10;
+  }
+}
+
+@mixin terminal-glow($color: $terminal-green, $spread: 15px) {
+  box-shadow:
+    0 0 $spread rgba($color, 0.15),
+    inset 0 0 ($spread * 0.5) rgba($color, 0.05);
+}
+
+@mixin text-glow($color: $terminal-cyan) {
+  text-shadow:
+    0 0 10px rgba($color, 0.5),
+    0 0 20px rgba($color, 0.3),
+    0 0 30px rgba($color, 0.1);
+}
+
+// ============================================================================
+// SEMANTIC UTILITY MIXINS
+// ============================================================================
+
+@mixin semantic-border-left($type: "action") {
+  border-left: 3px solid;
+  @if $type == "action" {
+    border-left-color: $semantic-action;
+  } @else if $type == "success" {
+    border-left-color: $semantic-success;
+  } @else if $type == "warning" {
+    border-left-color: $semantic-warning;
+  } @else if $type == "system" {
+    border-left-color: $semantic-system;
+  } @else if $type == "error" {
+    border-left-color: $semantic-error;
+  }
+}
+
+@mixin focus-ring($color: $semantic-action) {
+  &:focus {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba($color, 0.2);
+  }
+  &:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba($color, 0.2);
+  }
+}
 
 /*-- scss:rules --*/
 // Define standard CSS rules here. Processed last, after Bootstrap's rules
@@ -830,6 +988,284 @@ a {
   color: $terminal-yellow;
 }
 
+// ============================================================================
+// SEMANTIC COLOR UTILITY CLASSES
+// ============================================================================
+.text-action {
+  color: $semantic-action;
+}
+.text-success {
+  color: $semantic-success;
+}
+.text-warning {
+  color: $semantic-warning;
+}
+.text-error {
+  color: $semantic-error;
+}
+.text-system {
+  color: $semantic-system;
+}
+
+.bg-action-muted {
+  background-color: $semantic-action-muted;
+}
+.bg-success-muted {
+  background-color: $semantic-success-muted;
+}
+.bg-warning-muted {
+  background-color: $semantic-warning-muted;
+}
+.bg-error-muted {
+  background-color: $semantic-error-muted;
+}
+.bg-system-muted {
+  background-color: $semantic-system-muted;
+}
+
+.border-action {
+  @include semantic-border-left("action");
+}
+.border-success {
+  @include semantic-border-left("success");
+}
+.border-warning {
+  @include semantic-border-left("warning");
+}
+.border-error {
+  @include semantic-border-left("error");
+}
+.border-system {
+  @include semantic-border-left("system");
+}
+
+// ============================================================================
+// LAYOUT CONTENT CLASSES
+// ============================================================================
+
+// --- PROSE: Long-form reading content ---
+.prose-content {
+  font-family: $font-family-prose;
+  font-size: 1rem;
+  line-height: $line-height-prose;
+  color: $mono-text;
+  max-width: 65ch; // Optimal reading width
+  margin: 0 auto;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $font-family-monospace; // Keep headings monospace
+    margin-top: $spacing-10;
+    margin-bottom: $spacing-4;
+  }
+
+  p {
+    margin-bottom: $spacing-5;
+    color: $mono-text;
+  }
+
+  a {
+    color: $mono-accent;
+    text-decoration: underline;
+    text-decoration-color: rgba($mono-accent, 0.3);
+    text-underline-offset: 3px;
+    transition: text-decoration-color var(--transition-fast);
+
+    &:hover {
+      text-decoration-color: $mono-accent;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    padding-left: $spacing-6;
+    margin: $spacing-6 0;
+    @include semantic-border-left("system");
+  }
+
+  code {
+    font-family: $font-family-monospace;
+    font-size: 0.875em;
+    background: $mono-surface;
+    padding: 0.2em 0.4em;
+    border-radius: $radius-sm;
+  }
+
+  pre code {
+    display: block;
+    padding: $spacing-4;
+    overflow-x: auto;
+  }
+}
+
+// --- TERMINAL DENSE: Compact terminal-like content ---
+.terminal-dense {
+  font-family: $font-family-monospace;
+  font-size: $font-size-xs;
+  line-height: $line-height-dense;
+  background: $terminal-bg;
+  color: $terminal-text;
+  padding: $spacing-4;
+  border-radius: $radius-lg;
+  overflow-x: auto;
+
+  &.with-glow {
+    @include terminal-glow($terminal-green);
+  }
+
+  &.with-scanlines {
+    @include crt-scanlines(0.02);
+  }
+}
+
+// --- LOG STREAM: Timestamped entries like system logs ---
+.log-stream {
+  font-family: $font-family-monospace;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+
+  .log-entry {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $spacing-3;
+    padding: $spacing-2 0;
+    border-bottom: 1px solid $mono-border-subtle;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .log-timestamp {
+    color: $semantic-system;
+    font-size: $font-size-xs;
+    white-space: nowrap;
+  }
+
+  .log-content {
+    color: $mono-text;
+  }
+
+  .log-entry--success .log-content {
+    color: $semantic-success;
+  }
+
+  .log-entry--warning .log-content {
+    color: $semantic-warning;
+  }
+
+  .log-entry--error .log-content {
+    color: $semantic-error;
+  }
+
+  .log-entry--system .log-content {
+    color: $semantic-system;
+  }
+}
+
+// --- MAN PAGE: Documentation-style layout with sidebar ---
+.man-page {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: $spacing-8;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .man-nav {
+    font-family: $font-family-monospace;
+    font-size: $font-size-sm;
+    position: sticky;
+    top: $spacing-8;
+    align-self: start;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: $spacing-1 0;
+    }
+
+    a {
+      color: $mono-text-secondary;
+      text-decoration: none;
+
+      &:hover,
+      &.active {
+        color: $semantic-action;
+      }
+
+      &::before {
+        content: "→ ";
+        opacity: 0;
+        transition: opacity var(--transition-fast);
+      }
+
+      &:hover::before,
+      &.active::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .man-content {
+    @extend .prose-content;
+    max-width: none;
+  }
+}
+
+// ============================================================================
+// ANIMATION UTILITY CLASSES
+// ============================================================================
+
+.glow-pulse {
+  @include glow-pulse($terminal-cyan);
+}
+
+.glow-pulse-green {
+  @include glow-pulse($terminal-green);
+}
+
+.glow-pulse-purple {
+  @include glow-pulse($semantic-system);
+}
+
+.hover-lift {
+  @include hover-lift(-3px);
+}
+
+.hover-lift-sm {
+  @include hover-lift(-2px);
+}
+
+.text-glow {
+  @include text-glow($terminal-cyan);
+}
+
+.text-glow-green {
+  @include text-glow($terminal-green);
+}
+
+// Ambient effect toggle (applied via JS or user preference)
+.ambient-effects-enabled {
+  .terminal-dense,
+  .cli-header,
+  .terminal-header {
+    @include crt-scanlines(0.015);
+  }
+
+  .terminal-green,
+  .text-terminal-green {
+    @include text-glow($terminal-green);
+  }
+}
+
 // Loading animation for terminal
 @keyframes blink {
   0%,
@@ -837,6 +1273,18 @@ a {
     opacity: 1;
   }
   51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// Cursor blink for typewriter mixin
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
   100% {
     opacity: 0;
   }
