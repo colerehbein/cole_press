@@ -21,6 +21,14 @@ jobs:
         with:
           r-version: "4.5.1" # match your logs; or omit to use default stable
 
+      - name: Install system libs for R packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libxml2-dev
+
       # If your Quarto project is in a subdirectory, set working-directory on this
       - name: Install R deps from DESCRIPTION
         uses: r-lib/actions/setup-r-dependencies@v2

@@ -7,5 +7,7 @@ License: MIT
 Encoding: UTF-8
 URL: https://cole.press
 Imports:
-    knitr,
-    rmarkdown
+knitr,
+rmarkdown,
+gh,
+htmltools

@@ -41,7 +41,7 @@ sidebar:
        ░▒▒▓▓████████████████▓▓▒▒░
       ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
       ▒▓████▓▓██      ██▓▓████▓▒
-     ▒▓████▓▓██  ●●  ●●  ██▓▓████▓▒
+     ▒▓████▓▓██  ●  ●  ██▓▓████▓▒
      ▒▓████▓▓██    ◡    ██▓▓████▓▒
      ▒▓████▓▓██          ██▓▓████▓▒
       ▒▓████▓▓██  ～～～  ██▓▓████▓▒
@@ -53,18 +53,18 @@ sidebar:
 :::
 
 ::: system-info
-**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** **OS:** Full-Stack Developer & AI Researcher\
-**Kernel:** Building the future with code and data\
-**Uptime:** Available for interesting projects\
-**Shell:** TypeScript, Python, R, Go\
-**Resolution:** Problems → Solutions\
-**DE:** Creative & Technical\
-**WM:** Remote-friendly\
-**Theme:** Open Source Advocate\
-**Icons:** ✨ Always learning\
-**Terminal:** Currently coding\
-**CPU:** Ideas/sec: ∞\
-**Memory:** Caffeinated
+**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** **OS:** The One Great Matter\
+**Kernel:** Sitting, writing, counseling, building\
+**Uptime:** Twenty-four seven, three-sixty-five\
+**Shell:** Zazen, markdown, R, compassion, communism\
+**Resolution:** Dialectical materialism\
+**DE:** The Commons\
+**WM:** Cognitive reframing\
+**Theme:** Impermanence\
+**Icons:** Enso / Hammer\
+**Terminal:** Praxis through active listening\
+**CPU:** Critical mindfulness\
+**Memory:** Collective experience
 :::
 :::::
 
@@ -77,33 +77,32 @@ sidebar:
 ::: skills-json
 ``` json
 {
-  "development": {
-    "proficiency": "90%",
-    "languages": ["TypeScript", "Python", "R", "Go", "SQL"],
-    "frameworks": ["React", "Quarto", "Flask", "Shiny"],
-    "focus": "Full-stack applications"
+  "clinical_practice": {
+    "focus": "Crisis intervention & counseling",
+    "modalities": ["ACT", "Mindfulness-based CBT", "Behavioral activation"],
+    "populations": ["988/crisis lines", "SMI", "Depression", "ADHD"],
+    "languages": ["English", "Spanish (B1)"]
   },
-  "ai_research": {
-    "proficiency": "85%", 
-    "areas": ["Machine Learning", "Automation", "Data Science", "NLP"],
-    "tools": ["TensorFlow", "PyTorch", "Pandas", "scikit-learn"],
-    "focus": "Real-world applications"
+  "research": {
+    "focus": "Behavioral health & cognition",
+    "methods": ["Psychological assessment", "EEG", "Statistical analysis"],
+    "tools": ["R", "SPSS", "Qualtrics"],
+    "thesis": "Mindfulness-based behavioral activation for depression"
   },
-  "data_visualization": {
-    "proficiency": "88%",
-    "tools": ["ggplot2", "D3.js", "Plotly", "Observable"],
-    "focus": "Interactive dashboards"
+  "technical_writing": {
+    "focus": "Academic & technical publishing",
+    "tools": ["Quarto", "LaTeX", "Markdown", "R Markdown"],
+    "outputs": ["Thesis", "Research papers", "This website"]
   },
-  "writing": {
-    "proficiency": "80%",
-    "topics": ["Technology", "AI Ethics", "Digital Culture"], 
-    "platforms": ["Blog", "Newsletter", "Technical docs"],
-    "focus": "Thoughtful analysis"
+  "journalism": {
+    "focus": "Culture & community",
+    "experience": ["City reporter", "Copyeditor", "Culture writer"],
+    "beats": ["Local politics", "Food", "Arts"]
   },
-  "open_source": {
-    "proficiency": "88%",
-    "contributions": "Active maintainer",
-    "philosophy": "Building in public"
+  "philosophy": {
+    "degree": "B.A., St. John's College",
+    "focus": "Spinoza, ethics, philosophy of mind",
+    "languages": ["Ancient Greek (reading)", "French (reading)"]
   }
 }
 ```
@@ -115,23 +114,23 @@ sidebar:
 ::: {.project-item .blog}
 **Blog**
 
-Deep dives into technology trends, AI development insights, and digital culture analysis. **23** articles published covering the intersection of code and society.
+Writing on psychology, philosophy, politics, and New Mexico. The examined life, examined further.
 
 [**Visit Blog →**](/blog){.project-link}
 :::
 
 ::: {.project-item .cv}
-**Resume**
+**CV**
 
-Professional journey documentation including skills & certifications, research publications, and career highlights. Available for download.
+Clinical psychology, crisis intervention, research, journalism. M.S. Clinical Psych (NMHU), B.A. Philosophy (St. John's).
 
-[**View Resume →**](/cv){.project-link}
+[**View CV →**](/cv){.project-link}
 :::
 
 ::: {.project-item .portfolio}
-**Portfolio**
+**Projects**
 
-AI automation tools, open source contributions, web applications, and research experiments. Building in public.
+Research, writing samples, and things I've built. Works in progress and completed experiments.
 
 [**Explore Projects →**](/projects){.project-link}
 :::
@@ -150,16 +149,37 @@ AI automation tools, open source contributions, web applications, and research e
 #| message: false
 
 library(htmltools)
+library(gh)
 
-# Create a git-style activity log
+# Fetch real GitHub stats (with fallback)
+get_github_stats <- function() {
+  tryCatch({
+    # Get user info
+    user <- gh::gh("GET /users/{username}", username = "colerehbein")
+    
+    # Get recent events (commits, pushes, etc.)
+    events <- gh::gh("GET /users/{username}/events", username = "colerehbein", per_page = 30)
+    push_events <- sum(sapply(events, function(e) e$type == "PushEvent"))
+    
+    list(
+      repos = user$public_repos,
+      recent_pushes = push_events,
+      success = TRUE
+    )
+  }, error = function(e) {
+    list(repos = "??", recent_pushes = "??", success = FALSE)
+  })
+}
+
+stats <- get_github_stats()
+
 div(class = "git-log",
-    div(class = "git-line", "* 127 commits this year"),
-    div(class = "git-line", "* 23 public repositories"), 
-    div(class = "git-line", "* 8 recent pushes"),
+    div(class = "git-line", paste0("* ", stats$repos, " public repositories")),
+    div(class = "git-line", paste0("* ", stats$recent_pushes, " recent pushes")),
     div(class = "git-separator", "────────────────────────"),
     div(class = "git-status active", "● Building in public"),
-    div(class = "git-status active", "● Open source advocate"),
-    div(class = "git-status active", "● Always learning"),
+    div(class = "git-status active", "● Learning by doing"),
+    div(class = "git-status active", "● Embracing impermanence"),
     div(class = "git-link-container",
         tags$a(href = "https://github.com/colerehbein", 
                class = "git-remote", 
@@ -174,19 +194,19 @@ div(class = "git-log",
 :::
 
 :::::: thoughts-section
-::: {.thought-item .ai}
-**📊 AI_in_Practice.md**\
-Real-world applications and ethical considerations in modern AI development
+::: {.thought-item .philosophy}
+**📜 Spinoza_and_Selfhood.md**\
+Philosophy, identity, ethics—the internally determined self
 :::
 
-::: {.thought-item .code}
-**🔧 Code_and_Culture.py**\
-How technology shapes society and building more thoughtfully
+::: {.thought-item .praxis}
+**☎️ Crisis_Praxis.py**\
+Mental health, systems, solidarity—sitting with suffering
 :::
 
-::: {.thought-item .future}
-**🚀 Future_of_Work.rs**\
-Automation, human-AI collaboration, and evolving tech landscape
+::: {.thought-item .culture}
+**🌶️ Enchilada_Reviews.txt**\
+New Mexico food, culture writing, and strong opinions on chile
 :::
 ::::::
 
@@ -231,9 +251,9 @@ website   : https://cole.press
 ::: cli-footer
 ``` bash
 $ uptime
- 10:35AM  up 365 days, building cool things
+ 10:35AM  up 365 days, sitting with suffering
 $ whoami
-Cole Rehbein - Full-Stack Developer & AI Researcher
+Cole Rehbein - Crisis Counselor & Researcher
 $ echo "Thanks for visiting! ☕"
 Thanks for visiting! ☕
 ```

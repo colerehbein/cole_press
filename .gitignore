@@ -35,3 +35,4 @@ package-lock.json
 *.out
 *.toc
 *.synctex.gz
+.Renviron
