@@ -346,6 +346,120 @@ $code-bg: $mono-surface;
   --border-radius: #{$radius-base};
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 250ms ease-in-out;
+
+  // ========================================================================
+  // TERMINAL COLOR THEMES - User-switchable via JS
+  // ========================================================================
+  // Default: Lavender (philosophical dreamscape)
+  --terminal-primary: #c4b5fd;
+  --terminal-primary-bright: #e0d7ff;
+  --terminal-primary-dim: #a78bfa;
+  --terminal-glow: rgba(196, 181, 253, 0.4);
+}
+
+// Terminal Theme: Classic Green (Matrix)
+[data-terminal-theme="green"] {
+  --terminal-primary: #00ff41;
+  --terminal-primary-bright: #50ff7a;
+  --terminal-primary-dim: #00cc33;
+  --terminal-glow: rgba(0, 255, 65, 0.4);
+}
+
+// Terminal Theme: Amber (IBM 3278 / Apple II)
+[data-terminal-theme="amber"] {
+  --terminal-primary: #ffb000;
+  --terminal-primary-bright: #ffc832;
+  --terminal-primary-dim: #cc8800;
+  --terminal-glow: rgba(255, 176, 0, 0.4);
+}
+
+// Terminal Theme: Cyan (DEC VT220 / Cool Blue)
+[data-terminal-theme="cyan"] {
+  --terminal-primary: #00d4ff;
+  --terminal-primary-bright: #66e5ff;
+  --terminal-primary-dim: #00aacc;
+  --terminal-glow: rgba(0, 212, 255, 0.4);
+}
+
+// Terminal Theme: Lavender (Synthwave)
+[data-terminal-theme="lavender"] {
+  --terminal-primary: #c4b5fd;
+  --terminal-primary-bright: #e0d7ff;
+  --terminal-primary-dim: #a78bfa;
+  --terminal-glow: rgba(196, 181, 253, 0.4);
+}
+
+// Terminal Theme: White (Classic Unix)
+[data-terminal-theme="white"] {
+  --terminal-primary: #e0e0e0;
+  --terminal-primary-bright: #ffffff;
+  --terminal-primary-dim: #a0a0a0;
+  --terminal-glow: rgba(224, 224, 224, 0.3);
+}
+
+// ========================================================================
+// TERMINAL THEME SWITCHER UI
+// ========================================================================
+.terminal-theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  margin-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+
+  .theme-options {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .theme-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.2);
+      border-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &.active {
+      border-color: #fff;
+      box-shadow: 0 0 8px var(--terminal-glow);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        border-radius: 50%;
+      }
+    }
+
+    &[data-theme="green"] {
+      background: #00ff41;
+    }
+    &[data-theme="amber"] {
+      background: #ffb000;
+    }
+    &[data-theme="cyan"] {
+      background: #00d4ff;
+    }
+    &[data-theme="lavender"] {
+      background: #c4b5fd;
+    }
+    &[data-theme="white"] {
+      background: #e0e0e0;
+    }
+  }
 }
 
 // Reset and Base Styles
@@ -986,6 +1100,12 @@ a {
 }
 .text-terminal-yellow {
   color: $terminal-yellow;
+}
+
+// Dynamic terminal color (user-switchable)
+.text-terminal-primary {
+  color: var(--terminal-primary);
+  text-shadow: 0 0 10px var(--terminal-glow);
 }
 
 // ============================================================================

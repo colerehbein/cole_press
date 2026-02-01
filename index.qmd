@@ -23,7 +23,7 @@ sidebar:
 ---
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
 :::
 
 ::::: neofetch-style
@@ -53,7 +53,8 @@ sidebar:
 :::
 
 ::: system-info
-**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** **OS:** The One Great Matter\
+**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** 
+**OS:** The One Great Matter\
 **Kernel:** Sitting, writing, counseling, building\
 **Uptime:** Twenty-four seven, three-sixty-five\
 **Shell:** Zazen, markdown, R, compassion, communism\
@@ -69,7 +70,7 @@ sidebar:
 :::::
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">cat skills.json | jq '.expertise' && ls -la ~/projects/</code>
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">cat skills.json | jq '.expertise' && ls -la ~/projects/</code>
 :::
 
 :::::::::: skills-and-projects
@@ -139,7 +140,7 @@ Research, writing samples, and things I've built. Works in progress and complete
 ::::::::::
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">git log --oneline --graph | head -10</code>
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">git log --oneline --graph | head -10</code>
 :::
 
 ::: git-activity
@@ -190,7 +191,7 @@ div(class = "git-log",
 :::
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">cat thoughts/latest.txt</code>
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">cat thoughts/latest.txt</code>
 :::
 
 :::::: thoughts-section
@@ -211,7 +212,7 @@ New Mexico food, culture writing, and strong opinions on chile
 ::::::
 
 ::: cli-prompt
-<span class="text-terminal-green">cole@press:~$</span> <code class="text-glow">./connect.sh --all</code>
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">./connect.sh --all</code>
 :::
 
 ::::::: connect-section
@@ -380,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (asciiArt) {
         const cursor = document.createElement('span');
         cursor.textContent = '▋';
-        cursor.style.color = 'var(--cli-cyan)';
+        cursor.style.color = 'var(--terminal-primary)';
         cursor.style.animation = 'blink 1s infinite';
         cursor.style.marginLeft = '5px';
         asciiArt.appendChild(cursor);
@@ -394,6 +395,59 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         `;
         document.head.appendChild(style);
+    }
+
+    // ========================================================================
+    // TERMINAL COLOR THEME SWITCHER
+    // ========================================================================
+    const themes = ['lavender', 'amber', 'cyan', 'green', 'white'];
+    const themeNames = {
+        lavender: 'Lavender (Synthwave)',
+        amber: 'Amber (IBM 3278)',
+        cyan: 'Cyan (VT220)',
+        green: 'Green (Matrix)',
+        white: 'White (Unix)'
+    };
+    
+    // Load saved theme or default to lavender
+    const savedTheme = localStorage.getItem('terminal-theme') || 'lavender';
+    document.documentElement.dataset.terminalTheme = savedTheme;
+
+    // Create and inject the theme switcher UI into navbar
+    const navbarContainer = document.querySelector('.navbar-container');
+    if (navbarContainer) {
+        const switcher = document.createElement('div');
+        switcher.className = 'terminal-theme-switcher';
+        switcher.innerHTML = `
+            <div class="theme-options">
+                ${themes.map(t => `
+                    <button class="theme-dot ${t === savedTheme ? 'active' : ''}" 
+                            data-theme="${t}" 
+                            title="${themeNames[t]}"
+                            aria-label="Switch to ${themeNames[t]} theme"></button>
+                `).join('')}
+            </div>
+        `;
+        navbarContainer.appendChild(switcher);
+
+        // Add click handlers
+        switcher.querySelectorAll('.theme-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const theme = dot.dataset.theme;
+                document.documentElement.dataset.terminalTheme = theme;
+                localStorage.setItem('terminal-theme', theme);
+                
+                // Update active states
+                switcher.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                
+                // Update ASCII cursor color
+                const cursor = document.querySelector('.ascii-art span');
+                if (cursor) {
+                    cursor.style.color = 'var(--terminal-primary)';
+                }
+            });
+        });
     }
 });
 </script>
