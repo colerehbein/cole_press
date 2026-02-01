@@ -50,11 +50,13 @@ cole_press/
 ### Adding a Blog Post
 
 1. Create a new file in `posts/` (create directory if needed):
+
    ```bash
    touch posts/my-new-post.qmd
    ```
 
 2. Add front matter:
+
    ```yaml
    ---
    title: "My New Post"
@@ -71,11 +73,13 @@ cole_press/
 ### Adding a New Page
 
 1. Create a `.qmd` file at the root:
+
    ```bash
    touch new-page.qmd
    ```
 
 2. Add front matter:
+
    ```yaml
    ---
    title: "New Page"
@@ -98,6 +102,7 @@ cole_press/
 **Fonts:** Edit `_fonts.scss`
 
 The design uses a terminal/CLI-inspired aesthetic with:
+
 - Monospace typography (Anonymous Pro)
 - Clean, minimal colors
 - Box-drawing characters for borders
@@ -107,9 +112,9 @@ The design uses a terminal/CLI-inspired aesthetic with:
 Use the FontAwesome extension:
 
 ```markdown
-{{< fa brands github >}}    # Brand icons
-{{< fa solid envelope >}}   # Solid icons
-{{< fa regular star >}}     # Regular icons
+{{< fa brands github >}} # Brand icons
+{{< fa solid envelope >}} # Solid icons
+{{< fa regular star >}} # Regular icons
 ```
 
 ### Adding R Code
@@ -129,28 +134,31 @@ data %>% summarize(mean = mean(value))
 
 ## Available Commands
 
-| Command | Description |
-|---------|-------------|
+| Command        | Description                      |
+| -------------- | -------------------------------- |
 | `make preview` | Start dev server with hot reload |
-| `make build` | Render site to `_site/` |
-| `make setup` | Install R packages and TinyTeX |
-| `make clean` | Remove generated files |
-| `make help` | Show all available commands |
+| `make build`   | Render site to `_site/`          |
+| `make setup`   | Install R packages and TinyTeX   |
+| `make clean`   | Remove generated files           |
+| `make help`    | Show all available commands      |
 
 ## Code Style
 
 ### Quarto/Markdown
+
 - Use Quarto shortcodes for icons (`{{< fa >}}`)
 - Include descriptive front matter
 - Use semantic section headers
 
 ### SCSS
+
 - Follow existing naming conventions
 - Use CSS custom properties for colors
 - Mobile-first responsive design
 - Maintain terminal-inspired aesthetic
 
 ### General
+
 - Keep commits focused and atomic
 - Write descriptive commit messages
 - Test changes locally before pushing
@@ -177,4 +185,4 @@ Before submitting changes:
 
 ---
 
-*For AI agents: see [AGENTS.md](AGENTS.md) for machine-readable project documentation.*
+_For AI agents: see [AGENTS.md](AGENTS.md) for machine-readable project documentation._

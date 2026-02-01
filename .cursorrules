@@ -24,49 +24,52 @@ make clean    - Clean generated files
 
 ## File Patterns
 
-*.qmd       → Quarto Markdown content
-*.scss      → Theme styling
-_quarto.yml → Site configuration
-*.tex       → LaTeX templates (CV)
-*.lua       → Quarto filters
+_.qmd → Quarto Markdown content
+_.scss → Theme styling
+\_quarto.yml → Site configuration
+_.tex → LaTeX templates (CV)
+_.lua → Quarto filters
 
 ## Key Files
 
-_quarto.yml             - Site config, navigation
-monospatial-light.scss  - Primary theme
-monospatial-dark.scss   - Dark mode overrides
-_fonts.scss             - Font definitions
-DESCRIPTION             - R dependencies
+\_quarto.yml - Site config, navigation
+monospatial-light.scss - Primary theme
+monospatial-dark.scss - Dark mode overrides
+\_fonts.scss - Font definitions
+DESCRIPTION - R dependencies
 
 ## Coding Style
 
 ### Quarto Markdown
+
 - YAML front matter: title, date, description
 - Icons: {{< fa icon-name >}}
 - R chunks: ```{r} with #| options
 
 ### SCSS
+
 - Monospace font: Anonymous Pro
 - Terminal-inspired aesthetics
 - CSS custom properties for colors
 - Mobile-first responsive
 
 ### Configuration
+
 - Follow Quarto YAML schema
 - Navbar items: text + href
 
 ## Extensions
 
 fontawesome - {{< fa brands github >}}
-quarto-cv   - PDF CV generation
+quarto-cv - PDF CV generation
 
 ## Do Not
 
-- Modify _extensions/ without request
+- Modify \_extensions/ without request
 - Use npm for rendering (only for Netlify plugin)
 - Suggest full TeX Live (use TinyTeX)
 
 ## Output
 
-Generated site: _site/
+Generated site: \_site/
 Excluded from git

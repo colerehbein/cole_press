@@ -21,19 +21,19 @@ make clean      # Remove generated files
 
 ## File Types
 
-| Extension | Language | Purpose |
-|-----------|----------|---------|
-| `.qmd` | Quarto Markdown | Content pages |
-| `.scss` | SCSS | Theming |
-| `.yml` | YAML | Configuration |
-| `.tex` | LaTeX | CV templates |
-| `.lua` | Lua | Quarto filters |
+| Extension | Language        | Purpose        |
+| --------- | --------------- | -------------- |
+| `.qmd`    | Quarto Markdown | Content pages  |
+| `.scss`   | SCSS            | Theming        |
+| `.yml`    | YAML            | Configuration  |
+| `.tex`    | LaTeX           | CV templates   |
+| `.lua`    | Lua             | Quarto filters |
 
 ## Code Patterns
 
 ### Quarto Markdown (.qmd)
 
-```markdown
+````markdown
 ---
 title: "Page Title"
 description: "Brief description"
@@ -50,7 +50,9 @@ Content with {{< fa icon-name >}} icons.
 #| echo: false
 # R code here
 ```
-```
+````
+
+````
 
 ### SCSS Theme Variables
 
@@ -63,9 +65,9 @@ $body-color: #333333;
 $link-color: #0066cc;
 $code-bg: #f5f5f5;
 $font-family-monospace: "Anonymous Pro", monospace;
-```
+````
 
-### Quarto Config (_quarto.yml)
+### Quarto Config (\_quarto.yml)
 
 ```yaml
 project:
@@ -83,16 +85,19 @@ website:
 ## Copilot Suggestions
 
 ### When completing `.qmd` files:
+
 - Use Quarto shortcodes: `{{< fa brands github >}}`
 - Include YAML front matter with `title`, `date`, `description`
 - Use fenced R code blocks with `{r}` and options via `#|` comments
 
 ### When completing `.scss` files:
+
 - Maintain monospace typography (Anonymous Pro)
 - Use terminal-inspired color schemes
 - Follow mobile-first responsive patterns
 
 ### When completing `_quarto.yml`:
+
 - Follow Quarto YAML schema
 - Navigation items need `text` and `href`
 - Theme specified under `format: html: theme:`
@@ -113,10 +118,11 @@ website:
 ## Testing
 
 After making changes, verify with:
+
 ```bash
 quarto preview  # or: make preview
 ```
 
 ---
 
-*See [AGENTS.md](../AGENTS.md) for complete documentation.*
+_See [AGENTS.md](../AGENTS.md) for complete documentation._

@@ -24,13 +24,14 @@ make preview        # Start dev server
 
 ## Prerequisites
 
-| Tool | Version | Installation |
-|------|---------|--------------|
-| Quarto | ≥1.7.31 | [quarto.org](https://quarto.org/docs/get-started/) |
-| R | ≥4.5.1 | [r-project.org](https://www.r-project.org/) |
-| TinyTeX | latest | `quarto install tinytex` |
+| Tool    | Version | Installation                                       |
+| ------- | ------- | -------------------------------------------------- |
+| Quarto  | ≥1.7.31 | [quarto.org](https://quarto.org/docs/get-started/) |
+| R       | ≥4.5.1  | [r-project.org](https://www.r-project.org/)        |
+| TinyTeX | latest  | `quarto install tinytex`                           |
 
 **System libraries** (Ubuntu/Debian):
+
 ```bash
 sudo apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
 ```
@@ -62,12 +63,12 @@ cole_press/
 
 ## Documentation
 
-| Document | Purpose |
-|----------|---------|
-| [AGENTS.md](AGENTS.md) | AI agent reference (Codex, Claude, Copilot) |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
-| [CLAUDE.md](CLAUDE.md) | Claude-specific instructions |
-| [.github/copilot-instructions.md](.github/copilot-instructions.md) | GitHub Copilot context |
+| Document                                                           | Purpose                                     |
+| ------------------------------------------------------------------ | ------------------------------------------- |
+| [AGENTS.md](AGENTS.md)                                             | AI agent reference (Codex, Claude, Copilot) |
+| [CONTRIBUTING.md](CONTRIBUTING.md)                                 | How to contribute                           |
+| [CLAUDE.md](CLAUDE.md)                                             | Claude-specific instructions                |
+| [.github/copilot-instructions.md](.github/copilot-instructions.md) | GitHub Copilot context                      |
 
 ## Tech Stack
 

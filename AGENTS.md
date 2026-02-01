@@ -8,19 +8,19 @@
 **Repository:** `cole_press`  
 **Website:** [https://cole.press](https://cole.press)  
 **Type:** Personal website/blog built with Quarto  
-**Owner:** Cole Rehbein  
+**Owner:** Cole Rehbein
 
 A personal site featuring writings, projects, and experiments covering tech, AI, psychology, and politics. The design uses a distinctive terminal/neofetch-inspired aesthetic with monospace typography.
 
 ## Tech Stack
 
-| Component | Version | Purpose |
-|-----------|---------|---------|
-| **Quarto** | ≥1.7.31 | Static site generator (Markdown → HTML) |
-| **R** | ≥4.5.1 | Code execution in `.qmd` files |
-| **SCSS** | - | Theming (light/dark modes) |
-| **LaTeX** | TinyTeX | PDF CV generation via `quarto-cv` extension |
-| **Netlify** | - | Deployment platform |
+| Component   | Version | Purpose                                     |
+| ----------- | ------- | ------------------------------------------- |
+| **Quarto**  | ≥1.7.31 | Static site generator (Markdown → HTML)     |
+| **R**       | ≥4.5.1  | Code execution in `.qmd` files              |
+| **SCSS**    | -       | Theming (light/dark modes)                  |
+| **LaTeX**   | TinyTeX | PDF CV generation via `quarto-cv` extension |
+| **Netlify** | -       | Deployment platform                         |
 
 ## Directory Structure
 
@@ -52,13 +52,13 @@ cole_press/
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `_quarto.yml` | Site configuration: navigation, themes, metadata |
-| `monospatial-light.scss` | Main theme (1300+ lines, terminal-inspired) |
-| `monospatial-dark.scss` | Dark mode overrides |
-| `_fonts.scss` | `@font-face` definitions for Anonymous Pro |
-| `DESCRIPTION` | R dependencies: `knitr`, `rmarkdown` |
+| File                     | Purpose                                          |
+| ------------------------ | ------------------------------------------------ |
+| `_quarto.yml`            | Site configuration: navigation, themes, metadata |
+| `monospatial-light.scss` | Main theme (1300+ lines, terminal-inspired)      |
+| `monospatial-dark.scss`  | Dark mode overrides                              |
+| `_fonts.scss`            | `@font-face` definitions for Anonymous Pro       |
+| `DESCRIPTION`            | R dependencies: `knitr`, `rmarkdown`             |
 
 ## Build Commands
 
@@ -84,12 +84,14 @@ quarto render   # Generate static HTML to _site/
 ## Coding Conventions
 
 ### Quarto/Markdown
+
 - Use Quarto shortcodes for icons: `{{< fa icon-name >}}`
 - Front matter in YAML at top of `.qmd` files
 - R code chunks use `{r}` fenced blocks
 - Prefer semantic HTML classes over inline styles
 
 ### SCSS/Styling
+
 - Design aesthetic: **Terminal/CLI-inspired, monospace typography**
 - Primary font: `Anonymous Pro` (self-hosted in `fonts/`)
 - Colors defined as CSS custom properties in theme files
@@ -97,6 +99,7 @@ quarto render   # Generate static HTML to _site/
 - Mobile-first responsive design
 
 ### File Naming
+
 - Content pages: `kebab-case.qmd`
 - SCSS partials: `_name.scss`
 - Extensions: Located in `_extensions/`
@@ -104,11 +107,13 @@ quarto render   # Generate static HTML to _site/
 ## Extensions
 
 ### quarto-cv (mps9506/quarto-cv)
+
 - Generates PDF CVs using LaTeX
 - Requires TinyTeX or system LaTeX installation
 - Config in `_extensions/mps9506/quarto-cv/`
 
 ### fontawesome (quarto-ext/fontawesome)
+
 - Icon shortcode: `{{< fa brands github >}}`
 - Supports Font Awesome 6 icons
 - Config in `_extensions/quarto-ext/fontawesome/`
@@ -116,15 +121,18 @@ quarto render   # Generate static HTML to _site/
 ## Dependencies
 
 ### R Packages (from DESCRIPTION)
+
 - `knitr` - Code chunk execution
 - `rmarkdown` - Document rendering
 
 ### System Libraries (for R package compilation)
+
 - `libcurl4-openssl-dev`
 - `libssl-dev`
 - `libxml2-dev`
 
 ### npm (from package.json)
+
 - `@quarto/netlify-plugin-quarto` - Netlify integration
 
 ## CI/CD
@@ -142,24 +150,28 @@ quarto render   # Generate static HTML to _site/
 ## Common Tasks for AI Agents
 
 ### Adding a new blog post
+
 1. Create `posts/new-post.qmd` with YAML front matter
 2. Include `title`, `date`, `categories` in front matter
 3. Write content in Quarto Markdown
 
 ### Modifying the theme
+
 1. Edit `monospatial-light.scss` for light mode
 2. Edit `monospatial-dark.scss` for dark mode overrides
 3. Font changes go in `_fonts.scss`
 
 ### Adding a new page
+
 1. Create `new-page.qmd` at root
 2. Add navigation entry in `_quarto.yml` under `navbar`
 
 ### Testing changes
+
 1. Run `make preview` to start dev server
 2. Changes hot-reload automatically
 3. Check both light and dark themes
 
 ---
 
-*This file is designed to be read by AI coding assistants. For human contributors, see [CONTRIBUTING.md](CONTRIBUTING.md).*
+_This file is designed to be read by AI coding assistants. For human contributors, see [CONTRIBUTING.md](CONTRIBUTING.md)._
