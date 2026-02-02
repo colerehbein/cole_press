@@ -53,7 +53,7 @@ sidebar:
 :::
 
 ::: system-info
-**Cole Rehbein** \@ **cole.press** **──────────────────────────────────** 
+**Cole Rehbein** \@ **cole.press** **──────────────────────────────────**\ 
 **OS:** The One Great Matter\
 **Kernel:** Sitting, writing, counseling, building\
 **Uptime:** Twenty-four seven, three-sixty-five\
@@ -240,12 +240,20 @@ $ curl -X POST https://cole.press/newsletter \
 ::: social-links
 **🔗 Social Links**
 
-``` bash
-github    : https://github.com/colerehbein
-twitter   : https://twitter.com/colerehbein  
-email     : cole@cole.press
-website   : https://cole.press
-```
+::: social-links-list
+::: social-link-row
+[github]{.social-label} [:]{.social-separator} [https://github.com/colerehbein](https://github.com/colerehbein)
+:::
+::: social-link-row
+[twitter]{.social-label} [:]{.social-separator} [https://twitter.com/colerehbein](https://twitter.com/colerehbein)
+:::
+::: social-link-row
+[email]{.social-label} [:]{.social-separator} [cole@cole.press](mailto:cole@cole.press)
+:::
+::: social-link-row
+[website]{.social-label} [:]{.social-separator} [https://cole.press](https://cole.press)
+:::
+:::
 :::
 :::::::
 
@@ -413,12 +421,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('terminal-theme') || 'lavender';
     document.documentElement.dataset.terminalTheme = savedTheme;
 
-    // Create and inject the theme switcher UI into navbar
-    const navbarContainer = document.querySelector('.navbar-container');
-    if (navbarContainer) {
+    // Create and inject the theme switcher UI next to Code button
+    const codeToolsContainer = document.querySelector('.code-tools-button');
+    const titleBlock = document.querySelector('.quarto-title-block');
+    
+    // Find the best injection point - near the Code button or title area
+    let targetContainer = null;
+    if (codeToolsContainer) {
+        targetContainer = codeToolsContainer.parentElement;
+    } else if (titleBlock) {
+        // Create a container in the title block area
+        const titleMeta = titleBlock.querySelector('.quarto-title-meta') || titleBlock;
+        targetContainer = titleMeta;
+    }
+    
+    if (targetContainer) {
         const switcher = document.createElement('div');
         switcher.className = 'terminal-theme-switcher';
         switcher.innerHTML = `
+            <span class="theme-label">Terminal</span>
             <div class="theme-options">
                 ${themes.map(t => `
                     <button class="theme-dot ${t === savedTheme ? 'active' : ''}" 
@@ -428,7 +449,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 `).join('')}
             </div>
         `;
-        navbarContainer.appendChild(switcher);
+        
+        // Insert next to code button if possible
+        if (codeToolsContainer) {
+            codeToolsContainer.parentElement.insertBefore(switcher, codeToolsContainer);
+        } else {
+            targetContainer.appendChild(switcher);
+        }
 
         // Add click handlers
         switcher.querySelectorAll('.theme-dot').forEach(dot => {

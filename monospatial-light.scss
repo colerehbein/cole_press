@@ -401,12 +401,22 @@ $code-bg: $mono-surface;
 // TERMINAL THEME SWITCHER UI
 // ========================================================================
 .terminal-theme-switcher {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0 0.75rem;
-  margin-left: 0.5rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.75rem;
+  margin-right: 0.75rem;
+  background: $mono-surface;
+  border: 1px solid $mono-border;
+  border-radius: $radius-base;
+  font-family: $font-family-monospace;
+
+  .theme-label {
+    font-size: 0.7rem;
+    color: $mono-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
 
   .theme-options {
     display: flex;
@@ -414,21 +424,21 @@ $code-bg: $mono-surface;
   }
 
   .theme-dot {
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid $mono-border;
     cursor: pointer;
     transition: all 0.2s ease;
     position: relative;
 
     &:hover {
-      transform: scale(1.2);
-      border-color: rgba(255, 255, 255, 0.8);
+      transform: scale(1.15);
+      border-color: $mono-text-muted;
     }
 
     &.active {
-      border-color: #fff;
+      border-color: $mono-text;
       box-shadow: 0 0 8px var(--terminal-glow);
 
       &::after {
@@ -439,7 +449,7 @@ $code-bg: $mono-surface;
         transform: translate(-50%, -50%);
         width: 6px;
         height: 6px;
-        background: #fff;
+        background: $mono-text;
         border-radius: 50%;
       }
     }
@@ -1451,24 +1461,23 @@ a {
   }
 }
 
-// Neofetch-style display with rainbow ASCII - more readable
+// Neofetch-style display - compact
 .neofetch-style {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: $spacing-6;
-  background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 5%) 100%);
-  padding: $spacing-6;
-  border-radius: $radius-lg;
-  margin-bottom: $spacing-6;
-  box-shadow: $shadow-md;
+  gap: $spacing-4;
+  background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 3%) 100%);
+  padding: $spacing-4;
+  border-radius: $radius-base;
+  margin-bottom: $spacing-3;
+  box-shadow: $shadow-sm;
   border: 1px solid rgba($cli-rainbow-cyan, 0.2);
 
   .ascii-art {
     pre {
-      font-size: $font-size-xs;
-      line-height: 1.1;
+      font-size: 0.6rem;
+      line-height: 1;
       margin: 0;
-      // Rainbow gradient text - slightly more muted
       background: linear-gradient(
         45deg,
         lighten($cli-rainbow-red, 10%),
@@ -1489,17 +1498,16 @@ a {
   .system-info {
     color: lighten($terminal-text, 35%);
     font-family: $font-family-monospace;
-    font-size: $font-size-sm;
-    line-height: 1.4;
+    font-size: $font-size-xs;
+    line-height: 1.35;
 
     strong:first-child {
       color: $cli-rainbow-cyan;
-      font-size: $font-size-lg;
-      margin-bottom: $spacing-2;
+      font-size: $font-size-base;
+      margin-bottom: $spacing-1;
       display: block;
     }
 
-    // Better contrast for readability
     strong {
       color: lighten($terminal-text, 45%);
       font-weight: 600;
@@ -1511,13 +1519,13 @@ a {
 .cli-prompt {
   background: $cli-bg;
   color: $cli-rainbow-green;
-  padding: $spacing-3 $spacing-4;
-  margin: $spacing-4 0 $spacing-2;
+  padding: $spacing-2 $spacing-4;
+  margin: $spacing-3 0 $spacing-2;
   font-family: $font-family-monospace;
   font-size: $font-size-sm;
   border-radius: $radius-base;
   border: 1px solid rgba($cli-rainbow-cyan, 0.2);
-  box-shadow: $shadow-md;
+  box-shadow: $shadow-sm;
 
   // Terminal-style prompt
   code {
@@ -1529,35 +1537,36 @@ a {
   }
 }
 
-// Skills and Projects side-by-side layout
+// Skills and Projects layout
 .skills-and-projects {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: $spacing-6;
-  margin-bottom: $spacing-6;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-4;
+  margin-bottom: $spacing-4;
+  align-items: start;
 
   .skills-section {
     .skills-json {
       background: $cli-bg;
       color: $terminal-text;
-      padding: $spacing-5;
+      padding: $spacing-4;
       border-radius: $radius-lg;
-      box-shadow: $shadow-md;
+      box-shadow: $shadow-sm;
       border: 1px solid rgba($cli-rainbow-cyan, 0.2);
-      height: fit-content;
 
       pre {
         margin: 0;
-        font-size: $font-size-sm;
+        font-size: $font-size-xs;
+        line-height: 1.4;
       }
     }
   }
 
   .projects-section {
     .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: $spacing-4;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-3;
     }
   }
 }
@@ -1566,15 +1575,15 @@ a {
 .project-item {
   background: $cli-bg;
   border: 1px solid rgba($cli-rainbow-cyan, 0.2);
-  border-radius: $radius-lg;
-  padding: $spacing-5;
+  border-radius: $radius-base;
+  padding: $spacing-3 $spacing-4;
   transition: all var(--transition-normal);
-  box-shadow: $shadow-md;
+  box-shadow: $shadow-sm;
   position: relative;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: $shadow-lg;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
     border-color: rgba($cli-rainbow-cyan, 0.4);
   }
 
@@ -1584,8 +1593,8 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    border-radius: $radius-lg $radius-lg 0 0;
+    height: 2px;
+    border-radius: $radius-base $radius-base 0 0;
   }
 
   &.blog::before {
@@ -1601,16 +1610,16 @@ a {
   strong {
     color: lighten($terminal-text, 40%);
     font-family: $font-family-monospace;
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-3;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-1;
     display: block;
     font-weight: 600;
   }
 
   p {
-    margin-bottom: $spacing-4;
-    font-size: $font-size-sm;
-    line-height: 1.5;
+    margin-bottom: $spacing-2;
+    font-size: $font-size-xs;
+    line-height: 1.4;
     color: lighten($terminal-text, 25%);
   }
 
@@ -1619,9 +1628,9 @@ a {
     text-decoration: none;
     font-weight: 600;
     font-family: $font-family-monospace;
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     display: inline-block;
-    padding: $spacing-2 $spacing-3;
+    padding: $spacing-1 $spacing-2;
     border: 1px solid $cli-rainbow-cyan;
     border-radius: $radius-sm;
     transition: all var(--transition-normal);
@@ -1638,12 +1647,12 @@ a {
 .git-activity {
   background: $cli-bg;
   color: lighten($terminal-text, 30%);
-  padding: $spacing-5;
-  border-radius: $radius-lg;
-  margin-bottom: $spacing-6;
-  box-shadow: $shadow-md;
+  padding: $spacing-4;
+  border-radius: $radius-base;
+  margin-bottom: $spacing-4;
+  box-shadow: $shadow-sm;
   font-family: $font-family-monospace;
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
 
   .git-log {
     .git-line {
@@ -1685,68 +1694,53 @@ a {
   }
 }
 
-// Thoughts section with colorful borders - better flow
+// Thoughts section with colorful borders - compact
 .thoughts-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: $spacing-4;
-  margin-bottom: $spacing-6;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-3;
+  margin-bottom: $spacing-4;
 
   .thought-item {
     background: $mono-surface-elevated;
     border: 1px solid $mono-border;
-    border-radius: $radius-lg;
-    padding: $spacing-5;
+    border-radius: $radius-base;
+    padding: $spacing-3;
     transition: all var(--transition-normal);
-    box-shadow: $shadow-base;
+    box-shadow: $shadow-sm;
 
-    &.ai {
-      border-left: 4px solid $cli-rainbow-cyan;
-      background: linear-gradient(
-        135deg,
-        $mono-surface-elevated 0%,
-        rgba($cli-rainbow-cyan, 0.1) 100%
-      );
+    &.philosophy {
+      border-left: 3px solid $cli-rainbow-cyan;
     }
 
-    &.code {
-      border-left: 4px solid $cli-rainbow-yellow;
-      background: linear-gradient(
-        135deg,
-        $mono-surface-elevated 0%,
-        rgba($cli-rainbow-yellow, 0.1) 100%
-      );
+    &.praxis {
+      border-left: 3px solid $cli-rainbow-yellow;
     }
 
-    &.future {
-      border-left: 4px solid $cli-rainbow-purple;
-      background: linear-gradient(
-        135deg,
-        $mono-surface-elevated 0%,
-        rgba($cli-rainbow-purple, 0.1) 100%
-      );
+    &.culture {
+      border-left: 3px solid $cli-rainbow-purple;
     }
 
     strong {
-      font-size: $font-size-base;
-      margin-bottom: $spacing-2;
+      font-size: $font-size-sm;
+      margin-bottom: $spacing-1;
       display: block;
     }
   }
 }
 
-// Connect section - better spacing
+// Connect section - tighter
 .connect-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: $spacing-5;
-  margin-bottom: $spacing-6;
+  gap: $spacing-4;
+  margin-bottom: $spacing-4;
 
   .newsletter-box {
     background: $mono-surface-elevated;
     border: 1px solid $mono-border;
-    border-radius: $radius-lg;
-    padding: $spacing-6;
+    border-radius: $radius-base;
+    padding: $spacing-4;
     box-shadow: $shadow-base;
 
     strong {
@@ -1757,7 +1751,7 @@ a {
 
     pre {
       background: $cli-bg;
-      color: $cli-rainbow-green;
+      color: $terminal-text;
       padding: $spacing-3;
       border-radius: $radius-base;
       margin-bottom: $spacing-4;
@@ -1777,12 +1771,12 @@ a {
           transition: all var(--transition-normal);
 
           &:focus-within {
-            border-color: $cli-rainbow-cyan;
-            box-shadow: 0 0 0 2px rgba($cli-rainbow-cyan, 0.2);
+            border-color: var(--terminal-primary);
+            box-shadow: 0 0 0 2px var(--terminal-glow);
           }
 
           .cli-prompt-small {
-            color: $cli-rainbow-green;
+            color: var(--terminal-primary);
             font-family: $font-family-monospace;
             margin-right: $spacing-2;
             font-weight: bold;
@@ -1846,24 +1840,57 @@ a {
   .social-links {
     background: $mono-surface-elevated;
     border: 1px solid $mono-border;
-    border-radius: $radius-lg;
-    padding: $spacing-6;
+    border-radius: $radius-base;
+    padding: $spacing-4;
     box-shadow: $shadow-base;
 
     strong {
       color: $mono-text;
-      margin-bottom: $spacing-4;
+      margin-bottom: $spacing-3;
       display: block;
     }
 
     pre {
       background: $cli-bg;
       color: $terminal-text;
-      padding: $spacing-4;
+      padding: $spacing-3;
       border-radius: $radius-base;
       font-size: $font-size-xs;
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.8;
+    }
+
+    .social-links-list {
+      background: $cli-bg;
+      padding: $spacing-3;
+      border-radius: $radius-base;
+      font-family: $font-family-monospace;
+      font-size: $font-size-xs;
+
+      .social-link-row {
+        display: flex;
+        gap: $spacing-2;
+        line-height: 1.8;
+      }
+
+      .social-label {
+        color: var(--terminal-primary);
+        min-width: 70px;
+      }
+
+      .social-separator {
+        color: $terminal-text;
+      }
+
+      a {
+        color: $terminal-text;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--terminal-primary);
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
