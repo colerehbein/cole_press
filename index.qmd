@@ -2,25 +2,12 @@
 title: "Cole Rehbein"
 title-block-banner: false
 page-layout: article
-toc: true
-sidebar:
-  - title: "Quick Links"
-    contents:
-      - text: "Newsletter Signup"
-        href: "#newsletter"
-      - text: "GitHub Profile"
-        href: "https://github.com/colerehbein"
-      - text: "Contact"
-        href: "mailto:cole@cole.press"
-  - title: "Recent Posts"
-    contents:
-      - text: "AI in Practice"
-        href: "/blog"
-      - text: "Code & Culture" 
-        href: "/blog"
-      - text: "Future of Work"
-        href: "/blog"
+toc: false
 ---
+
+::::: homepage-with-sidebar
+
+:::: main-content
 
 ::: cli-prompt
 <span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
@@ -53,7 +40,7 @@ sidebar:
 :::
 
 ::: system-info
-**Cole Rehbein** \@ **cole.press** **──────────────────────────────────**\ 
+**Cole Rehbein** \@ **cole.press** **──────────────────────────────────**\
 **OS:** The One Great Matter\
 **Kernel:** Sitting, writing, counseling, building\
 **Uptime:** Twenty-four seven, three-sixty-five\
@@ -109,34 +96,6 @@ sidebar:
 ```
 :::
 ::::
-
-::::::: projects-section
-:::::: project-grid
-::: {.project-item .blog}
-**Blog**
-
-Writing on psychology, philosophy, politics, and New Mexico. The examined life, examined further.
-
-[**Visit Blog →**](/blog){.project-link}
-:::
-
-::: {.project-item .cv}
-**CV**
-
-Clinical psychology, crisis intervention, research, journalism. M.S. Clinical Psych (NMHU), B.A. Philosophy (St. John's).
-
-[**View CV →**](/cv){.project-link}
-:::
-
-::: {.project-item .portfolio}
-**Projects**
-
-Research, writing samples, and things I've built. Works in progress and completed experiments.
-
-[**Explore Projects →**](/projects){.project-link}
-:::
-::::::
-:::::::
 ::::::::::
 
 ::: cli-prompt
@@ -211,52 +170,6 @@ New Mexico food, culture writing, and strong opinions on chile
 :::
 ::::::
 
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">./connect.sh --all</code>
-:::
-
-::::::: connect-section
-::::: newsletter-box
-**📬 Newsletter Signup**
-
-``` bash
-$ curl -X POST https://cole.press/newsletter \
-  --data "email=your@email.com"
-```
-
-:::: newsletter-form
-<form action="#" method="post" onsubmit="return false;" class="cli-form">
-
-::: cli-input-wrapper
-[\$]{.cli-prompt-small} <input type="email" name="email" placeholder="your@email.com" required class="cli-input"> <button type="submit" class="cli-button">SEND</button>
-:::
-
-<small class="cli-note">No spam, just thoughtful content</small>
-
-</form>
-::::
-:::::
-
-::: social-links
-**🔗 Social Links**
-
-::: social-links-list
-::: social-link-row
-[github]{.social-label} [:]{.social-separator} [https://github.com/colerehbein](https://github.com/colerehbein)
-:::
-::: social-link-row
-[twitter]{.social-label} [:]{.social-separator} [https://twitter.com/colerehbein](https://twitter.com/colerehbein)
-:::
-::: social-link-row
-[email]{.social-label} [:]{.social-separator} [cole@cole.press](mailto:cole@cole.press)
-:::
-::: social-link-row
-[website]{.social-label} [:]{.social-separator} [https://cole.press](https://cole.press)
-:::
-:::
-:::
-:::::::
-
 ::: cli-footer
 ``` bash
 $ uptime
@@ -267,6 +180,68 @@ $ echo "Thanks for visiting! ☕"
 Thanks for visiting! ☕
 ```
 :::
+
+::::
+
+:::: connect-sidebar
+
+::::: newsletter-box
+**📬 Newsletter**
+
+``` bash
+$ curl -X POST cole.press/subscribe
+```
+
+<form action="#" method="post" onsubmit="return false;" class="cli-form">
+<div class="cli-input-wrapper">
+<span class="cli-prompt-small">$</span>
+<input type="email" name="email" placeholder="your@email.com" required class="cli-input">
+<button type="submit" class="cli-button">GO</button>
+</div>
+<small class="cli-note">No spam, just signal</small>
+</form>
+:::::
+
+::::: social-links
+**🔗 Links**
+
+<div class="social-links-list">
+<div class="social-link-row"><span class="social-label">github</span><span class="social-separator">:</span><a href="https://github.com/colerehbein">colerehbein</a></div>
+<div class="social-link-row"><span class="social-label">twitter</span><span class="social-separator">:</span><a href="https://twitter.com/colerehbein">@colerehbein</a></div>
+<div class="social-link-row"><span class="social-label">email</span><span class="social-separator">:</span><a href="mailto:cole@cole.press">cole@cole.press</a></div>
+<div class="social-link-row"><span class="social-label">web</span><span class="social-separator">:</span><a href="https://cole.press">cole.press</a></div>
+</div>
+:::::
+
+::::: project-sidebar-items
+::: {.project-item .blog}
+**Blog**
+
+Writing on psychology, philosophy, political theory. The examined life, examined further.
+
+[**Visit Blog →**](/blog){.project-link}
+:::
+
+::: {.project-item .cv}
+**CV**
+
+Clinical psychology, crisis intervention, research, journalism.
+
+[**View CV →**](/cv){.project-link}
+:::
+
+::: {.project-item .portfolio}
+**Projects**
+
+Research, writing samples, and things I've built.
+
+[**Explore Projects →**](/projects){.project-link}
+:::
+:::::
+
+::::
+
+:::::
 
 ```{=html}
 <script>
@@ -421,19 +396,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('terminal-theme') || 'lavender';
     document.documentElement.dataset.terminalTheme = savedTheme;
 
-    // Create and inject the theme switcher UI next to Code button
+    // Create and inject the theme switcher UI in the title meta area
     const codeToolsContainer = document.querySelector('.code-tools-button');
     const titleBlock = document.querySelector('.quarto-title-block');
-    
-    // Find the best injection point - near the Code button or title area
-    let targetContainer = null;
-    if (codeToolsContainer) {
-        targetContainer = codeToolsContainer.parentElement;
-    } else if (titleBlock) {
-        // Create a container in the title block area
-        const titleMeta = titleBlock.querySelector('.quarto-title-meta') || titleBlock;
-        targetContainer = titleMeta;
-    }
+    const titleMeta = titleBlock ? (titleBlock.querySelector('.quarto-title-meta') || titleBlock) : null;
+    const targetContainer = titleMeta || (codeToolsContainer ? codeToolsContainer.parentElement : null);
     
     if (targetContainer) {
         const switcher = document.createElement('div');
@@ -450,12 +417,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Insert next to code button if possible
-        if (codeToolsContainer) {
-            codeToolsContainer.parentElement.insertBefore(switcher, codeToolsContainer);
-        } else {
-            targetContainer.appendChild(switcher);
-        }
+        // Insert into the title meta area to avoid overlapping the Code button
+        targetContainer.appendChild(switcher);
 
         // Add click handlers
         switcher.querySelectorAll('.theme-dot').forEach(dot => {

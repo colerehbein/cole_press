@@ -44,7 +44,8 @@ format:
     include-in-header: _includes/preload-fonts.html
     code-fold: true
     code-summary: "Show code"
-    code-tools: true
+    code-tools:
+      source: repo
     execute:
       cache: true
       echo: true

@@ -400,6 +400,28 @@ $code-bg: $mono-surface;
 // ========================================================================
 // TERMINAL THEME SWITCHER UI
 // ========================================================================
+// Ensure code tools button is clickable and visible
+.code-tools-button {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+// Title block layout so Code button and switcher don't overlap
+.quarto-title-block .quarto-title-block > div {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  flex-wrap: wrap;
+}
+
+.quarto-title-block .quarto-title-block > div .title {
+  margin: 0;
+  margin-right: auto;
+}
+
+// Terminal theme switcher
 .terminal-theme-switcher {
   display: inline-flex;
   align-items: center;
@@ -410,6 +432,8 @@ $code-bg: $mono-surface;
   border: 1px solid $mono-border;
   border-radius: $radius-base;
   font-family: $font-family-monospace;
+  position: relative; // Ensure it stacks correctly
+  z-index: 10;
 
   .theme-label {
     font-size: 0.7rem;
@@ -1375,7 +1399,13 @@ a {
 }
 
 .text-glow {
-  @include text-glow($terminal-cyan);
+  color: var(--terminal-primary);
+  background: transparent !important;
+  padding: 0 !important;
+  text-shadow:
+    0 0 10px var(--terminal-glow),
+    0 0 20px var(--terminal-glow),
+    0 0 30px var(--terminal-glow);
 }
 
 .text-glow-green {
@@ -1527,23 +1557,20 @@ a {
   border: 1px solid rgba($cli-rainbow-cyan, 0.2);
   box-shadow: $shadow-sm;
 
-  // Terminal-style prompt
+  // Terminal-style prompt - use CSS variable for theme support
   code {
     background: transparent;
     padding: 0;
     border-radius: 0;
-    color: $cli-rainbow-green;
+    color: var(--terminal-primary);
     font-weight: 500;
   }
 }
 
 // Skills and Projects layout
 .skills-and-projects {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: $spacing-4;
+  display: block; // Changed from grid to block since we moved projects to sidebar
   margin-bottom: $spacing-4;
-  align-items: start;
 
   .skills-section {
     .skills-json {
@@ -1729,7 +1756,252 @@ a {
   }
 }
 
-// Connect section - tighter
+// Connect sidebar - sticky on right side
+.connect-sidebar {
+  position: static; // No sticky - just scroll with page
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+
+  .project-sidebar-items {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  .newsletter-box,
+  .social-links,
+  .project-item {
+    background: $mono-surface-elevated;
+    border: 1px solid $mono-border;
+    border-radius: $radius-base;
+    padding: $spacing-4;
+    box-shadow: $shadow-base;
+
+    strong {
+      color: $mono-text;
+      margin-bottom: $spacing-3;
+      display: block;
+      font-size: $font-size-sm;
+    }
+  }
+
+  .project-item {
+    p {
+      font-size: $font-size-xs;
+      margin-bottom: $spacing-3;
+      color: $mono-text-secondary;
+    }
+
+    strong {
+      color: $mono-text;
+    }
+
+    .project-link {
+      color: $mono-accent;
+      border-color: $mono-accent;
+    }
+
+    .project-link:hover {
+      background: rgba($mono-accent, 0.1);
+      color: $mono-accent-hover;
+      border-color: $mono-accent-hover;
+    }
+
+    // Override default project item styles for sidebar context
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  .newsletter-box {
+    // Override Quarto syntax highlighting for bash code blocks
+    div.sourceCode {
+      margin: 0 0 $spacing-3 0;
+
+      pre.sourceCode.bash {
+        background: $cli-bg;
+        padding: $spacing-2;
+        border-radius: $radius-base;
+        font-size: 0.65rem;
+        margin: 0;
+
+        code.sourceCode {
+          color: $terminal-text;
+
+          span.ex {
+            color: var(--terminal-primary);
+          }
+          span.at {
+            color: $terminal-text;
+          }
+          span.st {
+            color: $cli-rainbow-green;
+          }
+          span.dt {
+            color: $terminal-text;
+          }
+          span.kw {
+            color: $terminal-text;
+          }
+          span.va {
+            color: var(--terminal-primary);
+          }
+
+          > span > a:first-child {
+            display: none;
+          }
+        }
+
+        button.code-copy-button {
+          display: none;
+        }
+      }
+    }
+
+    .newsletter-form {
+      .cli-form {
+        .cli-input-wrapper {
+          display: flex;
+          align-items: center;
+          background: $mono-surface;
+          border: 1px solid $mono-border;
+          border-radius: $radius-base;
+          padding: $spacing-2;
+          margin-bottom: $spacing-2;
+          transition: all var(--transition-normal);
+
+          &:focus-within {
+            border-color: var(--terminal-primary);
+            box-shadow: 0 0 0 2px var(--terminal-glow);
+          }
+
+          .cli-prompt-small {
+            color: var(--terminal-primary);
+            font-family: $font-family-monospace;
+            margin-right: $spacing-2;
+            font-weight: bold;
+            font-size: $font-size-sm;
+          }
+
+          .cli-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            font-family: $font-family-monospace;
+            font-size: $font-size-xs;
+            color: $mono-text;
+            padding: $spacing-1;
+            min-width: 0;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              color: $mono-text-secondary;
+              opacity: 0.8;
+            }
+          }
+
+          .cli-button {
+            background: var(--terminal-primary);
+            color: $cli-bg;
+            border: none;
+            padding: $spacing-1 $spacing-2;
+            border-radius: $radius-sm;
+            font-family: $font-family-monospace;
+            font-size: 0.65rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            white-space: nowrap;
+
+            &:hover {
+              filter: brightness(1.1);
+              transform: translateY(-1px);
+            }
+
+            &:active {
+              transform: translateY(0);
+            }
+          }
+        }
+
+        .cli-note {
+          color: $mono-text-secondary;
+          font-size: 0.65rem;
+          font-family: $font-family-monospace;
+          margin: 0;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    .social-links-list {
+      background: $cli-bg;
+      padding: $spacing-2;
+      border-radius: $radius-base;
+      font-family: $font-family-monospace;
+      font-size: 0.65rem;
+      line-height: 1.6;
+
+      .social-link-row {
+        display: flex;
+        align-items: center;
+        gap: $spacing-1;
+        padding: $spacing-1 0;
+      }
+
+      .social-label {
+        color: var(--terminal-primary);
+        min-width: 55px;
+        font-weight: 500;
+      }
+
+      .social-separator {
+        color: $terminal-text;
+        margin-right: $spacing-1;
+      }
+
+      a {
+        color: $terminal-text;
+        text-decoration: none;
+        transition: color var(--transition-fast);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &:hover {
+          color: var(--terminal-primary);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Main content wrapper for sidebar layout
+.homepage-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: $spacing-6;
+  align-items: start;
+
+  .main-content {
+    min-width: 0; // Prevent grid blowout
+  }
+}
+
+// Legacy connect-section (keep for backwards compatibility)
 .connect-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1749,13 +2021,51 @@ a {
       display: block;
     }
 
-    pre {
-      background: $cli-bg;
-      color: $terminal-text;
-      padding: $spacing-3;
-      border-radius: $radius-base;
-      margin-bottom: $spacing-4;
-      font-size: $font-size-xs;
+    // Override Quarto syntax highlighting for bash code blocks
+    div.sourceCode {
+      margin: 0 0 $spacing-4 0;
+
+      pre.sourceCode.bash {
+        background: $cli-bg;
+        padding: $spacing-3;
+        border-radius: $radius-base;
+        font-size: $font-size-xs;
+        margin: 0;
+
+        code.sourceCode {
+          color: $terminal-text;
+
+          // Syntax highlighting with terminal aesthetic
+          span.ex {
+            color: var(--terminal-primary);
+          } // commands: $, curl, etc.
+          span.at {
+            color: $terminal-text;
+          } // flags: -X, --data
+          span.st {
+            color: $cli-rainbow-green;
+          } // strings
+          span.dt {
+            color: $terminal-text;
+          } // line continuation
+          span.kw {
+            color: $terminal-text;
+          } // keywords
+          span.va {
+            color: var(--terminal-primary);
+          } // variables
+
+          // Remove line number anchors styling
+          > span > a:first-child {
+            display: none;
+          }
+        }
+
+        // Hide copy button in these decorative blocks
+        button.code-copy-button {
+          display: none;
+        }
+      }
     }
 
     .newsletter-form {
@@ -1866,25 +2176,38 @@ a {
       border-radius: $radius-base;
       font-family: $font-family-monospace;
       font-size: $font-size-xs;
+      line-height: 1.8;
 
       .social-link-row {
         display: flex;
+        align-items: center;
         gap: $spacing-2;
-        line-height: 1.8;
+        padding: $spacing-1 0;
+
+        // Handle Quarto's p wrapper if it exists
+        p {
+          display: flex;
+          align-items: center;
+          gap: $spacing-2;
+          margin: 0;
+        }
       }
 
       .social-label {
         color: var(--terminal-primary);
         min-width: 70px;
+        font-weight: 500;
       }
 
       .social-separator {
         color: $terminal-text;
+        margin-right: $spacing-1;
       }
 
       a {
         color: $terminal-text;
         text-decoration: none;
+        transition: color var(--transition-fast);
 
         &:hover {
           color: var(--terminal-primary);
@@ -1906,9 +2229,47 @@ a {
   font-size: $font-size-sm;
   box-shadow: $shadow-md;
 
-  pre {
+  // Override Quarto syntax highlighting
+  div.sourceCode {
     margin: 0;
-    line-height: 1.6;
+
+    pre.sourceCode.bash {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      line-height: 1.6;
+
+      code.sourceCode {
+        color: $terminal-text;
+
+        // Terminal aesthetic syntax colors
+        span.ex {
+          color: var(--terminal-primary);
+        } // commands: $, uptime, whoami
+        span.at {
+          color: $terminal-text;
+        } // flags
+        span.st {
+          color: $cli-rainbow-green;
+        } // strings
+        span.kw {
+          color: $terminal-text;
+        } // keywords like &
+        span.va {
+          color: var(--terminal-primary);
+        } // variables
+
+        // Hide line number anchors
+        > span > a:first-child {
+          display: none;
+        }
+      }
+
+      // Hide copy button
+      button.code-copy-button {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1950,5 +2311,16 @@ a {
 
   .thoughts-section {
     grid-template-columns: 1fr;
+  }
+
+  // Sidebar becomes full-width below content on mobile
+  .homepage-with-sidebar {
+    grid-template-columns: 1fr;
+
+    .connect-sidebar {
+      position: static;
+      max-height: none;
+      order: 2; // Move below main content
+    }
   }
 }

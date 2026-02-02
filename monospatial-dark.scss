@@ -16,6 +16,7 @@ $terminal-cyan-dark: #22d3ee;
 $terminal-yellow-dark: #fde047;
 $terminal-red-dark: #f87171;
 $terminal-purple-dark: #c084fc;
+$terminal-text-dark: #e5e7eb; // Light gray for terminal text in dark mode
 
 // Semantic colors for dark mode
 $semantic-action-dark: $terminal-cyan-dark;
@@ -253,5 +254,32 @@ hr {
   &:hover,
   &.active {
     color: $semantic-action-dark;
+  }
+}
+// Dark mode overrides for connect section syntax highlighting
+.newsletter-box,
+.cli-footer {
+  div.sourceCode pre.sourceCode.bash code.sourceCode {
+    color: $terminal-text-dark;
+
+    span.at,
+    span.dt,
+    span.kw {
+      color: $terminal-text-dark;
+    }
+  }
+}
+
+.social-links .social-links-list {
+  .social-separator {
+    color: $terminal-text-dark;
+  }
+
+  a {
+    color: $terminal-text-dark;
+
+    &:hover {
+      color: var(--terminal-primary);
+    }
   }
 }
