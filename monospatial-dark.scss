@@ -308,13 +308,20 @@ hr {
 // Dark mode overrides for connect section syntax highlighting
 .newsletter-box,
 .cli-footer {
+  // Hide copy button in newsletter/cli sections
+  button.code-copy-button {
+    display: none;
+  }
+  
   div.sourceCode pre.sourceCode.bash code.sourceCode {
-    color: var(--terminal-primary, $terminal-text-dark);
+    color: var(--terminal-primary, $terminal-text-dark) !important;
 
     span.at,
     span.dt,
-    span.kw {
-      color: var(--terminal-primary, $terminal-text-dark);
+    span.kw,
+    span.st,
+    span.fu {
+      color: var(--terminal-primary, $terminal-text-dark) !important;
     }
   }
 }
