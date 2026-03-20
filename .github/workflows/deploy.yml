@@ -56,15 +56,20 @@ jobs:
       - name: Build CV website
         run: |
           cd ../cv
+          echo "Current directory: $(pwd)"
+          echo "Contents of CV repo:"
+          ls -la
           # Build the full CV website (creates _site/ with index.html)
-          quarto render
-          # Also build the PDF version explicitly
-          quarto render CV.qmd --to pdf
+          echo "Running quarto render..."
+          quarto render || echo "quarto render failed with exit code $?"
+          # Also try to build the PDF version explicitly
+          echo "Running quarto render CV.qmd --to pdf..."
+          quarto render CV.qmd --to pdf || echo "PDF render failed with exit code $?"
           # List what was built
-          echo "Contents of ../cv:"
+          echo "Contents of ../cv after render:"
           ls -la ../cv/
-          echo "Contents of ../cv/_site:"
-          ls -la ../cv/_site/ || echo "_site does not exist"
+          echo "Contents of ../cv/_site if it exists:"
+          ls -la ../cv/_site/ 2>/dev/null || echo "_site does not exist"
 
       # 6) Render main site
       - name: Render site
@@ -74,13 +79,23 @@ jobs:
       - name: Copy CV to _site
         run: |
           mkdir -p _site/cv
-          # Copy the CV website output
+          echo "Checking if ../cv/_site exists..."
           if [ -d ../cv/_site ]; then
+            echo "Found ../cv/_site, copying..."
             cp -r ../cv/_site/* _site/cv/
+            echo "Copied contents of _site/"
+          else
+            echo "ERROR: ../cv/_site does not exist!"
+            echo "Contents of ../cv:"
+            ls -la ../cv/
+            exit 1
           fi
           # Copy the CV PDF if it exists
           if [ -f ../cv/CV.pdf ]; then
             cp ../cv/CV.pdf _site/cv/
+            echo "Copied CV.pdf"
+          else
+            echo "WARNING: CV.pdf not found"
           fi
           # List what we copied for debugging
           echo "Contents of _site/cv:"
