@@ -312,16 +312,41 @@ hr {
   button.code-copy-button {
     display: none;
   }
-  
-  div.sourceCode pre.sourceCode.bash code.sourceCode {
-    color: var(--terminal-primary, $terminal-text-dark) !important;
 
-    span.at,
-    span.dt,
-    span.kw,
-    span.st,
-    span.fu {
-      color: var(--terminal-primary, $terminal-text-dark) !important;
+  // Override Quarto syntax highlighting for bash code blocks
+  div.sourceCode {
+    pre.sourceCode.bash {
+      background: $mono-code-bg-dark;
+
+      code.sourceCode {
+        color: var(--terminal-primary, $terminal-text-dark);
+
+        span.ex {
+          color: var(--terminal-primary);
+        }
+        span.at {
+          color: $terminal-text-dark;
+        }
+        span.st {
+          color: var(--terminal-primary);
+        }
+        span.dt {
+          color: $terminal-text-dark;
+        }
+        span.kw {
+          color: $terminal-text-dark;
+        }
+        span.va {
+          color: var(--terminal-primary);
+        }
+        span.fu {
+          color: var(--terminal-primary);
+        }
+
+        > span > a:first-child {
+          display: none;
+        }
+      }
     }
   }
 }
