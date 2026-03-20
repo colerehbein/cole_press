@@ -35,10 +35,9 @@ cole@cole.press
 
 :::
 
-::: {.cli-footer style="margin-top: 3rem;"}
+::: {.cli-footer}
 ```bash
 $ ls -la ~/cv/
-CV.pdf  index.html
-$ echo "Last updated: $(date)"
+CV.pdf
 ```
 :::
