@@ -4,6 +4,39 @@ title: "About"
 
 ::: {.prose-content}
 
-This site houses my writings, projects and experiments. It is built with [Quarto](https://quarto.org/) along with a custom monospace theme. Expect regular updates as I continue exploring technology, AI and the social sciences.
+I work in crisis mental health and study behavioral treatments for depression. Currently finishing a master's thesis on outdoor mindfulness-based behavioral activation.
+
+## What I Do
+
+**Crisis work:** 988 Suicide & Crisis Lifeline, Friday through Monday nights. ACT, behavioral activation, functional analysis of verbal behavior. High-acuity, short-duration interventions.
+
+**Research:** Master's thesis on outdoor mindfulness-based behavioral activation for depression. Longitudinal design, psychometric analysis, R and Python for data work.
+
+**Building:** Tools for psychological assessment (forthcoming), this website, a YouTube channel on mental health science communication.
+
+## Background
+
+**St. John's College** — B.A., philosophy (Great Books program). Focus on Spinoza, ethics, philosophy of mind. Ancient Greek (reading), close reading, Socratic dialogue.
+
+**Journalism** — City reporting, copyediting, culture writing. Local politics, food, arts.
+
+**Clinical training** — Crisis intervention, behavioral activation, ACT.
+
+## How I Think
+
+- **Behavioral science:** Functional analysis, ACT, behavioral activation
+- **Philosophy:** Spinoza, ethics, philosophy of mind
+- **Contemplative practice:** Sōtō Zen zazen (personal practice, student not teacher)
+- **Systems thinking:** Class, power, institutional critique
+
+## Current Status
+
+- **Thesis:** Data collection complete, analysis complete, writing in progress
+- **Crisis work:** Friday–Monday, 2:00 PM–11:00 PM MT
+- **Location:** Albuquerque, New Mexico
+
+## Contact
+
+cole@cole.press — Email is best. I check it when I'm not on crisis lines.
 
 :::
