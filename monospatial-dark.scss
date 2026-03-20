@@ -74,6 +74,55 @@ $callout-color-note: $mono-accent-dark;
 // Import @font-face rules
 @import "fonts";
 
+// CSS Custom Properties for Dynamic Theming (Terminal Colors)
+:root {
+  // Default: Lavender (philosophical dreamscape)
+  --terminal-primary: #c4b5fd;
+  --terminal-primary-bright: #e0d7ff;
+  --terminal-primary-dim: #a78bfa;
+  --terminal-glow: rgba(196, 181, 253, 0.4);
+}
+
+// Terminal Theme: Classic Green (Matrix)
+[data-terminal-theme="green"] {
+  --terminal-primary: #00ff41;
+  --terminal-primary-bright: #50ff7a;
+  --terminal-primary-dim: #00cc33;
+  --terminal-glow: rgba(0, 255, 65, 0.4);
+}
+
+// Terminal Theme: Amber (IBM 3278)
+[data-terminal-theme="amber"] {
+  --terminal-primary: #ffb000;
+  --terminal-primary-bright: #ffc832;
+  --terminal-primary-dim: #cc8800;
+  --terminal-glow: rgba(255, 176, 0, 0.4);
+}
+
+// Terminal Theme: Cyan (VT220)
+[data-terminal-theme="cyan"] {
+  --terminal-primary: #00d4ff;
+  --terminal-primary-bright: #66e5ff;
+  --terminal-primary-dim: #00aacc;
+  --terminal-glow: rgba(0, 212, 255, 0.4);
+}
+
+// Terminal Theme: Lavender (Synthwave) - Default
+[data-terminal-theme="lavender"] {
+  --terminal-primary: #c4b5fd;
+  --terminal-primary-bright: #e0d7ff;
+  --terminal-primary-dim: #a78bfa;
+  --terminal-glow: rgba(196, 181, 253, 0.4);
+}
+
+// Terminal Theme: White (Unix)
+[data-terminal-theme="white"] {
+  --terminal-primary: #e0e0e0;
+  --terminal-primary-bright: #ffffff;
+  --terminal-primary-dim: #a0a0a0;
+  --terminal-glow: rgba(224, 224, 224, 0.3);
+}
+
 // Navbar
 .navbar {
   background-color: #000;
@@ -259,18 +308,13 @@ hr {
 // Dark mode overrides for connect section syntax highlighting
 .newsletter-box,
 .cli-footer {
-  div.sourceCode pre.sourceCode.bash {
-    background-color: lighten($mono-bg-dark, 10%); // Lighter background for visibility
-    border: 1px solid $mono-border-dark;
-    
-    code.sourceCode {
-      color: $terminal-text-dark;
+  div.sourceCode pre.sourceCode.bash code.sourceCode {
+    color: var(--terminal-primary, $terminal-text-dark);
 
-      span.at,
-      span.dt,
-      span.kw {
-        color: $terminal-text-dark;
-      }
+    span.at,
+    span.dt,
+    span.kw {
+      color: var(--terminal-primary, $terminal-text-dark);
     }
   }
 }
