@@ -14,7 +14,7 @@ Albuquerque, New Mexico
 
 ### Download
 
-**[Download CV (PDF)](CV.pdf)** — Full academic and clinical CV
+**[Download CV (PDF)](/CV.pdf)** — Full academic and clinical CV
 
 ---
 
@@ -37,7 +37,7 @@ cole@cole.press
 
 ::: {.cli-footer}
 ```bash
-$ ls -la ~/cv/
-CV.pdf
+$ ls -la ~/
+/CV.pdf
 ```
 :::
