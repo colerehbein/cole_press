@@ -1,5 +1,7 @@
 [build]
 publish = "_site"
 
-[[plugins]]
-  package = "@quarto/netlify-plugin-quarto"
+# Note: Build is handled by GitHub Actions
+# The @quarto/netlify-plugin-quarto plugin has been removed
+# because R is not available in Netlify's build environment.
+# Instead, GitHub Actions builds the site and deploys the _site folder directly.
