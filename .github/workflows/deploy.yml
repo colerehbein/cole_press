@@ -57,12 +57,19 @@ jobs:
       # 7) Copy CV PDF to site root
       - name: Copy CV PDF
         run: |
-          if [ -f ../cv/CV.pdf ]; then
+          # Check both possible locations for the PDF
+          if [ -f ../cv/_site/CV.pdf ]; then
+            cp ../cv/_site/CV.pdf _site/CV.pdf
+            echo "CV.pdf copied from _site/ to _site/"
+          elif [ -f ../cv/CV.pdf ]; then
             cp ../cv/CV.pdf _site/CV.pdf
-            echo "CV.pdf copied to _site/"
+            echo "CV.pdf copied from cv root to _site/"
           else
             echo "ERROR: CV.pdf not found"
+            echo "Contents of ../cv:"
             ls -la ../cv/
+            echo "Contents of ../cv/_site:"
+            ls -la ../cv/_site/ 2>/dev/null || echo "_site does not exist"
             exit 1
           fi
           ls -la _site/CV.pdf
