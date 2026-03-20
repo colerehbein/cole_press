@@ -232,7 +232,7 @@ Writing on psychology, philosophy, political theory. The examined life, examined
 
 Clinical psychology, crisis intervention, research, journalism.
 
-[**View CV →**](/cv){.project-link}
+[**View CV →**](/cv/){.project-link}
 :::
 
 ::: {.project-item .portfolio}
