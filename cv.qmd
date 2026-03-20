@@ -1,0 +1,44 @@
+---
+title: "CV"
+page-layout: article
+---
+
+::: {.prose-content}
+
+## Cole Rehbein
+
+Crisis Counselor & Psychology Researcher  
+Albuquerque, New Mexico
+
+---
+
+### Download
+
+**[Download CV (PDF)](CV.pdf)** — Full academic and clinical CV
+
+---
+
+### Summary
+
+**Clinical:** Crisis intervention at 988 Suicide & Crisis Lifeline. ACT, behavioral activation, functional analysis of verbal behavior. Spanish (B1).
+
+**Research:** Master's thesis on outdoor mindfulness-based behavioral activation for depression. Longitudinal design, psychometric analysis.
+
+**Background:** St. John's College (philosophy), journalism, clinical psychology.
+
+---
+
+### Contact
+
+cole@cole.press  
+[GitHub](https://github.com/colerehbein)
+
+:::
+
+::: {.cli-footer style="margin-top: 3rem;"}
+```bash
+$ ls -la ~/cv/
+CV.pdf  index.html
+$ echo "Last updated: $(date)"
+```
+:::

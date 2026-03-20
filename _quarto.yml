@@ -27,7 +27,7 @@ website:
         text: Blog
       - href: projects.qmd
         text: Projects
-      - href: /cv/
+      - href: cv.qmd
         text: CV
     right:
       - icon: fab fa-github

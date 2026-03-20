@@ -16,10 +16,9 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.5.1'   # keep consistent with your other job
+          r-version: '4.5.1'
 
-      # 2) System libraries needed by CRAN packages compiled from source
-      #    (curl.h for curl, plus common crypto/xml deps used widely)
+      # 2) System libraries
       - name: Install system libs for R packages
         run: |
           sudo apt-get update
@@ -28,78 +27,45 @@ jobs:
             libssl-dev \
             libxml2-dev
 
-      # 3) Install R deps from DESCRIPTION (knitr, rmarkdown, and transitive deps)
-      #    NOTE: we do NOT force-install pak here to avoid rebuilding it from source on fresh runners.
+      # 3) Install R deps
       - name: Install R deps
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          # Read DESCRIPTION at repo root by default
-          # Avoid "extra-packages: any::pak" to skip compiling pak on new runners
           cache-version: 1
 
       # 4) Quarto CLI
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: true  # Enable TinyTeX for CV PDF generation
+          tinytex: true
 
-      # 5) Clone and build CV
+      # 5) Clone and build CV (just PDF)
       - name: Clone CV repo
-        run: |
-          git clone https://github.com/colerehbein/cv.git ../cv
+        run: git clone https://github.com/colerehbein/cv.git ../cv
 
-      - name: Install Quarto CV extension
+      - name: Build CV PDF
         run: |
           cd ../cv
           quarto add mps9506/quarto-cv --no-prompt
-
-      - name: Build CV website
-        run: |
-          cd ../cv
-          echo "Current directory: $(pwd)"
-          echo "Contents of CV repo:"
+          quarto render CV.qmd --to pdf
           ls -la
-          # Build the full CV website (creates _site/ with index.html)
-          echo "Running quarto render..."
-          quarto render || echo "quarto render failed with exit code $?"
-          # Also try to build the PDF version explicitly
-          echo "Running quarto render CV.qmd --to pdf..."
-          quarto render CV.qmd --to pdf || echo "PDF render failed with exit code $?"
-          # List what was built
-          echo "Contents of ../cv after render:"
-          ls -la ../cv/
-          echo "Contents of ../cv/_site if it exists:"
-          ls -la ../cv/_site/ 2>/dev/null || echo "_site does not exist"
 
       # 6) Render main site
       - name: Render site
         run: quarto render
 
-      # 7) Copy CV to site
-      - name: Copy CV to _site
+      # 7) Copy CV PDF to site root
+      - name: Copy CV PDF
         run: |
-          mkdir -p _site/cv
-          echo "Checking if ../cv/_site exists..."
-          if [ -d ../cv/_site ]; then
-            echo "Found ../cv/_site, copying..."
-            cp -r ../cv/_site/* _site/cv/
-            echo "Copied contents of _site/"
+          if [ -f ../cv/CV.pdf ]; then
+            cp ../cv/CV.pdf _site/CV.pdf
+            echo "CV.pdf copied to _site/"
           else
-            echo "ERROR: ../cv/_site does not exist!"
-            echo "Contents of ../cv:"
+            echo "ERROR: CV.pdf not found"
             ls -la ../cv/
             exit 1
           fi
-          # Copy the CV PDF if it exists
-          if [ -f ../cv/CV.pdf ]; then
-            cp ../cv/CV.pdf _site/cv/
-            echo "Copied CV.pdf"
-          else
-            echo "WARNING: CV.pdf not found"
-          fi
-          # List what we copied for debugging
-          echo "Contents of _site/cv:"
-          ls -la _site/cv/
+          ls -la _site/CV.pdf
 
       # 8) Deploy to Netlify
       - name: Deploy
@@ -110,4 +76,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID:   ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
