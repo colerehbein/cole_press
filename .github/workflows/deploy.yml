@@ -53,15 +53,18 @@ jobs:
           cd ../cv
           quarto add mps9506/quarto-cv --no-prompt
 
-      - name: Build CV (PDF and HTML)
+      - name: Build CV website
         run: |
           cd ../cv
-          # Build PDF version
+          # Build the full CV website (creates _site/ with index.html)
+          quarto render
+          # Also build the PDF version explicitly
           quarto render CV.qmd --to pdf
-          # Build HTML version for web viewing
-          quarto render CV.qmd --to html
-          # Build the index page
-          quarto render index.qmd
+          # List what was built
+          echo "Contents of ../cv:"
+          ls -la ../cv/
+          echo "Contents of ../cv/_site:"
+          ls -la ../cv/_site/ || echo "_site does not exist"
 
       # 6) Render main site
       - name: Render site
@@ -71,12 +74,11 @@ jobs:
       - name: Copy CV to _site
         run: |
           mkdir -p _site/cv
-          # Copy the website output (index.html, etc.)
-          cp -r ../cv/_site/* _site/cv/
-          # Copy the CV HTML and PDF if they exist
-          if [ -f ../cv/CV.html ]; then
-            cp ../cv/CV.html _site/cv/
+          # Copy the CV website output
+          if [ -d ../cv/_site ]; then
+            cp -r ../cv/_site/* _site/cv/
           fi
+          # Copy the CV PDF if it exists
           if [ -f ../cv/CV.pdf ]; then
             cp ../cv/CV.pdf _site/cv/
           fi
