@@ -9,6 +9,12 @@ toc: false
 
 :::: main-content
 
+::: intro-statement
+**I work in crisis mental health and study behavioral treatments for depression.**  
+Currently finishing a master's thesis on outdoor mindfulness-based behavioral activation.  
+I write about psychology, build research tools, and sit zazen in Albuquerque.
+:::
+
 ::: cli-prompt
 <span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
 :::
@@ -41,18 +47,17 @@ toc: false
 
 ::: system-info
 **Cole Rehbein** \@ **cole.press** **──────────────────────────────────**\
-**OS:** The One Great Matter\
-**Kernel:** Sitting, writing, counseling, building\
-**Uptime:** Twenty-four seven, three-sixty-five\
-**Shell:** Zazen, markdown, R, compassion, communism\
-**Resolution:** Dialectical materialism\
-**DE:** The Commons\
-**WM:** Cognitive reframing\
-**Theme:** Impermanence\
-**Icons:** Enso / Hammer\
+**OS:** Crisis counselor / Psychology researcher\
+**Kernel:** Sitting, writing, building, analyzing\
+**Uptime:** 988 crisis lines, Friday–Monday nights\
+**Shell:** Behavioral activation, ACT, zazen, R\
+**Resolution:** Science communication + contemplative practice\
+**DE:** Albuquerque, NM (Mountain Time)\
+**WM:** St. John's College → Journalism → Clinical\
+**Theme:** Examined life, examined further\
 **Terminal:** Praxis through active listening\
-**CPU:** Critical mindfulness\
-**Memory:** Collective experience
+**Current:** Finishing thesis, launching YouTube\
+**Memory:** Spinoza, Beck, Dōgen, Skinner
 :::
 :::::
 
