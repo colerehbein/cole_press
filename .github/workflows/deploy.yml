@@ -41,13 +41,38 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: false
+          tinytex: true  # Enable TinyTeX for CV PDF generation
 
-      # 5) Render site
+      # 5) Clone and build CV
+      - name: Clone CV repo
+        run: |
+          git clone https://github.com/colerehbein/cv.git ../cv
+
+      - name: Install Quarto CV extension
+        run: |
+          cd ../cv
+          quarto add mps9506/quarto-cv --no-prompt
+
+      - name: Build CV
+        run: |
+          cd ../cv
+          quarto render
+
+      # 6) Render main site
       - name: Render site
         run: quarto render
 
-      # 6) Deploy to Netlify
+      # 7) Copy CV to site
+      - name: Copy CV to _site
+        run: |
+          mkdir -p _site/cv
+          cp -r ../cv/_site/* _site/cv/
+          # Also copy the PDF if it exists
+          if [ -f ../cv/CV.pdf ]; then
+            cp ../cv/CV.pdf _site/cv/
+          fi
+
+      # 8) Deploy to Netlify
       - name: Deploy
         uses: nwtgck/actions-netlify@v2
         with:
