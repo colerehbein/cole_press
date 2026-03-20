@@ -4,41 +4,6 @@ title: "About"
 
 ::: {.prose-content}
 
-## I came to psychology sideways
-
-St. John's College (philosophy) → journalism (city reporting) → crisis counseling → clinical research. Now I study how behavioral science and contemplative practice intersect, and I'm learning to communicate that research clearly.
-
-## What I do
-
-**Crisis work:** I'm on the phone at 988 Suicide & Crisis Lifeline Friday through Monday nights. ACT, behavioral activation, functional analysis of verbal behavior. High-acuity, short-duration interventions.
-
-**Research:** Finishing my master's thesis on outdoor mindfulness-based behavioral activation for depression. Longitudinal design, psychometric analysis, R and Python for data work.
-
-**Building:** Tools for psychological assessment (forthcoming), this website, a YouTube channel on mental health science.
-
-## How I think
-
-I draw from a few places and try to hold them without forcing agreement:
-
-- **Behavioral science:** Functional analysis, ACT, behavioral activation. What actually changes behavior?
-- **Philosophy:** Spinoza, ethics, philosophy of mind. St. John's trained me to read closely and think structurally.
-- **Contemplative practice:** Sōtō Zen zazen. First-person phenomenological investigation of mind.
-- **Systems thinking:** Class, power, institutional critique. Mental health doesn't happen in a vacuum.
-
-None of these fully explain the others. The tension between first-person experience (what's it like to sit with depression?) and third-person analysis (what measurable behavior changed?) is productive, not problematic.
-
-## What I'm building toward
-
-**Short term:** Finish the thesis. Launch a YouTube channel translating clinical research for general audiences. Continue crisis work.
-
-**Long term:** Science communication that doesn't dumb down. Clinical research that doesn't ignore structure. Practice that isn't performance.
-
-## On the personal side
-
-I live in Albuquerque, New Mexico. I cook on Thursdays, sit zazen daily, and have strong opinions about chile (red and green, both excellent in their contexts).
-
-## Contact
-
-cole@cole.press — Email is best. I check it when I'm not on crisis lines.
+This site houses my writings, projects and experiments. It is built with [Quarto](https://quarto.org/) along with a custom monospace theme. Expect regular updates as I continue exploring technology, AI and the social sciences.
 
 :::

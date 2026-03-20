@@ -3,50 +3,8 @@ title: "Projects"
 page-layout: full
 ---
 
-A showcase of work in progress and completed projects.
+A showcase of work in progress and experiments.
 
-## Research
-
-**Master's Thesis: Outdoor Mindfulness-Based Behavioral Activation**  
-Investigating whether natural outdoor settings enhance brief behavioral activation + mindfulness interventions for college students with depression. Longitudinal RCT design (T1/T2/T3), 17 completers, 3 conditions (Control, Indoor, Outdoor). Corrected AAQ-II scoring error discovered and fixed (December 2025). Manuscript in progress.
-
-*Methods:* R for analysis, longitudinal mixed models, psychometric validation  
-*Status:* Data collection complete, analysis complete, writing in progress  
-*Repo:* Private until publication
-
-**Crisis Intervention Documentation**  
-Developing functional analysis frameworks for telephone crisis counseling. Case conceptualization tools using behavioral activation principles for brief, high-acuity interventions.
-
-*Status:* Internal practice development
-
-## Technical
-
-**cole.press** (this site)  
-Terminal-inspired personal website built with Quarto. Custom SCSS theme, monospace typography, R-powered dynamic content, GitHub Actions CI/CD.
-
-*Stack:* Quarto, R, SCSS, Netlify  
-*Repo:* [github.com/colerehbein/cole_press](https://github.com/colerehbein/cole_press)
-
-**Psychometrics Pipeline** (in development)  
-Building tools for personality assessment data processing. Typed ETL pipelines, scale scoring, norming. Not yet public.
-
-*Stack:* Python, Pydantic, SQLite  
-*Status:* Private development
-
-## Writing
-
-**Blog**  
-Writing on psychology research, clinical practice, and the examined life. Irregular updates as thesis permits.
-
-[Visit blog →](/blog)
-
-## Practice
-
-**Sōtō Zen Study**  
-Personal liturgical study project. Working through Soto School scriptures, Dōgen's Shōbōgenzō, and the Zen curriculum. Student-level, not teaching.
-
-*Status:* Private study, no public materials until authorized
-
----
-
-*Last updated: March 2026*
+- **ai tools** – exploring open-source language models.
+- **research automation** – building reproducible pipelines in R and Python.
+- **web experiments** – small sites and apps hosted on [GitHub](https://github.com/colerehbein).
