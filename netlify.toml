@@ -1,7 +1,6 @@
 [build]
-command = "mkdir -p _site && echo 'placeholder' > _site/.gitkeep"
 publish = "_site"
 
-# Note: Actual build is handled by GitHub Actions
-# This placeholder command prevents Netlify auto-build failures
-# GitHub Actions builds the full site and deploys via nwtgck/actions-netlify
+# Note: Build is handled by GitHub Actions
+# Netlify build command should be set to: echo "skip"
+# This prevents Netlify from auto-building while GitHub Actions handles the real build
