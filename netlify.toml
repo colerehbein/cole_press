@@ -1,2 +1,6 @@
 [build]
 publish = "_site"
+
+# Note: Build is handled by GitHub Actions
+# Netlify build command should be set to: echo "skip"
+# This prevents Netlify from auto-building while GitHub Actions handles the real build
