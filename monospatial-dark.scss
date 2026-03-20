@@ -259,13 +259,18 @@ hr {
 // Dark mode overrides for connect section syntax highlighting
 .newsletter-box,
 .cli-footer {
-  div.sourceCode pre.sourceCode.bash code.sourceCode {
-    color: $terminal-text-dark;
-
-    span.at,
-    span.dt,
-    span.kw {
+  div.sourceCode pre.sourceCode.bash {
+    background-color: lighten($mono-bg-dark, 10%); // Lighter background for visibility
+    border: 1px solid $mono-border-dark;
+    
+    code.sourceCode {
       color: $terminal-text-dark;
+
+      span.at,
+      span.dt,
+      span.kw {
+        color: $terminal-text-dark;
+      }
     }
   }
 }
