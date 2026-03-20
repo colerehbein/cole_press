@@ -197,10 +197,10 @@ Thanks for visiting! ☕
 $ curl -X POST cole.press/subscribe
 ```
 
-<form action="#" method="post" onsubmit="return false;" class="cli-form">
+<form action="https://buttondown.com/api/emails/embed-subscribe/coler" method="post" class="cli-form">
 <div class="cli-input-wrapper">
 <span class="cli-prompt-small">$</span>
-<input type="email" name="email" placeholder="your@email.com" required class="cli-input">
+<input type="email" name="email" id="bd-email" placeholder="your@email.com" required class="cli-input">
 <button type="submit" class="cli-button">GO</button>
 </div>
 <small class="cli-note">No spam, just signal</small>
@@ -331,36 +331,50 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transition = `opacity 0.6s ease-out, transform 0.6s ease-out`;
     });
     
-    // Newsletter form functionality
+    // Newsletter form functionality — Buttondown integration
     const newsletterForm = document.querySelector('.cli-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const button = this.querySelector('.cli-button');
             const input = this.querySelector('.cli-input');
+            const formData = new FormData(this);
             
             button.textContent = 'SENDING...';
             button.style.background = 'var(--cli-yellow)';
             button.style.transform = 'scale(0.95)';
             
-            setTimeout(() => {
-                button.textContent = '✓ SENT';
-                button.style.background = 'var(--cli-green)';
-                button.style.transform = 'scale(1)';
-                input.value = 'Thank you for subscribing!';
-                input.disabled = true;
-                input.style.color = 'var(--cli-green)';
-            }, 1200);
-            
-            setTimeout(() => {
-                button.textContent = 'SEND';
-                button.style.background = '';
-                button.style.transform = '';
-                input.value = '';
-                input.disabled = false;
-                input.style.color = '';
-                input.placeholder = 'your@email.com';
-            }, 4000);
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    button.textContent = '✓ SENT';
+                    button.style.background = 'var(--cli-green)';
+                    button.style.transform = 'scale(1)';
+                    input.value = 'Subscribed!';
+                    input.disabled = true;
+                    input.style.color = 'var(--cli-green)';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            })
+            .catch(error => {
+                button.textContent = 'ERROR';
+                button.style.background = 'var(--cli-red, #ff5555)';
+                input.value = 'Try again';
+                setTimeout(() => {
+                    button.textContent = 'GO';
+                    button.style.background = '';
+                    input.value = '';
+                    input.disabled = false;
+                    input.style.color = '';
+                }, 2000);
+            });
         });
     }
     
