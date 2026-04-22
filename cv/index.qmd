@@ -1,36 +1,81 @@
 ---
 title: "CV"
+description: "Cole Rehbein — crisis counselor, psychology researcher, and writer. Academic and clinical CV."
 page-layout: article
+code-tools: false
 ---
+
+::: cli-prompt
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">cat ~/cv.md</code>
+:::
 
 ::: {.prose-content}
 
 ## Cole Rehbein
 
-Crisis Counselor & Psychology Researcher  
+Crisis Counselor & Psychology Researcher
 Albuquerque, New Mexico
 
 ---
 
-### Download
+### Clinical Experience
 
-**[Download CV (PDF)](/CV.pdf)** — Full academic and clinical CV
+**Crisis Counselor** — 988 Suicide & Crisis Lifeline
+*Friday–Monday, 2:00 PM–11:00 PM MT*
+
+- High-acuity, short-duration crisis intervention
+- Modalities: ACT, behavioral activation, functional analysis of verbal behavior
+- Populations: crisis callers, SMI, depression, ADHD
+- Languages: English, Spanish (B1)
 
 ---
 
-### Summary
+### Education
 
-**Clinical:** Crisis intervention at 988 Suicide & Crisis Lifeline. ACT, behavioral activation, functional analysis of verbal behavior. Spanish (B1).
+**Master's Program** — Clinical Psychology
+*Thesis: Outdoor mindfulness-based behavioral activation for depression*
 
-**Research:** Master's thesis on outdoor mindfulness-based behavioral activation for depression. Longitudinal design, psychometric analysis.
+- Longitudinal design, psychometric analysis
+- Tools: R, SPSS, Qualtrics
 
-**Background:** St. John's College (philosophy), journalism, clinical psychology.
+**B.A., Philosophy** — St. John's College (Great Books Program)
+
+- Focus: Spinoza, ethics, philosophy of mind
+- Ancient Greek (reading), French (reading)
+- Close reading, Socratic dialogue
+
+---
+
+### Research
+
+**Thesis:** Mindfulness-based behavioral activation for depression
+
+- Data collection: complete
+- Analysis: complete
+- Writing: in progress
+
+**Methods:** Psychological assessment, EEG, statistical analysis
+
+---
+
+### Journalism
+
+- City reporter, copyeditor, culture writer
+- Beats: local politics, food, arts
+
+---
+
+### Technical Skills
+
+- **Languages:** R, Python, LaTeX, Markdown
+- **Tools:** Quarto, SPSS, Qualtrics, Git
+- **Publishing:** Academic papers, research reports, technical documentation
 
 ---
 
 ### Contact
 
-cole@cole.press  
-[GitHub](https://github.com/colerehbein)
+cole@cole.press
+[GitHub](https://github.com/colerehbein){target="_blank" rel="noopener noreferrer"}
 
 :::
