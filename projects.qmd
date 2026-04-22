@@ -3,53 +3,56 @@ title: "Projects"
 description: "Research tools, web experiments, and things I've built."
 page-layout: full
 code-tools: false
+toc: false
 ---
 
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls -la ~/projects/</code>
-:::
+```{=html}
+<div class="terminal-window-large">
+  <div class="terminal-header-bar">
+    <span class="terminal-dot red"></span>
+    <span class="terminal-dot yellow"></span>
+    <span class="terminal-dot green"></span>
+    <code>cole@press:~$ ls -la ~/projects/</code>
+  </div>
+  <div class="terminal-body">
 
-::: {.terminal-dense}
-```
-drwxr-xr-x  cole  staff  Jan 2026  ai-tools/
+    <pre class="terminal-listing">drwxr-xr-x  cole  staff  Jan 2026  ai-tools/
 drwxr-xr-x  cole  staff  Mar 2026  research-automation/
 drwxr-xr-x  cole  staff  Apr 2026  web-experiments/
-drwxr-xr-x  cole  staff  Apr 2026  cole-press/
+drwxr-xr-x  cole  staff  Apr 2026  cole-press/</pre>
+
+    <div class="terminal-project-grid">
+
+      <div class="terminal-project-card">
+        <div class="card-accent" style="background: linear-gradient(90deg, #ff6b6b, #ff9500);"></div>
+        <h4>AI Tools</h4>
+        <p>Exploring open-source language models and building practical applications for research and clinical workflows.</p>
+        <a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer" class="terminal-link">View on GitHub →</a>
+      </div>
+
+      <div class="terminal-project-card">
+        <div class="card-accent" style="background: linear-gradient(90deg, #3b82f6, #00e5ff);"></div>
+        <h4>Research Automation</h4>
+        <p>Building reproducible analysis pipelines in R and Python. Psychometric analysis, longitudinal data processing, and automated reporting.</p>
+        <a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer" class="terminal-link">View on GitHub →</a>
+      </div>
+
+      <div class="terminal-project-card">
+        <div class="card-accent" style="background: linear-gradient(90deg, #a855f7, #ec4899);"></div>
+        <h4>Web Experiments</h4>
+        <p>Small sites and apps — including this one. Built with Quarto, SCSS, and JavaScript. Terminal aesthetic, monospace typography, and zero frameworks.</p>
+        <a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer" class="terminal-link">View on GitHub →</a>
+      </div>
+
+      <div class="terminal-project-card">
+        <div class="card-accent" style="background: linear-gradient(90deg, #30e000, #00e5ff);"></div>
+        <h4>cole.press</h4>
+        <p>This website. A Quarto-powered personal site with a terminal/neofetch aesthetic, self-hosted fonts, and a dark mode that doesn't hurt your eyes.</p>
+        <a href="https://github.com/colerehbein/cole_press" target="_blank" rel="noopener noreferrer" class="terminal-link">Source Code →</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 ```
-:::
-
-:::::: nav-grid-compact
-
-::: {.project-item .blog}
-**AI Tools**
-
-Exploring open-source language models and building practical applications for research and clinical workflows.
-
-[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
-:::
-
-::: {.project-item .cv}
-**Research Automation**
-
-Building reproducible analysis pipelines in R and Python. Psychometric analysis, longitudinal data processing, and automated reporting.
-
-[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
-:::
-
-::: {.project-item .portfolio}
-**Web Experiments**
-
-Small sites and apps — including this one. Built with Quarto, SCSS, and JavaScript. Terminal aesthetic, monospace typography, and zero frameworks.
-
-[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
-:::
-
-::: {.project-item .blog}
-**cole.press**
-
-This website. A Quarto-powered personal site with a terminal/neofetch aesthetic, self-hosted fonts, and a dark mode that doesn't hurt your eyes.
-
-[**Source Code →**](https://github.com/colerehbein/cole_press){.project-link target="_blank" rel="noopener noreferrer"}
-:::
-
-::::::

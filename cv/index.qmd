@@ -3,79 +3,88 @@ title: "CV"
 description: "Cole Rehbein — crisis counselor, psychology researcher, and writer. Academic and clinical CV."
 page-layout: article
 code-tools: false
+toc: false
 ---
 
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">cat ~/cv.md</code>
-:::
+```{=html}
+<div class="terminal-window-large">
+  <div class="terminal-header-bar">
+    <span class="terminal-dot red"></span>
+    <span class="terminal-dot yellow"></span>
+    <span class="terminal-dot green"></span>
+    <code>cole@press:~$ cat ~/cv.md</code>
+  </div>
+  <div class="terminal-body terminal-prose">
 
-::: {.prose-content}
+    <h2>Cole Rehbein</h2>
+    <p class="terminal-subtitle-text">Crisis Counselor &amp; Psychology Researcher · Albuquerque, New Mexico</p>
 
-## Cole Rehbein
+    <hr class="terminal-hr">
 
-Crisis Counselor & Psychology Researcher
-Albuquerque, New Mexico
+    <h3>Clinical Experience</h3>
 
----
+    <p><strong>Crisis Counselor</strong> — 988 Suicide &amp; Crisis Lifeline</p>
+    <p><em>Friday–Monday, 2:00 PM–11:00 PM MT</em></p>
+    <ul>
+      <li>High-acuity, short-duration crisis intervention</li>
+      <li>Modalities: ACT, behavioral activation, functional analysis of verbal behavior</li>
+      <li>Populations: crisis callers, SMI, depression, ADHD</li>
+      <li>Languages: English, Spanish (B1)</li>
+    </ul>
 
-### Clinical Experience
+    <hr class="terminal-hr">
 
-**Crisis Counselor** — 988 Suicide & Crisis Lifeline
-*Friday–Monday, 2:00 PM–11:00 PM MT*
+    <h3>Education</h3>
 
-- High-acuity, short-duration crisis intervention
-- Modalities: ACT, behavioral activation, functional analysis of verbal behavior
-- Populations: crisis callers, SMI, depression, ADHD
-- Languages: English, Spanish (B1)
+    <p><strong>Master's Program</strong> — Clinical Psychology</p>
+    <p><em>Thesis: Outdoor mindfulness-based behavioral activation for depression</em></p>
+    <ul>
+      <li>Longitudinal design, psychometric analysis</li>
+      <li>Tools: R, SPSS, Qualtrics</li>
+    </ul>
 
----
+    <p><strong>B.A., Philosophy</strong> — St. John's College (Great Books Program)</p>
+    <ul>
+      <li>Focus: Spinoza, ethics, philosophy of mind</li>
+      <li>Ancient Greek (reading), French (reading)</li>
+      <li>Close reading, Socratic dialogue</li>
+    </ul>
 
-### Education
+    <hr class="terminal-hr">
 
-**Master's Program** — Clinical Psychology
-*Thesis: Outdoor mindfulness-based behavioral activation for depression*
+    <h3>Research</h3>
 
-- Longitudinal design, psychometric analysis
-- Tools: R, SPSS, Qualtrics
+    <p><strong>Thesis:</strong> Mindfulness-based behavioral activation for depression</p>
+    <ul>
+      <li>Data collection: complete</li>
+      <li>Analysis: complete</li>
+      <li>Writing: in progress</li>
+    </ul>
+    <p><strong>Methods:</strong> Psychological assessment, EEG, statistical analysis</p>
 
-**B.A., Philosophy** — St. John's College (Great Books Program)
+    <hr class="terminal-hr">
 
-- Focus: Spinoza, ethics, philosophy of mind
-- Ancient Greek (reading), French (reading)
-- Close reading, Socratic dialogue
+    <h3>Journalism</h3>
+    <ul>
+      <li>City reporter, copyeditor, culture writer</li>
+      <li>Beats: local politics, food, arts</li>
+    </ul>
 
----
+    <hr class="terminal-hr">
 
-### Research
+    <h3>Technical Skills</h3>
+    <ul>
+      <li><strong>Languages:</strong> R, Python, LaTeX, Markdown</li>
+      <li><strong>Tools:</strong> Quarto, SPSS, Qualtrics, Git</li>
+      <li><strong>Publishing:</strong> Academic papers, research reports, technical documentation</li>
+    </ul>
 
-**Thesis:** Mindfulness-based behavioral activation for depression
+    <hr class="terminal-hr">
 
-- Data collection: complete
-- Analysis: complete
-- Writing: in progress
+    <h3>Contact</h3>
+    <p><a href="mailto:cole@cole.press">cole@cole.press</a></p>
+    <p><a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer">GitHub</a></p>
 
-**Methods:** Psychological assessment, EEG, statistical analysis
-
----
-
-### Journalism
-
-- City reporter, copyeditor, culture writer
-- Beats: local politics, food, arts
-
----
-
-### Technical Skills
-
-- **Languages:** R, Python, LaTeX, Markdown
-- **Tools:** Quarto, SPSS, Qualtrics, Git
-- **Publishing:** Academic papers, research reports, technical documentation
-
----
-
-### Contact
-
-cole@cole.press
-[GitHub](https://github.com/colerehbein){target="_blank" rel="noopener noreferrer"}
-
-:::
+  </div>
+</div>
+```
