@@ -1,10 +1,55 @@
 ---
 title: "Projects"
+description: "Research tools, web experiments, and things I've built."
 page-layout: full
+code-tools: false
 ---
 
-A showcase of work in progress and experiments.
+::: cli-prompt
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls -la ~/projects/</code>
+:::
 
-- **ai tools** – exploring open-source language models.
-- **research automation** – building reproducible pipelines in R and Python.
-- **web experiments** – small sites and apps hosted on [GitHub](https://github.com/colerehbein).
+::: {.terminal-dense}
+```
+drwxr-xr-x  cole  staff  Jan 2026  ai-tools/
+drwxr-xr-x  cole  staff  Mar 2026  research-automation/
+drwxr-xr-x  cole  staff  Apr 2026  web-experiments/
+drwxr-xr-x  cole  staff  Apr 2026  cole-press/
+```
+:::
+
+:::::: nav-grid-compact
+
+::: {.project-item .blog}
+**AI Tools**
+
+Exploring open-source language models and building practical applications for research and clinical workflows.
+
+[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
+:::
+
+::: {.project-item .cv}
+**Research Automation**
+
+Building reproducible analysis pipelines in R and Python. Psychometric analysis, longitudinal data processing, and automated reporting.
+
+[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
+:::
+
+::: {.project-item .portfolio}
+**Web Experiments**
+
+Small sites and apps — including this one. Built with Quarto, SCSS, and JavaScript. Terminal aesthetic, monospace typography, and zero frameworks.
+
+[**View on GitHub →**](https://github.com/colerehbein){.project-link target="_blank" rel="noopener noreferrer"}
+:::
+
+::: {.project-item .blog}
+**cole.press**
+
+This website. A Quarto-powered personal site with a terminal/neofetch aesthetic, self-hosted fonts, and a dark mode that doesn't hurt your eyes.
+
+[**Source Code →**](https://github.com/colerehbein/cole_press){.project-link target="_blank" rel="noopener noreferrer"}
+:::
+
+::::::

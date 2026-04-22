@@ -38,7 +38,5 @@
 
 // ============================================================================
 // SECONDARY: Inter (Sans-serif) - Long-form prose readability
-// Loaded from Google Fonts CDN for simplicity
+// Loaded via <link> in _includes/preload-fonts.html for performance (#23)
 // ============================================================================
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");

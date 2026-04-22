@@ -1,0 +1,8 @@
+<!-- Terminal theme persistence across pages (#12) -->
+<script>
+  // Apply saved terminal theme immediately (before render) to avoid flash
+  (function() {
+    var t = localStorage.getItem('terminal-theme');
+    if (t) document.documentElement.dataset.terminalTheme = t;
+  })();
+</script>

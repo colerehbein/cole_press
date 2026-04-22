@@ -1,6 +1,12 @@
 ---
 title: "About"
+description: "Cole Rehbein — crisis counselor, psychology researcher, and writer in Albuquerque, NM."
+code-tools: false
 ---
+
+::: cli-prompt
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">cat ~/about.md</code>
+:::
 
 ::: {.prose-content}
 

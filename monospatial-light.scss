@@ -340,6 +340,23 @@ $code-bg: $mono-surface;
 // Import @font-face rules if self-hosting (Method B)
 @import "fonts"; // Assumes _fonts.scss exists
 
+// Smooth scroll for in-page navigation (#27)
+html {
+  scroll-behavior: smooth;
+}
+
+// Respect prefers-reduced-motion (#26)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 // CSS Custom Properties for Dynamic Theming
 :root {
   --spacing-unit: 0.75rem; // Smaller spacing unit for compact design
@@ -506,13 +523,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   line-height: $line-height-normal;
+  // Smooth dark/light mode transition (#15)
+  transition: background-color 300ms ease, color 300ms ease;
 }
 
 // Enhanced Navbar - more compact
 .navbar {
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
   background-image: linear-gradient(
     90deg,
     #ff6b6b,
@@ -521,7 +540,7 @@ body {
     #4dabf7,
     #a66dd4
   );
-  background-size: 100% 2px;
+  background-size: 100% 3px;
   background-position: bottom;
   background-repeat: no-repeat;
   padding: $spacing-3 0;
@@ -1033,6 +1052,12 @@ p {
   color: $mono-text-secondary;
 }
 
+// Intro statement should use full-weight text color (#9)
+.intro-statement p {
+  color: $mono-text;
+  font-size: $font-size-base;
+}
+
 a {
   color: $mono-accent;
   text-decoration: none;
@@ -1213,6 +1238,29 @@ a {
     font-family: $font-family-monospace; // Keep headings monospace
     margin-top: $spacing-10;
     margin-bottom: $spacing-4;
+  }
+
+  // Improved heading hierarchy contrast (#17)
+  h2 {
+    font-size: $font-size-2xl;
+    position: relative;
+    padding-bottom: $spacing-2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, $mono-accent, $cli-rainbow-cyan);
+      border-radius: $radius-base;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-lg;
+    color: $mono-text-secondary;
   }
 
   p {
@@ -1505,9 +1553,11 @@ a {
 
   .ascii-art {
     pre {
-      font-size: 0.6rem;
+      // Fixed sizing to protect ASCII alignment (#21)
+      font-size: 10px;
       line-height: 1;
       margin: 0;
+      font-family: $font-family-monospace;
       background: linear-gradient(
         45deg,
         lighten($cli-rainbow-red, 10%),
@@ -1701,6 +1751,7 @@ a {
     .git-status {
       color: $cli-rainbow-cyan;
       margin-bottom: $spacing-1;
+      list-style: none; // Remove default list marker (#4)
 
       &.active::before {
         content: "●";
@@ -1865,82 +1916,82 @@ a {
       }
     }
 
-    .newsletter-form {
-      .cli-form {
-        .cli-input-wrapper {
-          display: flex;
-          align-items: center;
-          background: $mono-surface;
-          border: 1px solid $mono-border;
-          border-radius: $radius-base;
-          padding: $spacing-2;
-          margin-bottom: $spacing-2;
-          transition: all var(--transition-normal);
+    // Newsletter form — fixed CSS cascade (#7)
+    // Removed .newsletter-form wrapper so styles apply directly
+    .cli-form {
+      .cli-input-wrapper {
+        display: flex;
+        align-items: center;
+        background: $mono-surface;
+        border: 1px solid $mono-border;
+        border-radius: $radius-base;
+        padding: $spacing-2;
+        margin-bottom: $spacing-2;
+        transition: all var(--transition-normal);
 
-          &:focus-within {
-            border-color: var(--terminal-primary);
-            box-shadow: 0 0 0 2px var(--terminal-glow);
-          }
-
-          .cli-prompt-small {
-            color: var(--terminal-primary);
-            font-family: $font-family-monospace;
-            margin-right: $spacing-2;
-            font-weight: bold;
-            font-size: $font-size-sm;
-          }
-
-          .cli-input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            font-family: $font-family-monospace;
-            font-size: $font-size-xs;
-            color: $mono-text;
-            padding: $spacing-1;
-            min-width: 0;
-
-            &:focus {
-              outline: none;
-            }
-
-            &::placeholder {
-              color: $mono-text-secondary;
-              opacity: 0.8;
-            }
-          }
-
-          .cli-button {
-            background: var(--terminal-primary);
-            color: $cli-bg;
-            border: none;
-            padding: $spacing-1 $spacing-2;
-            border-radius: $radius-sm;
-            font-family: $font-family-monospace;
-            font-size: 0.65rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            white-space: nowrap;
-
-            &:hover {
-              filter: brightness(1.1);
-              transform: translateY(-1px);
-            }
-
-            &:active {
-              transform: translateY(0);
-            }
-          }
+        &:focus-within {
+          border-color: var(--terminal-primary);
+          box-shadow: 0 0 0 2px var(--terminal-glow);
         }
 
-        .cli-note {
-          color: $mono-text-secondary;
-          font-size: 0.65rem;
+        .cli-prompt-small {
+          color: var(--terminal-primary);
           font-family: $font-family-monospace;
-          margin: 0;
-          opacity: 0.8;
+          margin-right: $spacing-2;
+          font-weight: bold;
+          font-size: $font-size-sm;
         }
+
+        .cli-input {
+          flex: 1;
+          border: none;
+          background: transparent;
+          font-family: $font-family-monospace;
+          font-size: $font-size-xs;
+          color: $mono-text;
+          padding: $spacing-1;
+          min-width: 0;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $mono-text-secondary;
+            opacity: 0.8;
+          }
+        }
+
+        .cli-button {
+          background: var(--terminal-primary);
+          color: $cli-bg;
+          border: none;
+          padding: $spacing-1 $spacing-2;
+          border-radius: $radius-sm;
+          font-family: $font-family-monospace;
+          font-size: 0.65rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all var(--transition-normal);
+          white-space: nowrap;
+
+          &:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+          }
+
+          &:active {
+            transform: translateY(0);
+          }
+        }
+      }
+
+      .cli-note {
+        color: $mono-text-secondary;
+        font-size: 0.65rem;
+        font-family: $font-family-monospace;
+        margin: 0;
+        opacity: 0.8;
       }
     }
   }
@@ -2001,222 +2052,7 @@ a {
   }
 }
 
-// Legacy connect-section (keep for backwards compatibility)
-.connect-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-4;
-  margin-bottom: $spacing-4;
-
-  .newsletter-box {
-    background: $mono-surface-elevated;
-    border: 1px solid $mono-border;
-    border-radius: $radius-base;
-    padding: $spacing-4;
-    box-shadow: $shadow-base;
-
-    strong {
-      color: $mono-text;
-      margin-bottom: $spacing-4;
-      display: block;
-    }
-
-    // Override Quarto syntax highlighting for bash code blocks
-    div.sourceCode {
-      margin: 0 0 $spacing-4 0;
-
-      pre.sourceCode.bash {
-        background: $cli-bg;
-        padding: $spacing-3;
-        border-radius: $radius-base;
-        font-size: $font-size-xs;
-        margin: 0;
-
-        code.sourceCode {
-          color: $terminal-text;
-
-          // Syntax highlighting with terminal aesthetic
-          span.ex {
-            color: var(--terminal-primary);
-          } // commands: $, curl, etc.
-          span.at {
-            color: $terminal-text;
-          } // flags: -X, --data
-          span.st {
-            color: $cli-rainbow-green;
-          } // strings
-          span.dt {
-            color: $terminal-text;
-          } // line continuation
-          span.kw {
-            color: $terminal-text;
-          } // keywords
-          span.va {
-            color: var(--terminal-primary);
-          } // variables
-
-          // Remove line number anchors styling
-          > span > a:first-child {
-            display: none;
-          }
-        }
-
-        // Hide copy button in these decorative blocks
-        button.code-copy-button {
-          display: none;
-        }
-      }
-    }
-
-    .newsletter-form {
-      .cli-form {
-        .cli-input-wrapper {
-          display: flex;
-          align-items: center;
-          background: $mono-surface;
-          border: 1px solid $mono-border;
-          border-radius: $radius-base;
-          padding: $spacing-2;
-          margin-bottom: $spacing-2;
-          transition: all var(--transition-normal);
-
-          &:focus-within {
-            border-color: var(--terminal-primary);
-            box-shadow: 0 0 0 2px var(--terminal-glow);
-          }
-
-          .cli-prompt-small {
-            color: var(--terminal-primary);
-            font-family: $font-family-monospace;
-            margin-right: $spacing-2;
-            font-weight: bold;
-            font-size: $font-size-sm;
-          }
-
-          .cli-input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            font-family: $font-family-monospace;
-            font-size: $font-size-sm;
-            color: $mono-text;
-            padding: $spacing-1;
-
-            &:focus {
-              outline: none;
-            }
-
-            &::placeholder {
-              color: $mono-text-secondary;
-              opacity: 0.8;
-            }
-          }
-
-          .cli-button {
-            background: $cli-rainbow-blue;
-            color: white;
-            border: none;
-            padding: $spacing-2 $spacing-3;
-            border-radius: $radius-sm;
-            font-family: $font-family-monospace;
-            font-size: $font-size-xs;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            margin-left: $spacing-2;
-
-            &:hover {
-              background: $cli-rainbow-cyan;
-              transform: translateY(-1px);
-            }
-
-            &:active {
-              transform: translateY(0);
-            }
-          }
-        }
-
-        .cli-note {
-          color: $mono-text-secondary;
-          font-size: $font-size-xs;
-          font-family: $font-family-monospace;
-          margin: 0;
-          opacity: 0.8;
-        }
-      }
-    }
-  }
-
-  .social-links {
-    background: $mono-surface-elevated;
-    border: 1px solid $mono-border;
-    border-radius: $radius-base;
-    padding: $spacing-4;
-    box-shadow: $shadow-base;
-
-    strong {
-      color: $mono-text;
-      margin-bottom: $spacing-3;
-      display: block;
-    }
-
-    pre {
-      background: $cli-bg;
-      color: $terminal-text;
-      padding: $spacing-3;
-      border-radius: $radius-base;
-      font-size: $font-size-xs;
-      margin: 0;
-      line-height: 1.8;
-    }
-
-    .social-links-list {
-      background: $cli-bg;
-      padding: $spacing-3;
-      border-radius: $radius-base;
-      font-family: $font-family-monospace;
-      font-size: $font-size-xs;
-      line-height: 1.8;
-
-      .social-link-row {
-        display: flex;
-        align-items: center;
-        gap: $spacing-2;
-        padding: $spacing-1 0;
-
-        // Handle Quarto's p wrapper if it exists
-        p {
-          display: flex;
-          align-items: center;
-          gap: $spacing-2;
-          margin: 0;
-        }
-      }
-
-      .social-label {
-        color: var(--terminal-primary);
-        min-width: 70px;
-        font-weight: 500;
-      }
-
-      .social-separator {
-        color: $terminal-text;
-        margin-right: $spacing-1;
-      }
-
-      a {
-        color: $terminal-text;
-        text-decoration: none;
-        transition: color var(--transition-fast);
-
-        &:hover {
-          color: var(--terminal-primary);
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
+// Legacy connect-section removed (#25) — was unused duplicate of connect-sidebar
 
 // CLI footer
 .cli-footer {
@@ -2281,6 +2117,25 @@ a {
   box-shadow: $shadow-lg;
 }
 
+// Style the Quarto dark/light mode toggle (#10)
+.quarto-color-scheme-toggle {
+  .bi {
+    font-family: $font-family-monospace;
+  }
+}
+
+.navbar .quarto-color-scheme-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: $radius-sm;
+  padding: 2px 6px;
+  transition: all var(--transition-fast);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
 // Responsive adjustments for new components
 @media (max-width: 768px) {
   .neofetch-style {
@@ -2303,10 +2158,6 @@ a {
     .projects-section .project-grid {
       grid-template-columns: 1fr;
     }
-  }
-
-  .connect-section {
-    grid-template-columns: 1fr;
   }
 
   .thoughts-section {

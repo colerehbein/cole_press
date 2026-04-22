@@ -211,8 +211,8 @@ $ curl -X POST cole.press/subscribe
 **🔗 Links**
 
 <div class="social-links-list">
-<div class="social-link-row"><span class="social-label">github</span><span class="social-separator">:</span><a href="https://github.com/colerehbein">colerehbein</a></div>
-<div class="social-link-row"><span class="social-label">twitter</span><span class="social-separator">:</span><a href="https://twitter.com/colerehbein">@colerehbein</a></div>
+<div class="social-link-row"><span class="social-label">github</span><span class="social-separator">:</span><a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer">colerehbein</a></div>
+<div class="social-link-row"><span class="social-label">x</span><span class="social-separator">:</span><a href="https://x.com/colerehbein" target="_blank" rel="noopener noreferrer">@colerehbein</a></div>
 <div class="social-link-row"><span class="social-label">email</span><span class="social-separator">:</span><a href="mailto:cole@cole.press">cole@cole.press</a></div>
 <div class="social-link-row"><span class="social-label">web</span><span class="social-separator">:</span><a href="https://cole.press">cole.press</a></div>
 </div>
@@ -276,7 +276,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const code = entry.target;
                 const text = code.textContent;
                 const typingSpeed = 30;
-                const totalTypingTime = text.length * typingSpeed + 200; // 200ms initial delay
                 
                 code.textContent = '';
                 code.style.opacity = '1';
@@ -330,50 +329,55 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.transform = 'translateY(20px)';
         section.style.transition = `opacity 0.6s ease-out, transform 0.6s ease-out`;
     });
+
+    // Typewriter fallback: after 3s, force all hidden content visible (#11)
+    setTimeout(() => {
+        cliPrompts.forEach(code => {
+            if (code.style.opacity === '0') {
+                code.style.opacity = '1';
+            }
+        });
+        sections.forEach(section => {
+            if (section.style.opacity === '0') {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    }, 3000);
     
-    // Newsletter form functionality — Buttondown integration
+    // Newsletter form functionality — Buttondown integration (#13)
+    // Uses native form submission as fallback; JS enhances with fetch
     const newsletterForm = document.querySelector('.cli-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
             const button = this.querySelector('.cli-button');
             const input = this.querySelector('.cli-input');
             const formData = new FormData(this);
             
-            button.textContent = 'SENDING...';
-            button.style.background = 'var(--cli-yellow)';
+            // Try fetch first; if CORS fails, let native form submit handle it
+            e.preventDefault();
+            button.textContent = '...';
             button.style.transform = 'scale(0.95)';
             
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
             })
             .then(response => {
-                if (response.ok) {
-                    button.textContent = '✓ SENT';
-                    button.style.background = 'var(--cli-green)';
+                if (response.ok || response.type === 'opaque') {
+                    button.textContent = '✓';
+                    button.style.background = '#22c55e';
                     button.style.transform = 'scale(1)';
                     input.value = 'Subscribed!';
                     input.disabled = true;
-                    input.style.color = 'var(--cli-green)';
+                    input.style.color = '#22c55e';
                 } else {
                     throw new Error('Submission failed');
                 }
             })
             .catch(error => {
-                button.textContent = 'ERROR';
-                button.style.background = 'var(--cli-red, #ff5555)';
-                input.value = 'Try again';
-                setTimeout(() => {
-                    button.textContent = 'GO';
-                    button.style.background = '';
-                    input.value = '';
-                    input.disabled = false;
-                    input.style.color = '';
-                }, 2000);
+                // Fallback: submit form natively
+                e.target.submit();
             });
         });
     }
@@ -387,16 +391,6 @@ document.addEventListener('DOMContentLoaded', function() {
         cursor.style.animation = 'blink 1s infinite';
         cursor.style.marginLeft = '5px';
         asciiArt.appendChild(cursor);
-        
-        // Add keyframes for blink animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
     }
 
     // ========================================================================
