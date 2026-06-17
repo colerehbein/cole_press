@@ -566,168 +566,7 @@ body {
   }
 }
 
-// Terminal Header
-.terminal-header {
-  background: linear-gradient(
-    135deg,
-    $terminal-bg 0%,
-    lighten($terminal-bg, 5%) 100%
-  );
-  color: $terminal-green;
-  padding: $spacing-4 $spacing-6;
-  border-radius: $radius-lg;
-  margin-bottom: $spacing-6;
-  box-shadow: $shadow-md;
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-
-  pre {
-    margin: 0;
-    color: $terminal-green;
-  }
-}
-
-// Compact Hero Section
-.hero-section-compact {
-  background: linear-gradient(
-    135deg,
-    $mono-surface 0%,
-    lighten($mono-surface, 2%) 100%
-  );
-  padding: $spacing-10 0 $spacing-8; // Much more compact
-  text-align: center;
-  border-bottom: 1px solid $mono-border-subtle;
-
-  .hero-title {
-    font-size: clamp(2rem, 4vw, 3rem); // Smaller
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    margin-bottom: $spacing-4;
-    background: linear-gradient(135deg, $mono-text 0%, $mono-accent 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .terminal-subtitle {
-    margin-bottom: $spacing-6;
-
-    pre {
-      background: lighten($terminal-bg, 3%);
-      color: $terminal-cyan;
-      padding: $spacing-4;
-      border-radius: $radius-md;
-      display: inline-block;
-      text-align: left;
-      margin: 0;
-      font-size: $font-size-sm;
-      box-shadow: $shadow-base;
-    }
-  }
-
-  .hero-actions-compact {
-    display: flex;
-    gap: $spacing-3;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .btn {
-      padding: $spacing-2 $spacing-5; // Smaller buttons
-      font-weight: 600;
-      border-radius: $radius-md;
-      transition: all var(--transition-normal);
-      text-decoration: none;
-      font-size: $font-size-sm;
-
-      &.btn-primary {
-        background: $mono-accent;
-        border-color: $mono-accent;
-        box-shadow: $shadow-base;
-
-        &:hover {
-          background: $mono-accent-hover;
-          transform: translateY(-1px);
-          box-shadow: $shadow-md;
-        }
-      }
-
-      &.btn-outline-secondary {
-        color: $mono-text-secondary;
-        border-color: $mono-border;
-        background: $mono-surface-elevated;
-
-        &:hover {
-          background: $mono-text;
-          color: $mono-surface-elevated;
-          transform: translateY(-1px);
-        }
-      }
-    }
-  }
-}
-
-// Compact main content
-.main-content-compact {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: $spacing-8 $spacing-6; // Much more compact
-}
-
-// Terminal prompt styling
-.terminal-prompt {
-  font-family: $font-family-monospace;
-  color: $terminal-green;
-  background: lighten($terminal-bg, 2%);
-  padding: $spacing-3 $spacing-4;
-  border-radius: $radius-base;
-  margin: $spacing-6 0 $spacing-4;
-  box-shadow: $shadow-sm;
-  font-size: $font-size-sm;
-}
-
-// Skills terminal
-.skills-terminal {
-  margin-bottom: $spacing-8;
-
-  pre {
-    background: linear-gradient(
-      135deg,
-      $terminal-bg 0%,
-      lighten($terminal-bg, 3%) 100%
-    );
-    color: $terminal-green;
-    padding: $spacing-5;
-    border-radius: $radius-lg;
-    box-shadow: $shadow-md;
-    font-size: $font-size-xs;
-    overflow-x: auto;
-  }
-}
-
-// Compact section titles
-.section-title-compact {
-  font-size: $font-size-2xl; // Smaller
-  font-weight: 700;
-  color: $mono-text;
-  margin-bottom: $spacing-8; // Less margin
-  text-align: center;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -$spacing-2;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px; // Smaller accent line
-    height: 2px;
-    background: linear-gradient(90deg, #ff6b6b, #4dabf7);
-    border-radius: $radius-base;
-  }
-}
-
 // Terminal window styling
-.terminal-window,
 .terminal-window-large {
   background: $terminal-bg;
   border-radius: $radius-lg;
@@ -961,237 +800,6 @@ body {
   }
 }
 
-// Compact navigation grid
-.nav-grid-compact {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $spacing-5; // Smaller gaps
-  margin-bottom: $spacing-8;
-
-  .nav-card-terminal {
-    transition: all var(--transition-normal);
-
-    &:hover {
-      transform: translateY(-2px) scale(1.02);
-    }
-  }
-}
-
-// Compact activity section
-.activity-section-compact {
-  margin-bottom: $spacing-8;
-
-  .github-terminal {
-    .terminal-window-large {
-      .terminal-body {
-        .github-stats-terminal {
-          .stat-line {
-            color: $terminal-green;
-            font-family: $font-family-monospace;
-            margin-bottom: $spacing-2;
-            font-size: $font-size-xs;
-          }
-
-          .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: $spacing-4;
-            margin: $spacing-4 0;
-
-            .stat-col {
-              text-align: center;
-
-              .stat-number {
-                display: block;
-                font-size: $font-size-xl;
-                font-weight: 700;
-                color: $terminal-cyan;
-                margin-bottom: $spacing-1;
-              }
-
-              .stat-label {
-                color: $terminal-text;
-                font-size: $font-size-xs;
-                font-family: $font-family-monospace;
-              }
-            }
-          }
-
-          .status-line {
-            color: $terminal-green;
-            font-size: $font-size-xs;
-            margin-bottom: $spacing-1;
-            font-family: $font-family-monospace;
-          }
-        }
-      }
-    }
-  }
-}
-
-// Insights matrix
-.insights-matrix {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: $spacing-4;
-  margin-bottom: $spacing-8;
-
-  .insight-terminal {
-    background: lighten($terminal-bg, 2%);
-    color: $terminal-text;
-    padding: $spacing-4;
-    border-radius: $radius-md;
-    border-left: 4px solid;
-    transition: all var(--transition-normal);
-    font-size: $font-size-sm;
-
-    &.ai {
-      border-left-color: $terminal-cyan;
-    }
-    &.code {
-      border-left-color: $terminal-yellow;
-    }
-    &.future {
-      border-left-color: $terminal-purple;
-    }
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
-    }
-
-    strong {
-      color: $terminal-green;
-      display: block;
-      margin-bottom: $spacing-2;
-      font-size: $font-size-sm;
-    }
-  }
-}
-
-// Connect terminal section
-.connect-terminal {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $spacing-6;
-  margin-bottom: $spacing-8;
-
-  .newsletter-terminal {
-    .terminal-body {
-      .newsletter-form-terminal {
-        margin-top: $spacing-4;
-
-        .terminal-input-group {
-          display: flex;
-          align-items: center;
-          background: lighten($terminal-bg, 5%);
-          border-radius: $radius-base;
-          padding: $spacing-2;
-
-          .terminal-prompt-char {
-            color: $terminal-green;
-            margin-right: $spacing-2;
-            font-weight: 700;
-          }
-
-          .terminal-input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            color: $terminal-text;
-            font-family: $font-family-monospace;
-            font-size: $font-size-sm;
-
-            &:focus {
-              outline: none;
-            }
-
-            &::placeholder {
-              color: $mono-text-muted;
-            }
-          }
-
-          .terminal-submit {
-            background: $mono-accent;
-            color: white;
-            border: none;
-            padding: $spacing-2 $spacing-3;
-            border-radius: $radius-sm;
-            font-family: $font-family-monospace;
-            font-size: $font-size-xs;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-
-            &:hover {
-              background: $mono-accent-hover;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .social-terminal {
-    pre {
-      background: lighten($terminal-bg, 2%);
-      color: $terminal-cyan;
-      padding: $spacing-4;
-      border-radius: $radius-md;
-      margin-bottom: $spacing-4;
-      font-size: $font-size-xs;
-    }
-
-    .social-links-terminal {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-2;
-
-      .social-link-terminal {
-        color: $terminal-text;
-        text-decoration: none;
-        font-family: $font-family-monospace;
-        font-size: $font-size-sm;
-        padding: $spacing-2 $spacing-3;
-        border-radius: $radius-sm;
-        transition: all var(--transition-fast);
-
-        &:hover {
-          background: lighten($terminal-bg, 8%);
-          color: $terminal-cyan;
-          text-decoration: none;
-        }
-
-        &.github:hover {
-          color: $terminal-purple;
-        }
-        &.twitter:hover {
-          color: $terminal-cyan;
-        }
-        &.email:hover {
-          color: $terminal-yellow;
-        }
-      }
-    }
-  }
-}
-
-// ASCII footer
-.ascii-footer {
-  margin-top: $spacing-10;
-  text-align: center;
-
-  pre {
-    background: lighten($terminal-bg, 1%);
-    color: $terminal-green;
-    padding: $spacing-5;
-    border-radius: $radius-lg;
-    display: inline-block;
-    font-size: $font-size-xs;
-    box-shadow: $shadow-base;
-  }
-}
-
 // Enhanced typography - more compact
 h1,
 h2,
@@ -1284,40 +892,6 @@ a {
         }
       }
     }
-  }
-}
-
-// Responsive design - more compact
-@media (max-width: 768px) {
-  .hero-section-compact {
-    padding: $spacing-6 0 $spacing-5;
-
-    .hero-actions-compact {
-      flex-direction: column;
-      align-items: center;
-
-      .btn {
-        width: 100%;
-        max-width: 250px;
-      }
-    }
-  }
-
-  .main-content-compact {
-    padding: $spacing-6 $spacing-4;
-  }
-
-  .nav-grid-compact {
-    grid-template-columns: 1fr;
-    gap: $spacing-4;
-  }
-
-  .connect-terminal {
-    grid-template-columns: 1fr;
-  }
-
-  .insights-matrix {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1473,149 +1047,9 @@ a {
   }
 }
 
-// --- TERMINAL DENSE: Compact terminal-like content ---
-.terminal-dense {
-  font-family: $font-family-monospace;
-  font-size: $font-size-xs;
-  line-height: $line-height-dense;
-  background: $terminal-bg;
-  color: $terminal-text;
-  padding: $spacing-4;
-  border-radius: $radius-lg;
-  overflow-x: auto;
-
-  &.with-glow {
-    @include terminal-glow($terminal-green);
-  }
-
-  &.with-scanlines {
-    @include crt-scanlines(0.02);
-  }
-}
-
-// --- LOG STREAM: Timestamped entries like system logs ---
-.log-stream {
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-  line-height: $line-height-normal;
-
-  .log-entry {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: $spacing-3;
-    padding: $spacing-2 0;
-    border-bottom: 1px solid $mono-border-subtle;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .log-timestamp {
-    color: $semantic-system;
-    font-size: $font-size-xs;
-    white-space: nowrap;
-  }
-
-  .log-content {
-    color: $mono-text;
-  }
-
-  .log-entry--success .log-content {
-    color: $semantic-success;
-  }
-
-  .log-entry--warning .log-content {
-    color: $semantic-warning;
-  }
-
-  .log-entry--error .log-content {
-    color: $semantic-error;
-  }
-
-  .log-entry--system .log-content {
-    color: $semantic-system;
-  }
-}
-
-// --- MAN PAGE: Documentation-style layout with sidebar ---
-.man-page {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: $spacing-8;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-
-  .man-nav {
-    font-family: $font-family-monospace;
-    font-size: $font-size-sm;
-    position: sticky;
-    top: $spacing-8;
-    align-self: start;
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      padding: $spacing-1 0;
-    }
-
-    a {
-      color: $mono-text-secondary;
-      text-decoration: none;
-
-      &:hover,
-      &.active {
-        color: $semantic-action;
-      }
-
-      &::before {
-        content: "→ ";
-        opacity: 0;
-        transition: opacity var(--transition-fast);
-      }
-
-      &:hover::before,
-      &.active::before {
-        opacity: 1;
-      }
-    }
-  }
-
-  .man-content {
-    @extend .prose-content;
-    max-width: none;
-  }
-}
-
 // ============================================================================
 // ANIMATION UTILITY CLASSES
 // ============================================================================
-
-.glow-pulse {
-  @include glow-pulse($terminal-cyan);
-}
-
-.glow-pulse-green {
-  @include glow-pulse($terminal-green);
-}
-
-.glow-pulse-purple {
-  @include glow-pulse($semantic-system);
-}
-
-.hover-lift {
-  @include hover-lift(-3px);
-}
-
-.hover-lift-sm {
-  @include hover-lift(-2px);
-}
 
 .text-glow {
   color: var(--terminal-primary);
@@ -1629,20 +1063,6 @@ a {
 
 .text-glow-green {
   @include text-glow($terminal-green);
-}
-
-// Ambient effect toggle (applied via JS or user preference)
-.ambient-effects-enabled {
-  .terminal-dense,
-  .cli-header,
-  .terminal-header {
-    @include crt-scanlines(0.015);
-  }
-
-  .terminal-green,
-  .text-terminal-green {
-    @include text-glow($terminal-green);
-  }
 }
 
 // Loading animation for terminal
@@ -1673,42 +1093,7 @@ a {
   animation: blink 1s infinite;
 }
 
-// Matrix animation
-@keyframes matrixFall {
-  to {
-    transform: translateY(100vh);
-  }
-}
-
-.matrix-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.03;
-}
-
 // ======== NEW CLI COMPONENTS (Colorful neofetch/btop inspired) ========
-
-// CLI Header
-.cli-header {
-  background: linear-gradient(135deg, $cli-bg 0%, $cli-bg-lighter 100%);
-  color: $cli-rainbow-green;
-  padding: $spacing-4 $spacing-6;
-  border-radius: $radius-lg;
-  margin-bottom: $spacing-6;
-  box-shadow: $shadow-md;
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-
-  pre {
-    margin: 0;
-    color: $cli-rainbow-green;
-  }
-}
 
 // Neofetch-style display - compact
 .neofetch-style {
@@ -1718,7 +1103,7 @@ a {
   background: linear-gradient(135deg, $cli-bg 0%, lighten($cli-bg, 3%) 100%);
   padding: $spacing-4;
   border-radius: $radius-base;
-  margin-bottom: $spacing-3;
+  margin-bottom: $spacing-6;
   box-shadow: $shadow-sm;
   border: 1px solid rgba($cli-rainbow-cyan, 0.2);
 
@@ -1791,7 +1176,7 @@ a {
 // Skills and Projects layout
 .skills-and-projects {
   display: block; // Changed from grid to block since we moved projects to sidebar
-  margin-bottom: $spacing-4;
+  margin-bottom: $spacing-6;
 
   .skills-section {
     .skills-json {
@@ -1897,7 +1282,7 @@ a {
   color: lighten($terminal-text, 30%);
   padding: $spacing-4;
   border-radius: $radius-base;
-  margin-bottom: $spacing-4;
+  margin-bottom: $spacing-6;
   box-shadow: $shadow-sm;
   font-family: $font-family-monospace;
   font-size: $font-size-xs;
@@ -1948,7 +1333,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-3;
-  margin-bottom: $spacing-4;
+  margin-bottom: $spacing-6;
 
   .thought-item {
     background: $mono-surface-elevated;
@@ -2215,7 +1600,7 @@ a {
 .homepage-with-sidebar {
   display: grid;
   grid-template-columns: 1fr 280px;
-  gap: $spacing-6;
+  gap: $spacing-8;
   align-items: start;
 
   .main-content {
