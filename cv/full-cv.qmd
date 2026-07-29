@@ -1,0 +1,158 @@
+---
+title: "Curriculum Vitae"
+author: "Cole Rehbein"
+date: last-modified
+jobtitle: "Crisis Counselor and Clinical Psychology Researcher"
+email: cole@cole.press
+github: colerehbein
+web: cole.press
+fontawesome: yes
+fontsize: 11pt
+papersize: letter
+documentclass: article
+updated: true
+output-file: cole-rehbein-cv.pdf
+format:
+  quarto-cv-pdf: default
+validate-yaml: false
+---
+
+# Summary
+
+Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care. Telephonic and chat/text crisis triage for the 988 Suicide & Crisis Lifeline network since January 2025, with 3+ years of clinical experience in Northern New Mexico. Conversational Spanish (B1).
+
+# Education
+
+_New Mexico Highlands University_, M.S. Clinical Psychology \hfill In progress
+
+- **Thesis**: The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression
+- **Advisor**: Dr. David Pan
+- Data collection and analysis complete; manuscript in progress
+
+\vspace{2mm}
+
+_St. John's College, Santa Fe_, B.A. Philosophy and History of Math and Science \hfill 2019
+
+- **Minors**: Classical Studies, Comparative Literature
+- **Senior paper**: The Internally Determined Self: Spinoza's _Ethics_ as a remedy for postmodernity's identity crisis
+
+# Clinical Experience
+
+_Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico)_
+
+Crisis and Access Specialist \hfill January 2025 – present
+
+- Crisis triage, intervention, and referral via phone and chat/text for Protocall's business partners, including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide Prevention Lifeline Backup Network
+- Friday–Monday nights
+- **Supervisor**: Patricia Bain
+
+\vspace{2mm}
+
+_Counseling ABQ_
+
+Counseling Intern \hfill January – August 2024
+
+- Comprehensive biopsychosocial intake assessments for new clients; diagnostic consultation to their ongoing therapists
+- Ongoing counseling for clients working on depression, ADHD, and mandated anger management treatment
+- **Supervisor**: Denise Decker, LMSW
+
+\vspace{2mm}
+
+_New Mexico Highlands University_
+
+Intervention work for thesis \hfill Fall 2023
+
+- Recruited for and conducted a brief, mindfulness-based behavioral activation intervention for college students with depression
+- **Supervisor**: Dr. David Pan
+
+\vspace{2mm}
+
+_New Mexico Behavioral Health Institute_
+
+Clinical Psychology Intern \hfill 2022 – 2023
+
+- Cognitive, neuropsychological, and intelligence tests as part of intakes and treatment planning
+- Group and individual therapies using brief Acceptance and Commitment Therapy (ACT) and mindfulness interventions, focused on people with schizophrenia-spectrum disorders
+- **Supervisor**: Dr. Mathias Stricherz
+
+# Research & Assessment
+
+**Thesis, New Mexico Highlands University** — brief, mindfulness-based behavioral activation intervention for college students with depression; longitudinal design; psychometric and statistical analysis in R.
+
+**Systematic review** — with Dr. Thomas R. Brooks: _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022: A Systematic Review_ (manuscript in preparation).
+
+**EEG research** — principal investigator for an EEG study of chronic cannabis use and stress responses on an emotional Stroop task; acquired new EEG equipment; managed lab inventory (Heflin lab, Fall 2022).
+
+**Psychological assessment** — cognitive, neuropsychological, and intelligence testing in clinical intake and treatment-planning settings. Coursework: Neuropsychological Assessment, IQ Assessment, Behavior Therapy and Assessment.
+
+# Teaching
+
+_New Mexico Highlands University_
+
+- Graduate Assistant, Memory and Cognition — embedded TA twice weekly; led class during the professor's absences \hfill Fall 2023
+- Graduate Assistant, Undergraduate Research Methods — assisted with undergraduate writing and research design \hfill Fall 2023
+- Teaching Assistant, First-Year Learning Community — psychology component of an interdisciplinary course; ran two Friday lab sections \hfill Fall 2022
+- Graduate Assistant, Human Connections Lab — managed a section developing studies on video game exposure and social psychological factors \hfill Spring 2022
+- Graduate Assistant for Dr. Lara Heflin — extracurricular neuroanatomy tutorial with sheep brain dissections; lab management \hfill Fall 2022
+
+_Breakthrough Santa Fe_
+
+- Tutor — regular one-on-one tutoring for at-risk and disadvantaged high school students \hfill 2018 – 2019
+
+# Journalism
+
+- City Reporter, _Rio Grande Sun_ — city politics, council meetings, local events \hfill Aug 2020 – May 2021
+- Calendar Editor, Copy Editor, Culture Contributor, _Santa Fe Reporter_ — event calendar for online and print; copyediting; food writing and gallery openings \hfill Aug 2019 – Mar 2020
+- Editorial Intern, _Santa Fe Reporter_ \hfill Sept 2015 – Mar 2016
+- Assistant Editor, _The Moon_ (student newspaper), St. John's College \hfill Jan – May 2016
+
+# Leadership & Service
+
+_New Mexico Highlands University_
+
+- President, Psi Chi Honor Society \hfill 2022 – 2024
+- Vice President & President Pro-Tempore, Associated Students of NMHU \hfill 2022 – 2023
+- Graduate Representative, Campus Advisory Committee on Finance \hfill 2022 – 2023
+- Graduate Liaison, Psychology Department \hfill Fall 2023
+
+_Other_
+
+- Co-founder, Walk the Talk Santa Fe \hfill Summer 2020
+- President, Student Committee on Instruction, St. John's College \hfill 2017 – 2018
+- Voting Member, Polity (student government), St. John's College \hfill 2016 – 2019
+- Eagle Scout, Scouting BSA \hfill 2015
+
+# Publications & Presentations
+
+**Book chapter**
+
+- Reysen, S., Brooks, T. R., Rehbein, C., Plante, C. N., Roberts, S. E., Gerbasi, K. C., & Joshi, R. _Need for Power, Transhumanism, and Gender Differences in Preference for Isekai Anime._ In _Explaining Isekai_ (M. Cserkits, ed.). Accepted.
+
+**Under review**
+
+- Brooks, T. R., Rehbein, C., Reysen, S., Plante, C. N., Roberts, S. E., & Tague, A. M. _"Don't be too proud of this technological terror you've constructed:" The influence of gender and in-group identification on transhumanist orientation._ Submitted to the _Journal for Religion, Film and Media_.
+
+**In preparation**
+
+- Rehbein, C., & Brooks, T. R. _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022: A Systematic Review._ For _Behaviour Research and Therapy_.
+- Rehbein, C., Brooks, T. R., Reysen, S., Plante, C. N., Roberts, S. E., & Tague, A. M. _Gender and Global Economics as Predictors of Transhumanist Orientation._ For _Fast Capitalism_.
+
+**Presentations and lectures**
+
+- Rehbein, C., & Brooks, T. R. (2023, April). _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022, or; Why We Stopped Shocking Trans People: A Systematic Review._ Southwest Psychological Association, Dallas, TX.
+- Carreon Gallegos, E. L., Brooks, T. R., & Rehbein, C. (2023, September). _Gender and In-group Identification: Exploring the Influence on Transhumanist Orientation._ Pop Culture Association of the South annual conference, New Orleans, LA.
+- Rehbein, C., & Brooks, T. R. (2023, March). _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022: A Systematic Review._ NMHU Women's and Gender Studies Brownbag Lecture Series.
+- Rehbein, C. (2023, September). Guest lectures: _Radical Behaviorism and Cognitive Science, I & II_, graduate Memory and Cognition class, NMHU.
+- Rehbein, C. (2022, October). Guest lecture: _Introduction to Clinical Psychology, Diagnosis, and the DSM_, undergraduate Intro to Psychology class, NMHU.
+
+**Poster**
+
+- Rehbein, C. (2023, April). _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022, or; Why We Stopped Shocking Trans People: A Systematic Review._ Rocky Mountain Psychological Association, Albuquerque, NM.
+
+# Technical Skills
+
+- **Research and statistics**: R (data manipulation, analysis, visualization), SPSS, Qualtrics
+- **Publishing and documentation**: Quarto, Markdown, LaTeX
+- **Programming and version control**: Python, Git
+- **Clinical**: crisis intervention and de-escalation (CPI Nonviolent Crisis Intervention training), ACT, behavioral activation, psychological assessment
+- **Languages**: English; conversational Spanish (B1)

@@ -1,1 +1,7 @@
-/blog/*  https://blog.cole.press/:splat  200!
+# blog.cole.press lives on as a shortcut to the in-site blog
+https://blog.cole.press/*  https://cole.press/blog/:splat  301
+
+/index.html  /  301
+/about.html  /about  301
+/projects.html  /projects  301
+/cv/index.html  /cv/  301

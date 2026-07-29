@@ -13,12 +13,17 @@ project:
 
 website:
   title: "cole.press"
-  description: "A personal website by Cole, with thoughts on tech, AI, psychology, and politics."
+  description: "Cole Rehbein — crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care."
   site-url: "https://cole.press"
   repo-url: "https://github.com/colerehbein/cole_press"
   favicon: favicon.svg
   search: true
-  open-graph: true
+  open-graph:
+    image: og-image.png
+  twitter-card:
+    card-style: summary_large_image
+    creator: "@colerehbein"
+    site: "@colerehbein"
   navbar:
     left:
       - href: index.qmd
@@ -34,8 +39,10 @@ website:
     right:
       - icon: fab fa-github
         href: https://github.com/colerehbein
+        aria-label: "GitHub"
       - icon: fab fa-x-twitter
         href: https://x.com/colerehbein
+        aria-label: "X (Twitter)"
 
 format:
   html:

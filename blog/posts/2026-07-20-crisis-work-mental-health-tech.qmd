@@ -1,0 +1,55 @@
+---
+title: "What Crisis Work Taught Me About Building Mental-Health Technology"
+description: "The best session on a crisis tool is a short one, and the best outcome is never needing it again, which is why engagement metrics make a lousy north star."
+author: "Cole Rehbein"
+date: 2026-07-20
+categories: [crisis work, mental-health technology, behavioral health]
+code-tools: false
+toc: false
+---
+
+## The queue
+
+Most Friday nights, around the time Albuquerque starts arguing about where to eat, I put on a headset and log into a queue. I work as a crisis counselor with Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico), Friday through Monday nights. The calls and chats come from people having the worst hour of their year. My job is to figure out quickly what kind of hour it is, and what the next ten minutes should look like.
+
+I also build things: this website, the analysis pipeline for a master's thesis on outdoor mindfulness-based behavioral activation for depression, small R tools that keep research honest. The two jobs share more wiring than you might expect. What follows is what the headset taught me about the keyboard.
+
+## Triage is the whole job
+
+A shift begins with almost no information. A phone number. A few lines of chat. A wait time that keeps climbing. From that you decide who needs a counselor right now, who needs a warmline, who needs a dispatcher, and who needs you to stay on the line and say very little. You make those calls while the queue moves and your coffee cools.
+
+Every software team does a version of this with a straight face and calls it backlog grooming. The stakes are lower and the snacks are better, but the cognitive shape is the same: too little information, too many claims on your attention, and a decision that has to be made anyway. Crisis work just forces the assumptions into the open. You learn to treat every piece of incoming information as provisional, to hold a working hypothesis loosely, and to update without embarrassment when the second sentence out of someone's mouth ruins the first.
+
+A good crisis tool should be built for that posture. It should assume the person using it is working from a fragment, and it should make revision cheap: fields that can be marked unknown, drafts that tolerate change, a record that shows what was known when. If your form demands a confident answer at minute two, your form will get one. It will be fiction.
+
+## The checklist doesn't assess risk
+
+Risk assessment training hands you a form. Ask about plan, means, intent, timeframe, past attempts, reasons for living. The form is useful the way a pilot's pre-flight checklist is useful: it keeps a tired person from skipping a step at 3 AM. But the score at the bottom is an input to a judgment, and the judgment is the actual product. Two callers can check identical boxes and need opposite responses. A form can't hear the difference between a rehearsed answer and a real one. A counselor can, some of the time, and gets better at it the way you get better at anything: supervision, case review, and being wrong in small ways before being wrong in big ones.
+
+This is where some mental-health software drifts off the road. A tool that turns the checklist into the decision has not removed clinical judgment; it has buried the judgment inside a scoring function that nobody on shift can inspect. Calibrated judgment is a skill with a feedback loop. Tools should tighten that loop: faster documentation, easier review, cleaner handoffs. They should be modest about replacing the judgment itself.
+
+## Documentation is a product
+
+Every contact ends with a note, written immediately, while the next call waits. The note has hard constraints: brief, factual, legally meaningful, and useful to a stranger. The stranger is the next counselor, who may pick up the story mid-scene at 2 AM with ninety seconds to catch up. You learn to write for that reader. What was said, what was assessed, what was done, what the plan is. No throat-clearing. No adjectives doing the work of facts.
+
+Software teams have versions of this and mostly treat them as chores: commit messages, incident reports, handoff docs. Crisis work treats the note as a first-class deliverable, because the note is the only part of the contact guaranteed to outlive the shift. A good note lets the next person act without guessing. A bad note makes the next caller pay for your vagueness. Tooling that makes the note slow to write or easy to fudge has taxed every future interaction to fund a slightly easier present.
+
+## The wrong north star
+
+Consumer software worships engagement: daily active users, session length, streaks, time in app. For a tool used by people in crisis, those numbers point backward. A successful session is short. The best possible outcome is that the person closes the thing and goes to sleep, or calls their sister, or makes it to Tuesday without needing you again. A rising time-on-site graph for a crisis tool should trigger an incident review, not a celebration. If your north star is engagement, you have built a slot machine and aimed it at people on the worst night of their year.
+
+Measure the boring, load-bearing things instead. How fast did the person reach a human when they needed one? Did the handoff carry the context, or did they have to retell the worst part three times? Did the safety plan get saved somewhere it can actually be found again? These metrics are unglamorous and hard to put on a keynote slide, which is part of their appeal.
+
+## Human in the loop, at 2 AM
+
+"Human in the loop" sounds clean in a pitch deck: the model proposes, the human disposes. At 2 AM the human in the loop is a specific person. She is six hours into a shift. Her coffee is cold. She is holding a risk assessment in one hand and three blinking chat windows in the other, and the software is asking her to dismiss a modal dialog.
+
+Design for that human. Sane defaults. Fewer clicks. No pop-ups competing for attention while someone describes a plan to die. And retire the idea that line staff are naive end-users who need the tool kept simple. The people who answer the lines are expert operators working tired. They know exactly where the software fails, because they absorb the failures with their own evenings, and they are usually the last ones asked. If you are building for crisis services and you have not sat with the night shift, you are designing from a photograph.
+
+## What I took back to the keyboard
+
+I'm finishing a thesis on outdoor mindfulness-based behavioral activation for depression: data collected, analysis complete, manuscript in progress. The methods are standard: longitudinal design, psychometrics, R for the analysis. The working habits came from the crisis line. Assume your data is incomplete and say so. Write the analysis so a stranger can re-run it cold, because the stranger is future you, and future you is also tired. Treat reproducibility the way a good note treats the next counselor: as a duty to whoever picks the work up mid-scene.
+
+That is the kind of thing I want to build, and it is what this site is for: small, reproducible tools for behavioral-health research and care, built by someone who has answered the phone. On Monday night I will log back into the queue. The coffee will go cold on schedule. Somewhere in the shift, a note from a counselor I have never met will tell me, in forty seconds, exactly what I need to know. I want the software I write to hold up under the same standard.
+
+*No caller is described in this essay. The details are shift logistics and my own habits; confidentiality is the one feature with no opt-out.*

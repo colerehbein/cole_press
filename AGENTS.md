@@ -30,12 +30,22 @@ cole_press/
 ├── index.qmd                # Home page (terminal/neofetch style)
 ├── about.qmd                # About page
 ├── projects.qmd             # Projects showcase
+├── blog/
+│   ├── index.qmd            # Blog listing + RSS feed (feed: true → /blog/index.xml)
+│   ├── _metadata.yml        # Shared front matter for blog pages
+│   └── posts/               # Posts: YYYY-MM-DD-slug.qmd
+├── cv/
+│   ├── index.qmd            # Web CV page (links both PDFs)
+│   ├── full-cv.qmd          # Full CV source → cole-rehbein-cv.pdf
+│   └── resume.qmd           # One-page résumé source → cole-rehbein-resume.pdf
 ├── monospatial-light.scss   # Light theme (primary)
 ├── monospatial-dark.scss    # Dark theme
 ├── _fonts.scss              # Font face definitions (Anonymous Pro)
 ├── fonts/                   # Self-hosted WOFF2 font files
+├── og-image.png             # 1200×630 Open Graph social card
 ├── _includes/
-│   └── preload-fonts.html   # Font preloading for performance
+│   ├── preload-fonts.html   # Font preloading for performance
+│   └── terminal-theme.html  # Terminal color-theme switcher
 ├── _extensions/
 │   ├── mps9506/quarto-cv/   # CV PDF extension (LaTeX-based)
 │   └── quarto-ext/fontawesome/  # FontAwesome icons shortcode
@@ -47,6 +57,7 @@ cole_press/
 ├── setup.sh                 # Manual environment setup script
 ├── package.json             # npm deps (Netlify Quarto plugin)
 ├── DESCRIPTION              # R package dependencies
+├── _redirects               # Netlify redirect rules (see "Redirects & Domains")
 └── netlify.toml             # Netlify deployment config
 ```
 
@@ -55,6 +66,9 @@ cole_press/
 | File                     | Purpose                                          |
 | ------------------------ | ------------------------------------------------ |
 | `_quarto.yml`            | Site configuration: navigation, themes, metadata |
+| `blog/index.qmd`         | Blog listing page; `feed: true` generates RSS at `/blog/index.xml` |
+| `cv/full-cv.qmd`         | Full CV source (PDF via quarto-cv)               |
+| `cv/resume.qmd`          | One-page résumé source (PDF via quarto-cv)       |
 | `monospatial-light.scss` | Main theme (1300+ lines, terminal-inspired)      |
 | `monospatial-dark.scss`  | Dark mode overrides                              |
 | `_fonts.scss`            | `@font-face` definitions for Anonymous Pro       |
@@ -140,6 +154,14 @@ quarto render   # Generate static HTML to _site/
 - **Main branch push:** Triggers full render and Netlify deploy
 - **Pull requests:** Render check with artifact upload
 - Workflows in `.github/workflows/`
+- `deploy.yml` sets `tinytex: true` in the Quarto setup step — this is what allows the CV/résumé PDFs (`quarto-cv-pdf` format) to build in CI
+
+## Redirects & Domains
+
+`_redirects` (copied into `_site/` at render time) defines Netlify rules:
+
+- `https://blog.cole.press/* → https://cole.press/blog/:splat` (301) — subdomain shortcut to the in-site blog. **Requires `blog.cole.press` to be attached as a domain alias in the cole.press Netlify site's dashboard**; until then the rule never fires.
+- Legacy `.html` URLs (`/index.html`, `/about.html`, `/projects.html`, `/cv/index.html`) 301 to their clean URLs.
 
 ## Output
 
@@ -151,9 +173,10 @@ quarto render   # Generate static HTML to _site/
 
 ### Adding a new blog post
 
-1. Create `posts/new-post.qmd` with YAML front matter
-2. Include `title`, `date`, `categories` in front matter
+1. Create `blog/posts/YYYY-MM-DD-slug.qmd` with YAML front matter
+2. Include `title`, `description`, `author`, `date`, `categories` in front matter
 3. Write content in Quarto Markdown
+4. The listing page and RSS feed (`/blog/index.xml`) update automatically on render — no extra config needed
 
 ### Modifying the theme
 

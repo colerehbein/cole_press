@@ -315,3 +315,32 @@ hr {
     }
   }
 }
+
+// ============================================================================
+// ACCESSIBILITY — keyboard focus & screen-reader utility
+// ============================================================================
+
+// Visible focus indicator for keyboard users (WCAG 2.4.7, 1.4.11).
+// $mono-accent-dark passes 3:1 against dark page and terminal backgrounds.
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid $mono-accent-dark;
+  outline-offset: 2px;
+}
+
+// Screen-reader-only text (e.g., accessible names for decorative ASCII art)
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

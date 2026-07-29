@@ -1,0 +1,120 @@
+---
+title: "Blog"
+description: "Essays on crisis work, behavioral science, technology, and the examined life."
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  feed: true
+page-layout: full
+code-tools: false
+toc: false
+---
+
+::: cli-prompt
+<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls ~/writing --sort=date</code>
+:::
+
+Essays on crisis work, behavioral science, technology, and the examined life. Low frequency, long half-life — everything here also ships over [RSS](index.xml).
+
+```{=html}
+<style>
+/* ========================================================================
+   Blog listing polish — page-scoped (do not move to theme files).
+   Reuses theme custom properties (--terminal-primary, --spacing-unit,
+   --border-radius, --transition-fast) and Bootstrap variables so the
+   light/dark themes keep working untouched.
+   ======================================================================== */
+
+/* Post rows: quiet separators; terminal-primary accent on hover */
+.quarto-listing .quarto-post {
+  border-bottom: 1px solid var(--bs-border-color);
+  padding: calc(var(--spacing-unit) * 1.5) 0;
+  transition: border-color var(--transition-fast);
+}
+
+.quarto-listing .quarto-post:first-of-type {
+  padding-top: calc(var(--spacing-unit) * 0.5);
+}
+
+.quarto-listing .quarto-post:hover {
+  border-bottom-color: var(--terminal-primary);
+}
+
+/* Titles: clean anchors, terminal-colored underline on hover */
+.quarto-listing .listing-title a {
+  text-decoration: none;
+}
+
+.quarto-listing .listing-title a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--terminal-primary);
+  text-underline-offset: 0.2em;
+}
+
+/* Metadata: compact + secondary */
+.quarto-listing .listing-date,
+.quarto-listing .listing-description {
+  color: var(--bs-secondary-color);
+}
+
+/* Category pills on each post */
+.quarto-listing .listing-category {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius);
+  padding: 0.1em 0.5em;
+  font-size: 0.8em;
+  color: var(--bs-secondary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.quarto-listing .listing-category:hover {
+  color: var(--terminal-primary);
+  border-color: var(--terminal-primary);
+  text-decoration: none;
+}
+
+/* Category filter block (rendered above the listing when categories: true) */
+.quarto-listing-category-title {
+  font-size: 0.85em;
+  color: var(--bs-secondary-color);
+  letter-spacing: 0.08em;
+}
+
+.quarto-listing-category .quarto-category {
+  display: inline-block;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius);
+  padding: 0.1em 0.6em;
+  margin-right: 0.25em;
+  font-size: 0.85em;
+  color: var(--bs-secondary-color);
+  cursor: pointer;
+  user-select: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.quarto-listing-category .quarto-category:hover,
+.quarto-listing-category .quarto-category.active {
+  color: var(--terminal-primary);
+  border-color: var(--terminal-primary);
+}
+
+/* Graceful degradation: when no post has categories yet, the filter holds
+   only "All" — hide it so a one-post archive still looks intentional.
+   If Quarto's markup differs, this rule simply never matches (no-op). */
+.quarto-listing-category:has(.quarto-category:only-child) {
+  display: none;
+}
+
+/* Empty-filter message, if it is ever reached */
+.quarto-listing .listing-no-matching {
+  color: var(--bs-secondary-color);
+  border: 1px dashed var(--bs-border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit) calc(var(--spacing-unit) * 1.5);
+}
+</style>
+```

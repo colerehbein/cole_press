@@ -47,9 +47,9 @@ $web-font-path: "" !default; // Prevent default Bootswatch fonts
 $mono-bg: #ffffff;
 $mono-text: #0f172a;
 $mono-text-secondary: #475569;
-$mono-text-muted: #64748b;
-$mono-accent: #3b82f6;
-$mono-accent-hover: #2563eb;
+$mono-text-muted: #5d6d82; // WCAG AA: 5.05:1 on $mono-surface (was #64748b, 4.55:1)
+$mono-accent: #2563eb; // WCAG AA: 5.17:1 on white / 4.94:1 on $mono-surface (was #3b82f6, 3.68/3.52 — failed)
+$mono-accent-hover: #1d4ed8; // 6.70:1 on white (was #2563eb, promoted to base)
 
 // Terminal Colors
 $terminal-bg: #1a1d23;
@@ -70,7 +70,7 @@ $cli-rainbow-yellow: #ffd23f;
 $cli-rainbow-green: #30e000;
 $cli-rainbow-cyan: #00e5ff;
 $cli-rainbow-blue: #3b82f6;
-$cli-rainbow-purple: #a855f7;
+$cli-rainbow-purple: #b365f6; // WCAG AA: 4.91:1 on $terminal-bg / 5.39:1 on $cli-bg (was #a855f7, 4.27 — failed)
 $cli-rainbow-pink: #ec4899;
 
 // More vibrant accent colors
@@ -1488,6 +1488,9 @@ a {
         &:focus-within {
           border-color: var(--terminal-primary);
           box-shadow: 0 0 0 2px var(--terminal-glow);
+          // High-contrast indicator — the glow alone fails 3:1 on light bg
+          outline: 2px solid $mono-accent;
+          outline-offset: 1px;
         }
 
         .cli-prompt-small {
@@ -1514,7 +1517,6 @@ a {
 
           &::placeholder {
             color: $mono-text-secondary;
-            opacity: 0.8;
           }
         }
 
@@ -1547,7 +1549,6 @@ a {
         font-size: 0.65rem;
         font-family: $font-family-monospace;
         margin: 0;
-        opacity: 0.8;
       }
     }
   }
@@ -1690,6 +1691,35 @@ a {
     border-color: rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.1);
   }
+}
+
+// ============================================================================
+// ACCESSIBILITY — keyboard focus & screen-reader utility
+// ============================================================================
+
+// Visible focus indicator for keyboard users (WCAG 2.4.7, 1.4.11).
+// $mono-accent passes 3:1 against page, surface, and terminal backgrounds.
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid $mono-accent;
+  outline-offset: 2px;
+}
+
+// Screen-reader-only text (e.g., accessible names for decorative ASCII art)
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 // Responsive adjustments for new components

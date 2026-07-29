@@ -1,0 +1,4 @@
+# Directory metadata for /blog/ — inherited by index.qmd and every post
+# under posts/. Page-level front matter still wins on conflict.
+toc: false
+code-tools: false

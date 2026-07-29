@@ -3,33 +3,262 @@ title: "Cole Rehbein"
 title-block-banner: false
 page-layout: article
 toc: false
+description: "Crisis counselor and clinical psychology researcher building reproducible behavioral-health tools — R, Quarto, and technical writing."
+code-tools: false
 ---
+
+```{=html}
+<style>
+/* ==========================================================================
+   Homepage: professional layer (hero, proof cards, projects strip)
+   Page-scoped only; uses theme CSS custom properties so both light and dark
+   themes render correctly. Terminal accents come from --terminal-primary.
+   ========================================================================== */
+
+.hero-section {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius);
+  background: var(--bs-body-bg);
+  background: color-mix(in srgb, var(--bs-body-color) 3%, var(--bs-body-bg));
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.hero-positioning {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--bs-body-color);
+  margin-bottom: 0.75rem;
+}
+
+.hero-credibility {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--bs-body-color);
+  margin-bottom: 0;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.25rem 0 0.9rem;
+}
+
+.hero-cta .cta-button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 1.05rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--bs-body-color);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+/* High-specificity hover rules so the theme's a:hover accent doesn't win */
+.hero-cta a.cta-button:hover {
+  text-decoration: none;
+}
+
+.hero-cta .cta-primary {
+  background: var(--bs-body-color);
+  color: var(--bs-body-bg);
+}
+
+.hero-cta a.cta-primary:hover {
+  background: transparent;
+  color: var(--bs-body-color);
+}
+
+.hero-cta .cta-secondary {
+  background: transparent;
+  color: var(--bs-body-color);
+}
+
+.hero-cta a.cta-secondary:hover {
+  background: var(--bs-body-color);
+  color: var(--bs-body-bg);
+}
+
+.hero-cta .cta-button:focus-visible {
+  outline: 2px solid var(--bs-body-color);
+  outline-offset: 2px;
+}
+
+.hero-location {
+  font-size: 0.8rem;
+  color: var(--bs-body-color);
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+.section-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bs-body-color);
+  margin-bottom: 0.75rem;
+}
+
+.section-heading::before {
+  content: "$ ";
+  color: var(--terminal-primary);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.proof-card {
+  background: var(--bs-body-bg);
+  background: color-mix(in srgb, var(--bs-body-color) 4%, var(--bs-body-bg));
+  border: 1px solid var(--bs-border-color);
+  border-left: 3px solid var(--terminal-primary);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.1rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.proof-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px var(--terminal-glow);
+}
+
+.proof-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--bs-body-color);
+  margin: 0 0 0.4rem;
+}
+
+.proof-card p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  margin: 0;
+}
+
+.selected-projects {
+  margin-bottom: 2rem;
+}
+
+.project-strip {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--border-radius);
+}
+
+.project-strip li {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.project-strip li:last-child {
+  border-bottom: 0;
+}
+
+.project-strip li::before {
+  content: "~/";
+  color: var(--terminal-primary);
+  margin-right: 0.25rem;
+}
+
+/* Prompt row: neofetch command left, terminal theme switcher right */
+.cli-prompt .prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cli-prompt .terminal-theme-switcher {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.25rem;
+  }
+
+  .hero-positioning {
+    font-size: 1.15rem;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+```
 
 ::::: homepage-with-sidebar
 
 :::: main-content
 
-::: intro-statement
-**I work in crisis mental health and study behavioral treatments for depression.**  
-Currently finishing a master's thesis on outdoor mindfulness-based behavioral activation.  
-I write about psychology, build research tools, and sit zazen in Albuquerque.
+::: hero-section
+```{=html}
+<p class="hero-positioning">Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care.</p>
+<p class="hero-credibility">I work high-acuity phone and chat triage and intervention with Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico), and my clinical psychology master's thesis at New Mexico Highlands University examines mindfulness-based behavioral activation for depression. I use R, Quarto, Python, and technical writing to turn behavioral science into usable tools.</p>
+<div class="hero-cta">
+  <a class="cta-button cta-primary" href="/projects">View Selected Work</a>
+  <a class="cta-button cta-secondary" href="/cv/">View CV</a>
+  <a class="cta-button cta-secondary" href="mailto:cole@cole.press">Email Me</a>
+</div>
+<p class="hero-location">Albuquerque, NM · Open to behavioral-health research, mental-health technology, clinical data, and science communication roles.</p>
+```
 :::
 
+::: proof-section
+## Selected proof {.section-heading}
+
+```{=html}
+<div class="proof-grid">
+  <article class="proof-card">
+    <h3>Crisis intervention</h3>
+    <p>High-acuity phone and chat triage and intervention on 988-network lines, Friday through Monday nights, with Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico).</p>
+  </article>
+  <article class="proof-card">
+    <h3>Research</h3>
+    <p>Longitudinal master's thesis on outdoor mindfulness-based behavioral activation for depression — data collection and analysis complete; psychometrics and statistical analysis in R.</p>
+  </article>
+  <article class="proof-card">
+    <h3>Tools</h3>
+    <p>Reproducible R and Quarto workflows, technical publishing in Markdown and LaTeX, and small web utilities for behavioral-health research.</p>
+  </article>
+</div>
+```
+:::
+
+<h2 class="visually-hidden">Terminal</h2>
+
 ::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code>
+<div class="prompt-row">
+<span class="prompt-line"><span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code></span>
+<span class="theme-switcher-mount"></span>
+</div>
 :::
 
 ::::: neofetch-style
 ::: ascii-art
-```         
-     ██████╗ ██████╗ ██╗     ███████╗
+```{=html}
+<pre aria-hidden="true">     ██████╗ ██████╗ ██╗     ███████╗
     ██╔════╝██╔═══██╗██║     ██╔════╝
     ██║     ██║   ██║██║     █████╗  
     ██║     ██║   ██║██║     ██╔══╝  
     ╚██████╗╚██████╔╝███████╗███████╗
      ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
 
-          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
+          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
         ░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░
        ░▒▒▓▓████████████████▓▓▒▒░
       ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
@@ -41,7 +270,8 @@ I write about psychology, build research tools, and sit zazen in Albuquerque.
        ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
         ░▒▒▓▓████████████▓▓▒▒░
           ░░▒▒▒▓▓▓▓▓▓▓▓▒▒▒░░
-             ░░░▒▒▒▒▒░░░
+             ░░░▒▒▒▒▒░░░</pre>
+<span class="visually-hidden">Colorful ASCII art spelling "COLE" above a smiling block-character face.</span>
 ```
 :::
 
@@ -51,103 +281,23 @@ I write about psychology, build research tools, and sit zazen in Albuquerque.
 **Kernel:** Sitting, writing, building, analyzing\
 **Uptime:** 988 crisis lines, Friday–Monday nights\
 **Shell:** Behavioral activation, ACT, zazen, R\
-**Resolution:** Science communication + contemplative practice\
 **DE:** Albuquerque, NM (Mountain Time)\
 **WM:** St. John's College → Journalism → Clinical\
 **Theme:** Examined life, examined further\
-**Terminal:** Praxis through active listening\
-**Current:** Finishing thesis, launching YouTube\
 **Memory:** Spinoza, Beck, Dōgen, Skinner
 :::
 :::::
 
+::: selected-projects
+## Selected projects {.section-heading}
 
-:::::::::: skills-and-projects
-:::: skills-section
-::: skills-json
-``` json
-{
-  "clinical_practice": {
-    "focus": "Crisis intervention & counseling",
-    "modalities": ["ACT", "Mindfulness-based CBT", "Behavioral activation"],
-    "populations": ["988/crisis lines", "SMI", "Depression", "ADHD"],
-    "languages": ["English", "Spanish (B1)"]
-  },
-  "research": {
-    "focus": "Behavioral health & cognition",
-    "methods": ["Psychological assessment", "EEG", "Statistical analysis"],
-    "tools": ["R", "SPSS", "Qualtrics"],
-    "thesis": "Mindfulness-based behavioral activation for depression"
-  },
-  "technical_writing": {
-    "focus": "Academic & technical publishing",
-    "tools": ["Quarto", "LaTeX", "Markdown", "R Markdown"],
-    "outputs": ["Thesis", "Research papers", "This website"]
-  },
-  "journalism": {
-    "focus": "Culture & community",
-    "experience": ["City reporter", "Copyeditor", "Culture writer"],
-    "beats": ["Local politics", "Food", "Arts"]
-  },
-  "philosophy": {
-    "degree": "B.A., St. John's College",
-    "focus": "Spinoza, ethics, philosophy of mind",
-    "languages": ["Ancient Greek (reading)", "French (reading)"]
-  }
-}
+```{=html}
+<ul class="project-strip">
+  <li><strong><a href="https://github.com/colerehbein/cole_press" target="_blank" rel="noopener noreferrer">cole.press</a></strong> — this site: a Quarto + SCSS personal site and design system.</li>
+  <li><strong><a href="https://github.com/colerehbein/macOSMoveTo" target="_blank" rel="noopener noreferrer">macOSMoveTo</a></strong> — a macOS Finder Quick Action for moving files.</li>
+</ul>
 ```
 :::
-::::
-::::::::::
-
-
-::: git-activity
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-library(htmltools)
-library(gh)
-
-# Fetch real GitHub stats (with fallback)
-get_github_stats <- function() {
-  tryCatch({
-    # Get user info
-    user <- gh::gh("GET /users/{username}", username = "colerehbein")
-    
-    # Get recent events (commits, pushes, etc.)
-    events <- gh::gh("GET /users/{username}/events", username = "colerehbein", per_page = 30)
-    push_events <- sum(sapply(events, function(e) e$type == "PushEvent"))
-    
-    list(
-      repos = user$public_repos,
-      recent_pushes = push_events,
-      success = TRUE
-    )
-  }, error = function(e) {
-    list(repos = "??", recent_pushes = "??", success = FALSE)
-  })
-}
-
-stats <- get_github_stats()
-
-div(class = "git-log",
-    div(class = "git-line", paste0("* ", stats$repos, " public repositories")),
-    div(class = "git-line", paste0("* ", stats$recent_pushes, " recent pushes")),
-    div(class = "git-separator", "────────────────────────"),
-    div(class = "git-status active", "● Building in public"),
-    div(class = "git-status active", "● Learning by doing"),
-    div(class = "git-status active", "● Embracing impermanence"),
-    div(class = "git-link-container",
-        tags$a(href = "https://github.com/colerehbein", 
-               class = "git-remote", 
-               "origin/main → github.com/colerehbein")
-    )
-)
-```
-:::
-
 
 :::::: thoughts-section
 ::: {.thought-item .philosophy}
@@ -191,6 +341,7 @@ $ curl -X POST cole.press/subscribe
 <form action="https://buttondown.com/api/emails/embed-subscribe/coler" method="post" class="cli-form">
 <div class="cli-input-wrapper">
 <span class="cli-prompt-small">$</span>
+<label for="bd-email" class="visually-hidden">Email address for the newsletter</label>
 <input type="email" name="email" id="bd-email" placeholder="your@email.com" required class="cli-input">
 <button type="submit" class="cli-button">GO</button>
 </div>
@@ -213,9 +364,9 @@ $ curl -X POST cole.press/subscribe
 ::: {.project-item .blog}
 **Blog**
 
-Writing on psychology, philosophy, political theory. The examined life, examined further.
+Essays on crisis work, research, and technology.
 
-[**Visit Blog →**](/blog){.project-link}
+[**Visit Blog →**](/blog/){.project-link}
 :::
 
 ::: {.project-item .cv}
@@ -243,7 +394,6 @@ Research, writing samples, and things I've built.
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
-    
     // Newsletter form functionality — Buttondown integration (#13)
     // Uses native form submission as fallback; JS enhances with fetch
     const newsletterForm = document.querySelector('.cli-form');
@@ -252,12 +402,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const button = this.querySelector('.cli-button');
             const input = this.querySelector('.cli-input');
             const formData = new FormData(this);
-            
+
             // Try fetch first; if CORS fails, let native form submit handle it
             e.preventDefault();
             button.textContent = '...';
             button.style.transform = 'scale(0.95)';
-            
+
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
@@ -280,11 +430,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // Add a subtle cursor blink to the ASCII art section
+
+    // Blinking cursor on the ASCII art panel (decorative)
     const asciiArt = document.querySelector('.ascii-art');
-    if (asciiArt) {
+    if (asciiArt && !asciiArt.querySelector('.ascii-cursor')) {
         const cursor = document.createElement('span');
+        cursor.className = 'ascii-cursor';
+        cursor.setAttribute('aria-hidden', 'true');
         cursor.textContent = '▋';
         cursor.style.color = 'var(--terminal-primary)';
         cursor.style.animation = 'blink 1s infinite';
@@ -303,34 +455,35 @@ document.addEventListener('DOMContentLoaded', function() {
         green: 'Green (Matrix)',
         white: 'White (Unix)'
     };
-    
+
     // Load saved theme or default to lavender
     const savedTheme = localStorage.getItem('terminal-theme') || 'lavender';
     document.documentElement.dataset.terminalTheme = savedTheme;
 
-    // Create and inject the theme switcher UI in the title meta area
-    const codeToolsContainer = document.querySelector('.code-tools-button');
-    const titleBlock = document.querySelector('.quarto-title-block');
-    const titleMeta = titleBlock ? (titleBlock.querySelector('.quarto-title-meta') || titleBlock) : null;
-    const targetContainer = titleMeta || (codeToolsContainer ? codeToolsContainer.parentElement : null);
-    
-    if (targetContainer) {
+    // Mount target: the code-tools button is disabled (code-tools: false), so
+    // the switcher mounts into a dedicated slot in the neofetch prompt line,
+    // with the title block as a fallback.
+    const mountTarget =
+        document.querySelector('.theme-switcher-mount') ||
+        document.querySelector('.quarto-title-block .quarto-title-meta') ||
+        document.querySelector('.quarto-title-block');
+
+    if (mountTarget) {
         const switcher = document.createElement('div');
         switcher.className = 'terminal-theme-switcher';
         switcher.innerHTML = `
             <span class="theme-label">Terminal</span>
             <div class="theme-options">
                 ${themes.map(t => `
-                    <button class="theme-dot ${t === savedTheme ? 'active' : ''}" 
-                            data-theme="${t}" 
+                    <button class="theme-dot ${t === savedTheme ? 'active' : ''}"
+                            data-theme="${t}"
                             title="${themeNames[t]}"
                             aria-label="Switch to ${themeNames[t]} theme"></button>
                 `).join('')}
             </div>
         `;
-        
-        // Insert into the title meta area to avoid overlapping the Code button
-        targetContainer.appendChild(switcher);
+
+        mountTarget.appendChild(switcher);
 
         // Add click handlers
         switcher.querySelectorAll('.theme-dot').forEach(dot => {
@@ -338,16 +491,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const theme = dot.dataset.theme;
                 document.documentElement.dataset.terminalTheme = theme;
                 localStorage.setItem('terminal-theme', theme);
-                
+
                 // Update active states
                 switcher.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
                 dot.classList.add('active');
-                
-                // Update ASCII cursor color
-                const cursor = document.querySelector('.ascii-art span');
-                if (cursor) {
-                    cursor.style.color = 'var(--terminal-primary)';
-                }
             });
         });
     }

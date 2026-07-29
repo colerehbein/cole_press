@@ -1,0 +1,61 @@
+---
+title: "Résumé"
+author: "Cole Rehbein"
+date: last-modified
+jobtitle: "Crisis Counselor and Clinical Psychology Researcher"
+email: cole@cole.press
+github: colerehbein
+web: cole.press
+fontawesome: yes
+fontsize: 10pt
+papersize: letter
+documentclass: article
+updated: true
+output-file: cole-rehbein-resume.pdf
+format:
+  quarto-cv-pdf:
+    geometry: margin=0.8in
+validate-yaml: false
+---
+
+Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care. Telephonic and chat/text crisis triage for the 988 Suicide & Crisis Lifeline network since January 2025; 3+ years of clinical experience in Northern New Mexico. Conversational Spanish (B1).
+
+# Education
+
+_New Mexico Highlands University_ — M.S., Clinical Psychology \hfill In progress
+
+Thesis: brief, mindfulness-based behavioral activation intervention for college students with depression (data collection and analysis complete; manuscript in progress). Advisor: Dr. David Pan.
+
+_St. John's College, Santa Fe_ — B.A., Philosophy and History of Math and Science \hfill 2019
+
+# Clinical & Crisis Experience
+
+_Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico)_ — Crisis and Access Specialist \hfill Jan 2025 – present
+
+High-acuity crisis triage, intervention, and referral by phone and chat/text for partners including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide Prevention Lifeline Backup Network.
+
+_Counseling ABQ_ — Counseling Intern \hfill Jan – Aug 2024
+
+Biopsychosocial intake assessments and diagnostic consultation; ongoing counseling for depression, ADHD, and mandated anger management treatment.
+
+_New Mexico Behavioral Health Institute_ — Clinical Psychology Intern \hfill 2022 – 2023
+
+Cognitive, neuropsychological, and intelligence testing for intakes and treatment planning; brief ACT and mindfulness interventions with schizophrenia-spectrum disorders.
+
+# Research & Data
+
+- Thesis (NMHU): longitudinal design; psychometric and statistical analysis in R; manuscript in progress.
+- Systematic review with Dr. Thomas R. Brooks: _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022_ — in preparation for _Behaviour Research and Therapy_; presented at the Southwest Psychological Association (2023).
+- Principal investigator, EEG study of chronic cannabis use and stress responses on an emotional Stroop task (NMHU, Fall 2022).
+
+# Teaching & Leadership
+
+Graduate assistant and teaching assistant across four NMHU courses and labs (Memory and Cognition, Undergraduate Research Methods, First-Year Learning Community, Human Connections Lab), 2022–2023. President, Psi Chi Honor Society (2022–2024); Vice President & President Pro-Tempore, Associated Students of NMHU (2022–2023).
+
+# Science Communication
+
+City Reporter, _Rio Grande Sun_ (2020–2021); Calendar Editor, Copy Editor, and culture contributor, _Santa Fe Reporter_ (2019–2020). Technical and academic publishing in Quarto, Markdown, and LaTeX.
+
+# Technical Skills
+
+R, SPSS, Qualtrics · Quarto, Markdown, LaTeX · Python, Git

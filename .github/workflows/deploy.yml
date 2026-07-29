@@ -39,42 +39,11 @@ jobs:
         with:
           tinytex: true
 
-      # 5) Clone and build CV (just PDF)
-      - name: Clone CV repo
-        run: git clone https://github.com/colerehbein/cv.git ../cv
-
-      - name: Build CV PDF
-        run: |
-          cd ../cv
-          quarto add mps9506/quarto-cv --no-prompt
-          quarto render CV.qmd --to pdf
-          ls -la
-
-      # 6) Render main site
+      # 5) Render main site (also builds the scrubbed CV + résumé PDFs in cv/)
       - name: Render site
         run: quarto render
 
-      # 7) Copy CV PDF to site root
-      - name: Copy CV PDF
-        run: |
-          # Check both possible locations for the PDF
-          if [ -f ../cv/_site/CV.pdf ]; then
-            cp ../cv/_site/CV.pdf _site/CV.pdf
-            echo "CV.pdf copied from _site/ to _site/"
-          elif [ -f ../cv/CV.pdf ]; then
-            cp ../cv/CV.pdf _site/CV.pdf
-            echo "CV.pdf copied from cv root to _site/"
-          else
-            echo "ERROR: CV.pdf not found"
-            echo "Contents of ../cv:"
-            ls -la ../cv/
-            echo "Contents of ../cv/_site:"
-            ls -la ../cv/_site/ 2>/dev/null || echo "_site does not exist"
-            exit 1
-          fi
-          ls -la _site/CV.pdf
-
-      # 8) Deploy to Netlify
+      # 6) Deploy to Netlify
       - name: Deploy
         uses: nwtgck/actions-netlify@v2
         with:
