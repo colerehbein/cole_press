@@ -154,7 +154,7 @@ quarto render   # Generate static HTML to _site/
 - **Main branch push:** Triggers full render and Netlify deploy
 - **Pull requests:** Render check with artifact upload
 - Workflows in `.github/workflows/`
-- `deploy.yml` sets `tinytex: true` in the Quarto setup step — this is what allows the CV/résumé PDFs (`quarto-cv-pdf` format) to build in CI
+- Both workflows set `tinytex: true` in the Quarto setup step — required for the CV/résumé PDFs (`quarto-cv-pdf` format) to render in CI; removing it breaks `quarto render` on `cv/full-cv.qmd`
 
 ## Redirects & Domains
 
