@@ -67,12 +67,119 @@ $code-color: $mono-text-dark;
 // Quarto Callout Variables (Dark - Example: Note)
 $callout-color-note: $mono-accent-dark;
 
+// ============================================================================
+// Shared component layer variables (dark values).
+// _components.scss is imported by both themes; these variables give the shared
+// components their dark-mode surfaces. Terminal/CLI colors stay identical to
+// the light theme (terminals are always dark panels).
+// ============================================================================
+
+// Theme surfaces (dark)
+$mono-bg: #1a1d21;
+$mono-text: #e2e8f0;
+$mono-text-secondary: #cbd5e1;
+$mono-text-muted: #a7b0bd;
+$mono-accent: #8ab4ff;
+$mono-accent-hover: #aecbff;
+$mono-border: #2f3640;
+$mono-border-subtle: #262c33;
+$mono-surface: #23272e;
+$mono-surface-elevated: #2a2f38;
+
+// Terminal colors (same as light — terminals are always-dark panels)
+$terminal-bg: #1a1d23;
+$terminal-text: #e2e8f0;
+$terminal-cyan: #00ffff;
+$terminal-green: #00ff41;
+$terminal-yellow: #ffff00;
+$terminal-red: #ff6b6b;
+$terminal-purple: #a66dd4;
+$terminal-orange: #f8e71c;
+
+// CLI / rainbow palette
+$cli-bg: #0f1419;
+$cli-bg-lighter: #1a1f24;
+$cli-rainbow-red: #ff6b6b;
+$cli-rainbow-orange: #ff9500;
+$cli-rainbow-yellow: #ffd23f;
+$cli-rainbow-green: #30e000;
+$cli-rainbow-cyan: #00e5ff;
+$cli-rainbow-blue: #3b82f6;
+$cli-rainbow-purple: #b365f6;
+$cli-rainbow-pink: #ec4899;
+
+// Semantic color system (mapped to terminals like the light theme)
+$semantic-action: $terminal-cyan;
+$semantic-action-hover: lighten($terminal-cyan, 10%);
+$semantic-action-muted: rgba($terminal-cyan, 0.15);
+$semantic-success: $terminal-green;
+$semantic-success-muted: rgba($terminal-green, 0.15);
+$semantic-warning: $cli-rainbow-yellow;
+$semantic-warning-muted: rgba($cli-rainbow-yellow, 0.15);
+$semantic-error: $terminal-red;
+$semantic-error-muted: rgba($terminal-red, 0.15);
+$semantic-system: $cli-rainbow-purple;
+$semantic-system-muted: rgba($cli-rainbow-purple, 0.15);
+$semantic-output: $terminal-text;
+$semantic-output-muted: rgba($terminal-text, 0.7);
+
+// Spacing / typography / shadow / radius (same as light theme)
+$spacing-1: 0.25rem;
+$spacing-2: 0.5rem;
+$spacing-3: 0.75rem;
+$spacing-4: 1rem;
+$spacing-5: 1.25rem;
+$spacing-6: 1.5rem;
+$spacing-8: 2rem;
+$spacing-10: 2.5rem;
+$spacing-12: 3rem;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 0.9rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+
+$line-height-dense: 1.2;
+$line-height-tight: 1.25;
+$line-height-normal: 1.4;
+$line-height-relaxed: 1.6;
+$line-height-prose: 1.75;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-base:
+  0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+$radius-sm: 0.25rem;
+$radius-base: 0.375rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+
+$link-hover-color: $mono-accent-hover;
+$border-radius: $radius-base;
+$headings-font-family: inherit;
+$headings-font-weight: 600;
+
 /*-- scss:rules --*/
 
 // Custom CSS Rules for Dark Theme
 
 // Import @font-face rules
 @import "fonts";
+
+// Shared component layer (mixins + all custom component styles + terminal
+// theme token blocks). Imported by both light and dark themes so the two modes
+// never drift apart. Dark-specific overrides below layer on top.
+@import "components";
 
 // Navbar
 .navbar {

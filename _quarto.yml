@@ -49,6 +49,7 @@ format:
     theme:
       light: monospatial-light.scss
       dark: monospatial-dark.scss
+    respect-user-color-scheme: true
     toc: true
     include-in-header:
       - _includes/preload-fonts.html
