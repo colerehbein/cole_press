@@ -37,27 +37,27 @@ website:
       - href: /cv/
         text: CV
     right:
-      - icon: fab fa-github
-        href: https://github.com/colerehbein
+      - href: https://github.com/colerehbein
+        text: GitHub
         aria-label: "GitHub"
-      - icon: fab fa-x-twitter
-        href: https://x.com/colerehbein
+      - href: https://x.com/colerehbein
+        text: X
         aria-label: "X (Twitter)"
+
+  page-footer:
+    left: "© 2026 Cole Rehbein — crisis counselor & clinical psychology researcher"
+    right: "[GitHub](https://github.com/colerehbein) · [X](https://x.com/colerehbein) · [RSS](/blog/index.xml)"
 
 format:
   html:
     theme:
-      light: monospatial-light.scss
-      dark: monospatial-dark.scss
+      light: brutalist-light.scss
+      dark: brutalist-dark.scss
     respect-user-color-scheme: true
     toc: true
     include-in-header:
       - _includes/preload-fonts.html
-      - _includes/terminal-theme.html
-    code-fold: true
-    code-summary: "Show code"
-    code-tools:
-      source: repo
+      - _includes/accent-palette.html
     execute:
       cache: true
       echo: true

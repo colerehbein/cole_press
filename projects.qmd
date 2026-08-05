@@ -1,262 +1,46 @@
 ---
 title: "Projects"
 description: "Case studies: research tooling, macOS utilities, and this website — problem, role, stack, artifact."
-page-layout: full
-code-tools: false
 toc: false
 ---
 
-```{=html}
-<style>
-  /* Projects page — case-study layout. Page-scoped only; reuses theme classes
-     .terminal-window-large, .terminal-header-bar, .terminal-body,
-     .terminal-listing, .terminal-project-card, .terminal-link.
-     Palette values mirror the theme's terminal/CLI-rainbow variables. */
+Evidence over adjectives. Each entry lists the problem, what I personally built, the stack, a specific artifact, and where things stand.
 
-  .projects-intro {
-    color: #cbd5e1;
-    font-size: 0.875rem;
-    line-height: 1.6;
-    margin: 0 0 1.25rem;
-  }
+<div class="card-grid">
 
-  .case-study-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .case-card .case-card-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.75rem;
-  }
-
-  .case-card h4 {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 0;
-  }
-
-  .case-prompt {
-    color: #30e000;
-    font-weight: 700;
-  }
-
-  .case-tag {
-    color: #a855f7;
-    font-size: 0.7rem;
-    font-weight: 400;
-  }
-
-  .status-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
-    border: 1px solid;
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
-  .status-active   { color: #30e000; border-color: rgba(48, 224, 0, 0.5); }
-  .status-shipped  { color: #00e5ff; border-color: rgba(0, 229, 255, 0.5); }
-  .status-prep     { color: #ffd23f; border-color: rgba(255, 210, 63, 0.5); }
-  .status-archived { color: #9aa7b8; border-color: rgba(154, 167, 184, 0.45); }
-
-  .case-fields {
-    margin: 0;
-    display: grid;
-    gap: 0.4rem;
-  }
-
-  .case-field {
-    display: grid;
-    grid-template-columns: 5rem 1fr;
-    gap: 0.75rem;
-    align-items: baseline;
-  }
-
-  .case-field dt {
-    color: #30e000;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-  }
-
-  .case-field dd {
-    margin: 0;
-    color: #d6dde8;
-    font-size: 0.78rem;
-    line-height: 1.55;
-  }
-
-  .case-field dd .terminal-link {
-    margin-right: 0.4rem;
-  }
-
-  .artifact-pending {
-    color: #ffd23f;
-    font-weight: 600;
-  }
-
-  .artifact-note {
-    color: #96a1b3;
-  }
-
-  @media (max-width: 480px) {
-    .case-field {
-      grid-template-columns: 1fr;
-      gap: 0.1rem;
-    }
-  }
-</style>
-
-<div class="terminal-window-large">
-  <div class="terminal-header-bar">
-    <span class="terminal-dot red" aria-hidden="true"></span>
-    <span class="terminal-dot yellow" aria-hidden="true"></span>
-    <span class="terminal-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ ls ~/projects/</code>
-  </div>
-  <div class="terminal-body">
-
-    <pre class="terminal-listing">cole_press/    macOSMoveTo/    pandoc-apa7/    thesis-analysis/</pre>
-
-    <p class="projects-intro">Evidence over adjectives. Each entry lists the problem, what I personally built, the stack, a specific artifact, and where things stand.</p>
-
-    <div class="case-study-list">
-
-      <article class="terminal-project-card case-card" aria-labelledby="proj-cole-press">
-        <div class="case-card-head">
-          <h4 id="proj-cole-press"><span class="case-prompt" aria-hidden="true">$</span>cole.press</h4>
-          <span class="status-badge status-active">Active</span>
-        </div>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>problem</dt>
-            <dd>A personal site that is itself a portfolio artifact — the design, engineering, and writing are the evidence, not the wrapper around it.</dd>
-          </div>
-          <div class="case-field">
-            <dt>role</dt>
-            <dd>Design and build, solo: information architecture, light and dark terminal themes, components, content, deployment.</dd>
-          </div>
-          <div class="case-field">
-            <dt>stack</dt>
-            <dd>Quarto, SCSS, JavaScript, Netlify, self-hosted Anonymous Pro.</dd>
-          </div>
-          <div class="case-field">
-            <dt>artifact</dt>
-            <dd>
-              <a href="https://cole.press" target="_blank" rel="noopener noreferrer" class="terminal-link" aria-label="cole.press — live site">Live site →</a>
-              <a href="https://github.com/colerehbein/cole_press" target="_blank" rel="noopener noreferrer" class="terminal-link" aria-label="cole.press — source code on GitHub">Source →</a>
-            </dd>
-          </div>
-          <div class="case-field">
-            <dt>status</dt>
-            <dd>Active. Shipped: light/dark terminal themes, Buttondown newsletter integration. Ongoing: accessibility and SEO iteration.</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="terminal-project-card case-card" aria-labelledby="proj-macosmoveto">
-        <div class="case-card-head">
-          <h4 id="proj-macosmoveto"><span class="case-prompt" aria-hidden="true">$</span>macOSMoveTo</h4>
-          <span class="status-badge status-shipped">Shipped</span>
-        </div>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>problem</dt>
-            <dd>Finder has no native "Move to…" Quick Action — moving a file means drag-and-drop or clipboard workarounds.</dd>
-          </div>
-          <div class="case-field">
-            <dt>role</dt>
-            <dd>Identified the workflow gap; designed, packaged, tested, and documented the utility.</dd>
-          </div>
-          <div class="case-field">
-            <dt>stack</dt>
-            <dd>Automator, AppleScript.</dd>
-          </div>
-          <div class="case-field">
-            <dt>artifact</dt>
-            <dd>
-              <a href="https://github.com/colerehbein/macOSMoveTo" target="_blank" rel="noopener noreferrer" class="terminal-link" aria-label="macOSMoveTo — source and install guide on GitHub">Source &amp; install guide →</a>
-            </dd>
-          </div>
-          <div class="case-field">
-            <dt>status</dt>
-            <dd>Shipped. Installable Automator workflow with documented install and usage.</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="terminal-project-card case-card" aria-labelledby="proj-thesis-workflow">
-        <div class="case-card-head">
-          <h4 id="proj-thesis-workflow"><span class="case-prompt" aria-hidden="true">$</span>Thesis Analysis Workflow</h4>
-          <span class="status-badge status-prep">In preparation</span>
-        </div>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>problem</dt>
-            <dd>Reproducible longitudinal psychometric analysis and automated reporting for the master's thesis (mindfulness-based behavioral activation for depression) — every table and figure regenerates from data, with no hand-edited numbers.</dd>
-          </div>
-          <div class="case-field">
-            <dt>role</dt>
-            <dd>Sole analyst: data collection, cleaning, psychometrics, longitudinal analysis, automated reporting.</dd>
-          </div>
-          <div class="case-field">
-            <dt>stack</dt>
-            <dd>R, Quarto.</dd>
-          </div>
-          <div class="case-field">
-            <dt>artifact</dt>
-            <dd><span class="artifact-pending">Public synthetic/de-identified demo in preparation</span> <span class="artifact-note">— no participant data will ever be published.</span></dd>
-          </div>
-          <div class="case-field">
-            <dt>status</dt>
-            <dd>In preparation. Data collection and analysis complete; manuscript in progress.</dd>
-          </div>
-        </dl>
-      </article>
-
-      <article class="terminal-project-card case-card" aria-labelledby="proj-pandoc-apa7">
-        <div class="case-card-head">
-          <h4 id="proj-pandoc-apa7"><span class="case-prompt" aria-hidden="true">$</span>pandoc-apa7 <span class="case-tag">archived / experimental fork</span></h4>
-          <span class="status-badge status-archived">Archived</span>
-        </div>
-        <dl class="case-fields">
-          <div class="case-field">
-            <dt>problem</dt>
-            <dd>Draft academic manuscripts in Markdown and compile to APA 7th-edition LaTeX/PDF — an APA writing workflow without Word.</dd>
-          </div>
-          <div class="case-field">
-            <dt>role</dt>
-            <dd>Experimental fork: updated an open-source APA6 pandoc template for APA 7.</dd>
-          </div>
-          <div class="case-field">
-            <dt>stack</dt>
-            <dd>pandoc, LaTeX (apa7 class), BibLaTeX.</dd>
-          </div>
-          <div class="case-field">
-            <dt>artifact</dt>
-            <dd>
-              <a href="https://github.com/colerehbein/pandoc-apa7" target="_blank" rel="noopener noreferrer" class="terminal-link" aria-label="pandoc-apa7 — source on GitHub">Source →</a>
-            </dd>
-          </div>
-          <div class="case-field">
-            <dt>status</dt>
-            <dd>Archived. Work-in-progress experiment, last touched 2022; kept public for reference.</dd>
-          </div>
-        </dl>
-      </article>
-
-    </div>
-
-  </div>
+<div class="card">
+  <h3 class="project-card-title">cole.press <span class="badge">Active</span></h3>
+  <p class="project-card-body">A personal site that is itself a portfolio artifact — the design, engineering, and writing are the evidence, not the wrapper around it. Built solo: information architecture, an academic brutalist design system with switchable accent palettes, content, and deployment.</p>
+  <p class="project-card-body"><strong>Stack:</strong> Quarto, SCSS, JavaScript, Netlify, self-hosted Anonymous Pro.</p>
+  <p class="project-card-links">
+    <a class="btn btn-sm" href="https://cole.press" target="_blank" rel="noopener noreferrer">Live site</a>
+    <a class="btn btn-sm" href="https://github.com/colerehbein/cole_press" target="_blank" rel="noopener noreferrer">Source</a>
+  </p>
 </div>
-```
+
+<div class="card">
+  <h3 class="project-card-title">macOSMoveTo <span class="badge">Shipped</span></h3>
+  <p class="project-card-body">Finder has no native "Move to…" Quick Action — moving a file means drag-and-drop or clipboard workarounds. Identified the workflow gap; designed, packaged, tested, and documented the utility.</p>
+  <p class="project-card-body"><strong>Stack:</strong> Automator, AppleScript.</p>
+  <p class="project-card-links">
+    <a class="btn btn-sm" href="https://github.com/colerehbein/macOSMoveTo" target="_blank" rel="noopener noreferrer">Source &amp; install guide</a>
+  </p>
+</div>
+
+<div class="card">
+  <h3 class="project-card-title">Thesis Analysis Workflow <span class="badge">In preparation</span></h3>
+  <p class="project-card-body">Reproducible longitudinal psychometric analysis and automated reporting for the master's thesis (mindfulness-based behavioral activation for depression) — every table and figure regenerates from data, with no hand-edited numbers. Sole analyst: data collection, cleaning, psychometrics, longitudinal analysis, automated reporting.</p>
+  <p class="project-card-body"><strong>Stack:</strong> R, Quarto.</p>
+  <p class="project-card-body"><em>Public synthetic/de-identified demo in preparation — no participant data will ever be published.</em></p>
+</div>
+
+<div class="card">
+  <h3 class="project-card-title">pandoc-apa7 <span class="badge">Archived</span></h3>
+  <p class="project-card-body">Draft academic manuscripts in Markdown and compile to APA 7th-edition LaTeX/PDF — an APA writing workflow without Word. Experimental fork: updated an open-source APA6 pandoc template for APA 7. Work-in-progress experiment, last touched 2022; kept public for reference.</p>
+  <p class="project-card-body"><strong>Stack:</strong> pandoc, LaTeX (apa7 class), BibLaTeX.</p>
+  <p class="project-card-links">
+    <a class="btn btn-sm" href="https://github.com/colerehbein/pandoc-apa7" target="_blank" rel="noopener noreferrer">Source</a>
+  </p>
+</div>
+
+</div>

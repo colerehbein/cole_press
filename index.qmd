@@ -1,325 +1,91 @@
 ---
 title: "Cole Rehbein"
 title-block-banner: false
-page-layout: article
+page-layout: full
 toc: false
 description: "Crisis counselor and clinical psychology researcher building reproducible behavioral-health tools — R, Quarto, and technical writing."
-code-tools: false
+include-in-header:
+  - _includes/home-no-title.html
 ---
 
-::::: homepage-with-sidebar
+<div class="home-container">
 
-:::: main-content
+<header>
+<p class="home-kicker">Crisis Counselor · Clinical Psychology Researcher</p>
+<h1 class="home-title">Cole Rehbein</h1>
+<section aria-label="Abstract" class="home-abstract">
+<strong>Abstract:</strong> Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care. High-acuity phone and chat triage and intervention for the 988 Suicide &amp; Crisis Lifeline network; M.S. in clinical psychology at New Mexico Highlands University, with a thesis on mindfulness-based behavioral activation for depression. I use R, Quarto, Python, and technical writing to turn behavioral science into usable tools.
+</section>
+<p class="home-meta">
+Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical Psychology (in progress), NMHU &nbsp;·&nbsp; 988 crisis lines, Fri–Mon nights &nbsp;·&nbsp; R / Quarto / Python &nbsp;·&nbsp; <a href="mailto:cole@cole.press">cole@cole.press</a>
+</p>
+</header>
 
-```{=html}
-<div class="term-window term-hero">
-  <div class="term-window-head">
-    <span class="term-dot red" aria-hidden="true"></span>
-    <span class="term-dot yellow" aria-hidden="true"></span>
-    <span class="term-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ cat ~/about.md</code>
-  </div>
-  <div class="term-window-body">
-    <p class="hero-positioning">Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care.</p>
-    <p class="hero-credibility">I work high-acuity phone and chat triage and intervention with Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico), and my clinical psychology master's thesis at New Mexico Highlands University examines mindfulness-based behavioral activation for depression. I use R, Quarto, Python, and technical writing to turn behavioral science into usable tools.</p>
-    <p class="term-cta">
-      <a class="term-btn primary" href="/projects">./view-selected-work</a>
-      <a class="term-btn" href="/cv/">./view-cv</a>
-      <a class="term-btn" href="mailto:cole@cole.press">./email-me</a>
-    </p>
-    <p class="term-note">Albuquerque, NM · Open to behavioral-health research, mental-health technology, clinical data, and science communication roles.</p>
-  </div>
-</div>
-```
+<div class="home-layout">
 
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls ~/proof</code>
-:::
+<div class="home-main">
 
-```{=html}
-<div class="term-mini-grid">
-  <div class="term-mini">
-    <div class="term-mini-head"><code>crisis.txt</code></div>
-    <div class="term-mini-body">
-      <p>High-acuity phone and chat triage and intervention on 988-network lines, Friday through Monday nights, with Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico).</p>
-    </div>
-  </div>
-  <div class="term-mini">
-    <div class="term-mini-head"><code>research.txt</code></div>
-    <div class="term-mini-body">
-      <p>Longitudinal master's thesis on outdoor mindfulness-based behavioral activation for depression — data collection and analysis complete; psychometrics and statistical analysis in R.</p>
-    </div>
-  </div>
-  <div class="term-mini">
-    <div class="term-mini-head"><code>tools.txt</code></div>
-    <div class="term-mini-body">
-      <p>Reproducible R and Quarto workflows, technical publishing in Markdown and LaTeX, and small web utilities for behavioral-health research.</p>
-    </div>
-  </div>
-</div>
-```
-
-::: cli-prompt
-<div class="prompt-row">
-<span class="prompt-line"><span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">neofetch --config custom</code></span>
-<span class="theme-switcher-mount"></span>
-</div>
-:::
-
-::::: neofetch-style
-::: ascii-art
-```{=html}
-<pre aria-hidden="true">     ██████╗ ██████╗ ██╗     ███████╗
-    ██╔════╝██╔═══██╗██║     ██╔════╝
-    ██║     ██║   ██║██║     █████╗  
-    ██║     ██║   ██║██║     ██╔══╝  
-    ╚██████╗╚██████╔╝███████╗███████╗
-     ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
-
-          ░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░
-        ░░▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒░░
-       ░▒▒▓▓████████████████▓▓▒▒░
-      ░▒▓▓██████▓▓▓▓▓▓██████▓▓▒░
-      ▒▓████▓▓██      ██▓▓████▓▒
-     ▒▓████▓▓██  ●  ●  ██▓▓████▓▒
-     ▒▓████▓▓██    ◡    ██▓▓████▓▒
-     ▒▓████▓▓██          ██▓▓████▓▒
-      ▒▓████▓▓██  ～～～  ██▓▓████▓▒
-       ▒▓████▓▓██▓▓▓▓▓▓██████▓▓▒░
-        ░░▒▒▓▓████████████▓▓▒▒░
-          ░░▒▒▒▓▓▓▓▓▓▓▓▒▒▒░░
-             ░░░▒▒▒▒▒░░░</pre>
-<span class="visually-hidden">Colorful ASCII art spelling "COLE" above a smiling block-character face.</span>
-```
-:::
-
-::: system-info
-**Cole Rehbein** \@ **cole.press** **──────────────────────────────────**\
-**OS:** Crisis counselor / Psychology researcher\
-**Kernel:** Sitting, writing, building, analyzing\
-**Uptime:** 988 crisis lines, Friday–Monday nights\
-**Shell:** Behavioral activation, ACT, zazen, R\
-**DE:** Albuquerque, NM (Mountain Time)\
-**WM:** St. John's College → Journalism → Clinical\
-**Theme:** Examined life, examined further\
-**Memory:** Spinoza, Beck, Dōgen, Skinner
-:::
-:::::
-
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls -l ~/projects</code>
-:::
-
-```{=html}
-<div class="term-window">
-  <div class="term-window-body term-ls-wrap">
-    <ul class="term-ls">
-      <li><span class="perm" aria-hidden="true">drwxr-xr-x</span> <a class="f dir" href="https://github.com/colerehbein/cole_press" target="_blank" rel="noopener noreferrer">cole_press/</a> <span class="d">— this site: a Quarto + SCSS personal site and design system.</span></li>
-      <li><span class="perm" aria-hidden="true">drwxr-xr-x</span> <a class="f dir" href="https://github.com/colerehbein/macOSMoveTo" target="_blank" rel="noopener noreferrer">macOSMoveTo/</a> <span class="d">— a macOS Finder Quick Action for moving files.</span></li>
-    </ul>
-  </div>
-</div>
-```
-
-::: cli-prompt
-<span class="text-terminal-primary">cole@press:~$</span> <code class="text-glow">ls -l ~/writing</code>
-:::
-
-```{=html}
-<div class="term-window">
-  <div class="term-window-body term-ls-wrap">
-    <ul class="term-ls">
-      <li><span class="perm" aria-hidden="true">-rw-r--r--</span> <span class="f md">Spinoza_and_Selfhood.md</span> <span class="d">— philosophy, identity, ethics: the internally determined self</span></li>
-      <li><span class="perm" aria-hidden="true">-rw-r--r--</span> <span class="f py">Crisis_Praxis.py</span> <span class="d">— mental health, systems, solidarity: sitting with suffering</span></li>
-      <li><span class="perm" aria-hidden="true">-rw-r--r--</span> <span class="f txt">Enchilada_Reviews.txt</span> <span class="d">— New Mexico food, culture writing, strong opinions on chile</span></li>
-    </ul>
-  </div>
-</div>
-```
-
-```{=html}
-<div class="term-window">
-  <div class="term-window-body term-session">
-    <p class="line"><span class="prompt text-terminal-primary">$</span> <span class="cmd">uptime</span></p>
-    <p class="out"> 10:35AM  up 365 days, sitting with suffering</p>
-    <p class="line"><span class="prompt text-terminal-primary">$</span> <span class="cmd">whoami</span></p>
-    <p class="out">Cole Rehbein — Crisis Counselor &amp; Researcher</p>
-    <p class="line"><span class="prompt text-terminal-primary">$</span> <span class="cmd">echo "Thanks for visiting!"</span></p>
-    <p class="out">Thanks for visiting!</p>
-  </div>
-</div>
-```
-
-::::
-
-:::: connect-sidebar
-
-```{=html}
-<div class="term-window">
-  <div class="term-window-head">
-    <span class="term-dot red" aria-hidden="true"></span>
-    <span class="term-dot yellow" aria-hidden="true"></span>
-    <span class="term-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ ls</code>
-  </div>
-  <div class="term-window-body term-ls-wrap">
-    <ul class="term-ls">
-      <li><a class="f dir" href="/blog/">blog/</a> <span class="d">— essays on crisis work, research, and technology</span></li>
-      <li><a class="f dir" href="/cv/">cv/</a> <span class="d">— clinical psychology, crisis intervention, journalism</span></li>
-      <li><a class="f dir" href="/projects">projects/</a> <span class="d">— research, writing samples, things I've built</span></li>
-    </ul>
-  </div>
+<div class="home-start-hint">
+<p class="home-start-hint-label">First visit?</p>
+<p class="home-start-hint-body">Start with the <a href="/about">About</a> page, grab the <a href="/cv/">CV</a> (both PDFs included), or read the latest essay on the <a href="/blog/">Blog</a>.</p>
 </div>
 
-<div class="term-window">
-  <div class="term-window-head">
-    <span class="term-dot red" aria-hidden="true"></span>
-    <span class="term-dot yellow" aria-hidden="true"></span>
-    <span class="term-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ cat ~/links.txt</code>
-  </div>
-  <div class="term-window-body term-ls-wrap">
-    <ul class="term-ls term-kv">
-      <li><span class="k">github</span><span class="sep">:</span><a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer">colerehbein</a></li>
-      <li><span class="k">x</span><span class="sep">:</span><a href="https://x.com/colerehbein" target="_blank" rel="noopener noreferrer">@colerehbein</a></li>
-      <li><span class="k">email</span><span class="sep">:</span><a href="mailto:cole@cole.press">cole@cole.press</a></li>
-      <li><span class="k">web</span><span class="sep">:</span><a href="https://cole.press">cole.press</a></li>
-    </ul>
-  </div>
+<h2 class="home-section-title">Directory Index</h2>
+
+<dl class="directory-list">
+<div class="directory-entry">
+<dt class="directory-term"><a href="/blog/">1. Blog</a></dt>
+<dd class="directory-desc">Essays on crisis work, research, and technology. Low frequency, long half-life — also available over <a href="/blog/index.xml">RSS</a>.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/projects">2. Projects</a></dt>
+<dd class="directory-desc">Research, writing samples, and things I've built — problem, role, stack, artifact.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/cv/">3. CV</a></dt>
+<dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism — full CV and one-page résumé as PDFs.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/about">4. About</a></dt>
+<dd class="directory-desc">Background, training, and the long way around.</dd>
+</div>
+</dl>
+
 </div>
 
-<div class="term-window">
-  <div class="term-window-head">
-    <span class="term-dot red" aria-hidden="true"></span>
-    <span class="term-dot yellow" aria-hidden="true"></span>
-    <span class="term-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ ./subscribe --newsletter</code>
-  </div>
-  <div class="term-window-body">
-    <form action="https://buttondown.com/api/emails/embed-subscribe/coler" method="post" class="cli-form term-form">
-      <div class="cli-input-wrapper">
-        <span class="cli-prompt-small" aria-hidden="true">$</span>
-        <label for="bd-email" class="visually-hidden">Email address for the newsletter</label>
-        <input type="email" name="email" id="bd-email" placeholder="your@email.com" required class="cli-input">
-        <button type="submit" class="cli-button">GO</button>
-      </div>
-      <small class="term-note">No spam, just signal</small>
-    </form>
-  </div>
+<div class="home-sidebar">
+
+<div class="home-sidebar-section">
+<h2 class="home-sidebar-title">Links</h2>
+<ul class="instrument-links">
+<li><span class="link-label">github</span><a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer">colerehbein</a></li>
+<li><span class="link-label">x</span><a href="https://x.com/colerehbein" target="_blank" rel="noopener noreferrer">@colerehbein</a></li>
+<li><span class="link-label">email</span><a href="mailto:cole@cole.press">cole@cole.press</a></li>
+<li><span class="link-label">web</span><a href="https://cole.press">cole.press</a></li>
+</ul>
 </div>
-```
 
-::::
+<div class="home-sidebar-section">
+<h2 class="home-sidebar-title">Newsletter</h2>
+<form action="https://buttondown.com/api/emails/embed-subscribe/coler" method="post" class="quick-search-form">
+<label for="bd-email" class="visually-hidden">Email address for the newsletter</label>
+<input type="email" name="email" id="bd-email" placeholder="your@email.com" required class="quick-search-input">
+<button type="submit" class="quick-search-btn">Go</button>
+</form>
+<p class="quick-search-hint">No spam, just signal.</p>
+</div>
 
-:::::
+<div class="home-sidebar-section">
+<h2 class="home-sidebar-title">Currently</h2>
+<ul class="changelog-list">
+<li class="changelog-entry"><span class="changelog-date">Thesis</span><span class="changelog-desc">data collection &amp; analysis complete; manuscript in progress</span></li>
+<li class="changelog-entry"><span class="changelog-date">Crisis lines</span><span class="changelog-desc">988 network, Friday–Monday nights</span></li>
+<li class="changelog-entry"><span class="changelog-date">This site</span><span class="changelog-desc">rebuilt in an academic brutalist design</span></li>
+</ul>
+</div>
 
-```{=html}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
+</div>
 
-    // Newsletter form functionality — Buttondown integration (#13)
-    // Uses native form submission as fallback; JS enhances with fetch
-    const newsletterForm = document.querySelector('.cli-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            const button = this.querySelector('.cli-button');
-            const input = this.querySelector('.cli-input');
+</div>
 
-            // Try fetch first; if CORS fails, let native form submit handle it
-            e.preventDefault();
-            button.textContent = '...';
-            button.style.transform = 'scale(0.95)';
-
-            fetch(this.action, {
-                method: 'POST',
-                body: new FormData(this),
-            })
-            .then(response => {
-                if (response.ok || response.type === 'opaque') {
-                    button.textContent = '✓';
-                    button.style.background = '#22c55e';
-                    button.style.transform = 'scale(1)';
-                    input.value = 'Subscribed!';
-                    input.disabled = true;
-                    input.style.color = '#22c55e';
-                } else {
-                    throw new Error('Submission failed');
-                }
-            })
-            .catch(error => {
-                // Fallback: submit form natively
-                e.target.submit();
-            });
-        });
-    }
-
-    // Blinking cursor on the ASCII art panel (decorative)
-    const asciiArt = document.querySelector('.ascii-art');
-    if (asciiArt && !asciiArt.querySelector('.ascii-cursor')) {
-        const cursor = document.createElement('span');
-        cursor.className = 'ascii-cursor';
-        cursor.setAttribute('aria-hidden', 'true');
-        cursor.textContent = '▋';
-        cursor.style.color = 'var(--terminal-primary)';
-        cursor.style.animation = 'blink 1s infinite';
-        cursor.style.marginLeft = '5px';
-        asciiArt.appendChild(cursor);
-    }
-
-    // ========================================================================
-    // TERMINAL COLOR THEME SWITCHER
-    // ========================================================================
-    const themes = ['lavender', 'amber', 'cyan', 'green', 'white'];
-    const themeNames = {
-        lavender: 'Lavender (Synthwave)',
-        amber: 'Amber (IBM 3278)',
-        cyan: 'Cyan (VT220)',
-        green: 'Green (Matrix)',
-        white: 'White (Unix)'
-    };
-
-    // Load saved theme or default to lavender
-    const savedTheme = localStorage.getItem('terminal-theme') || 'lavender';
-    document.documentElement.dataset.terminalTheme = savedTheme;
-
-    // Mount target: the code-tools button is disabled (code-tools: false), so
-    // the switcher mounts into a dedicated slot in the neofetch prompt line,
-    // with the title block as a fallback.
-    const mountTarget =
-        document.querySelector('.theme-switcher-mount') ||
-        document.querySelector('.quarto-title-block .quarto-title-meta') ||
-        document.querySelector('.quarto-title-block');
-
-    if (mountTarget) {
-        const switcher = document.createElement('div');
-        switcher.className = 'terminal-theme-switcher';
-        switcher.innerHTML = `
-            <span class="theme-label">Terminal</span>
-            <div class="theme-options">
-                ${themes.map(t => `
-                    <button class="theme-dot ${t === savedTheme ? 'active' : ''}"
-                            data-theme="${t}"
-                            title="${themeNames[t]}"
-                            aria-label="Switch to ${themeNames[t]} theme"></button>
-                `).join('')}
-            </div>
-        `;
-
-        mountTarget.appendChild(switcher);
-
-        // Add click handlers
-        switcher.querySelectorAll('.theme-dot').forEach(dot => {
-            dot.addEventListener('click', () => {
-                const theme = dot.dataset.theme;
-                document.documentElement.dataset.terminalTheme = theme;
-                localStorage.setItem('terminal-theme', theme);
-
-                // Update active states
-                switcher.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
-                dot.classList.add('active');
-            });
-        });
-    }
-});
-</script>
-```
+</div>

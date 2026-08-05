@@ -1,0 +1,153 @@
+/* ============================================================================
+   Academic Brutalism — Dark theme
+   Ported from the IPIP Repository design system (docs/design/ in that repo).
+   Dark token values are verbatim from IPIP styles.css `@media
+   (prefers-color-scheme: dark)`. Shares the component layer with the light
+   theme via _brutalist.scss — only these tokens differ.
+   ============================================================================ */
+
+/*-- scss:defaults --*/
+
+$web-font-path: "" !default;
+
+// Typography — same stacks as light
+$font-family-base: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-monospace: "Anonymous Pro", "SF Mono", Monaco, "Roboto Mono", "Source Code Pro", monospace !default;
+$font-family-prose: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+$headings-font-family: inherit;
+$headings-font-weight: 700;
+$headings-color: #f0f0f0;
+
+// Bootstrap bridge — brutalist values (dark)
+$body-bg: #1a1a1a;
+$body-color: #f0f0f0;
+$link-color: #6b9eff;
+$link-hover-color: #a78bfa;
+$primary: #6b9eff;
+$secondary: #999999;
+$border-color: #777777;
+$border-radius: 0rem;
+$border-radius-sm: 0rem;
+$border-radius-lg: 0rem;
+$border-radius-pill: 50rem;
+
+// Containers / controls
+$card-bg: #242424;
+$card-color: #f0f0f0;
+$card-border-color: #777777;
+$input-bg: #1a1a1a;
+$input-color: #f0f0f0;
+$input-border-color: #777777;
+$input-focus-border-color: #6b9eff;
+$dropdown-bg: #242424;
+$dropdown-color: #f0f0f0;
+$dropdown-border-color: #777777;
+
+// Code
+$code-color: #f0f0f0;
+$code-bg: #2e2e2e;
+$code-block-bg: #242424;
+
+// Headings / misc
+$headings-color: #f0f0f0;
+$blockquote-border-color: #777777;
+
+/*-- scss:rules --*/
+
+// Design tokens (dark) — verbatim from IPIP styles.css dark block
+:root {
+  --color-bg: #1a1a1a;
+  --color-surface: #242424;
+  --color-primary: #6b9eff;
+  --color-primary-hover: #a78bfa;
+  --color-primary-light: #2a2a2a;
+  --color-text: #f0f0f0;
+  --color-text-secondary: #d0d0d0;
+  --color-muted: #999999;
+  --color-border: #777777;
+  --color-border-hover: #999999;
+  --color-positive: #4ade80;
+  --color-negative: #ff6b6b;
+  --color-accent: #6b9eff;
+  --radius: 0px;
+  --radius-lg: 0px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --transition: 0ms;
+  --color-focus-ring: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  --font-mono: "Anonymous Pro", "SF Mono", Monaco, "Roboto Mono", "Source Code Pro", monospace;
+
+  // Semantic surface colors (dark)
+  --color-hover-bg: #2a2a2a;
+  --color-row-alt: #2a2a2a;
+  --color-code-bg: #2e2e2e;
+  --color-border-light: #383838;
+  --color-clinical: #ff8a8a;
+  --color-clinical-bg: #2a1a1a;
+  --color-clinical-bg-light: #2e1818;
+  --color-clinical-border: #6b3a3a;
+  --color-error-bg: #2e0d0d;
+  --color-error-border: #7f1d1d;
+  --color-warning-bg: #2a1a00;
+  --color-warning-border: #b45309;
+  --color-warning-text: #fbbf24;
+  --color-info-bg: #0c1e2e;
+  --color-info-border: #2563eb;
+  --color-session-expired-bg: #2a1a00;
+  --color-session-expired-border: #b45309;
+
+  // Palette swatch colors (dark)
+  --swatch-classic: #6b9eff;
+  --swatch-violet: #a78bfa;
+  --swatch-green: #4ade80;
+  --swatch-amber: #fbbf24;
+  --swatch-crimson: #ff6b6b;
+
+  // Bootstrap runtime zeroing
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-box-shadow: none;
+  --bs-box-shadow-sm: none;
+  --bs-box-shadow-lg: none;
+}
+
+// Accent palettes (dark)
+[data-palette="classic"] {
+  --color-primary: #6b9eff;
+  --color-primary-hover: #a78bfa;
+  --color-accent: #6b9eff;
+}
+[data-palette="violet"] {
+  --color-primary: #a78bfa;
+  --color-primary-hover: #c4b5fd;
+  --color-accent: #a78bfa;
+}
+[data-palette="green"] {
+  --color-primary: #4ade80;
+  --color-primary-hover: #86efac;
+  --color-accent: #4ade80;
+}
+[data-palette="amber"] {
+  --color-primary: #fbbf24;
+  --color-primary-hover: #fde68a;
+  --color-accent: #fbbf24;
+}
+[data-palette="crimson"] {
+  --color-primary: #ff6b6b;
+  --color-primary-hover: #fca5a5;
+  --color-accent: #ff6b6b;
+}
+
+// Focus ring follows the active palette
+[data-palette] {
+  --color-focus-ring: color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+// Font faces + shared component layer
+@import "fonts";
+@import "brutalist";

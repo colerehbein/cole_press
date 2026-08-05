@@ -1,0 +1,49 @@
+<!-- Accent palette persistence + navbar picker (#terminal-themes reimagined for the brutalist design) -->
+<script>
+(function () {
+  // Apply saved palette before first paint (no flash)
+  var saved = null;
+  try { saved = localStorage.getItem("cole-palette"); } catch (e) {}
+  if (saved && ["classic", "violet", "green", "amber", "crimson"].indexOf(saved) !== -1) {
+    document.documentElement.dataset.palette = saved;
+  }
+})();
+
+document.addEventListener("DOMContentLoaded", function () {
+  var mount = document.querySelector(".quarto-navbar-tools");
+  if (!mount) return;
+
+  var palettes = [
+    ["classic", "Classic Blue"],
+    ["violet", "Violet"],
+    ["green", "Green"],
+    ["amber", "Amber"],
+    ["crimson", "Crimson"]
+  ];
+  var current = document.documentElement.dataset.palette || "classic";
+
+  var wrap = document.createElement("div");
+  wrap.className = "palette-picker";
+  wrap.setAttribute("role", "group");
+  wrap.setAttribute("aria-label", "Accent palette");
+
+  palettes.forEach(function (p) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "palette-swatch" + (p[0] === current ? " active" : "");
+    b.setAttribute("data-palette", p[0]);
+    b.setAttribute("aria-label", "Switch to " + p[1] + " palette");
+    b.setAttribute("title", p[1]);
+    b.addEventListener("click", function () {
+      document.documentElement.dataset.palette = p[0];
+      try { localStorage.setItem("cole-palette", p[0]); } catch (e) {}
+      wrap.querySelectorAll(".palette-swatch").forEach(function (s) {
+        s.classList.toggle("active", s.getAttribute("data-palette") === p[0]);
+      });
+    });
+    wrap.appendChild(b);
+  });
+
+  mount.insertBefore(wrap, mount.firstChild);
+});
+</script>

@@ -1,74 +1,77 @@
 ---
 title: "About"
 description: "Cole Rehbein — crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care."
-code-tools: false
 toc: false
 ---
 
-```{=html}
-<style>
-  /* About page only: lead hierarchy, built on existing theme custom properties */
-  .terminal-prose .about-lead {
-    font-size: 1rem;
-    color: #f8fafc;
-    border-left: 2px solid var(--terminal-primary, #00e5ff);
-    padding-left: var(--spacing-unit, 0.75rem);
-  }
-</style>
+I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico) and am completing an M.S. in clinical psychology at New Mexico Highlands University, with a thesis on outdoor mindfulness-based behavioral activation for depression.
 
-<div class="terminal-window-large">
-  <div class="terminal-header-bar">
-    <span class="terminal-dot red" aria-hidden="true"></span>
-    <span class="terminal-dot yellow" aria-hidden="true"></span>
-    <span class="terminal-dot green" aria-hidden="true"></span>
-    <code>cole@press:~$ cat ~/about.md</code>
-  </div>
-  <div class="terminal-body terminal-prose">
+## What I Do
 
-    <h2>Cole Rehbein</h2>
-    <p class="terminal-subtitle-text">Crisis Counselor &amp; Clinical Psychology Researcher · Albuquerque, New Mexico</p>
+**Crisis work.** Crisis counselor with Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico). High-acuity phone and chat triage and intervention, using ACT and behavioral activation. Friday–Monday nights.
 
-    <p class="about-lead">Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care.</p>
+**Research.** M.S. in clinical psychology at New Mexico Highlands University. Thesis: (outdoor) mindfulness-based behavioral activation for depression. Longitudinal design, psychometrics, psychological assessment, EEG. R for data work.
 
-    <p>I work high-acuity crisis lines for Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico) and am completing an M.S. in clinical psychology at New Mexico Highlands University, with a thesis on outdoor mindfulness-based behavioral activation for depression.</p>
+**Building & writing.** This site — a Quarto artifact, hand-set in an academic brutalist design and deployed as static files — plus research tooling in R, Python, Quarto, Markdown, LaTeX, and Git, and science communication. Before clinical work: journalism as a city reporter, copyeditor, and culture writer.
 
-    <h3>What I Do</h3>
+## Background
 
-    <p><strong>Crisis work.</strong> Crisis counselor with Protocall Services (988 Suicide &amp; Crisis Lifeline network partner serving New Mexico). High-acuity phone and chat triage and intervention, using ACT and behavioral activation. Friday–Monday nights.</p>
+**Clinical training** — Crisis intervention, ACT, behavioral activation. Graduate training in psychometrics, psychological assessment, and longitudinal research methods at New Mexico Highlands University.
 
-    <p><strong>Research.</strong> M.S. in clinical psychology at New Mexico Highlands University. Thesis: (outdoor) mindfulness-based behavioral activation for depression. Longitudinal design, psychometrics, psychological assessment, EEG. R for data work.</p>
+**Journalism** — City reporting, copyediting, culture writing. Local politics, food, arts. Accuracy on a deadline.
 
-    <p><strong>Building &amp; writing.</strong> This site — a Quarto/SCSS artifact, hand-set in monospace and deployed as static files — plus research tooling in R, Python, Quarto, Markdown, LaTeX, and Git, and science communication. Before clinical work: journalism as a city reporter, copyeditor, and culture writer.</p>
+**St. John's College** — B.A., philosophy (Great Books program). Close reading, Socratic dialogue, ancient Greek (reading).
 
-    <h3>Background</h3>
+## Also True
 
-    <p><strong>Clinical training</strong> — Crisis intervention, ACT, behavioral activation. Graduate training in psychometrics, psychological assessment, and longitudinal research methods at New Mexico Highlands University.</p>
+- **Zazen:** Sōtō Zen, personal practice — student, not teacher
+- **Spinoza:** ethics, philosophy of mind; the undergraduate focus that stuck
+- **Systems thinking:** class, power, institutional critique
 
-    <p><strong>Journalism</strong> — City reporting, copyediting, culture writing. Local politics, food, arts. Accuracy on a deadline.</p>
+## Current Status
 
-    <p><strong>St. John's College</strong> — B.A., philosophy (Great Books program). Close reading, Socratic dialogue, ancient Greek (reading).</p>
+- **Thesis:** data collection and analysis complete; manuscript in progress
+- **Location:** Albuquerque, New Mexico
+- **Open to:** behavioral-health research, mental-health technology, clinical data, and science communication roles
 
-    <h3>Also true</h3>
+## Contact
 
-    <ul>
-      <li><strong>Zazen:</strong> Sōtō Zen, personal practice — student, not teacher</li>
-      <li><strong>Spinoza:</strong> ethics, philosophy of mind; the undergraduate focus that stuck</li>
-      <li><strong>Systems thinking:</strong> class, power, institutional critique</li>
-    </ul>
+[cole@cole.press](mailto:cole@cole.press) — Email is best. I check it when I'm not on crisis lines.
 
-    <h3>Current Status</h3>
+[github.com/colerehbein](https://github.com/colerehbein)
 
-    <ul>
-      <li><strong>Thesis:</strong> data collection and analysis complete; manuscript in progress</li>
-      <li><strong>Location:</strong> Albuquerque, New Mexico</li>
-      <li><strong>Open to:</strong> behavioral-health research, mental-health technology, clinical data, and science communication roles</li>
-    </ul>
+## Career Timeline
 
-    <h3>Contact</h3>
+<div class="ipip-timeline">
+<div class="ipip-timeline-line">
 
-    <p><a href="mailto:cole@cole.press">cole@cole.press</a> — Email is best. I check it when I'm not on crisis lines.</p>
-    <p><a href="https://github.com/colerehbein" target="_blank" rel="noopener noreferrer">github.com/colerehbein</a></p>
-
-  </div>
+<div class="ipip-timeline-item">
+<span class="ipip-timeline-dot" aria-hidden="true"></span>
+<p class="ipip-timeline-year">2015–2019</p>
+<p class="ipip-timeline-title">St. John's College, Santa Fe <span class="ipip-timeline-tag">B.A. Philosophy</span></p>
+<p class="ipip-timeline-desc">Great Books program — close reading, Socratic dialogue, ancient Greek. Senior paper on Spinoza's <em>Ethics</em>.</p>
 </div>
-```
+
+<div class="ipip-timeline-item">
+<span class="ipip-timeline-dot" aria-hidden="true"></span>
+<p class="ipip-timeline-year">2015–2021</p>
+<p class="ipip-timeline-title">Journalism <span class="ipip-timeline-tag">City Reporter · Copy Editor</span></p>
+<p class="ipip-timeline-desc">Editorial intern and calendar editor at the <em>Santa Fe Reporter</em>; city reporter at the <em>Rio Grande Sun</em>. Local politics, food, arts — accuracy on a deadline.</p>
+</div>
+
+<div class="ipip-timeline-item">
+<span class="ipip-timeline-dot" aria-hidden="true"></span>
+<p class="ipip-timeline-year">2022–2024</p>
+<p class="ipip-timeline-title">Clinical training <span class="ipip-timeline-tag">M.S. Clinical Psychology</span></p>
+<p class="ipip-timeline-desc">New Mexico Highlands University. Psychometrics, psychological assessment, EEG research; clinical internship at Counseling ABQ and NMBHI.</p>
+</div>
+
+<div class="ipip-timeline-item">
+<span class="ipip-timeline-dot" aria-hidden="true"></span>
+<p class="ipip-timeline-year">2025–present</p>
+<p class="ipip-timeline-title">Protocall Services — 988 Suicide &amp; Crisis Lifeline <span class="ipip-timeline-tag">Crisis &amp; Access Specialist</span></p>
+<p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights. Thesis data collection and analysis complete; manuscript in progress.</p>
+</div>
+
+</div>
+</div>
