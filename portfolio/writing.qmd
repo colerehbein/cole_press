@@ -38,6 +38,6 @@ Essays on crisis work, behavioral science, technology, and the examined life liv
 </div>
 <div class="directory-entry">
 <dt class="directory-term">Thesis: mindfulness-based behavioral activation</dt>
-<dd class="directory-desc">A brief, outdoor mindfulness-based behavioral activation intervention for college students with depression — M.S. thesis, clinical psychology, NMHU (2026). See <a href="/research">Research</a>.</dd>
+<dd class="directory-desc">A brief, outdoor mindfulness-based behavioral activation intervention for college students with depression — M.S. thesis, clinical/counseling psychology, NMHU (2026). See <a href="/research">Research</a>.</dd>
 </div>
 </dl>

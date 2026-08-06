@@ -8,13 +8,13 @@ I study behavioral treatments for depression and the measurement that makes them
 
 ## Master's Thesis
 
-**The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression.** New Mexico Highlands University, M.S. Clinical Psychology. Advisor: Dr. David Pan.
+**The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression.** New Mexico Highlands University, M.S. Clinical/Counseling Psychology (2026). Advisor: Dr. David Pan.
 
 | | |
 |---|---|
 | **Question** | Does a brief, outdoor mindfulness-based behavioral activation intervention reduce depressive symptoms in college students? |
 | **Design** | Longitudinal; psychometrics and statistical analysis in R |
-| **Status** | Data collection and analysis complete; manuscript in progress |
+| **Status** | Complete — degree conferred, 2026 |
 | **Advisor** | Dr. David Pan |
 
 The full analysis pipeline — cleaning, psychometrics, longitudinal models, and automated reporting in Quarto — regenerates every table and figure from raw data. A public synthetic/de-identified demo is in preparation; no participant data will ever be published.

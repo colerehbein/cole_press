@@ -48,7 +48,7 @@ Design for that human. Sane defaults. Fewer clicks. No pop-ups competing for att
 
 ## What I took back to the keyboard
 
-I'm finishing a thesis on outdoor mindfulness-based behavioral activation for depression: data collected, analysis complete, manuscript in progress. The methods are standard: longitudinal design, psychometrics, R for the analysis. The working habits came from the crisis line. Assume your data is incomplete and say so. Write the analysis so a stranger can re-run it cold, because the stranger is future you, and future you is also tired. Treat reproducibility the way a good note treats the next counselor: as a duty to whoever picks the work up mid-scene.
+My thesis on outdoor mindfulness-based behavioral activation for depression is done — data collected, analysis complete. The methods are standard: longitudinal design, psychometrics, R for the analysis. The working habits came from the crisis line. Assume your data is incomplete and say so. Write the analysis so a stranger can re-run it cold, because the stranger is future you, and future you is also tired. Treat reproducibility the way a good note treats the next counselor: as a duty to whoever picks the work up mid-scene.
 
 That is the kind of thing I want to build, and it is what this site is for: small, reproducible tools for behavioral-health research and care, built by someone who has answered the phone. On Monday night I will log back into the queue. The coffee will go cold on schedule. Somewhere in the shift, a note from a counselor I have never met will tell me, in forty seconds, exactly what I need to know. I want the software I write to hold up under the same standard.
 

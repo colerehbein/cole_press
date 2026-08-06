@@ -4,13 +4,13 @@ description: "Cole Rehbein — crisis counselor and clinical psychology research
 toc: false
 ---
 
-I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico) and am completing an M.S. in clinical psychology at New Mexico Highlands University, with a thesis on outdoor mindfulness-based behavioral activation for depression.
+I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico) and completed an M.S. in clinical/counseling psychology at New Mexico Highlands University, with a thesis on outdoor mindfulness-based behavioral activation for depression.
 
 ## What I Do
 
 **Crisis work.** Crisis counselor with Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico). High-acuity phone and chat triage and intervention, using ACT and behavioral activation. Friday–Monday nights.
 
-**Research.** M.S. in clinical psychology at New Mexico Highlands University. Thesis: (outdoor) mindfulness-based behavioral activation for depression. Longitudinal design, psychometrics, psychological assessment, EEG. R for data work.
+**Research.** M.S. in clinical/counseling psychology at New Mexico Highlands University. Thesis: (outdoor) mindfulness-based behavioral activation for depression. Longitudinal design, psychometrics, psychological assessment, EEG. R for data work.
 
 **Building & writing.** This site — a Quarto artifact, hand-set in an academic brutalist design and deployed as static files — plus research tooling in R, Python, Quarto, Markdown, LaTeX, and Git, and science communication. Before clinical work: journalism as a city reporter, copyeditor, and culture writer.
 
@@ -30,7 +30,7 @@ I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lif
 
 ## Current Status
 
-- **Thesis:** data collection and analysis complete; manuscript in progress
+- **Thesis:** complete, 2026
 - **Location:** Albuquerque, New Mexico
 - **Open to:** behavioral-health research, mental-health technology, clinical data, and science communication roles
 
@@ -62,7 +62,7 @@ I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lif
 <div class="ipip-timeline-item">
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2022–2024</p>
-<p class="ipip-timeline-title">Clinical training <span class="ipip-timeline-tag">M.S. Clinical Psychology</span></p>
+<p class="ipip-timeline-title">Clinical training <span class="ipip-timeline-tag">M.S. Clinical/Counseling Psychology</span></p>
 <p class="ipip-timeline-desc">New Mexico Highlands University. Psychometrics, psychological assessment, EEG research; clinical internship at Counseling ABQ and NMBHI.</p>
 </div>
 
@@ -70,7 +70,7 @@ I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lif
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2025–present</p>
 <p class="ipip-timeline-title">Protocall Services — 988 Suicide &amp; Crisis Lifeline <span class="ipip-timeline-tag">Crisis &amp; Access Specialist</span></p>
-<p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights. Thesis data collection and analysis complete; manuscript in progress.</p>
+<p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights. M.S. in clinical/counseling psychology completed in 2026.</p>
 </div>
 
 </div>

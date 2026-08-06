@@ -22,9 +22,9 @@ Crisis counselor and clinical psychology researcher building reproducible tools 
 
 # Education
 
-_New Mexico Highlands University_ — M.S., Clinical Psychology \hfill In progress
+_New Mexico Highlands University_ — M.S., Clinical/Counseling Psychology \hfill 2026
 
-Thesis: brief, mindfulness-based behavioral activation intervention for college students with depression (data collection and analysis complete; manuscript in progress). Advisor: Dr. David Pan.
+Thesis: brief, mindfulness-based behavioral activation intervention for college students with depression (complete, 2026). Advisor: Dr. David Pan.
 
 _St. John's College, Santa Fe_ — B.A., Philosophy and History of Math and Science \hfill 2019
 
@@ -44,7 +44,7 @@ Cognitive, neuropsychological, and intelligence testing for intakes and treatmen
 
 # Research & Data
 
-- Thesis (NMHU): longitudinal design; psychometric and statistical analysis in R; manuscript in progress.
+- Thesis (NMHU): longitudinal design; psychometric and statistical analysis in R; complete (2026).
 - Systematic review with Dr. Thomas R. Brooks: _Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022_ — in preparation for _Behaviour Research and Therapy_; presented at the Southwest Psychological Association (2023).
 - Principal investigator, EEG study of chronic cannabis use and stress responses on an emotional Stroop task (NMHU, Fall 2022).
 

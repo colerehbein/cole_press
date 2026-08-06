@@ -15,12 +15,12 @@ Crisis counselor and clinical psychology researcher building reproducible tools 
 
 <div class="cv-entry">
 <div>
-<p class="cv-role">M.S., Clinical Psychology (in progress)</p>
+<p class="cv-role">M.S., Clinical/Counseling Psychology (2026)</p>
 <p class="cv-org">New Mexico Highlands University</p>
 </div>
 <div class="cv-detail">
 <p class="cv-meta">Thesis</p>
-<p>The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression. Advisor: Dr. David Pan. Data collection and analysis complete; manuscript in progress.</p>
+<p>The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression. Advisor: Dr. David Pan. Thesis complete, 2026.</p>
 </div>
 </div>
 
@@ -104,7 +104,7 @@ Crisis counselor and clinical psychology researcher building reproducible tools 
 <ul>
 <li>Brief, mindfulness-based behavioral activation intervention for college students with depression</li>
 <li>Longitudinal design; psychometric and statistical analysis in R</li>
-<li>Data collection and analysis complete; manuscript in progress</li>
+<li>Thesis complete (2026)</li>
 </ul>
 </div>
 </div>
