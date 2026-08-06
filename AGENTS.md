@@ -32,6 +32,7 @@ cole_press/
 ├── about.qmd                # About page (prose + career timeline)
 ├── research.qmd             # Research page (thesis, review, EEG, methods)
 ├── projects.qmd             # Projects showcase (card grid)
+├── 404.qmd                  # Custom not-found page (renders 404.html)
 ├── portfolio/
 │   ├── index.qmd            # Portfolio landing (Photos + Writing cards)
 │   ├── photos.qmd           # Photo gallery grid

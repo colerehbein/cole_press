@@ -127,9 +127,18 @@ The form posts to Buttondown (`https://buttondown.com/api/emails/embed-subscribe
    (paths are relative to `portfolio/`).
 3. Add the folder to `resources` in `_quarto.yml` if Quarto doesn't copy it automatically (`resources: - portfolio/photos/`).
 
-### 4.8 The Portfolio navbar dropdown
+### 4.8 The navbar structure
 
-The navbar's Portfolio item is a Quarto `menu:` dropdown (Photos, Writing, plus a mobile-only "Overview"). Clicking "Portfolio" itself navigates to `/portfolio/` on desktop — that's not native Quarto behavior; it's done by `_includes/portfolio-nav.html` (repoints the toggle's href and strips `data-bs-toggle` on desktop widths, so the link navigates; CSS hover/focus opens the menu instantly). On mobile the native toggle behavior stays and an "Overview" item appears. If you add more dropdowns, give them their own include logic or generalize that script.
+Top navigation (`_quarto.yml` → `navbar`):
+
+- **Home · About · Research ▾ · Blog · Portfolio ▾ · CV** (right: GitHub · X)
+- **Research ▾** is a pure dropdown toggle (Research, Projects) — native Quarto `menu:`, no custom JS.
+- **Portfolio ▾** (Overview, Photos, Writing) — clicking "Portfolio" itself navigates to `/portfolio/` on desktop (not native Quarto: `_includes/portfolio-nav.html` repoints the toggle's href and strips `data-bs-toggle` on desktop, while CSS hover/focus opens the menu). On mobile the native toggle stays and the Overview item appears.
+- Both dropdowns use the shared brutalist `.dropdown-menu` styling in `_brutalist.scss` (square, black border, hover = primary-light).
+
+### 4.9 The 404 page
+
+`404.qmd` renders to `404.html`, which Netlify serves as the custom not-found page (Quarto picks it up automatically — no config needed). It uses the directory-list component and includes the 988 note.
 
 ---
 

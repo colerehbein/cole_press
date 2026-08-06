@@ -31,12 +31,14 @@ website:
         text: Home
       - href: about.qmd
         text: About
-      - href: research.qmd
-        text: Research
+      - text: Research
+        menu:
+          - href: research.qmd
+            text: Research
+          - href: projects.qmd
+            text: Projects
       - href: /blog/
         text: Blog
-      - href: projects.qmd
-        text: Projects
       - text: Portfolio
         menu:
           - text: Overview

@@ -1,0 +1,24 @@
+---
+title: "Page Not Found"
+---
+
+<dl class="directory-list">
+<div class="directory-entry">
+<dt class="directory-term">Error</dt>
+<dd class="directory-desc">The page you're looking for doesn't exist or has moved.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/">Home</a></dt>
+<dd class="directory-desc">Back to the start.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/blog/">Blog</a></dt>
+<dd class="directory-desc">Essays on crisis work, research, and technology.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/cv/">CV</a></dt>
+<dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism.</dd>
+</div>
+</dl>
+
+In crisis? Call or text 988 — Suicide & Crisis Lifeline.
