@@ -32,6 +32,10 @@ cole_press/
 ├── about.qmd                # About page (prose + career timeline)
 ├── research.qmd             # Research page (thesis, review, EEG, methods)
 ├── projects.qmd             # Projects showcase (card grid)
+├── portfolio/
+│   ├── index.qmd            # Portfolio landing (Photos + Writing cards)
+│   ├── photos.qmd           # Photo gallery grid
+│   └── writing.qmd          # Writing index (essays, journalism, academic)
 ├── blog/
 │   ├── index.qmd            # Blog listing + RSS feed (feed: true → /blog/index.xml)
 │   ├── _metadata.yml        # Shared front matter for blog pages
@@ -49,6 +53,7 @@ cole_press/
 ├── _includes/
 │   ├── preload-fonts.html   # Font preloading for performance
 │   ├── accent-palette.html  # Palette boot script + navbar picker JS
+│   ├── portfolio-nav.html   # Portfolio navbar: click-navigates on desktop, dropdown on hover
 │   └── home-no-title.html   # Hides Quarto title block on the home page
 ├── _extensions/
 │   ├── mps9506/quarto-cv/   # CV PDF extension (LaTeX-based)

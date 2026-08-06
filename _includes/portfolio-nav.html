@@ -1,0 +1,29 @@
+<!-- Portfolio navbar behavior: desktop = parent link navigates to /portfolio/
+     while hover/focus opens the dropdown; mobile keeps the native toggle and
+     shows an "Overview" item so the main page stays reachable. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var toggles = document.querySelectorAll(".navbar .nav-item.dropdown > a.dropdown-toggle");
+  var toggle = null;
+  toggles.forEach(function (t) {
+    if (t.textContent.trim().toLowerCase().indexOf("portfolio") === 0) toggle = t;
+  });
+  if (!toggle) return;
+
+  toggle.setAttribute("href", "/portfolio/");
+  toggle.setAttribute("aria-label", "Portfolio — click to open overview, submenu for Photos and Writing");
+
+  var mq = window.matchMedia("(min-width: 992px)");
+  function apply() {
+    if (mq.matches) {
+      // Desktop: clicking the parent navigates; the dropdown opens on hover/focus (CSS)
+      toggle.removeAttribute("data-bs-toggle");
+    } else {
+      // Mobile: keep native toggle behavior
+      toggle.setAttribute("data-bs-toggle", "dropdown");
+    }
+  }
+  apply();
+  mq.addEventListener("change", apply);
+});
+</script>

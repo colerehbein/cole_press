@@ -22,27 +22,27 @@ The full analysis pipeline — cleaning, psychometrics, longitudinal models, and
 ## Systematic Review
 
 <div class="cv-entry">
-  <div>
-    <p class="cv-role">Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022</p>
-    <p class="cv-org">with Dr. Thomas R. Brooks</p>
-  </div>
-  <div class="cv-detail">
-    <p class="cv-meta">Manuscript in preparation</p>
-    <p>A systematic review of how desired treatment outcomes for trans behavioral health care have changed across six decades — presented at the Southwest Psychological Association (2023) and the Rocky Mountain Psychological Association (2023).</p>
-  </div>
+<div>
+<p class="cv-role">Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022</p>
+<p class="cv-org">with Dr. Thomas R. Brooks</p>
+</div>
+<div class="cv-detail">
+<p class="cv-meta">Manuscript in preparation</p>
+<p>A systematic review of how desired treatment outcomes for trans behavioral health care have changed across six decades — presented at the Southwest Psychological Association (2023) and the Rocky Mountain Psychological Association (2023).</p>
+</div>
 </div>
 
 ## EEG Research
 
 <div class="cv-entry">
-  <div>
-    <p class="cv-role">Emotional Stroop, cannabis, and stress</p>
-    <p class="cv-org">Heflin lab, New Mexico Highlands University</p>
-  </div>
-  <div class="cv-detail">
-    <p class="cv-meta">Fall 2022 · Principal investigator</p>
-    <p>EEG study of chronic cannabis use and stress responses on an emotional Stroop task. Acquired new EEG equipment; managed lab inventory and consumables.</p>
-  </div>
+<div>
+<p class="cv-role">Emotional Stroop, cannabis, and stress</p>
+<p class="cv-org">Heflin lab, New Mexico Highlands University</p>
+</div>
+<div class="cv-detail">
+<p class="cv-meta">Fall 2022 · Principal investigator</p>
+<p>EEG study of chronic cannabis use and stress responses on an emotional Stroop task. Acquired new EEG equipment; managed lab inventory and consumables.</p>
+</div>
 </div>
 
 ## Methods & Tools

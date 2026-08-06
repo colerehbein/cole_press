@@ -1,0 +1,27 @@
+---
+title: "Portfolio"
+description: "Photography and writing by Cole Rehbein — essays, journalism, and academic papers."
+toc: false
+---
+
+Two shelves: what I see and what I write.
+
+<div class="card-grid">
+
+<div class="card">
+  <h3 class="project-card-title">Photos</h3>
+  <p class="project-card-body">Photography — New Mexico, mostly. Light, landscape, and the occasional enchilada.</p>
+  <p class="project-card-links">
+    <a class="btn btn-primary" href="/portfolio/photos.html">View photos</a>
+  </p>
+</div>
+
+<div class="card">
+  <h3 class="project-card-title">Writing</h3>
+  <p class="project-card-body">Essays on the blog, journalism from the <em>Santa Fe Reporter</em> and the <em>Rio Grande Sun</em>, and academic papers — philosophy and psychology.</p>
+  <p class="project-card-links">
+    <a class="btn btn-primary" href="/portfolio/writing.html">Read writing</a>
+  </p>
+</div>
+
+</div>

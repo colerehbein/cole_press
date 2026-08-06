@@ -46,11 +46,15 @@ Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical Psychology (in progress), NMHU &nbs
 <dd class="directory-desc">Research, writing samples, and things I've built — problem, role, stack, artifact.</dd>
 </div>
 <div class="directory-entry">
-<dt class="directory-term"><a href="/cv/">4. CV</a></dt>
+<dt class="directory-term"><a href="/portfolio/">4. Portfolio</a></dt>
+<dd class="directory-desc">Photography and writing — essays, journalism, and academic papers.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/cv/">5. CV</a></dt>
 <dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism — full CV and one-page résumé as PDFs.</dd>
 </div>
 <div class="directory-entry">
-<dt class="directory-term"><a href="/about">5. About</a></dt>
+<dt class="directory-term"><a href="/about">6. About</a></dt>
 <dd class="directory-desc">Background, training, and the long way around.</dd>
 </div>
 </dl>

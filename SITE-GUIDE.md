@@ -32,6 +32,9 @@ To ship: commit your changes and push to `main`. The GitHub Action (`Build & Dep
 | `/about` | `about.qmd` | About: prose + career timeline |
 | `/research` | `research.qmd` | Research: thesis, systematic review, EEG work, methods, presentations |
 | `/projects` | `projects.qmd` | Case-study cards |
+| `/portfolio/` | `portfolio/index.qmd` | Portfolio landing: Photos + Writing cards |
+| `/portfolio/photos` | `portfolio/photos.qmd` | Photo gallery (grid) |
+| `/portfolio/writing` | `portfolio/writing.qmd` | Writing index: essays, journalism, academic papers |
 | `/blog/` | `blog/index.qmd` + `blog/posts/*.qmd` | Essay listing + RSS feed (`/blog/index.xml`) |
 | `/cv/` | `cv/index.qmd` | Web CV + PDF download buttons |
 | `cv/cole-rehbein-cv.pdf` | `cv/full-cv.qmd` | Full CV PDF (LaTeX, built automatically) |
@@ -115,6 +118,18 @@ The picker saves to `localStorage["cole-palette"]`; the boot script in `_include
 ### 4.6 Update the newsletter form
 
 The form posts to Buttondown (`https://buttondown.com/api/emails/embed-subscribe/coler` in `index.qmd`). Change the email/subscribe ID there.
+
+### 4.7 Add photos to the portfolio
+
+1. Drop image files (JPG/PNG/WebP) into `portfolio/photos/`.
+2. In `portfolio/photos.qmd`, replace a placeholder frame with:
+   `<figure class="photo-frame"><img src="photos/your-photo.jpg" alt="Description" loading="lazy"></figure>`
+   (paths are relative to `portfolio/`).
+3. Add the folder to `resources` in `_quarto.yml` if Quarto doesn't copy it automatically (`resources: - portfolio/photos/`).
+
+### 4.8 The Portfolio navbar dropdown
+
+The navbar's Portfolio item is a Quarto `menu:` dropdown (Photos, Writing, plus a mobile-only "Overview"). Clicking "Portfolio" itself navigates to `/portfolio/` on desktop — that's not native Quarto behavior; it's done by `_includes/portfolio-nav.html` (repoints the toggle's href and strips `data-bs-toggle` on desktop widths, so the link navigates; CSS hover/focus opens the menu instantly). On mobile the native toggle behavior stays and an "Overview" item appears. If you add more dropdowns, give them their own include logic or generalize that script.
 
 ---
 

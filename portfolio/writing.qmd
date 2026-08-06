@@ -1,0 +1,43 @@
+---
+title: "Writing"
+description: "Writing by Cole Rehbein — essays, journalism, and academic papers."
+toc: false
+---
+
+## Essays
+
+Essays on crisis work, behavioral science, technology, and the examined life live on the [blog](/blog/). Low frequency, long half-life — also available over [RSS](/blog/index.xml).
+
+## Journalism
+
+<dl class="directory-list">
+<div class="directory-entry">
+<dt class="directory-term"><a href="https://sfreporter.com/author/cole-rehbein/" target="_blank" rel="noopener noreferrer">Santa Fe Reporter</a></dt>
+<dd class="directory-desc">Calendar editor, copy editor, and culture contributor (2019–2020) — community events, copyediting, restaurant reviews, food writing, gallery openings.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term">Rio Grande Sun</dt>
+<dd class="directory-desc">City reporter (2020–2021) — city politics, council meetings, and local events in Española and Rio Arriba County.</dd>
+</div>
+</dl>
+
+## Academic Papers
+
+<dl class="directory-list">
+<div class="directory-entry">
+<dt class="directory-term">The Internally Determined Self</dt>
+<dd class="directory-desc">Senior paper, St. John's College (2019) — Spinoza's <em>Ethics</em> as a remedy for postmodernity's identity crisis. Philosophy and history of math and science; minors in classical studies and comparative literature.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term">Is It Right to Rebel?</dt>
+<dd class="directory-desc">Adolescence as crisis in moral identity development — PSYC 6400, Advanced Developmental Psychology, NMHU (2022).</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term">Memory &amp; Cognition literature review</dt>
+<dd class="directory-desc">Graduate literature review — Memory and Cognition, NMHU.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term">Thesis: mindfulness-based behavioral activation</dt>
+<dd class="directory-desc">A brief, outdoor mindfulness-based behavioral activation intervention for college students with depression — M.S. thesis, clinical psychology, NMHU (2026). See <a href="/research">Research</a>.</dd>
+</div>
+</dl>

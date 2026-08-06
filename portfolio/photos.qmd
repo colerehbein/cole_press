@@ -1,0 +1,16 @@
+---
+title: "Photos"
+description: "Photography by Cole Rehbein."
+toc: false
+---
+
+Photography — New Mexico, mostly. More coming soon; this shelf is being stocked.
+
+<div class="photo-grid">
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 01</span></figure>
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 02</span></figure>
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 03</span></figure>
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 04</span></figure>
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 05</span></figure>
+  <figure class="photo-frame"><span class="photo-placeholder">Photo 06</span></figure>
+</div>
