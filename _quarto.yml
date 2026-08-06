@@ -4,6 +4,7 @@ project:
   resources:
     - fonts/
     - favicon.svg
+    - portfolio/photos/
   render:
     - "*.qmd"
     - "!AGENTS.md"
