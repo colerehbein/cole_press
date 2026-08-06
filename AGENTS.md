@@ -30,6 +30,7 @@ cole_press/
 ├── _quarto.yml              # Main Quarto configuration
 ├── index.qmd                # Home page (kicker, abstract, directory index, sidebar)
 ├── about.qmd                # About page (prose + career timeline)
+├── research.qmd             # Research page (thesis, review, EEG, methods)
 ├── projects.qmd             # Projects showcase (card grid)
 ├── blog/
 │   ├── index.qmd            # Blog listing + RSS feed (feed: true → /blog/index.xml)

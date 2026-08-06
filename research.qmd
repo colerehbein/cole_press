@@ -1,0 +1,62 @@
+---
+title: "Research"
+description: "Clinical psychology research: mindfulness-based behavioral activation for depression, a systematic review of trans behavioral health care outcomes, EEG methods, and reproducible analysis in R."
+toc: false
+---
+
+I study behavioral treatments for depression and the measurement that makes them testable. Three threads — a longitudinal thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, and EEG research on stress and cannabis — share one method: reproducible data work in R, so every number here regenerates from data, not from memory.
+
+## Master's Thesis
+
+**The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression.** New Mexico Highlands University, M.S. Clinical Psychology. Advisor: Dr. David Pan.
+
+| | |
+|---|---|
+| **Question** | Does a brief, outdoor mindfulness-based behavioral activation intervention reduce depressive symptoms in college students? |
+| **Design** | Longitudinal; psychometrics and statistical analysis in R |
+| **Status** | Data collection and analysis complete; manuscript in progress |
+| **Advisor** | Dr. David Pan |
+
+The full analysis pipeline — cleaning, psychometrics, longitudinal models, and automated reporting in Quarto — regenerates every table and figure from raw data. A public synthetic/de-identified demo is in preparation; no participant data will ever be published.
+
+## Systematic Review
+
+<div class="cv-entry">
+  <div>
+    <p class="cv-role">Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022</p>
+    <p class="cv-org">with Dr. Thomas R. Brooks</p>
+  </div>
+  <div class="cv-detail">
+    <p class="cv-meta">Manuscript in preparation</p>
+    <p>A systematic review of how desired treatment outcomes for trans behavioral health care have changed across six decades — presented at the Southwest Psychological Association (2023) and the Rocky Mountain Psychological Association (2023).</p>
+  </div>
+</div>
+
+## EEG Research
+
+<div class="cv-entry">
+  <div>
+    <p class="cv-role">Emotional Stroop, cannabis, and stress</p>
+    <p class="cv-org">Heflin lab, New Mexico Highlands University</p>
+  </div>
+  <div class="cv-detail">
+    <p class="cv-meta">Fall 2022 · Principal investigator</p>
+    <p>EEG study of chronic cannabis use and stress responses on an emotional Stroop task. Acquired new EEG equipment; managed lab inventory and consumables.</p>
+  </div>
+</div>
+
+## Methods & Tools
+
+- **R** — psychometrics, longitudinal analysis, visualization; reproducible reporting with Quarto
+- **Assessment** — neuropsychological, cognitive, and intelligence testing in clinical intake and treatment-planning settings
+- **Survey & data** — SPSS, Qualtrics
+- **EEG** — acquisition and lab management (Heflin lab)
+
+## Presentations
+
+- Rehbein, C., &amp; Brooks, T. R. (2023, April). *Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022, or; Why We Stopped Shocking Trans People: A Systematic Review.* Southwest Psychological Association, Dallas, TX.
+- Rehbein, C., &amp; Brooks, T. R. (2023, March). *Changes in Desired Outcomes for Trans Behavioral Health Care, 1963–2022: A Systematic Review.* NMHU Women's and Gender Studies Brownbag Lecture Series.
+
+## Status
+
+Open to behavioral-health research, mental-health technology, clinical data, and science communication roles. [cole@cole.press](mailto:cole@cole.press) — email is best; I check it when I'm not on crisis lines.

@@ -30,6 +30,7 @@ To ship: commit your changes and push to `main`. The GitHub Action (`Build & Dep
 |---|---|---|
 | `/` | `index.qmd` | Home: kicker, title, abstract, directory index, sidebar |
 | `/about` | `about.qmd` | About: prose + career timeline |
+| `/research` | `research.qmd` | Research: thesis, systematic review, EEG work, methods, presentations |
 | `/projects` | `projects.qmd` | Case-study cards |
 | `/blog/` | `blog/index.qmd` + `blog/posts/*.qmd` | Essay listing + RSS feed (`/blog/index.xml`) |
 | `/cv/` | `cv/index.qmd` | Web CV + PDF download buttons |
@@ -75,11 +76,12 @@ To ship: commit your changes and push to `main`. The GitHub Action (`Build & Dep
 
 **Note:** raw HTML in `.qmd` files must be **unindented to column 0** — pandoc turns indented `<dt>`/`<dd>`/`<p>` lines into escaped code blocks.
 
-### 4.3 Edit About / CV / Projects
+### 4.3 Edit About / Research / CV / Projects
 
-All three are Markdown + a few theme classes:
+All are Markdown + a few theme classes:
 
 - **About** — plain Markdown; the timeline at the bottom uses `.ipip-timeline*` classes (see the section in `about.qmd` as a template).
+- **Research** — thesis facts live in a Markdown table (rendered with the brutalist `.table` styles); the review and EEG studies use `.cv-entry` rows (same as CV). Update the thesis **Status** row when the manuscript moves.
 - **Projects** — each project is a `.card` inside `.card-grid`. Copy an existing card block; status uses `.badge` pills.
 - **CV** — each position is a `.cv-entry` (left column: `.cv-role` + `.cv-org`; right column: `.cv-detail` with an optional `.cv-meta` date line). PDF download buttons are `.btn btn-primary` / `.btn`.
 
@@ -143,6 +145,8 @@ Bootstrap bridge: each theme file sets SCSS vars (`$body-bg`, `$primary`, `$bord
 - **Links:** `--color-primary` (blue by default), underline in body text, `--color-primary-hover` (purple) on hover/visited. Nav links are not underlined — they get a 2px bottom border on hover instead.
 - **Accent palettes:** Classic Blue, Violet, Green, Amber, Crimson — switchable from the navbar; persist across visits.
 - **Rainbow stripe:** the 4px hard-stop striped bar under the header — the site's one decorative flourish. Colors are fixed (do not change per palette).
+- **988 crisis note:** the bordered line in the footer center (`page-footer.center` in `_quarto.yml`) — appears on every page; styled via `.nav-footer .footer-items-center`.
+- **Print:** a `@media print` block in `_brutalist.scss` strips the chrome (header, footer, picker, search, TOC) and keeps cards/entries together across page breaks.
 
 Full component reference: [docs/design/catalog.md](./docs/design/catalog.md).
 

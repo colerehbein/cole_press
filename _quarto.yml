@@ -30,6 +30,8 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: research.qmd
+        text: Research
       - href: /blog/
         text: Blog
       - href: projects.qmd
@@ -46,6 +48,7 @@ website:
 
   page-footer:
     left: "© 2026 Cole Rehbein — crisis counselor & clinical psychology researcher"
+    center: "In crisis? Call or text 988 — Suicide & Crisis Lifeline"
     right: "[GitHub](https://github.com/colerehbein) · [X](https://x.com/colerehbein) · [RSS](/blog/index.xml)"
 
 format:

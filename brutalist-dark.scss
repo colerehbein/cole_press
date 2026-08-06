@@ -114,6 +114,9 @@ $blockquote-border-color: #777777;
   --bs-box-shadow: none;
   --bs-box-shadow-sm: none;
   --bs-box-shadow-lg: none;
+
+  // Table borders follow the brutalist tokens
+  --bs-table-border-color: var(--color-border);
 }
 
 // Accent palettes (dark)

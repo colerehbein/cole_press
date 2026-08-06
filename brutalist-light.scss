@@ -115,6 +115,10 @@ $blockquote-border-color: #000000;
   --bs-box-shadow: none;
   --bs-box-shadow-sm: none;
   --bs-box-shadow-lg: none;
+
+  // Table borders follow the brutalist tokens (Bootstrap's own table CSS wins
+  // over plain `.table td` rules, so set the underlying Bootstrap var)
+  --bs-table-border-color: var(--color-border);
 }
 
 // Accent palettes (light) — override ONLY accent tokens; borders/surfaces stay

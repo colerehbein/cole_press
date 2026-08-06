@@ -34,19 +34,23 @@ Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical Psychology (in progress), NMHU &nbs
 
 <dl class="directory-list">
 <div class="directory-entry">
-<dt class="directory-term"><a href="/blog/">1. Blog</a></dt>
+<dt class="directory-term"><a href="/research">1. Research</a></dt>
+<dd class="directory-desc">Thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, EEG work — reproducible methods, honest numbers.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/blog/">2. Blog</a></dt>
 <dd class="directory-desc">Essays on crisis work, research, and technology. Low frequency, long half-life — also available over <a href="/blog/index.xml">RSS</a>.</dd>
 </div>
 <div class="directory-entry">
-<dt class="directory-term"><a href="/projects">2. Projects</a></dt>
+<dt class="directory-term"><a href="/projects">3. Projects</a></dt>
 <dd class="directory-desc">Research, writing samples, and things I've built — problem, role, stack, artifact.</dd>
 </div>
 <div class="directory-entry">
-<dt class="directory-term"><a href="/cv/">3. CV</a></dt>
+<dt class="directory-term"><a href="/cv/">4. CV</a></dt>
 <dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism — full CV and one-page résumé as PDFs.</dd>
 </div>
 <div class="directory-entry">
-<dt class="directory-term"><a href="/about">4. About</a></dt>
+<dt class="directory-term"><a href="/about">5. About</a></dt>
 <dd class="directory-desc">Background, training, and the long way around.</dd>
 </div>
 </dl>
