@@ -151,6 +151,20 @@ $blockquote-border-color: #777777;
   --color-focus-ring: color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
+// Rainbow palette (default) — links alternate through the hue cycle; dark-mode
+// hues are lighter for contrast on the dark background.
+[data-palette="rainbow"] {
+  --color-primary: #6b9eff;
+  --color-primary-hover: #a78bfa;
+  --color-accent: #6b9eff;
+  --rainbow-1: #ff6b6b;    // red
+  --rainbow-2: #fbbf24;    // orange
+  --rainbow-3: #4ade80;    // green
+  --rainbow-4: #6b9eff;    // blue
+  --rainbow-5: #c084fc;    // purple
+  --rainbow-6: #22d3ee;    // teal
+}
+
 // Font faces + shared component layer
 @import "fonts";
 @import "brutalist";

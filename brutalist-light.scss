@@ -153,6 +153,21 @@ $blockquote-border-color: #000000;
   --color-focus-ring: color-mix(in srgb, var(--color-primary) 15%, transparent);
 }
 
+// Rainbow palette (default) — links alternate through the hue cycle
+// (see "Rainbow link theming" in _brutalist.scss); UI chrome stays a clean
+// blue base.
+[data-palette="rainbow"] {
+  --color-primary: #0000ee;
+  --color-primary-hover: #551a8b;
+  --color-accent: #0000ee;
+  --rainbow-1: #cc0000;    // red
+  --rainbow-2: #b45309;    // orange
+  --rainbow-3: #006600;    // green
+  --rainbow-4: #0a6ebd;    // blue
+  --rainbow-5: #6d28d9;    // purple
+  --rainbow-6: #0e7490;    // teal
+}
+
 // Font faces + shared component layer
 @import "fonts";
 @import "brutalist";

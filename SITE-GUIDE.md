@@ -179,7 +179,8 @@ Bootstrap bridge: each theme file sets SCSS vars (`$body-bg`, `$primary`, `$bord
 - **Borders:** 1px = containers/rows; 2px = structural emphasis (header bottom, section-top rules, table headers); `--color-border-light` = interior hairlines.
 - **Typography:** body = Helvetica Neue, `line-height: 1.6`; headings 700 weight with *negative* tracking (`-0.02em`); uppercase labels with *positive* tracking (`0.05em`+); mono (Anonymous Pro) for code, dates, data.
 - **Links:** `--color-primary` (blue by default), underline in body text, `--color-primary-hover` (purple) on hover/visited. Nav links are not underlined — they get a 2px bottom border on hover instead.
-- **Accent palettes:** Classic Blue, Violet, Green, Amber, Crimson — switchable from the navbar; persist across visits.
+- **Accent palettes:** **Rainbow** (the default), Classic Blue, Violet, Green, Amber, Crimson — switchable from the navbar; your choice persists across visits (localStorage `cole-palette`).
+- **Rainbow = alternating link colors.** When Rainbow is active, link *lists and titles* (home directory index, sidebar Links, portfolio writing index, 404 list, blog post titles) cycle through six hues (red › orange › green › blue › purple › teal), defined as `--rainbow-1..6` per theme in each `brutalist-*.scss`. Picking any solid palette overrides it site-wide. Nav/footer/dropdown/prose links and buttons stay a single accent color. See the "Rainbow link theming" section in `_brutalist.scss`.
 - **Rainbow stripe:** the 4px hard-stop striped bar under the header — the site's one decorative flourish. Colors are fixed (do not change per palette).
 - **988 crisis note:** the bordered line in the footer center (`page-footer.center` in `_quarto.yml`) — appears on every page; styled via `.nav-footer .footer-items-center`.
 - **Print:** a `@media print` block in `_brutalist.scss` strips the chrome (header, footer, picker, search, TOC) and keeps cards/entries together across page breaks.

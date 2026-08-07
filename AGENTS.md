@@ -130,6 +130,7 @@ quarto render   # Generate static HTML to _site/
 - **Tokens only:** components use `var(--color-*)` custom properties — never hardcode colors
 - **Architecture:** tokens live in the theme files (`brutalist-*.scss`); ALL component CSS lives in `_brutalist.scss`, imported by both themes — light and dark can never drift
 - Accent palettes (`[data-palette="..."]` blocks) override only `--color-primary`/`--color-primary-hover`/`--color-accent`/`--color-focus-ring`; palette blocks are defined per theme (light values in the light file, dark in the dark file)
+- **`rainbow` is the default palette.** It adds `--rainbow-1..6` and the "Rainbow link theming" section in `_brutalist.scss` cycles those hues across link lists/titles via enumerated `:nth-child(N)` rules (do NOT use `an+b` formulas — the CSS minifier rewrites `6n+1` → `7n`, which is wrong). Solid palettes override rainbow. Default selection lives in `_includes/accent-palette.html` (localsStorage `cole-palette`, defaults to `rainbow`).
 - The rainbow stripe (`#quarto-header::after`) is the only multicolor element — fixed colors, never per-palette
 - Body font: Helvetica Neue system stack; mono: Anonymous Pro (self-hosted in `fonts/`)
 - Headings use NEGATIVE tracking; uppercase labels use POSITIVE tracking

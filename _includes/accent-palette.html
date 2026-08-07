@@ -1,11 +1,13 @@
 <!-- Accent palette persistence + navbar picker (#terminal-themes reimagined for the brutalist design) -->
 <script>
 (function () {
-  // Apply saved palette before first paint (no flash)
+  // Apply saved palette before first paint (no flash). Default is rainbow.
   var saved = null;
   try { saved = localStorage.getItem("cole-palette"); } catch (e) {}
-  if (saved && ["classic", "violet", "green", "amber", "crimson"].indexOf(saved) !== -1) {
+  if (saved && ["rainbow", "classic", "violet", "green", "amber", "crimson"].indexOf(saved) !== -1) {
     document.documentElement.dataset.palette = saved;
+  } else {
+    document.documentElement.dataset.palette = "rainbow";
   }
 })();
 
@@ -14,13 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!mount) return;
 
   var palettes = [
+    ["rainbow", "Rainbow"],
     ["classic", "Classic Blue"],
     ["violet", "Violet"],
     ["green", "Green"],
     ["amber", "Amber"],
     ["crimson", "Crimson"]
   ];
-  var current = document.documentElement.dataset.palette || "classic";
+  var current = document.documentElement.dataset.palette || "rainbow";
 
   var wrap = document.createElement("div");
   wrap.className = "palette-picker";

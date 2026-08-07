@@ -1171,6 +1171,19 @@ textarea {
   &[data-palette="amber"]   { background: var(--swatch-amber); }
   &[data-palette="crimson"] { background: var(--swatch-crimson); }
 
+  // Rainbow swatch: hard-stop stripes (matches the header stripe)
+  &[data-palette="rainbow"] {
+    background: linear-gradient(
+      to right,
+      #d73224 0 16.67%,
+      #e8590c 16.67% 33.33%,
+      #1a7f37 33.33% 50%,
+      #0a6ebd 50% 66.67%,
+      #6d28d9 66.67% 83.33%,
+      #0e7490 83.33% 100%
+    );
+  }
+
   &:hover {
     border-color: var(--color-primary);
   }
@@ -1178,6 +1191,34 @@ textarea {
   &.active {
     outline: 2px solid var(--color-text);
     outline-offset: 1px;
+  }
+}
+
+/* ── Rainbow link theming (default palette) ──────── */
+// Alternating hues across link lists and post titles. Applies only when
+// [data-palette="rainbow"] is active; selecting any solid palette overrides it.
+// Links keep their hue on hover/visited (no purple-visited clash). Nav, footer,
+// dropdown, prose links, and buttons stay single-accent.
+//
+// NOTE: uses explicit :nth-child(N) positions (not an+b formulas) because the
+// CSS minifier used at build time rewrites e.g. 6n+1 -> 7n, which is wrong.
+
+@for $k from 1 through 24 {
+  $i: (($k - 1) % 6) + 1;
+
+  // Directory lists (home index, portfolio writing, 404)
+  [data-palette="rainbow"] .directory-list .directory-entry:nth-child(#{$k}) .directory-term a {
+    color: var(--rainbow-#{$i});
+  }
+
+  // Home sidebar Links list
+  [data-palette="rainbow"] .instrument-links li:nth-child(#{$k}) a {
+    color: var(--rainbow-#{$i});
+  }
+
+  // Blog listing post titles
+  [data-palette="rainbow"] .quarto-post:nth-child(#{$k}) .listing-title a {
+    color: var(--rainbow-#{$i});
   }
 }
 
