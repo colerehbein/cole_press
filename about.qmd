@@ -1,42 +1,53 @@
 ---
 title: "About"
-description: "Cole Rehbein — crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care."
+description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher in Albuquerque, New Mexico — biography, work, and contact."
 toc: false
 ---
 
-I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico) and completed an M.S. in clinical/counseling psychology at New Mexico Highlands University, with a thesis on outdoor mindfulness-based behavioral activation for depression.
+Four nights a week I take crisis calls and chats for Protocall Services, a 988 Suicide & Crisis Lifeline network partner serving New Mexico. The rest of the time I study behavioral treatments for depression. I finished an M.S. in clinical/counseling psychology at New Mexico Highlands University in July 2026; my thesis tested a brief, outdoor mindfulness-based behavioral activation intervention for college students.
+
+## The Path Here
+
+I came to clinical work from journalism, and the two are closer than they look. Both start with listening to someone you don't know, figuring out the next honest move, and getting it right. Journalism taught me the deadline part. Clinical work taught me what to do when there's no deadline and someone is falling apart anyway.
 
 ## What I Do
 
-**Crisis work.** Crisis counselor with Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico). High-acuity phone and chat triage and intervention, using ACT and behavioral activation. Friday–Monday nights.
+**Crisis work.** Phone and chat triage, intervention, and referral on 988-network lines, Friday through Monday nights. Mostly ACT and behavioral activation.
 
-**Research.** M.S. in clinical/counseling psychology at New Mexico Highlands University. Thesis: (outdoor) mindfulness-based behavioral activation for depression. Longitudinal design, psychometrics, psychological assessment, EEG. R for data work.
+**Research.** Behavioral treatments for depression, and the measurement that makes them testable. Two threads run through it: how people become the agents of their own moral lives, and what helps when that process stalls. My thesis tested a brief, outdoor mindfulness-based behavioral activation intervention. A course paper called "Is It Right to Rebel?" argued that adolescent rebellion is adolescence becoming a moral agent, not a phase to survive. Details on the [Research](/research) page.
 
-**Building & writing.** This site — a Quarto artifact, hand-set in an academic brutalist design and deployed as static files — plus research tooling in R, Python, Quarto, Markdown, LaTeX, and Git, and science communication. Before clinical work: journalism as a city reporter, copyeditor, and culture writer.
+**Writing.** Essays on the [blog](/blog/). Before clinical work, journalism: city reporter at the Rio Grande Sun, calendar and copy editor at the Santa Fe Reporter.
 
 ## Background
 
-**Clinical training** — Crisis intervention, ACT, behavioral activation. Graduate training in psychometrics, psychological assessment, and longitudinal research methods at New Mexico Highlands University.
+**Clinical training.** Crisis intervention, ACT, behavioral activation. Graduate work in psychometrics, psychological assessment, and longitudinal methods at New Mexico Highlands University.
 
-**Journalism** — City reporting, copyediting, culture writing. Local politics, food, arts. Accuracy on a deadline.
+**Journalism.** City reporting, copyediting, culture writing. Local politics, food, arts at the Rio Grande Sun and the Santa Fe Reporter.
 
-**St. John's College** — B.A., philosophy (Great Books program). Close reading, Socratic dialogue, ancient Greek (reading).
+**St. John's College.** B.A. in philosophy from the Great Books program. Close reading, Socratic dialogue, and a senior paper that turned Spinoza's Ethics into an argument about what makes a self.
+
+## Teaching
+
+Graduate assistant and TA across five New Mexico Highlands courses and labs: Memory and Cognition, Undergraduate Research Methods, a First-Year Learning Community, the Human Connections Lab, and a neuroanatomy tutorial. Also tutored at Breakthrough Santa Fe.
 
 ## Also True
 
-- **Zazen:** Sōtō Zen, personal practice — student, not teacher
-- **Spinoza:** ethics, philosophy of mind; the undergraduate focus that stuck
-- **Systems thinking:** class, power, institutional critique
+- I sit zazen, Sōtō Zen; a student rather than a teacher.
+- I read Spinoza, Beck, Dōgen, and Skinner, roughly in that order.
+- Eagle Scout, once. Co-founder of Walk the Talk Santa Fe.
+
+## Papers & Talks
+
+A book chapter accepted, a systematic review in preparation, and conference presentations at the Southwest and Rocky Mountain Psychological Associations. Full list on the [CV](/cv/) page.
 
 ## Current Status
 
-- **Thesis:** complete, 2026
-- **Location:** Albuquerque, New Mexico
-- **Open to:** behavioral-health research, mental-health technology, clinical data, and science communication roles
+- **Location.** Albuquerque, New Mexico.
+- **Open to.** Behavioral-health research, mental-health technology, clinical data, and science communication roles.
 
 ## Contact
 
-[cole@cole.press](mailto:cole@cole.press) — Email is best. I check it when I'm not on crisis lines.
+[cole@cole.press](mailto:cole@cole.press). Email is best. I check it when I'm not on crisis lines.
 
 [github.com/colerehbein](https://github.com/colerehbein)
 
@@ -49,28 +60,28 @@ I work high-acuity crisis lines for Protocall Services (988 Suicide & Crisis Lif
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2015–2019</p>
 <p class="ipip-timeline-title">St. John's College, Santa Fe <span class="ipip-timeline-tag">B.A. Philosophy</span></p>
-<p class="ipip-timeline-desc">Great Books program — close reading, Socratic dialogue, ancient Greek. Senior paper on Spinoza's <em>Ethics</em>.</p>
+<p class="ipip-timeline-desc">Great Books program: close reading, Socratic dialogue, ancient Greek. Senior paper on Spinoza's <em>Ethics</em>.</p>
 </div>
 
 <div class="ipip-timeline-item">
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2015–2021</p>
 <p class="ipip-timeline-title">Journalism <span class="ipip-timeline-tag">City Reporter · Copy Editor</span></p>
-<p class="ipip-timeline-desc">Editorial intern and calendar editor at the <em>Santa Fe Reporter</em>; city reporter at the <em>Rio Grande Sun</em>. Local politics, food, arts — accuracy on a deadline.</p>
+<p class="ipip-timeline-desc">Editorial intern and calendar editor at the <em>Santa Fe Reporter</em>; city reporter at the <em>Rio Grande Sun</em>. Local politics, food, arts. Accuracy under a deadline.</p>
 </div>
 
 <div class="ipip-timeline-item">
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
-<p class="ipip-timeline-year">2022–2024</p>
-<p class="ipip-timeline-title">Clinical training <span class="ipip-timeline-tag">M.S. Clinical/Counseling Psychology</span></p>
-<p class="ipip-timeline-desc">New Mexico Highlands University. Psychometrics, psychological assessment, EEG research; clinical internship at Counseling ABQ and NMBHI.</p>
+<p class="ipip-timeline-year">2022–2026</p>
+<p class="ipip-timeline-title">New Mexico Highlands University <span class="ipip-timeline-tag">M.S. Clinical/Counseling Psychology</span></p>
+<p class="ipip-timeline-desc">Psychometrics, psychological assessment, EEG research; clinical internships at Counseling ABQ and NMBHI. Degree conferred July 2026.</p>
 </div>
 
 <div class="ipip-timeline-item">
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2025–present</p>
 <p class="ipip-timeline-title">Protocall Services — 988 Suicide &amp; Crisis Lifeline <span class="ipip-timeline-tag">Crisis &amp; Access Specialist</span></p>
-<p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights. M.S. in clinical/counseling psychology completed in 2026.</p>
+<p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights.</p>
 </div>
 
 </div>

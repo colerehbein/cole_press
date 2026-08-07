@@ -14,7 +14,7 @@ project:
 
 website:
   title: "cole.press"
-  description: "Cole Rehbein — crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care."
+  description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Essays, research, and tools for behavioral health."
   site-url: "https://cole.press"
   repo-url: "https://github.com/colerehbein/cole_press"
   favicon: favicon.svg

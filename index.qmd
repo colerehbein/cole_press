@@ -14,10 +14,10 @@ include-in-header:
 <p class="home-kicker">Crisis Counselor · Clinical Psychology Researcher</p>
 <h1 class="home-title">Cole Rehbein</h1>
 <section aria-label="Abstract" class="home-abstract">
-<strong>Abstract:</strong> Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care. High-acuity phone and chat triage and intervention for the 988 Suicide &amp; Crisis Lifeline network; M.S. in clinical/counseling psychology from New Mexico Highlands University (2026), with a thesis on mindfulness-based behavioral activation for depression. I use R, Quarto, Python, and technical writing to turn behavioral science into usable tools.
+<strong>Abstract:</strong> Crisis counselor and clinical psychology researcher in Albuquerque. Four nights a week I take calls and chats for the 988 Suicide &amp; Crisis Lifeline network. The rest of the time I study behavioral treatments for depression. I finished an M.S. in clinical/counseling psychology at New Mexico Highlands University in July 2026, where my thesis tested a brief, outdoor mindfulness-based behavioral activation intervention for college students. I build research tools in R and Quarto, and I write about psychology and crisis work.
 </section>
 <p class="home-meta">
-Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical/Counseling Psychology, NMHU (2026) &nbsp;·&nbsp; 988 crisis lines, Fri–Mon nights &nbsp;·&nbsp; R / Quarto / Python &nbsp;·&nbsp; <a href="mailto:cole@cole.press">cole@cole.press</a>
+Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical/Counseling Psychology, NMHU (July 2026) &nbsp;·&nbsp; 988 crisis lines, Fri–Mon nights &nbsp;·&nbsp; R / Quarto / Python &nbsp;·&nbsp; <a href="mailto:cole@cole.press">cole@cole.press</a>
 </p>
 </header>
 
@@ -86,9 +86,9 @@ Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical/Counseling Psychology, NMHU (2026) 
 <div class="home-sidebar-section">
 <h2 class="home-sidebar-title">Currently</h2>
 <ul class="changelog-list">
-<li class="changelog-entry"><span class="changelog-date">Thesis</span><span class="changelog-desc">complete, 2026</span></li>
-<li class="changelog-entry"><span class="changelog-date">Crisis lines</span><span class="changelog-desc">988 network, Friday–Monday nights</span></li>
-<li class="changelog-entry"><span class="changelog-date">This site</span><span class="changelog-desc">rebuilt in an academic brutalist design</span></li>
+<li class="changelog-entry"><span class="changelog-date">M.S.</span><span class="changelog-desc">clinical/counseling psychology, July 2026</span></li>
+<li class="changelog-entry"><span class="changelog-date">On the lines</span><span class="changelog-desc">988, Friday–Monday nights</span></li>
+<li class="changelog-entry"><span class="changelog-date">Reading</span><span class="changelog-desc">Spinoza, Beck, Dōgen, Skinner</span></li>
 </ul>
 </div>
 

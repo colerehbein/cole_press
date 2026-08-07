@@ -4,7 +4,7 @@ description: "Cole Rehbein — academic and clinical CV: crisis counseling, clin
 toc: false
 ---
 
-Crisis counselor and clinical psychology researcher building reproducible tools for behavioral-health research, communication, and care. Albuquerque, NM · [cole@cole.press](mailto:cole@cole.press) · [cole.press](https://cole.press) · [github.com/colerehbein](https://github.com/colerehbein)
+Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. Albuquerque, NM · [cole@cole.press](mailto:cole@cole.press) · [cole.press](https://cole.press) · [github.com/colerehbein](https://github.com/colerehbein)
 
 <p>
 <a class="btn btn-primary" href="cole-rehbein-cv.pdf">Download full CV (PDF)</a>
@@ -15,12 +15,12 @@ Crisis counselor and clinical psychology researcher building reproducible tools 
 
 <div class="cv-entry">
 <div>
-<p class="cv-role">M.S., Clinical/Counseling Psychology (2026)</p>
+<p class="cv-role">M.S., Clinical/Counseling Psychology (July 2026)</p>
 <p class="cv-org">New Mexico Highlands University</p>
 </div>
 <div class="cv-detail">
 <p class="cv-meta">Thesis</p>
-<p>The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression. Advisor: Dr. David Pan. Thesis complete, 2026.</p>
+<p>The effectiveness of a brief, mindfulness-based behavioral activation intervention for college students with depression. Advisor: Dr. David Pan. Thesis complete, July 2026.</p>
 </div>
 </div>
 

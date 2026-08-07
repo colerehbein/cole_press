@@ -127,7 +127,19 @@ The form posts to Buttondown (`https://buttondown.com/api/emails/embed-subscribe
    (paths are relative to `portfolio/`).
 3. Add the folder to `resources` in `_quarto.yml` if Quarto doesn't copy it automatically (`resources: - portfolio/photos/`).
 
-### 4.8 The navbar structure
+### 4.8 Update the CV (and how the CV repo works)
+
+The full CV's **source of truth is the private GitHub repo [`colerehbein/cv`](https://github.com/colerehbein/cv)** (the academic CV with auto-rendered publications). The site keeps the PDF building inside this repo because `/cv/` is a page here.
+
+Workflow to update the CV:
+
+1. Edit `CV.qmd` in your local clone of `colerehbein/cv` (push it — it's the record).
+2. `make cv-sync` in this repo — copies `CV.qmd`, the CSL, and `references/*.bib` into `cv/` (and pins `output-file: cole-rehbein-cv.pdf`).
+3. `quarto render` (or `make build`), commit the synced `cv/` changes, push.
+
+The one-page résumé (`cv/resume.qmd`) is site-owned and edited directly here — the CV repo has no résumé. `cv/index.qmd` (the web CV page) is also site-owned.
+
+### 4.9 The navbar structure
 
 Top navigation (`_quarto.yml` → `navbar`):
 

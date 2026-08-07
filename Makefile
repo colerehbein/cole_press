@@ -1,7 +1,7 @@
 # Makefile for cole_press
 # Quarto-based personal website at cole.press
 
-.PHONY: help preview build render setup clean install-r-deps install-tinytex check
+.PHONY: help preview build render setup clean install-r-deps install-tinytex check cv-sync
 
 # Default target
 help:
@@ -53,6 +53,10 @@ clean:
 	rm -rf *_cache/
 	rm -rf .quarto/
 	@echo "✅ Clean complete!"
+
+# CV: sync canonical full CV from colerehbein/cv repo (SOURCE defaults to ../cv)
+cv-sync:
+	@bash scripts/cv-sync.sh $(filter-out $@,$(MAKECMDGOALS))
 
 # Verification
 check:

@@ -43,8 +43,10 @@ cole_press/
 │   └── posts/               # Posts: YYYY-MM-DD-slug.qmd
 ├── cv/
 │   ├── index.qmd            # Web CV page (links both PDFs)
-│   ├── full-cv.qmd          # Full CV source → cole-rehbein-cv.pdf
-│   └── resume.qmd           # One-page résumé source → cole-rehbein-resume.pdf
+│   ├── full-cv.qmd          # Full CV source → cole-rehbein-cv.pdf (SYNCED from colerehbein/cv)
+│   ├── resume.qmd           # One-page résumé source → cole-rehbein-resume.pdf
+│   ├── references/*.bib     # Bibliography (synced)
+│   └── *.csl                # Citation style (synced)
 ├── brutalist-light.scss     # Light theme: tokens + Bootstrap bridge + palettes
 ├── brutalist-dark.scss      # Dark theme: tokens + Bootstrap bridge + palettes
 ├── _brutalist.scss          # SHARED component layer (imported by BOTH themes)
@@ -211,6 +213,10 @@ quarto render   # Generate static HTML to _site/
 
 1. Create `new-page.qmd` at root
 2. Add navigation entry in `_quarto.yml` under `navbar`
+
+### Updating the CV
+
+The full CV is synced from the private GitHub repo `colerehbein/cv` (source of truth). After editing it there, run `make cv-sync` then include the synced `cv/` files in the commit. The résumé and the web CV page are owned by this repo. See SITE-GUIDE §4.8.
 
 ### Testing changes
 
