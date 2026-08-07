@@ -11,7 +11,7 @@
 **Type:** Personal website/blog built with Quarto  
 **Owner:** Cole Rehbein
 
-A personal site for a crisis counselor and clinical psychology researcher — audience: mental-health professionals and clients. The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero radius/shadows/transitions, Helvetica Neue body text, uppercase labels, monospace only for data — plus two flourishes: a switchable **accent palette** (5 colors) and a **rainbow stripe** under the header.
+A personal site for a crisis counselor and clinical psychology researcher — audience: mental-health professionals and clients. The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero radius/shadows/transitions, Helvetica Neue body text, uppercase labels, monospace only for data — plus two flourishes: a switchable **accent palette** (6 options: a rainbow default + five solids) and a **rainbow stripe** under the header.
 
 ## Tech Stack
 

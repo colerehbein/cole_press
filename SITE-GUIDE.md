@@ -8,7 +8,7 @@ A practical guide to updating, maintaining, and shipping this site. For AI agent
 
 A personal website for Cole Rehbein — crisis counselor and clinical psychology researcher — built with **Quarto** and deployed to **Netlify**. Content lives in Markdown (`.qmd` files); a push to `main` on GitHub triggers a GitHub Action that renders the site and deploys it.
 
-The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero rounded corners, zero shadows, system sans-serif (Helvetica Neue), uppercase labels, monospace only for data/code — with two bits of personality: an **accent palette switcher** (5 colors) and a **rainbow stripe** under the header.
+The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero rounded corners, zero shadows, system sans-serif (Helvetica Neue), uppercase labels, monospace only for data/code — with two bits of personality: an **accent palette switcher** (6 options: a rainbow default + five solids) and a **rainbow stripe** under the header.
 
 ---
 

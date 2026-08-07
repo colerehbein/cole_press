@@ -34,6 +34,7 @@ Defined in `:root` in each theme file. Light values in `brutalist-light.scss`, d
 | `--transition` | `0ms` | `0ms` | — |
 | `--font-mono` | Anonymous Pro stack | same | Code, dates, data |
 | `--swatch-*` | per-palette hexes | per-palette hexes | Navbar picker swatch colors |
+| `--rainbow-1..6` | `#cc0000…#0e7490` | `#ff6b6b…#22d3ee` | Link-cycle hues (palette-only) — see "Rainbow link theming" |
 
 Bootstrap runtime zeroing (also in `:root`): `--bs-border-radius: 0`, `--bs-box-shadow: none` (+sm/lg).
 
@@ -62,7 +63,7 @@ Bootstrap runtime zeroing (also in `:root`): `--bs-border-radius: 0`, `--bs-box-
 - `.navbar .nav-link` — uppercase, `0.85rem`, 600; hover = primary color + 2px primary underline; active = 2px text-color underline.
 - `.navbar-toggler` — 1px border, 0 radius (mobile).
 - `.quarto-color-scheme-toggle` — bare muted button.
-- `.palette-picker` / `.palette-swatch` — 5 square 14px swatches, active = 2px outline; hidden ≤640px.
+- `.palette-picker` / `.palette-swatch` — 6 square 14px swatches (rainbow = hard-stop striped gradient), active = 2px outline; hidden ≤640px.
 
 ### Footer (`page-footer` → `.nav-footer`)
 Top border 1px; links uppercase `0.8rem`, 700, underlined; muted text.
@@ -143,6 +144,22 @@ Top border 1px; links uppercase `0.8rem`, 700, underlined; muted text.
 - `.empty-state-page` — centered muted placeholder.
 - `.error` — negative color on error-bg with error-border.
 - `::selection` — primary bg, bg-color text.
+
+### Photo gallery (Portfolio)
+- `.photo-grid` — `repeat(auto-fill, minmax(240px, 1fr))`, gap 1rem.
+- `.photo-frame` — 1px border, 0 radius, square (`aspect-ratio: 1 / 1`), centered content, `overflow: hidden`.
+- `.photo-placeholder` — mono uppercase muted label inside an empty frame.
+- Adding photos: drop images in `portfolio/photos/` and replace a placeholder with `<figure class="photo-frame"><img src="photos/…" alt="…" loading="lazy"></figure>`.
+
+## 3.5 Rainbow link theming (default palette)
+
+When `[data-palette="rainbow"]` is active, links alternate through `--rainbow-1..6` (red › orange › green › blue › purple › teal) across:
+
+- `.directory-list .directory-entry .directory-term a` — home index, portfolio writing, 404
+- `.instrument-links li a` — home sidebar Links
+- `.quarto-post .listing-title a` — blog post titles
+
+Rules use **enumerated `:nth-child(1)` … `:nth-child(24)`** (cycle length 6) — do NOT use `an+b` formulas like `6n+1`: this build's CSS minifier rewrites `6n+1` → `7n`, which selects the wrong children. Rainbow links keep their hue on hover/visited; nav, footer, dropdown, prose links, and buttons keep the base single accent. Selecting any solid palette overrides the rainbow site-wide.
 
 ## 4. Responsive breakpoints
 

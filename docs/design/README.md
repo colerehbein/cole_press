@@ -21,7 +21,7 @@ This site uses **Academic Brutalism**, ported from the [IPIP Repository](https:/
 8. **Monospace for data** — Anonymous Pro (self-hosted) for codes, dates, numbers.
 9. **Off-white surfaces** — `#fcfcfc`/`#f5f5f5` for subtle box differentiation.
 10. **Grid-heavy layouts** — CSS Grid with `minmax()` for card grids.
-11. **Two allowed flourishes** — the accent palette switcher (5 colors) and the rainbow stripe under the header.
+11. **Two allowed flourishes** — the accent palette switcher (6 options: a rainbow default + five solids) and the rainbow stripe under the header.
 12. **Tokens only** — components use `var(--color-*)`; never hardcode colors that exist as tokens.
 
 ## Token quick reference
@@ -47,15 +47,29 @@ Semantic surfaces (`--color-hover-bg`, `--color-code-bg`, `--color-warning-*`, `
 
 ## Accent palettes
 
-Five palettes, switchable from the navbar (persisted in `localStorage["cole-palette"]`). They override ONLY accent tokens (`--color-primary`, `--color-primary-hover`, `--color-accent`, `--color-focus-ring`).
+Six palettes, switchable from the navbar (persisted in `localStorage["cole-palette"]`), **rainbow being the default**. Solid palettes override ONLY accent tokens (`--color-primary`, `--color-primary-hover`, `--color-accent`, `--color-focus-ring`). The rainbow palette does the same for its base accent, plus adds `--rainbow-1..6` which cycle across link lists/titles.
 
 | Palette | Light primary / hover | Dark primary / hover |
 |---|---|---|
+| **rainbow** (default) | base `#0000ee` / `#551a8b`; links cycle `--rainbow-1..6` | base `#6b9eff` / `#a78bfa`; links cycle dark `--rainbow-1..6` |
 | classic | `#0000ee` / `#551a8b` | `#6b9eff` / `#a78bfa` |
 | violet | `#7c3aed` / `#5b21b6` | `#a78bfa` / `#c4b5fd` |
 | green | `#006600` / `#004d00` | `#4ade80` / `#86efac` |
 | amber | `#b45309` / `#92400e` | `#fbbf24` / `#fde68a` |
 | crimson | `#cc0000` / `#990000` | `#ff6b6b` / `#fca5a5` |
+
+### Rainbow link hues (`--rainbow-1..6`)
+
+| Var | Hue | Light | Dark |
+|---|---|---|---|
+| `--rainbow-1` | red | `#cc0000` | `#ff6b6b` |
+| `--rainbow-2` | orange | `#b45309` | `#fbbf24` |
+| `--rainbow-3` | green | `#006600` | `#4ade80` |
+| `--rainbow-4` | blue | `#0a6ebd` | `#6b9eff` |
+| `--rainbow-5` | purple | `#6d28d9` | `#c084fc` |
+| `--rainbow-6` | teal | `#0e7490` | `#22d3ee` |
+
+Under rainbow, links in lists and post titles alternate through these hues (see "Rainbow link theming" in the catalog). Nav, footer, dropdown, prose links, and buttons keep the base single accent. Picking any solid palette switches everything to that one hue.
 
 ## Rainbow stripe
 
