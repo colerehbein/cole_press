@@ -13,11 +13,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # No R, no TinyTeX: the site has zero R chunks, and this check only
-      # verifies the HTML renders. (The CV PDFs are built in deploy.yml,
-      # which keeps TinyTeX for the quarto-cv extension.)
+      # Quarto with TinyTeX: the render includes cv/full-cv.qmd and
+      # cv/resume.qmd, which need LaTeX for the PDFs. (No R needed — zero R
+      # chunks site-wide; quarto-cv is lualatex-only.)
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       - name: Render site
         run: quarto render
