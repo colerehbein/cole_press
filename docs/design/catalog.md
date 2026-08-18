@@ -34,7 +34,7 @@ Defined in `:root` in each theme file. Light values in `brutalist-light.scss`, d
 | `--transition` | `0ms` | `0ms` | — |
 | `--font-mono` | Anonymous Pro stack | same | Code, dates, data |
 | `--swatch-*` | per-palette hexes | per-palette hexes | Navbar picker swatch colors |
-| `--rainbow-1..6` | `#cc0000…#0e7490` | `#ff6b6b…#22d3ee` | Link-cycle hues (palette-only) — also drive the header stripe and the picker's rainbow swatch, so the rainbow is one canonical 6-hue story per theme — see "Rainbow link theming" |
+| `--rainbow-1..6` | `#cc0000…#0e7490` | `#ff6b6b…#22d3ee` | Link-cycle hues + picker swatch (palette-only). NOTE: the header stripe uses a different, deliberately garish 5-color palette — see SITE-GUIDE "Rainbow stripe" |
 
 Bootstrap runtime zeroing (also in `:root`): `--bs-border-radius: 0`, `--bs-box-shadow: none` (+sm/lg).
 
