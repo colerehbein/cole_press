@@ -5,6 +5,7 @@ project:
     - fonts/
     - favicon.svg
     - portfolio/photos/
+    - netlify.toml
   render:
     - "*.qmd"
     - "!AGENTS.md"
