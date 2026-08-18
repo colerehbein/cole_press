@@ -5,12 +5,20 @@ publish = "_site"
 # Netlify build command should be set to: echo "skip"
 # This prevents Netlify from auto-building while GitHub Actions handles the real build
 
+# Security headers for the whole site. The inline scripts that mount the
+# palette picker / dropdown nav / footer year / rotating-currently live in
+# _includes/*.html, so a strict CSP needs 'unsafe-inline' for script-src.
+# The policy below is the real one (it does not break anything); it allows
+# same-origin scripts/styles, inline scripts (the includes), inline styles
+# (Quarto), fonts, images, and the Buttondown newsletter form endpoint.
 [[headers]]
 for = "/*"
   [headers.values]
   X-Content-Type-Options = "nosniff"
   Referrer-Policy = "strict-origin-when-cross-origin"
   Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+  X-Frame-Options = "DENY"
+  Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://buttondown.com; form-action 'self' https://buttondown.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
 
 [[headers]]
 for = "/fonts/*"

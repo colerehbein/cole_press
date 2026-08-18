@@ -21,4 +21,4 @@ title: "Page Not Found"
 </div>
 </dl>
 
-In crisis? Call or text 988 — Suicide & Crisis Lifeline.
+*The 988 crisis line lives in the footer; it's on every page.*

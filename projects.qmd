@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-description: "Case studies: research tooling, macOS utilities, and this website — problem, role, stack, artifact."
+description: "Case studies: research tooling, macOS utilities, and this website. Problem, role, stack, artifact."
 toc: false
 ---
 
@@ -10,7 +10,7 @@ Evidence over adjectives. Each entry lists the problem, what I personally built,
 
 <div class="card">
   <h3 class="project-card-title">cole.press <span class="badge">Active</span></h3>
-  <p class="project-card-body">A personal site that is itself a portfolio artifact — the design, engineering, and writing are the evidence, not the wrapper around it. Built solo: information architecture, an academic brutalist design system with switchable accent palettes, content, and deployment.</p>
+  <p class="project-card-body">A personal site that is itself a portfolio artifact. The design, engineering, and writing are the evidence, not the wrapper around it. Built solo: information architecture, an academic brutalist design system with switchable accent palettes, content, and deployment.</p>
   <p class="project-card-body"><strong>Stack:</strong> Quarto, SCSS, JavaScript, Netlify, self-hosted Anonymous Pro.</p>
   <p class="project-card-links">
     <a class="btn btn-sm" href="https://cole.press" target="_blank" rel="noopener noreferrer">Live site</a>
@@ -20,7 +20,7 @@ Evidence over adjectives. Each entry lists the problem, what I personally built,
 
 <div class="card">
   <h3 class="project-card-title">macOSMoveTo <span class="badge">Shipped</span></h3>
-  <p class="project-card-body">Finder has no native "Move to…" Quick Action — moving a file means drag-and-drop or clipboard workarounds. Identified the workflow gap; designed, packaged, tested, and documented the utility.</p>
+  <p class="project-card-body">Finder has no native "Move to…" Quick Action. Moving a file means drag-and-drop or clipboard workarounds. Identified the workflow gap; designed, packaged, tested, and documented the utility.</p>
   <p class="project-card-body"><strong>Stack:</strong> Automator, AppleScript.</p>
   <p class="project-card-links">
     <a class="btn btn-sm" href="https://github.com/colerehbein/macOSMoveTo" target="_blank" rel="noopener noreferrer">Source &amp; install guide</a>
@@ -29,14 +29,14 @@ Evidence over adjectives. Each entry lists the problem, what I personally built,
 
 <div class="card">
   <h3 class="project-card-title">Thesis Analysis Workflow <span class="badge">In preparation</span></h3>
-  <p class="project-card-body">Reproducible longitudinal psychometric analysis and automated reporting for the master's thesis (mindfulness-based behavioral activation for depression) — every table and figure regenerates from data, with no hand-edited numbers. Sole analyst: data collection, cleaning, psychometrics, longitudinal analysis, automated reporting.</p>
+  <p class="project-card-body">Reproducible longitudinal psychometric analysis and automated reporting for the master's thesis (mindfulness-based behavioral activation for depression). Every table and figure regenerates from data, with no hand-edited numbers. Sole analyst: data collection, cleaning, psychometrics, longitudinal analysis, automated reporting.</p>
   <p class="project-card-body"><strong>Stack:</strong> R, Quarto.</p>
-  <p class="project-card-body"><em>Public synthetic/de-identified demo in preparation — no participant data will ever be published.</em></p>
+  <p class="project-card-body"><em>Public synthetic/de-identified demo in preparation. No participant data will ever be published.</em></p>
 </div>
 
 <div class="card">
   <h3 class="project-card-title">pandoc-apa7 <span class="badge">Archived</span></h3>
-  <p class="project-card-body">Draft academic manuscripts in Markdown and compile to APA 7th-edition LaTeX/PDF — an APA writing workflow without Word. Experimental fork: updated an open-source APA6 pandoc template for APA 7. Work-in-progress experiment, last touched 2022; kept public for reference.</p>
+  <p class="project-card-body">Draft academic manuscripts in Markdown and compile to APA 7th-edition LaTeX/PDF. An APA writing workflow without Word. Experimental fork: updated an open-source APA6 pandoc template for APA 7. Work-in-progress experiment, last touched 2022; kept public for reference.</p>
   <p class="project-card-body"><strong>Stack:</strong> pandoc, LaTeX (apa7 class), BibLaTeX.</p>
   <p class="project-card-links">
     <a class="btn btn-sm" href="https://github.com/colerehbein/pandoc-apa7" target="_blank" rel="noopener noreferrer">Source</a>

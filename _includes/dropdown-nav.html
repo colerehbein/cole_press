@@ -1,0 +1,43 @@
+<!-- Navbar dropdown behavior: on desktop, a dropdown's parent link navigates
+     to its landing page (Research → /research/, Portfolio → /portfolio/)
+     while hover/focus opens the submenu; mobile keeps the native toggle.
+     Applied to every dropdown whose first menu item points at the same page
+     the parent is named for. Currently Research and Portfolio. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var toggles = document.querySelectorAll(".navbar .nav-item.dropdown > a.dropdown-toggle");
+  toggles.forEach(function (toggle) {
+    // The parent's landing page is the first item's href when it's in-page
+    // (not "#", which is the native Quarto placeholder for a pure toggle).
+    var first = toggle.parentElement.querySelector(".dropdown-menu a[href]");
+    if (!first) return;
+    var href = first.getAttribute("href");
+    if (!href || href === "#") return;
+
+    var label = toggle.textContent.trim().toLowerCase();
+    var firstText = first.textContent.trim().toLowerCase();
+    // Only repoint when the first item is the landing page (e.g. "Research"
+    // under Research, "Overview" under Portfolio, not "Photos").
+    var isLanding = firstText.indexOf("overview") === 0 || firstText.indexOf(label) === 0;
+    if (!isLanding) return;
+
+    var landing = href.replace(/\.html$/, "");
+    if (landing.indexOf("/") !== 0) landing = "/" + landing;
+    toggle.setAttribute("href", landing);
+    toggle.setAttribute("aria-label", label + ", click to open; submenu for more");
+
+    var mq = window.matchMedia("(min-width: 992px)");
+    function apply() {
+      if (mq.matches) {
+        // Desktop: clicking the parent navigates; the dropdown opens on hover/focus (CSS)
+        toggle.removeAttribute("data-bs-toggle");
+      } else {
+        // Mobile: keep native toggle behavior
+        toggle.setAttribute("data-bs-toggle", "dropdown");
+      }
+    }
+    apply();
+    mq.addEventListener("change", apply);
+  });
+});
+</script>

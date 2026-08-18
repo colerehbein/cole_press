@@ -123,26 +123,31 @@ $blockquote-border-color: #777777;
 [data-palette="classic"] {
   --color-primary: #6b9eff;
   --color-primary-hover: #a78bfa;
+  --color-primary-light: #25314d;
   --color-accent: #6b9eff;
 }
 [data-palette="violet"] {
   --color-primary: #a78bfa;
   --color-primary-hover: #c4b5fd;
+  --color-primary-light: #2d2540;
   --color-accent: #a78bfa;
 }
 [data-palette="green"] {
   --color-primary: #4ade80;
   --color-primary-hover: #86efac;
+  --color-primary-light: #14301f;
   --color-accent: #4ade80;
 }
 [data-palette="amber"] {
   --color-primary: #fbbf24;
   --color-primary-hover: #fde68a;
+  --color-primary-light: #3a2b06;
   --color-accent: #fbbf24;
 }
 [data-palette="crimson"] {
   --color-primary: #ff6b6b;
   --color-primary-hover: #fca5a5;
+  --color-primary-light: #3d1a1a;
   --color-accent: #ff6b6b;
 }
 
@@ -156,6 +161,7 @@ $blockquote-border-color: #777777;
 [data-palette="rainbow"] {
   --color-primary: #6b9eff;
   --color-primary-hover: #a78bfa;
+  --color-primary-light: #25314d; // same tint as classic (same base blue)
   --color-accent: #6b9eff;
   --rainbow-1: #ff6b6b;    // red
   --rainbow-2: #fbbf24;    // orange

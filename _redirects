@@ -1,7 +1,13 @@
 # blog.cole.press lives on as a shortcut to the in-site blog
 https://blog.cole.press/*  https://cole.press/blog/:splat  301
 
-/index.html  /  301
-/about.html  /about  301
-/projects.html  /projects  301
-/cv/index.html  /cv/  301
+# Legacy .html URLs → clean URLs (keep the site's links .html-proof)
+/index.html                  /  301
+/about.html                  /about  301
+/research.html               /research  301
+/projects.html               /projects  301
+/cv/index.html               /cv/  301
+/portfolio/index.html        /portfolio/  301
+/portfolio/photos.html       /portfolio/photos  301
+/portfolio/writing.html      /portfolio/writing  301
+/blog/index.html             /blog/  301

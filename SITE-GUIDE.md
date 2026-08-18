@@ -123,8 +123,8 @@ The form posts to Buttondown (`https://buttondown.com/api/emails/embed-subscribe
 
 1. Drop image files (JPG/PNG/WebP) into `portfolio/photos/`.
 2. In `portfolio/photos.qmd`, replace a placeholder frame with:
-   `<figure class="photo-frame"><img src="photos/your-photo.jpg" alt="Description" loading="lazy"></figure>`
-   (paths are relative to `portfolio/`).
+   `<figure class="photo-frame photo-landscape"><img src="photos/your-photo.jpg" alt="Description" loading="lazy"></figure>`
+   (paths are relative to `portfolio/`). The default frame is square (`1/1`); add a modifier class to fit the shot: `photo-landscape` (4/3), `photo-wide` (16/9), or `photo-portrait` (3/4).
 3. Add the folder to `resources` in `_quarto.yml` if Quarto doesn't copy it automatically (`resources: - portfolio/photos/`).
 
 ### 4.8 Update the CV (and how the CV repo works)
@@ -145,10 +145,11 @@ Top navigation (`_quarto.yml` → `navbar`):
 
 - **Home · About · Research ▾ · Blog · Portfolio ▾ · CV** (right: GitHub · X)
 - **Research ▾** is a pure dropdown toggle (Research, Projects) — native Quarto `menu:`, no custom JS.
-- **Portfolio ▾** (Overview, Photos, Writing) — clicking "Portfolio" itself navigates to `/portfolio/` on desktop (not native Quarto: `_includes/portfolio-nav.html` repoints the toggle's href and strips `data-bs-toggle` on desktop, while CSS hover/focus opens the menu). On mobile the native toggle stays and the Overview item appears.
+- **Portfolio ▾** (Overview, Photos, Writing) — clicking "Portfolio" itself navigates to `/portfolio/` on desktop (not native Quarto: `_includes/dropdown-nav.html` repoints the toggle's href and strips `data-bs-toggle` on desktop, while CSS hover/focus opens the menu). On mobile the native toggle stays and the Overview item appears.
+- **Research ▾** uses the same `dropdown-nav.html` behavior now: clicking "Research" navigates to `/research/` on desktop while hover/focus opens the submenu; on mobile it's a native toggle with the Research item visible.
 - Both dropdowns use the shared brutalist `.dropdown-menu` styling in `_brutalist.scss` (square, black border, hover = primary-light).
 
-### 4.9 The 404 page
+### 4.10 The 404 page
 
 `404.qmd` renders to `404.html`, which Netlify serves as the custom not-found page (Quarto picks it up automatically — no config needed). It uses the directory-list component and includes the 988 note.
 
@@ -181,7 +182,7 @@ Bootstrap bridge: each theme file sets SCSS vars (`$body-bg`, `$primary`, `$bord
 - **Links:** `--color-primary` (blue by default), underline in body text, `--color-primary-hover` (purple) on hover/visited. Nav links are not underlined — they get a 2px bottom border on hover instead.
 - **Accent palettes:** **Rainbow** (the default), Classic Blue, Violet, Green, Amber, Crimson — switchable from the navbar; your choice persists across visits (localStorage `cole-palette`).
 - **Rainbow = alternating link colors.** When Rainbow is active, link *lists and titles* (home directory index, sidebar Links, portfolio writing index, 404 list, blog post titles) cycle through six hues (red › orange › green › blue › purple › teal), defined as `--rainbow-1..6` per theme in each `brutalist-*.scss`. Picking any solid palette overrides it site-wide. Nav/footer/dropdown/prose links and buttons stay a single accent color. See the "Rainbow link theming" section in `_brutalist.scss`.
-- **Rainbow stripe:** the 4px hard-stop striped bar under the header — the site's one decorative flourish. Colors are fixed (do not change per palette).
+- **Rainbow stripe:** the 4px hard-stop striped bar under the header — the site's one decorative flourish. The stripe uses the *same* six `--rainbow-*` hues as the link cycle and the palette picker swatch, so the whole site's color story is one canonical rainbow. Colors are **not** fixed per palette — they follow the theme's `--rainbow-*` values (dark mode gets lighter hues for contrast).
 - **988 crisis note:** the bordered line in the footer center (`page-footer.center` in `_quarto.yml`) — appears on every page; styled via `.nav-footer .footer-items-center`.
 - **Print:** a `@media print` block in `_brutalist.scss` strips the chrome (header, footer, picker, search, TOC) and keeps cards/entries together across page breaks.
 
@@ -212,3 +213,19 @@ Full component reference: [docs/design/catalog.md](./docs/design/catalog.md).
 | Dark mode looks unstyled | Both themes import `_brutalist.scss`; if a new component was added only to one theme file, move it to `_brutalist.scss`. |
 | Palette picker missing | `_includes/accent-palette.html` must be in `include-in-header` in `_quarto.yml`, and it mounts into `.quarto-navbar-tools` (Quarto's navbar tools container). |
 | Blog listing rows have no separators | Quarto's client-side listing CSS can win the cascade; the `.quarto-listing .quarto-post` rules in `_brutalist.scss` use `!important` deliberately. Keep them. |
+
+---
+
+## 9. Reverting the rainbow (options, documented)
+
+The rainbow is the default palette and the header stripe is the site's one decorative flourish. If you ever want to tone it down, each piece is independent:
+
+| What you want | What to change |
+|---|---|
+| **Make Classic Blue the default palette** (visitors still pick others) | In `_includes/accent-palette.html`, change the fallback `document.documentElement.dataset.palette = "rainbow"` to `"classic"` (there are two spots: the pre-paint boot and the `current` default). |
+| **Remove rainbow link cycling** (solid single-accent links everywhere) | Delete the `@for $k from 1 through 24` block ("Rainbow link theming") in `_brutalist.scss`, or just set the default palette to `"classic"`. |
+| **Revert the header stripe to the old 5-color flat stripe** | In `_brutalist.scss` `#quarto-header::after`, replace the `var(--rainbow-N)` gradient stops with the old colors: `#ff6b6b 0 20%, #f8e71c 20% 40%, #00c9a7 40% 60%, #4dabf7 60% 80%, #a66dd4 80% 100%` (this was the pre-Aug-2026 stripe). |
+| **Remove the stripe entirely** | Delete the `&::after` block in `_brutalist.scss` `#quarto-header`. |
+| **Remove the whole palette switcher** | Delete `_includes/accent-palette.html` from `include-in-header` in `_quarto.yml` and the `.palette-picker`/`.palette-swatch` CSS. |
+
+The palette picker writes to `localStorage["cole-palette"]`; to test a different default, clear that key (or use a private window).

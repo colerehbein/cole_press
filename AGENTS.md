@@ -56,7 +56,7 @@ cole_press/
 ├── _includes/
 │   ├── preload-fonts.html   # Font preloading for performance
 │   ├── accent-palette.html  # Palette boot script + navbar picker JS
-│   ├── portfolio-nav.html   # Portfolio navbar: click-navigates on desktop, dropdown on hover
+│   ├── dropdown-nav.html    # Navbar dropdowns: click-navigates on desktop, dropdown on hover
 │   └── home-no-title.html   # Hides Quarto title block on the home page
 ├── _extensions/
 │   ├── mps9506/quarto-cv/   # CV PDF extension (LaTeX-based)

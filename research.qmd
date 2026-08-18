@@ -4,7 +4,7 @@ description: "Clinical psychology research: mindfulness-based behavioral activat
 toc: false
 ---
 
-I study behavioral treatments for depression and the measurement that makes them testable. Three threads — a longitudinal thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, and EEG research on stress and cannabis — share one method: reproducible data work in R, so every number here regenerates from data, not from memory.
+I study behavioral treatments for depression and the measurement that makes them testable. Three threads share one method: reproducible data work in R, so every number here regenerates from data, not from memory. The threads are a longitudinal thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, and EEG research on stress and cannabis.
 
 ## Master's Thesis
 
@@ -14,10 +14,10 @@ I study behavioral treatments for depression and the measurement that makes them
 |---|---|
 | **Question** | Does a brief, outdoor mindfulness-based behavioral activation intervention reduce depressive symptoms in college students? |
 | **Design** | Longitudinal; psychometrics and statistical analysis in R |
-| **Status** | Complete — degree conferred, 2026 |
+| **Status** | Complete, degree conferred 2026 |
 | **Advisor** | Dr. David Pan |
 
-The full analysis pipeline — cleaning, psychometrics, longitudinal models, and automated reporting in Quarto — regenerates every table and figure from raw data. A public synthetic/de-identified demo is in preparation; no participant data will ever be published.
+The full analysis pipeline (cleaning, psychometrics, longitudinal models, and automated reporting in Quarto) regenerates every table and figure from raw data. A public synthetic/de-identified demo is in preparation; no participant data will ever be published.
 
 ## Systematic Review
 
@@ -28,7 +28,7 @@ The full analysis pipeline — cleaning, psychometrics, longitudinal models, and
 </div>
 <div class="cv-detail">
 <p class="cv-meta">Manuscript in preparation</p>
-<p>A systematic review of how desired treatment outcomes for trans behavioral health care have changed across six decades — presented at the Southwest Psychological Association (2023) and the Rocky Mountain Psychological Association (2023).</p>
+<p>A systematic review of how desired treatment outcomes for trans behavioral health care have changed across six decades, presented at the Southwest Psychological Association (2023) and the Rocky Mountain Psychological Association (2023).</p>
 </div>
 </div>
 
@@ -47,10 +47,10 @@ The full analysis pipeline — cleaning, psychometrics, longitudinal models, and
 
 ## Methods & Tools
 
-- **R** — psychometrics, longitudinal analysis, visualization; reproducible reporting with Quarto
-- **Assessment** — neuropsychological, cognitive, and intelligence testing in clinical intake and treatment-planning settings
-- **Survey & data** — SPSS, Qualtrics
-- **EEG** — acquisition and lab management (Heflin lab)
+- **R**: psychometrics, longitudinal analysis, visualization; reproducible reporting with Quarto
+- **Assessment**: neuropsychological, cognitive, and intelligence testing in clinical intake and treatment-planning settings
+- **Survey & data**: SPSS, Qualtrics
+- **EEG**: acquisition and lab management (Heflin lab)
 
 ## Presentations
 
@@ -59,4 +59,4 @@ The full analysis pipeline — cleaning, psychometrics, longitudinal models, and
 
 ## Status
 
-Open to behavioral-health research, mental-health technology, clinical data, and science communication roles. [cole@cole.press](mailto:cole@cole.press) — email is best; I check it when I'm not on crisis lines.
+Open to behavioral-health research, mental-health technology, clinical data, and science communication roles. [cole@cole.press](mailto:cole@cole.press). Email is best; I check it when I'm not on crisis lines.

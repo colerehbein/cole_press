@@ -1,0 +1,33 @@
+<!-- Rotating "Currently" line on the home page sidebar: cycles through a few
+     short-lived facts (reading / building / listening) so the sidebar feels
+     lived-in. Falls back to the static list if JS is off. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var list = document.querySelector(".home-sidebar .changelog-list");
+  if (!list) return;
+
+  // A rotating entry is appended after the static ones and replaced over time.
+  var rotating = document.createElement("li");
+  rotating.className = "changelog-entry";
+  rotating.innerHTML = '<span class="changelog-date">Also</span><span class="changelog-desc"></span>';
+  list.appendChild(rotating);
+
+  var items = [
+    ["Building", "reproducible R tools for behavioral-health research"],
+    ["Listening", "whatever the desert recommends"],
+    ["Thinking", "about measurement, mostly"],
+    ["Sitting", "zazen, Sōtō Zen. A student, not a teacher"]
+  ];
+  var desc = rotating.querySelector(".changelog-desc");
+  var date = rotating.querySelector(".changelog-date");
+  var i = 0;
+
+  function show() {
+    date.textContent = items[i][0];
+    desc.textContent = items[i][1];
+    i = (i + 1) % items.length;
+  }
+  show();
+  setInterval(show, 9000);
+});
+</script>

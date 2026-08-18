@@ -13,6 +13,9 @@ _site/
 *_cache/
 *_files/
 
+# J-space ledger (agent working state, not site content)
+.jspace/
+
 # OS
 .DS_Store
 *.icloud

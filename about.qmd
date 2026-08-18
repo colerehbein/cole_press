@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher in Albuquerque, New Mexico — biography, work, and contact."
+description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher in Albuquerque, New Mexico. Biography, work, and contact."
 toc: false
 ---
 
@@ -80,7 +80,7 @@ A book chapter accepted, a systematic review in preparation, and conference pres
 <div class="ipip-timeline-item">
 <span class="ipip-timeline-dot" aria-hidden="true"></span>
 <p class="ipip-timeline-year">2025–present</p>
-<p class="ipip-timeline-title">Protocall Services — 988 Suicide &amp; Crisis Lifeline <span class="ipip-timeline-tag">Crisis &amp; Access Specialist</span></p>
+<p class="ipip-timeline-title">Protocall Services, 988 Suicide &amp; Crisis Lifeline <span class="ipip-timeline-tag">Crisis &amp; Access Specialist</span></p>
 <p class="ipip-timeline-desc">High-acuity phone and chat triage and intervention, Friday–Monday nights.</p>
 </div>
 

@@ -21,10 +21,12 @@ website:
   search: true
   open-graph:
     image: og-image.png
+    image-alt: "Cole Rehbein, crisis counselor and clinical psychology researcher. White card, black text, rainbow stripe."
   twitter-card:
     card-style: summary_large_image
     creator: "@colerehbein"
     site: "@colerehbein"
+    image-alt: "Cole Rehbein, crisis counselor and clinical psychology researcher. White card, black text, rainbow stripe."
   navbar:
     left:
       - href: index.qmd
@@ -37,6 +39,8 @@ website:
             text: Research
           - href: projects.qmd
             text: Projects
+          - href: colophon.qmd
+            text: Colophon
       - href: /blog/
         text: Blog
       - text: Portfolio
@@ -56,11 +60,14 @@ website:
       - href: https://x.com/colerehbein
         text: X
         aria-label: "X (Twitter)"
+      - href: /blog/index.xml
+        text: RSS
+        aria-label: "RSS feed"
 
   page-footer:
-    left: "© 2026 Cole Rehbein — crisis counselor & clinical psychology researcher"
-    center: "In crisis? Call or text 988 — Suicide & Crisis Lifeline"
-    right: "[GitHub](https://github.com/colerehbein) · [X](https://x.com/colerehbein) · [RSS](/blog/index.xml)"
+    left: "© 2026 Cole Rehbein, crisis counselor & clinical psychology researcher · [cole@cole.press](mailto:cole@cole.press)"
+    center: "In crisis? Call or text 988, Suicide & Crisis Lifeline"
+    right: "[GitHub](https://github.com/colerehbein) · [X](https://x.com/colerehbein) · [RSS](/blog/index.xml) · [Colophon](/colophon)"
 
 format:
   html:
@@ -71,8 +78,10 @@ format:
     toc: true
     include-in-header:
       - _includes/preload-fonts.html
+      - _includes/skip-link.html
+      - _includes/footer-year.html
       - _includes/accent-palette.html
-      - _includes/portfolio-nav.html
+      - _includes/dropdown-nav.html
     execute:
       cache: true
       echo: true
@@ -80,7 +89,7 @@ format:
     highlight-style:
       light: github
       dark: monokai
-    html-math-method: katex
+    html-math-method: plain
     grid:
       sidebar-width: 250px
       body-width: 900px

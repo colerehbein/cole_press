@@ -2,11 +2,8 @@ Package: colepress
 Type: Project
 Title: Cole Press Quarto Site
 Version: 0.0.1
-Description: Quarto site with R-based rendering.
+Description: Quarto site. No R code execution — all pages are static Markdown/HTML;
+  PDFs are built by the quarto-cv LaTeX extension. (R deps removed 2026-08-18.)
 License: MIT
 Encoding: UTF-8
 URL: https://cole.press
-Imports: knitr,
-  rmarkdown,
-  gh,
-  htmltools

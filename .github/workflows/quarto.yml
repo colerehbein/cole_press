@@ -13,37 +13,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # No R, no TinyTeX: the site has zero R chunks, and this check only
+      # verifies the HTML renders. (The CV PDFs are built in deploy.yml,
+      # which keeps TinyTeX for the quarto-cv extension.)
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true # needed to render cv/*.qmd PDFs (quarto-cv-pdf)
-
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: "4.5.1" # match your logs; or omit to use default stable
-
-      - name: Install system libs for R packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev
-
-      # If your Quarto project is in a subdirectory, set working-directory on this
-      - name: Install R deps from DESCRIPTION
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          # reads DESCRIPTION in the repo root by default
-          # if you have subdir, add: working-directory: site
-          extra-packages: any::pak
-          # pak speeds installs & caching; leave as-is
 
       - name: Render site
         run: quarto render
-        # If subdir:
-        # working-directory: site
+
+      # Screenshot + smoke guard: renders key routes headless, asserts the
+      # chrome exists (toggler glyph, skip link, palette picker), and saves
+      # screenshots as an artifact.
+      - name: Screenshot check
+        run: |
+          npm install
+          npx playwright install --with-deps chromium
+          python3 -m http.server 4200 --directory _site &
+          sleep 2
+          node scripts/screenshot-check.mjs http://localhost:4200 ./screenshot-check-out
+        continue-on-error: true # visual regression guard: warn, don't block deploy
+
+      - name: Upload screenshots (artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshot-check-out/
+          if-no-files-found: ignore
 
       - name: Upload artifact (optional)
         if: always()

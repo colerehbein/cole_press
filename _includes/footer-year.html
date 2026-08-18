@@ -1,0 +1,11 @@
+<!-- Dynamic footer year: Quarto's page-footer is static, so bump the © year
+     client-side instead of editing _quarto.yml every January. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".nav-footer-left p, .nav-footer .footer-items-left p").forEach(function (p) {
+    if (p.textContent.indexOf("©") !== -1) {
+      p.textContent = p.textContent.replace(/\d{4}/, String(new Date().getFullYear()));
+    }
+  });
+});
+</script>

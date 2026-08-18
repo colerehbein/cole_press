@@ -3,9 +3,10 @@ title: "Cole Rehbein"
 title-block-banner: false
 page-layout: full
 toc: false
-description: "Crisis counselor and clinical psychology researcher building reproducible behavioral-health tools — R, Quarto, and technical writing."
+description: "Crisis counselor and clinical psychology researcher building reproducible behavioral-health tools. R, Quarto, and technical writing."
 include-in-header:
   - _includes/home-no-title.html
+  - _includes/rotating-currently.html
 ---
 
 <div class="home-container">
@@ -34,28 +35,28 @@ Albuquerque, NM &nbsp;·&nbsp; M.S. Clinical/Counseling Psychology, NMHU (July 2
 
 <dl class="directory-list">
 <div class="directory-entry">
-<dt class="directory-term"><a href="/research">1. Research</a></dt>
-<dd class="directory-desc">Thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, EEG work — reproducible methods, honest numbers.</dd>
-</div>
-<div class="directory-entry">
-<dt class="directory-term"><a href="/blog/">2. Blog</a></dt>
-<dd class="directory-desc">Essays on crisis work, research, and technology. Low frequency, long half-life — also available over <a href="/blog/index.xml">RSS</a>.</dd>
-</div>
-<div class="directory-entry">
-<dt class="directory-term"><a href="/projects">3. Projects</a></dt>
-<dd class="directory-desc">Research, writing samples, and things I've built — problem, role, stack, artifact.</dd>
-</div>
-<div class="directory-entry">
-<dt class="directory-term"><a href="/portfolio/">4. Portfolio</a></dt>
-<dd class="directory-desc">Photography and writing — essays, journalism, and academic papers.</dd>
-</div>
-<div class="directory-entry">
-<dt class="directory-term"><a href="/cv/">5. CV</a></dt>
-<dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism — full CV and one-page résumé as PDFs.</dd>
-</div>
-<div class="directory-entry">
-<dt class="directory-term"><a href="/about">6. About</a></dt>
+<dt class="directory-term"><a href="/about">1. About</a></dt>
 <dd class="directory-desc">Background, training, and the long way around.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/research">2. Research</a></dt>
+<dd class="directory-desc">Thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, EEG work. Reproducible methods, honest numbers.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/blog/">3. Blog</a></dt>
+<dd class="directory-desc">Essays on crisis work, research, and technology. Low frequency, long half-life. Also over <a href="/blog/index.xml">RSS</a>.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/projects">4. Projects</a></dt>
+<dd class="directory-desc">Research, writing samples, and things I've built. Problem, role, stack, artifact.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/portfolio/">5. Portfolio</a></dt>
+<dd class="directory-desc">Photography and writing. Essays, journalism, and academic papers.</dd>
+</div>
+<div class="directory-entry">
+<dt class="directory-term"><a href="/cv/">6. CV</a></dt>
+<dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism. Full CV and one-page résumé as PDFs.</dd>
 </div>
 </dl>
 

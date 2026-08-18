@@ -160,7 +160,12 @@ summary:focus-visible,
 
   &::after {
     // Rainbow stripe — the site's one decorative flourish. Hard-stop stripes
-    // (flat segments, not a soft gradient), colors from the old site palette.
+    // (flat segments, not a soft gradient).
+    // The six hues are the canonical rainbow (--rainbow-1..6) defined per
+    // theme; the stripe, the palette-swatch preview, and the rainbow link
+    // cycling all share these exact hues so the site's color story is one
+    // story. (Previous stripe colors: #ff6b6b/#f8e71c/#00c9a7/#4dabf7/#a66dd4
+    // — see SITE-GUIDE "Reverting the rainbow" if you want them back.)
     content: "";
     position: absolute;
     left: 0;
@@ -169,11 +174,12 @@ summary:focus-visible,
     height: 4px;
     background: linear-gradient(
       to right,
-      #ff6b6b 0 20%,
-      #f8e71c 20% 40%,
-      #00c9a7 40% 60%,
-      #4dabf7 60% 80%,
-      #a66dd4 80% 100%
+      var(--rainbow-1) 0 16.6667%,
+      var(--rainbow-2) 16.6667% 33.3333%,
+      var(--rainbow-3) 33.3333% 50%,
+      var(--rainbow-4) 50% 66.6667%,
+      var(--rainbow-5) 66.6667% 83.3333%,
+      var(--rainbow-6) 83.3333% 100%
     );
     pointer-events: none;
   }
@@ -258,8 +264,33 @@ summary:focus-visible,
   }
 }
 
+// Hamburger glyph — Bootstrap's icon is an inline SVG background that the
+// brutalist theme strips; draw the three lines with a pseudo-element instead
+// so the mobile menu button is actually visible.
 .navbar-toggler-icon {
   background-image: none;
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0.25em;
+    right: 0.25em;
+    height: 2px;
+    background: currentColor;
+  }
+
+  &::before {
+    top: 0.3em;
+    box-shadow: 0 0.38em 0 currentColor; // middle line
+  }
+
+  &::after {
+    bottom: 0.3em;
+  }
 }
 
 // Navbar dropdown menus (Portfolio → Photos / Writing)
@@ -429,6 +460,22 @@ summary:focus-visible,
   }
 }
 
+// Dark mode: the bright primary hues (e.g. #6b9eff) fail WCAG AA for white
+// text (2.6:1). Use the page background as the button text instead — the
+// same inverted-label pattern as the home-start-hint and quick-search button,
+// and it reads correctly across every palette.
+[data-bs-theme="dark"] .btn-primary {
+  color: var(--color-bg);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-bg);
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
+}
+
 .btn-sm {
   font-size: 0.8rem;
   padding: 0.3rem 0.75rem;
@@ -444,7 +491,10 @@ summary:focus-visible,
   padding: 1.25rem 1.5rem;
 
   &:hover {
-    transform: translateY(-1px); // instant, no transition
+    // Instant, no motion — a border-color shift is the brutalist way to
+    // mark interactivity (the old translateY(-1px) broke the zero-motion
+    // invariant and meant nothing on touch).
+    border-color: var(--color-primary);
   }
 }
 
@@ -1119,6 +1169,11 @@ textarea {
   }
 }
 
+// Per-photo aspect overrides — pick the one that fits the shot.
+.photo-frame.photo-landscape { aspect-ratio: 4 / 3; }
+.photo-frame.photo-wide      { aspect-ratio: 16 / 9; }
+.photo-frame.photo-portrait  { aspect-ratio: 3 / 4; }
+
 .photo-placeholder {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -1157,30 +1212,35 @@ textarea {
 }
 
 .palette-swatch {
+  // Visual swatch is 14px; the hit area is 24px+ (WCAG 2.5.8 target size)
+  // via padding + background-clip, so the color stays 14px but the button
+  // is comfortably tappable.
   width: 14px;
   height: 14px;
-  padding: 0;
+  padding: 5px;
+  background-clip: content-box;
   border: 1px solid var(--color-border);
   border-radius: 0;
   background: var(--color-surface);
   cursor: pointer;
 
-  &[data-palette="classic"] { background: var(--swatch-classic); }
-  &[data-palette="violet"]  { background: var(--swatch-violet); }
-  &[data-palette="green"]   { background: var(--swatch-green); }
-  &[data-palette="amber"]   { background: var(--swatch-amber); }
-  &[data-palette="crimson"] { background: var(--swatch-crimson); }
+  &[data-palette="classic"] { background-color: var(--swatch-classic); }
+  &[data-palette="violet"]  { background-color: var(--swatch-violet); }
+  &[data-palette="green"]   { background-color: var(--swatch-green); }
+  &[data-palette="amber"]   { background-color: var(--swatch-amber); }
+  &[data-palette="crimson"] { background-color: var(--swatch-crimson); }
 
-  // Rainbow swatch: hard-stop stripes (matches the header stripe)
+  // Rainbow swatch: hard-stop stripes, matching the header stripe exactly
+  // (same six --rainbow-* hues — the swatch previews what it selects)
   &[data-palette="rainbow"] {
-    background: linear-gradient(
+    background-image: linear-gradient(
       to right,
-      #d73224 0 16.67%,
-      #e8590c 16.67% 33.33%,
-      #1a7f37 33.33% 50%,
-      #0a6ebd 50% 66.67%,
-      #6d28d9 66.67% 83.33%,
-      #0e7490 83.33% 100%
+      var(--rainbow-1) 0 16.6667%,
+      var(--rainbow-2) 16.6667% 33.3333%,
+      var(--rainbow-3) 33.3333% 50%,
+      var(--rainbow-4) 50% 66.6667%,
+      var(--rainbow-5) 66.6667% 83.3333%,
+      var(--rainbow-6) 83.3333% 100%
     );
   }
 
@@ -1262,9 +1322,21 @@ textarea {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
+}
 
+// Mobile: keep the palette picker reachable (it was hidden ≤640px before,
+// which locked phone visitors onto the default palette). Tighten spacing so
+// it fits beside the dark-mode toggle.
+@media (max-width: 640px) {
   .palette-picker {
-    display: none;
+    gap: 0.2rem;
+    margin-right: 0.4rem;
+  }
+
+  .palette-swatch {
+    width: 13px;
+    height: 13px;
+    padding: 5px; // 13 + 10 + 2 = 25px hit area (still ≥24px with border-box)
   }
 }
 

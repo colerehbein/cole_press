@@ -1,7 +1,7 @@
 // _fonts.scss - Font definitions for cole.press
 
 // ============================================================================
-// PRIMARY: Anonymous Pro (Monospace) - Terminal aesthetic
+// PRIMARY: Anonymous Pro (Monospace) — data, dates, code
 // ============================================================================
 
 @font-face {
@@ -37,6 +37,10 @@
 }
 
 // ============================================================================
-// SECONDARY: Inter (Sans-serif) - Long-form prose readability
-// Loaded via <link> in _includes/preload-fonts.html for performance (#23)
+// SECONDARY: Inter (Sans-serif) — Long-form prose readability
+// NOTE: Inter is NOT actually loaded by this site. The comment below is
+// historical: a preload link was planned in preload-fonts.html but the
+// brutalist redesign went back to the Helvetica Neue system stack and the
+// Inter dependency was dropped. Do not add Inter preloads unless the body
+// font actually uses it.
 // ============================================================================

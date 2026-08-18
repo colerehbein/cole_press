@@ -12,4 +12,4 @@ code-tools: false
 toc: false
 ---
 
-Essays on crisis work, behavioral science, technology, and the examined life. Low frequency, long half-life — everything here also ships over [RSS](index.xml).
+Essays on crisis work, behavioral science, technology, and the examined life. Low frequency, long half-life; everything here also ships over [RSS](index.xml).
