@@ -1,10 +1,10 @@
 ---
 title: "About"
-description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher in Albuquerque, New Mexico. Biography, work, and contact."
+description: "Crisis clinician and psychotherapist (LMHC) on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher in Albuquerque, New Mexico. Biography, work, and contact."
 toc: false
 ---
 
-Four nights a week I take crisis calls and chats for Protocall Services, a 988 Suicide & Crisis Lifeline network partner serving New Mexico. The rest of the time I study behavioral treatments for depression. I finished an M.S. in clinical/counseling psychology at New Mexico Highlands University in July 2026; my thesis tested a brief, outdoor mindfulness-based behavioral activation intervention for college students.
+I am a crisis clinician and psychotherapist, licensed in New Mexico (LMHC). Four nights a week I take crisis calls and chats for Protocall Services, a 988 Suicide & Crisis Lifeline network partner serving New Mexico, where my title is Clinical Specialist. The rest of the time I study behavioral treatments for depression. I finished an M.S. in clinical/counseling psychology at New Mexico Highlands University in July 2026; my thesis tested a brief, outdoor mindfulness-based behavioral activation intervention for college students.
 
 ## The Path Here
 
@@ -43,6 +43,7 @@ A book chapter accepted, a systematic review in preparation, and conference pres
 ## Current Status
 
 - **Location.** Albuquerque, New Mexico.
+- **Licensure.** LMHC (Licensed Mental Health Counselor), New Mexico.
 - **Open to.** Behavioral-health research, mental-health technology, clinical data, and science communication roles.
 
 ## Contact

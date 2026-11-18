@@ -28,7 +28,7 @@ Evidence over adjectives. Each entry lists the problem, what I personally built,
 </div>
 
 <div class="card">
-  <h3 class="project-card-title">Thesis Analysis Workflow <span class="badge">In preparation</span></h3>
+  <h3 class="project-card-title">Thesis Analysis Workflow <span class="badge">Complete</span></h3>
   <p class="project-card-body">Reproducible longitudinal psychometric analysis and automated reporting for the master's thesis (mindfulness-based behavioral activation for depression). Every table and figure regenerates from data, with no hand-edited numbers. Sole analyst: data collection, cleaning, psychometrics, longitudinal analysis, automated reporting.</p>
   <p class="project-card-body"><strong>Stack:</strong> R, Quarto.</p>
   <p class="project-card-body"><em>Public synthetic/de-identified demo in preparation. No participant data will ever be published.</em></p>

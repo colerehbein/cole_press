@@ -25,7 +25,13 @@ csl: apa-annotated-bibliography.csl
 ---
 
 # Professional Summary
-Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. M.S. in clinical/counseling psychology, New Mexico Highlands University (July 2026). Conversational Spanish (B1). Research and writing in R, Quarto, and LaTeX. \vspace{3mm}
+Licensed Mental Health Counselor (LMHC) and Clinical Specialist at Protocall Services on the 988 Suicide \& Crisis Lifeline network, and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience across inpatient, private-practice, and community mental-health settings in Northern New Mexico. M.S. in clinical/counseling psychology, New Mexico Highlands University (July 2026). Conversational Spanish (B1). Research and writing in R, Quarto, and LaTeX.
+
+\hrule
+
+# Licensure
+
+- Licensed Mental Health Counselor (LMHC), New Mexico \vspace{3mm}
 
 \hrule
 
@@ -64,7 +70,7 @@ _Counseling ABQ_
 
 Counseling Intern \hfill January-August, 2024
 
-- **Responsibilities**: Provided comprehensive biopsychosocial intake assessments for new clients to the practice and diagnostic consultation to their ongoing therapists; provided ongoing counseling for clients working on depression, ADHD, and mandated anger management treatment.
+- **Responsibilities**: Provided comprehensive biopsychosocial intake assessments for new clients to the practice and diagnostic consultation to their ongoing therapists; provided ongoing teletherapy counseling for clients working on depression, ADHD, and mandated anger management treatment.
 - **Supervisor**: Denise Decker, LMSW
 
 \hrule
@@ -80,9 +86,15 @@ _Protocall Services_
 \vspace{1mm}
 
 \begin{itemize}
-\item[] Crisis and Access Specialist \hfill January 2025-present
-\item[] \hspace{5mm} \textit{Responsibilities:} Providing crisis triage, intervention, and referral services via phone and chat/text for Protocall's business partners, including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide and Prevention Lifeline Backup Network.
+\item[] Clinical Specialist \hfill 2026-present
+\item[] \hspace{5mm} \textit{Previously:} Crisis and Access Specialist \hfill January 2025-2026
+\item[] \hspace{5mm} \textit{Responsibilities:} Providing crisis triage, intervention, and referral services via phone and chat/text for Protocall's business partners, including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide and Prevention Lifeline Backup Network. Assessed clients' needs and developed personalized safety plans; collaborated with law enforcement, medical professionals, and community resources to coordinate care and facilitate timely interventions.
 \item[] \hspace{5mm} \textit{Supervisor:} Patricia Bain
+\item[] \hspace{5mm} \textit{Special Projects:}
+\item[] \hspace{10mm} AI Prototrainer Alignment Project \hfill July 2026-present
+\item[] \hspace{10mm} \textit{Responsibilities:} Helped user-test AI training tools, including evaluating model performance, alignment to best practices and company procedures, and red-flagging ethics and risk incidents.
+\item[] \hspace{10mm} New Mexico Service Improvement \hfill July 2026-present
+\item[] \hspace{10mm} \textit{Responsibilities:} Improved call-handling procedures to better align with multicultural best-practices, provided comprehensive referrals lists, and participated in in-person tabling events.
 \end{itemize}
 
 \vspace{3mm}
@@ -127,7 +139,7 @@ _New Mexico Highlands University_
 \vspace{1mm}
 \begin{itemize}
 \item[] City Reporter \hfill Aug 2020 - May 2021
-\item[] \hspace{5mm} \textit{Responsibilities:} Covered city politics, council meetings, local events.
+\item[] \hspace{5mm} \textit{Responsibilities:} Covered city government and the North Central Regional Transit District, reporting on the pueblos of Ohkay Owingeh and Santa Clara (Kha'po Owingeh) to inform the public.
 \end{itemize}
 
 \vspace{3mm}

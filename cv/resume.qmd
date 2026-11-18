@@ -2,7 +2,7 @@
 title: "Résumé"
 author: "Cole Rehbein"
 date: last-modified
-jobtitle: "Crisis Counselor and Clinical Psychology Researcher"
+jobtitle: "LMHC · Clinical Specialist and Clinical Psychology Researcher"
 email: cole@cole.press
 github: colerehbein
 web: cole.press
@@ -14,13 +14,15 @@ updated: true
 output-file: cole-rehbein-resume.pdf
 format:
   quarto-cv-pdf:
-    geometry: margin=0.8in
+    geometry: margin=0.6in
 validate-yaml: false
 ---
 
-Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. M.S. in clinical/counseling psychology, New Mexico Highlands University (July 2026). Conversational Spanish (B1). Research and writing in R, Quarto, and LaTeX.
+Licensed Mental Health Counselor (LMHC) and Clinical Specialist at Protocall Services on the 988 Suicide & Crisis Lifeline network, and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. M.S. in clinical/counseling psychology, New Mexico Highlands University (July 2026). Conversational Spanish (B1). Research and writing in R, Quarto, and LaTeX.
 
-# Education
+# Education & Licensure
+
+_Licensed Mental Health Counselor (LMHC), New Mexico_
 
 _New Mexico Highlands University_ — M.S., Clinical/Counseling Psychology \hfill July 2026
 
@@ -30,9 +32,9 @@ _St. John's College, Santa Fe_ — B.A., Philosophy and History of Math and Scie
 
 # Clinical & Crisis Experience
 
-_Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico)_ — Crisis and Access Specialist \hfill Jan 2025 – present
+_Protocall Services (988 Suicide & Crisis Lifeline network partner serving New Mexico)_ — Clinical Specialist (formerly Crisis and Access Specialist) \hfill Jan 2025 – present
 
-High-acuity crisis triage, intervention, and referral by phone and chat/text for partners including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide Prevention Lifeline Backup Network.
+High-acuity crisis triage, intervention, and referral by phone and chat/text for partners including New Mexico 988, the New Mexico Crisis and Access Line, and the National Suicide Prevention Lifeline Backup Network. Risk assessment and safety planning; coordinated with law enforcement, medical, and community resources. **AI Prototrainer Alignment Project** (July 2026 – present): user-tested AI training tools; evaluated model performance and alignment to clinical best practices; red-flagged ethics and risk incidents.
 
 _Counseling ABQ_ — Counseling Intern \hfill Jan – Aug 2024
 

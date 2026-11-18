@@ -15,19 +15,19 @@ project:
 
 website:
   title: "cole.press"
-  description: "Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Essays, research, and tools for behavioral health."
+  description: "Crisis clinician and psychotherapist (LMHC) on the 988 Suicide & Crisis Lifeline network, and clinical psychology researcher. Essays, research, and tools for behavioral health."
   site-url: "https://cole.press"
   repo-url: "https://github.com/colerehbein/cole_press"
   favicon: favicon.svg
   search: true
   open-graph:
     image: og-image.png
-    image-alt: "Cole Rehbein, crisis counselor and clinical psychology researcher. White card, black text, rainbow stripe."
+    image-alt: "Cole Rehbein, crisis clinician and psychotherapist (LMHC) and clinical psychology researcher. White card, black text, rainbow stripe."
   twitter-card:
     card-style: summary_large_image
     creator: "@colerehbein"
     site: "@colerehbein"
-    image-alt: "Cole Rehbein, crisis counselor and clinical psychology researcher. White card, black text, rainbow stripe."
+    image-alt: "Cole Rehbein, crisis clinician and psychotherapist (LMHC) and clinical psychology researcher. White card, black text, rainbow stripe."
   navbar:
     left:
       - href: index.qmd
@@ -66,7 +66,7 @@ website:
         aria-label: "RSS feed"
 
   page-footer:
-    left: "© 2026 Cole Rehbein, crisis counselor & clinical psychology researcher · [cole@cole.press](mailto:cole@cole.press)"
+    left: "© 2026 Cole Rehbein, crisis clinician & psychotherapist · LMHC · [cole@cole.press](mailto:cole@cole.press)"
     center: "In crisis? Call or text 988, Suicide & Crisis Lifeline"
     right: "[GitHub](https://github.com/colerehbein) · [X](https://x.com/colerehbein) · [RSS](/blog/index.xml) · [Colophon](/colophon)"
 
@@ -76,17 +76,13 @@ format:
       light: brutalist-light.scss
       dark: brutalist-dark.scss
     respect-user-color-scheme: true
-    toc: true
+    toc: false
     include-in-header:
       - _includes/preload-fonts.html
       - _includes/skip-link.html
       - _includes/footer-year.html
       - _includes/accent-palette.html
       - _includes/dropdown-nav.html
-    execute:
-      cache: true
-      echo: true
-      warning: false
     highlight-style:
       light: github
       dark: monokai

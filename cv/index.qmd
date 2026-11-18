@@ -4,7 +4,7 @@ description: "Cole Rehbein — academic and clinical CV: crisis counseling, clin
 toc: false
 ---
 
-Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. Albuquerque, NM · [cole@cole.press](mailto:cole@cole.press) · [cole.press](https://cole.press) · [github.com/colerehbein](https://github.com/colerehbein)
+Crisis clinician and psychotherapist (LMHC, New Mexico) on the 988 Suicide & Crisis Lifeline network, and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. Albuquerque, NM · [cole@cole.press](mailto:cole@cole.press) · [cole.press](https://cole.press) · [github.com/colerehbein](https://github.com/colerehbein)
 
 <p>
 <a class="btn btn-primary" href="cole-rehbein-cv.pdf">Download full CV (PDF)</a>
@@ -39,7 +39,7 @@ Crisis counselor on the 988 Suicide & Crisis Lifeline network and clinical psych
 
 <div class="cv-entry">
 <div>
-<p class="cv-role">Crisis and Access Specialist</p>
+<p class="cv-role">Clinical Specialist (formerly Crisis and Access Specialist)</p>
 <p class="cv-org">Protocall Services — 988 Suicide &amp; Crisis Lifeline network partner serving New Mexico</p>
 </div>
 <div class="cv-detail">

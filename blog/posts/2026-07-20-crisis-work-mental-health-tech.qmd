@@ -53,3 +53,5 @@ My thesis on outdoor mindfulness-based behavioral activation for depression is d
 That is the kind of thing I want to build, and it is what this site is for: small, reproducible tools for behavioral-health research and care, built by someone who has answered the phone. On Monday night I will log back into the queue. The coffee will go cold on schedule. Somewhere in the shift, a note from a counselor I have never met will tell me, in forty seconds, exactly what I need to know. I want the software I write to hold up under the same standard.
 
 *No caller is described in this essay. The details are shift logistics and my own habits; confidentiality is the one feature with no opt-out.*
+
+Reply by email: [cole@cole.press](mailto:cole@cole.press).

@@ -10,7 +10,7 @@ Two shelves: what I see and what I write.
 
 <div class="card">
   <h3 class="project-card-title">Photos</h3>
-  <p class="project-card-body">Photography. New Mexico, mostly. Light, landscape, and the occasional enchilada.</p>
+  <p class="project-card-body">Photography. New Mexico, mostly. Light, landscape, and the occasional enchilada. This shelf is being stocked.</p>
   <p class="project-card-links">
     <a class="btn btn-primary" href="/portfolio/photos">View photos</a>
   </p>
