@@ -30,6 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
   wrap.setAttribute("role", "group");
   wrap.setAttribute("aria-label", "Accent palette");
 
+  // Visible label so sighted visitors know what the swatches do.
+  var label = document.createElement("span");
+  label.className = "palette-label";
+  label.setAttribute("aria-hidden", "true");
+  label.textContent = "Palette";
+  wrap.appendChild(label);
+
   palettes.forEach(function (p) {
     var b = document.createElement("button");
     b.type = "button";

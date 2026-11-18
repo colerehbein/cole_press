@@ -1,16 +1,12 @@
 <!-- Rotating "Currently" line on the home page sidebar: cycles through a few
-     short-lived facts (reading / building / listening) so the sidebar feels
-     lived-in. Falls back to the static list if JS is off. -->
+     short-lived facts (building / listening / thinking / sitting) so the
+     sidebar feels lived-in. Advances on click, Enter, or Space only; there is
+     no timer, so nothing moves under the reader and no pause control is
+     needed (WCAG 2.2.2). Falls back to the static list if JS is off. -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   var list = document.querySelector(".home-sidebar .changelog-list");
   if (!list) return;
-
-  // A rotating entry is appended after the static ones and replaced over time.
-  var rotating = document.createElement("li");
-  rotating.className = "changelog-entry";
-  rotating.innerHTML = '<span class="changelog-date">Also</span><span class="changelog-desc"></span>';
-  list.appendChild(rotating);
 
   var items = [
     ["Building", "reproducible R tools for behavioral-health research"],
@@ -18,8 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Thinking", "about measurement, mostly"],
     ["Sitting", "zazen, Sōtō Zen. A student, not a teacher"]
   ];
-  var desc = rotating.querySelector(".changelog-desc");
-  var date = rotating.querySelector(".changelog-date");
+
+  var li = document.createElement("li");
+  li.className = "changelog-entry";
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "changelog-rotate";
+  btn.title = "Show another line";
+  btn.innerHTML = '<span class="changelog-date"></span><span class="changelog-desc"></span>';
+  li.appendChild(btn);
+  list.appendChild(li);
+
+  var date = btn.querySelector(".changelog-date");
+  var desc = btn.querySelector(".changelog-desc");
   var i = 0;
 
   function show() {
@@ -27,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     desc.textContent = items[i][1];
     i = (i + 1) % items.length;
   }
+
   show();
-  setInterval(show, 9000);
+  btn.addEventListener("click", show);
 });
 </script>

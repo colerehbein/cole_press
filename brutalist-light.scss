@@ -69,7 +69,6 @@ $blockquote-border-color: #000000;
   --color-text-secondary: #333333;
   --color-muted: #666666;
   --color-border: #000000;
-  --color-border-hover: #000000;
   --color-positive: #006600;
   --color-negative: #cc0000;
   --color-accent: #0000ee;
@@ -84,22 +83,13 @@ $blockquote-border-color: #000000;
 
   // Semantic surface colors (light)
   --color-hover-bg: #f8fafc;
-  --color-row-alt: #f0f3f7;
   --color-code-bg: #f1f5f9;
   --color-border-light: #e5e5e5;
-  --color-clinical: #8b0000;
-  --color-clinical-bg: #fffafa;
-  --color-clinical-bg-light: #fff5f5;
-  --color-clinical-border: #c0a0a0;
   --color-error-bg: #fef2f2;
   --color-error-border: #fecaca;
   --color-warning-bg: #fef3c7;
   --color-warning-border: #f59e0b;
   --color-warning-text: #92400e;
-  --color-info-bg: #e3f2fd;
-  --color-info-border: #1976d2;
-  --color-session-expired-bg: #fffbeb;
-  --color-session-expired-border: #d97706;
 
   // Palette swatch colors (light) — used by the accent picker
   --swatch-classic: #0000ee;

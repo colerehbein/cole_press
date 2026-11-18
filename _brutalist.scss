@@ -458,9 +458,9 @@ summary:focus-visible,
 }
 
 // Dark mode: the bright primary hues (e.g. #6b9eff) fail WCAG AA for white
-// text (2.6:1). Use the page background as the button text instead — the
-// same inverted-label pattern as the home-start-hint and quick-search button,
-// and it reads correctly across every palette.
+// text (2.6:1). Use the page background as the button text instead (the same
+// inverted-label pattern as the newsletter button), and it reads correctly
+// across every palette.
 [data-bs-theme="dark"] .btn-primary {
   color: var(--color-bg);
   background: var(--color-primary);
@@ -585,7 +585,6 @@ summary:focus-visible,
 
 /* ── Forms ───────────────────────────────────────── */
 
-.form-control,
 input[type="email"],
 input[type="text"],
 input[type="search"],
@@ -609,37 +608,6 @@ textarea {
   &::placeholder {
     color: var(--color-muted);
   }
-}
-
-/* ── Callouts / notes ────────────────────────────── */
-
-.callout,
-.home-callout {
-  border-left: 3px solid var(--color-border);
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0.6rem 0.75rem;
-  color: var(--color-text-secondary);
-  font-size: 0.9rem;
-
-  .callout-header {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text);
-  }
-}
-
-.callout-warning {
-  background: var(--color-warning-bg);
-  border-left-color: var(--color-warning-border);
-}
-
-.callout-danger,
-.callout-error {
-  background: var(--color-error-bg);
-  border-left-color: var(--color-error-border);
 }
 
 /* ── Timeline (About page) — verbatim from IPIP ──── */
@@ -845,37 +813,6 @@ textarea {
   margin-bottom: 0.75rem;
 }
 
-.home-start-hint {
-  border: 1px solid var(--color-border);
-  margin-bottom: 1.25rem;
-  background: var(--color-surface);
-}
-
-.home-start-hint-label {
-  display: inline-block;
-  background: var(--color-text);
-  color: var(--color-bg);
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.25rem 0.5rem;
-  margin: 0;
-}
-
-.home-start-hint-body {
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--color-text-secondary);
-  margin: 0;
-
-  a {
-    color: var(--color-primary);
-    font-weight: 600;
-  }
-}
-
 // Sidebar link lists
 .instrument-links {
   list-style: none;
@@ -932,13 +869,40 @@ textarea {
   }
 }
 
-// Newsletter / quick search form
-.quick-search-form {
+// Rotating "Currently" entry (home sidebar): advances on click or Enter/Space
+// only. No timer, so nothing moves under the reader and WCAG 2.2.2 (Pause,
+// Stop, Hide) never comes into play.
+.changelog-rotate {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover .changelog-desc,
+  &:focus-visible .changelog-desc {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Newsletter form
+.newsletter-form {
   display: flex;
   gap: 0;
 }
 
-.quick-search-input {
+.newsletter-input {
   flex: 1;
   min-width: 0;
   padding: 0.4rem 0.5rem;
@@ -960,7 +924,7 @@ textarea {
   }
 }
 
-.quick-search-btn {
+.newsletter-btn {
   padding: 0.4rem 0.75rem;
   border: 1px solid var(--color-border);
   background: var(--color-text);
@@ -978,7 +942,7 @@ textarea {
   }
 }
 
-.quick-search-hint {
+.newsletter-hint {
   margin-top: 0.35rem;
   font-size: 0.75rem;
   color: var(--color-muted);
@@ -1201,6 +1165,15 @@ textarea {
 
 /* ── Accent palette picker (navbar) ──────────────── */
 
+.palette-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
 .palette-picker {
   display: inline-flex;
   align-items: center;
@@ -1227,8 +1200,9 @@ textarea {
   &[data-palette="amber"]   { background-color: var(--swatch-amber); }
   &[data-palette="crimson"] { background-color: var(--swatch-crimson); }
 
-  // Rainbow swatch: hard-stop stripes, matching the header stripe exactly
-  // (same six --rainbow-* hues — the swatch previews what it selects)
+  // Rainbow swatch: hard-stop stripes of the canonical --rainbow-* link hues.
+  // (The swatch previews the links it selects; the header stripe is its own
+  // deliberately garish five-color set and is not previewed here.)
   &[data-palette="rainbow"] {
     background-image: linear-gradient(
       to right,
@@ -1277,21 +1251,6 @@ textarea {
   [data-palette="rainbow"] .quarto-post:nth-child(#{$k}) .listing-title a {
     color: var(--rainbow-#{$i});
   }
-}
-
-/* ── Empty states / errors ───────────────────────── */
-
-.empty-state-page {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--color-muted);
-}
-
-.error {
-  color: var(--color-negative);
-  padding: 1.5rem;
-  background: var(--color-error-bg);
-  border: 1px solid var(--color-error-border);
 }
 
 /* ── Responsive (IPIP breakpoints: 768 / 640 / 420) */
@@ -1361,8 +1320,7 @@ textarea {
   #quarto-sidebar,
   .sidebar,
   .nav-footer,
-  .home-start-hint,
-  .quick-search-form {
+  .newsletter-form {
     display: none !important;
   }
 
@@ -1400,5 +1358,87 @@ textarea {
   h2,
   h3 {
     break-after: avoid;
+  }
+}
+
+// Per-post NOW bar (build-time partial; generated by scripts/status-bar.mjs,
+// included at the top of each post body via a per-post include shortcode;
+// the vault publish pipeline injects it into every new post)
+.post-now {
+  border: 1px solid var(--color-border-light);
+  margin: 0 0 1.75rem;
+}
+
+.post-now-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.post-now-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.post-now-time {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.post-now-rows {
+  margin: 0;
+  padding: 0.3rem 0;
+}
+
+.post-now-row {
+  display: grid;
+  grid-template-columns: 5.25rem 1fr;
+  gap: 0.9rem;
+  padding: 0.22rem 0.75rem;
+}
+
+.post-now-row + .post-now-row {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.post-now-row dt {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  padding-top: 0.08rem;
+}
+
+.post-now-row dd {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.post-now-row dd a {
+  color: var(--color-primary);
+}
+
+@media (max-width: 30rem) {
+  .post-now-row {
+    grid-template-columns: 4rem 1fr;
+    gap: 0.6rem;
+  }
+
+  .post-now-head {
+    flex-direction: column;
+    gap: 0.1rem;
   }
 }
