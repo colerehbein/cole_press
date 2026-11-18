@@ -1,6 +1,6 @@
 ---
 title: "Blog"
-description: "Essays on crisis work, behavioral science, technology, and the examined life."
+description: "Essays on crisis work, behavioral science, and technology."
 listing:
   contents: posts
   sort: "date desc"
@@ -11,15 +11,14 @@ page-layout: full
 code-tools: false
 ---
 
-Essays on crisis work, behavioral science, technology, and the examined life. Low frequency, long half-life; everything here also ships over [RSS](index.xml).
+Essays on crisis work, behavioral science, and technology. Everything here also ships over [RSS](index.xml).
 
 ## Newsletter
 
-New essays by email, nothing else.
+New essays by email.
 
 <form action="https://buttondown.com/api/emails/embed-subscribe/coler" method="post" class="newsletter-form">
 <label for="bd-email-blog" class="visually-hidden">Email address for the newsletter</label>
 <input type="email" name="email" id="bd-email-blog" placeholder="your@email.com" required class="newsletter-input">
 <button type="submit" class="newsletter-btn">Go</button>
 </form>
-<p class="newsletter-hint">No spam, just signal.</p>

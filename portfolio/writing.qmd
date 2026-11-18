@@ -5,7 +5,7 @@ description: "Writing by Cole Rehbein. Essays, journalism, and academic papers."
 
 ## Essays
 
-Essays on crisis work, behavioral science, technology, and the examined life live on the [blog](/blog/). Low frequency, long half-life. Also over [RSS](/blog/index.xml).
+Essays on crisis work, behavioral science, and technology live on the [blog](/blog/), also over [RSS](/blog/index.xml).
 
 ## Journalism
 

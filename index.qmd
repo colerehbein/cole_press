@@ -29,27 +29,27 @@ Albuquerque, NM &nbsp;·&nbsp; LMHC, New Mexico &nbsp;·&nbsp; M.S. Clinical/Cou
 <dl class="directory-list">
 <div class="directory-entry">
 <dt class="directory-term"><a href="/about">1. About</a></dt>
-<dd class="directory-desc">Start here: background, training, and the long way around.</dd>
+<dd class="directory-desc">Background, training, and contact.</dd>
 </div>
 <div class="directory-entry">
 <dt class="directory-term"><a href="/research">2. Research</a></dt>
-<dd class="directory-desc">Thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, EEG work. Reproducible methods, honest numbers.</dd>
+<dd class="directory-desc">Thesis, systematic review, EEG work, and methods.</dd>
 </div>
 <div class="directory-entry">
 <dt class="directory-term"><a href="/blog/">3. Blog</a></dt>
-<dd class="directory-desc">Essays on crisis work, research, and technology. Low frequency, long half-life. Also over <a href="/blog/index.xml">RSS</a>.</dd>
+<dd class="directory-desc">Essays on crisis work, research, and technology. <a href="/blog/index.xml">RSS</a></dd>
 </div>
 <div class="directory-entry">
 <dt class="directory-term"><a href="/projects">4. Projects</a></dt>
-<dd class="directory-desc">Research, writing samples, and things I've built. Problem, role, stack, artifact.</dd>
+<dd class="directory-desc">Research tooling, writing samples, and things I've built.</dd>
 </div>
 <div class="directory-entry">
 <dt class="directory-term"><a href="/portfolio/">5. Portfolio</a></dt>
-<dd class="directory-desc">Writing now, photography soon. Essays, journalism, and academic papers.</dd>
+<dd class="directory-desc">Writing and photography.</dd>
 </div>
 <div class="directory-entry">
 <dt class="directory-term"><a href="/cv/">6. CV</a></dt>
-<dd class="directory-desc">Clinical psychology, crisis intervention, research, journalism. Full CV and one-page résumé as PDFs.</dd>
+<dd class="directory-desc">Full CV and one-page résumé as PDFs.</dd>
 </div>
 </dl>
 
@@ -74,7 +74,6 @@ Albuquerque, NM &nbsp;·&nbsp; LMHC, New Mexico &nbsp;·&nbsp; M.S. Clinical/Cou
 <input type="email" name="email" id="bd-email" placeholder="your@email.com" required class="newsletter-input">
 <button type="submit" class="newsletter-btn">Go</button>
 </form>
-<p class="newsletter-hint">No spam, just signal.</p>
 </div>
 
 <div class="home-sidebar-section">
