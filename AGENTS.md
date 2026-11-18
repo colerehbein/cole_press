@@ -11,14 +11,13 @@
 **Type:** Personal website/blog built with Quarto  
 **Owner:** Cole Rehbein
 
-A personal site for a crisis counselor and clinical psychology researcher — audience: mental-health professionals and clients. The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero radius/shadows/transitions, Helvetica Neue body text, uppercase labels, monospace only for data — plus two flourishes: a switchable **accent palette** (6 options: a rainbow default + five solids) and a **rainbow stripe** under the header.
+A personal site for a crisis clinician and psychotherapist (LMHC in New Mexico) and clinical psychology researcher — audience: mental-health professionals and clients. The design is **Academic Brutalism** (ported from the IPIP Repository design system): white/off-white surfaces, pure black borders, zero radius/shadows/transitions, Helvetica Neue body text, uppercase labels, monospace only for data — plus two flourishes: a switchable **accent palette** (6 options: a rainbow default + five solids) and a **rainbow stripe** under the header.
 
 ## Tech Stack
 
 | Component   | Version | Purpose                                     |
 | ----------- | ------- | ------------------------------------------- |
 | **Quarto**  | ≥1.7.31 | Static site generator (Markdown → HTML)     |
-| **R**       | ≥4.5.1  | Code execution in `.qmd` files              |
 | **SCSS**    | -       | Theming (light/dark modes)                  |
 | **LaTeX**   | TinyTeX | PDF CV generation via `quarto-cv` extension |
 | **Netlify** | -       | Deployment platform                         |
@@ -32,6 +31,7 @@ cole_press/
 ├── about.qmd                # About page (prose + career timeline)
 ├── research.qmd             # Research page (thesis, review, EEG, methods)
 ├── projects.qmd             # Projects showcase (card grid)
+├── colophon.qmd             # Colophon: how the site is made
 ├── 404.qmd                  # Custom not-found page (renders 404.html)
 ├── portfolio/
 │   ├── index.qmd            # Portfolio landing (Photos + Writing cards)
@@ -40,7 +40,7 @@ cole_press/
 ├── blog/
 │   ├── index.qmd            # Blog listing + RSS feed (feed: true → /blog/index.xml)
 │   ├── _metadata.yml        # Shared front matter for blog pages
-│   └── posts/               # Posts: YYYY-MM-DD-slug.qmd
+│   └── posts/               # Posts: YYYY-MM-DD-slug.qmd (+ _metadata.yml mounts the NOW bar)
 ├── cv/
 │   ├── index.qmd            # Web CV page (links both PDFs)
 │   ├── full-cv.qmd          # Full CV source → cole-rehbein-cv.pdf (SYNCED from colerehbein/cv)
@@ -54,9 +54,12 @@ cole_press/
 ├── fonts/                   # Self-hosted WOFF2 font files
 ├── og-image.png             # 1200×630 Open Graph social card
 ├── _includes/
-│   ├── preload-fonts.html   # Font preloading for performance
+│   ├── preload-fonts.html   # Font preloading + theme-color / touch icon
 │   ├── accent-palette.html  # Palette boot script + navbar picker JS
 │   ├── dropdown-nav.html    # Navbar dropdowns: click-navigates on desktop, dropdown on hover
+│   ├── footer-year.html     # Bumps the © year client-side
+│   ├── skip-link.html       # Skip-to-content link (first focusable element)
+│   ├── rotating-currently.html # Home sidebar rotating line (click to advance)
 │   └── home-no-title.html   # Hides Quarto title block on the home page
 ├── _extensions/
 │   ├── mps9506/quarto-cv/   # CV PDF extension (LaTeX-based)
@@ -69,10 +72,15 @@ cole_press/
 ├── .github/workflows/
 │   ├── deploy.yml           # Netlify deployment (main branch)
 │   └── quarto.yml           # PR render check
+├── scripts/
+│   ├── status-bar.mjs       # NOW bar generator (_status.qmd from live data + status.yml)
+│   ├── cv-sync.sh           # Pulls canonical CV files from colerehbein/cv
+│   └── screenshot-check.mjs # Playwright smoke + em-dash style guard
 ├── Makefile                 # Build commands
 ├── setup.sh                 # Manual environment setup script
 ├── package.json             # npm deps (Netlify Quarto plugin)
-├── DESCRIPTION              # R package dependencies
+├── status.yml               # NOW bar manual rows (reading/listening/sitting/cats)
+├── _status.qmd              # Generated NOW bar partial (committed as fallback snapshot)
 ├── _redirects               # Netlify redirect rules (see "Redirects & Domains")
 └── netlify.toml             # Netlify deployment config
 ```
@@ -98,7 +106,7 @@ cole_press/
 # Quick commands via Makefile
 make preview    # Start local dev server with live reload
 make build      # Render site to _site/
-make setup      # Install R packages and TinyTeX
+make setup      # Install TinyTeX
 make clean      # Remove generated files
 
 # Direct Quarto commands
@@ -119,7 +127,7 @@ quarto render   # Generate static HTML to _site/
 
 - Use Quarto shortcodes for icons: `{{< fa icon-name >}}`
 - Front matter in YAML at top of `.qmd` files
-- R code chunks use `{r}` fenced blocks
+- The site has zero R chunks — no `{r}` blocks anywhere
 - **Raw HTML in `.qmd` files must be unindented to column 0** — pandoc turns indented `<dt>`/`<dd>`/`<p>` lines into escaped code blocks
 - Never add page-scoped `<style>` blocks to `.qmd` files — component styles go in `_brutalist.scss`
 - `include-in-header` at the document level (e.g. `index.qmd` hiding the title block) is the only accepted per-page CSS
@@ -159,17 +167,6 @@ quarto render   # Generate static HTML to _site/
 
 ## Dependencies
 
-### R Packages (from DESCRIPTION)
-
-- `knitr` - Code chunk execution
-- `rmarkdown` - Document rendering
-
-### System Libraries (for R package compilation)
-
-- `libcurl4-openssl-dev`
-- `libssl-dev`
-- `libxml2-dev`
-
 ### npm (from package.json)
 
 - `@quarto/netlify-plugin-quarto` - Netlify integration
@@ -185,8 +182,8 @@ quarto render   # Generate static HTML to _site/
 
 `_redirects` (copied into `_site/` at render time) defines Netlify rules:
 
-- `https://blog.cole.press/* → https://cole.press/blog/:splat` (301) — subdomain shortcut to the in-site blog. **Requires `blog.cole.press` to be attached as a domain alias in the cole.press Netlify site's dashboard**; until then the rule never fires.
-- Legacy `.html` URLs (`/index.html`, `/about.html`, `/projects.html`, `/cv/index.html`) 301 to their clean URLs.
+- `https://blog.cole.press/* → https://cole.press/blog/:splat` (301) — subdomain shortcut to the in-site blog. Netlify supports these full-URL domain rules (2026-11), but the rule only fires when **`blog.cole.press` is bound to the cole.press site**. As of 2026-11-17 the subdomain is bound to a *separate* Netlify site serving a stray empty blog, so requests land there instead. Fix in the Netlify dashboard: detach `blog.cole.press` from that site and add it as a domain alias of the cole.press site.
+- Legacy `.html` URLs (`/index.html`, `/about.html`, `/projects.html`, `/cv/index.html`, `/colophon.html`, the portfolio and blog paths) 301 to their clean URLs.
 
 ## Output
 
@@ -202,6 +199,7 @@ quarto render   # Generate static HTML to _site/
 2. Include `title`, `description`, `author`, `date`, `categories` in front matter
 3. Write content in Quarto Markdown
 4. The listing page and RSS feed (`/blog/index.xml`) update automatically on render — no extra config needed
+5. The NOW bar dateline mounts automatically on every post via `blog/posts/_metadata.yml` (`include-before-body`); do not add a per-post include
 
 ### Modifying the theme
 

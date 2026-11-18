@@ -7,15 +7,15 @@
 
 This is **cole_press**, a Quarto-based personal website at [cole.press](https://cole.press).
 
-**Tech stack:** Quarto 1.7.31 + R 4.5.1 + SCSS + LaTeX (for CV)  
-**Design:** Terminal/CLI-inspired with monospace typography (Anonymous Pro)
+**Tech stack:** Quarto 1.7.31 + SCSS + LaTeX (for the CV PDFs; zero R chunks in the site)  
+**Design:** Academic Brutalism (pure black borders, zero radius/shadows/transitions; Helvetica Neue prose, Anonymous Pro for data)
 
 ## Build Commands
 
 ```bash
 make preview    # Dev server with hot reload
 make build      # Render to _site/
-make setup      # Install R deps + TinyTeX
+make setup      # Install TinyTeX
 make clean      # Remove generated files
 ```
 
@@ -45,18 +45,16 @@ categories: [tech, ai]
 
 Content with {{< fa icon-name >}} icons.
 
-```{r}
-#| label: chunk-name
-#| echo: false
-# R code here
-```
+::: {.callout-note}
+Quarto callout (styled by the shared component layer).
+:::
 ````
 
 ````
 
 ### SCSS Theme Variables
 
-The theme uses CSS custom properties. Key variables in `monospatial-light.scss`:
+The theme uses CSS custom properties. Key variables in `brutalist-light.scss`:
 
 ```scss
 // Colors are defined as CSS custom properties
@@ -88,12 +86,12 @@ website:
 
 - Use Quarto shortcodes: `{{< fa brands github >}}`
 - Include YAML front matter with `title`, `date`, `description`
-- Use fenced R code blocks with `{r}` and options via `#|` comments
+- The site has zero R chunks: no `{r}` blocks
 
 ### When completing `.scss` files:
 
-- Maintain monospace typography (Anonymous Pro)
-- Use terminal-inspired color schemes
+- Helvetica Neue for prose; Anonymous Pro (mono) reserved for data, dates, code
+- Academic Brutalism tokens (`var(--color-*)` only; zero radius/shadows/transitions)
 - Follow mobile-first responsive patterns
 
 ### When completing `_quarto.yml`:
@@ -105,10 +103,10 @@ website:
 ## Key Files
 
 - `_quarto.yml` - Site configuration
-- `monospatial-light.scss` - Primary theme (1300+ lines)
-- `monospatial-dark.scss` - Dark mode overrides
+- `brutalist-light.scss` - Light theme tokens + palettes
+- `brutalist-dark.scss` - Dark theme tokens + palettes
+- `_brutalist.scss` - Shared component layer (both themes)
 - `_fonts.scss` - Font face definitions
-- `DESCRIPTION` - R dependencies (knitr, rmarkdown)
 
 ## Extensions Available
 

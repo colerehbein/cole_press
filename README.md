@@ -2,9 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/placeholder/deploy-status)](https://cole.press)
 
-Personal website at [cole.press](https://cole.press) — writings, projects, and experiments covering tech, AI, psychology, and politics.
+Personal website at [cole.press](https://cole.press): essays on crisis work and behavioral science, research, projects, and photography.
 
-Built with **Quarto** + **R** + **SCSS** featuring a terminal/CLI-inspired design.
+Built with **Quarto** + **SCSS**, featuring an Academic Brutalism design.
 
 ## Quick Start
 
@@ -53,8 +53,9 @@ make help       # Show all commands
 cole_press/
 ├── *.qmd                    # Content pages (Quarto Markdown)
 ├── _quarto.yml              # Site configuration
-├── monospatial-light.scss   # Light theme (primary)
-├── monospatial-dark.scss    # Dark theme
+├── brutalist-light.scss     # Light tokens + accent palettes
+├── brutalist-dark.scss      # Dark tokens + accent palettes
+├── _brutalist.scss          # Shared component layer (both themes)
 ├── _fonts.scss              # Font definitions (Anonymous Pro)
 ├── _extensions/             # Quarto extensions (fontawesome, quarto-cv)
 ├── .devcontainer/           # VS Code dev container config
@@ -73,8 +74,7 @@ cole_press/
 ## Tech Stack
 
 - **[Quarto](https://quarto.org)** — Static site generator
-- **[R](https://www.r-project.org)** — Code execution in documents
-- **SCSS** — Custom theming with terminal-inspired design
+- **SCSS** — Academic Brutalism theming (tokens per theme, one shared component layer)
 - **[Netlify](https://netlify.com)** — Deployment and hosting
 - **TinyTeX** — PDF CV generation via quarto-cv extension
 

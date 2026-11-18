@@ -1,4 +1,9 @@
-# blog.cole.press lives on as a shortcut to the in-site blog
+# blog.cole.press lives on as a shortcut to the in-site blog.
+# Domain-level from-URL rules are supported by Netlify (2026-11 changelog), but
+# this only fires when blog.cole.press is BOUND TO THIS SITE. Right now the
+# subdomain is bound to a separate Netlify site that serves a stray empty blog.
+# Fix: in the Netlify dashboard, detach blog.cole.press from that site and add
+# it as a domain alias of the cole.press site; this rule then does the rest.
 https://blog.cole.press/*  https://cole.press/blog/:splat  301
 
 # Legacy .html URLs → clean URLs (keep the site's links .html-proof)
@@ -7,6 +12,7 @@ https://blog.cole.press/*  https://cole.press/blog/:splat  301
 /research.html               /research  301
 /projects.html               /projects  301
 /cv/index.html               /cv/  301
+/colophon.html               /colophon  301
 /portfolio/index.html        /portfolio/  301
 /portfolio/photos.html       /portfolio/photos  301
 /portfolio/writing.html      /portfolio/writing  301

@@ -37,8 +37,9 @@ make preview
 cole_press/
 ├── *.qmd                    # Content pages
 ├── _quarto.yml              # Site configuration
-├── monospatial-light.scss   # Light theme
-├── monospatial-dark.scss    # Dark theme
+├── brutalist-light.scss     # Light theme tokens
+├── brutalist-dark.scss      # Dark theme tokens
+├── _brutalist.scss          # Shared component layer
 ├── _fonts.scss              # Font definitions
 ├── fonts/                   # WOFF2 font files
 ├── _extensions/             # Quarto extensions
@@ -97,15 +98,15 @@ cole_press/
 
 ### Modifying Themes
 
-**Light theme:** Edit `monospatial-light.scss`  
-**Dark theme:** Edit `monospatial-dark.scss`  
+**Theme tokens:** Edit `brutalist-light.scss` (light) or `brutalist-dark.scss` (dark)  
+**Components:** Edit `_brutalist.scss` (shared by both themes, never a theme file)  
 **Fonts:** Edit `_fonts.scss`
 
-The design uses a terminal/CLI-inspired aesthetic with:
+The design is Academic Brutalism:
 
-- Monospace typography (Anonymous Pro)
-- Clean, minimal colors
-- Box-drawing characters for borders
+- Helvetica Neue for prose; Anonymous Pro (mono) reserved for data, dates, and code
+- Pure black borders, zero rounded corners, zero shadows, zero transitions
+- Colors come from `var(--color-*)` tokens only
 
 ### Using Icons
 
@@ -155,7 +156,7 @@ data %>% summarize(mean = mean(value))
 - Follow existing naming conventions
 - Use CSS custom properties for colors
 - Mobile-first responsive design
-- Maintain terminal-inspired aesthetic
+- Maintain the Academic Brutalism invariants (zero radius/shadows/transitions, tokens only)
 
 ### General
 
