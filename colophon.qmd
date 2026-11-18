@@ -25,7 +25,7 @@ No shadows and no transitions. Borders are 1px for containers, 2px for structure
 
 ## Why Quarto
 
-The same toolchain I use for the thesis analysis pipeline: reproducible documents where every table and figure regenerates from data. The site is one more Quarto document, versioned, built by a Makefile, deployed by CI. No CMS, no database, no build server to keep alive. A push to `main` renders and ships.
+The same toolchain I use for the thesis pipeline: documents where every table and figure regenerates from data. The site is one more Quarto document, versioned and deployed by CI. There is no CMS and no database. A push to `main` renders it and Netlify serves it.
 
 ## Why the 988 note is everywhere
 
@@ -37,7 +37,7 @@ Light mode inks: `#cc0000` › `#b45309` › `#006600` › `#0a6ebd` › `#6d28d
 
 ## The words
 
-Written by me, edited by me, fact-checked by me. The blog posts are essays, not press releases; the CV is what happened; the research page is what the numbers actually said. No generative filler. If a page is short, it's because the truth is short.
+Written by me, edited by me, fact-checked by me. The blog posts are what I think about crisis work and software. The CV is what happened. The research page is what the numbers said. If a page is short, the truth was short.
 
 ---
 
