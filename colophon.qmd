@@ -3,15 +3,13 @@ title: "Colophon"
 description: "How this site is made. The design system, the stack, and the reasoning behind the rainbow."
 ---
 
-This site is built the way the research is: reproducible, boring tools, nothing hand-edited. Here is the whole machine.
-
 ## Design
 
 **Academic Brutalism**, ported from the IPIP Repository design system. White/off-white surfaces, pure black borders, zero rounded corners, zero shadows, zero transitions. Helvetica Neue for prose; monospace (Anonymous Pro, self-hosted) reserved for data, dates, and code. Uppercase labels carry the hierarchy; links underline themselves like a proper document.
 
 The one flourish is the rainbow: a hard-stop striped bar under the header, and link *lists* that cycle six hues. The stripe is its own deliberately garish five-color set; the palette-picker swatch and the link hues share one canonical set of six colors per theme, light mode getting the deeper inks and dark mode the lighter glow. The accent palette switcher in the navbar swaps the link/accent color site-wide (Rainbow, Classic Blue, Violet, Green, Amber, Crimson), persisted in `localStorage` so your choice survives the page.
 
-Everything is deliberate: no shadows because nothing floats; no transitions because nothing needs to animate; 1px borders for containers, 2px for structure.
+No shadows and no transitions. Borders are 1px for containers, 2px for structure.
 
 ## Stack
 

@@ -5,7 +5,6 @@ page-layout: full
 description: "Crisis clinician, psychotherapist (LMHC), and clinical psychology researcher building reproducible behavioral-health tools. R, Quarto, and technical writing."
 include-in-header:
   - _includes/home-no-title.html
-  - _includes/rotating-currently.html
 ---
 
 <div class="home-container">
