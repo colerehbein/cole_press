@@ -1,7 +1,6 @@
 ---
 title: "Portfolio"
 description: "Photography and writing by Cole Rehbein. Essays, journalism, and academic papers."
-toc: false
 ---
 
 Two shelves: what I see and what I write.

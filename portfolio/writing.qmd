@@ -1,7 +1,6 @@
 ---
 title: "Writing"
 description: "Writing by Cole Rehbein. Essays, journalism, and academic papers."
-toc: false
 ---
 
 ## Essays

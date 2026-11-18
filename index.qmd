@@ -2,7 +2,6 @@
 title: "Cole Rehbein"
 title-block-banner: false
 page-layout: full
-toc: false
 description: "Crisis clinician, psychotherapist (LMHC), and clinical psychology researcher building reproducible behavioral-health tools. R, Quarto, and technical writing."
 include-in-header:
   - _includes/home-no-title.html
@@ -84,7 +83,6 @@ Albuquerque, NM &nbsp;·&nbsp; LMHC, New Mexico &nbsp;·&nbsp; M.S. Clinical/Cou
 <ul class="changelog-list">
 <li class="changelog-entry"><span class="changelog-date">M.S.</span><span class="changelog-desc">clinical/counseling psychology, July 2026</span></li>
 <li class="changelog-entry"><span class="changelog-date">On the lines</span><span class="changelog-desc">988, Friday–Monday nights</span></li>
-<li class="changelog-entry"><span class="changelog-date">Reading</span><span class="changelog-desc">Spinoza, Beck, Dōgen, Skinner</span></li>
 </ul>
 </div>
 

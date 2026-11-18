@@ -1,7 +1,6 @@
 ---
 title: "Photos"
 description: "Photography by Cole Rehbein. New Mexico light, landscape, and food."
-toc: false
 ---
 
 Photography. New Mexico, mostly. Light, landscape, and the occasional enchilada.

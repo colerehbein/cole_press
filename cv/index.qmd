@@ -1,7 +1,6 @@
 ---
 title: "CV"
 description: "Cole Rehbein — academic and clinical CV: crisis counseling, clinical psychology research, assessment, teaching, and technical writing."
-toc: false
 ---
 
 Crisis clinician and psychotherapist (LMHC, New Mexico) on the 988 Suicide & Crisis Lifeline network, and clinical psychology researcher. Telephone and chat/text crisis intervention since January 2025; three-plus years of clinical experience in Northern New Mexico. Albuquerque, NM · [cole@cole.press](mailto:cole@cole.press) · [cole.press](https://cole.press) · [github.com/colerehbein](https://github.com/colerehbein)

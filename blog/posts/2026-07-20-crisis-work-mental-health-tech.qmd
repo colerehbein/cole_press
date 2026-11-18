@@ -5,7 +5,6 @@ author: "Cole Rehbein"
 date: 2026-07-20
 categories: [crisis work, mental-health technology, behavioral health]
 code-tools: false
-toc: false
 ---
 
 ## The queue

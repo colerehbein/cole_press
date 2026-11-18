@@ -1,7 +1,6 @@
 ---
 title: "Colophon"
 description: "How this site is made. The design system, the stack, and the reasoning behind the rainbow."
-toc: false
 ---
 
 This site is built the way the research is: reproducible, boring tools, nothing hand-edited. Here is the whole machine.

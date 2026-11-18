@@ -1,7 +1,6 @@
 ---
 title: "Projects"
 description: "Case studies: research tooling, macOS utilities, and this website. Problem, role, stack, artifact."
-toc: false
 ---
 
 Evidence over adjectives. Each entry lists the problem, what I personally built, the stack, a specific artifact, and where things stand.

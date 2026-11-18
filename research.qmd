@@ -1,7 +1,6 @@
 ---
 title: "Research"
 description: "Clinical psychology research: mindfulness-based behavioral activation for depression, a systematic review of trans behavioral health care outcomes, EEG methods, and reproducible analysis in R."
-toc: false
 ---
 
 I study behavioral treatments for depression and the measurement that makes them testable. Three threads share one method: reproducible data work in R, so every number here regenerates from data, not from memory. The threads are a longitudinal thesis on mindfulness-based behavioral activation, a systematic review of trans behavioral health care outcomes, and EEG research on stress and cannabis.
