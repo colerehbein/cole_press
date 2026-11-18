@@ -12,7 +12,8 @@ from PIL import Image, ImageDraw, ImageFont
 W, H = 1200, 630
 NEUE = "/System/Library/Fonts/HelveticaNeue.ttc"
 
-NAME = "Cole Rehbein"
+NAME_1 = "Cole Rehbein"
+NAME_2 = "MS, LMHC"
 DESC = (
     "Crisis clinician and psychotherapist (LMHC) on the 988 Suicide & Crisis "
     "Lifeline network, and clinical psychology researcher studying behavioral "
@@ -56,24 +57,25 @@ def main():
     img = Image.new("RGB", (W, H), "#ffffff")
     d = ImageDraw.Draw(img)
 
-    f_name = ImageFont.truetype(NEUE, 76, index=1)
-    f_desc = ImageFont.truetype(NEUE, 23, index=0)
-    f_foot = ImageFont.truetype(NEUE, 14, index=1)
+    f_name = ImageFont.truetype(NEUE, 112, index=1)
+    f_desc = ImageFont.truetype(NEUE, 26, index=0)
+    f_foot = ImageFont.truetype(NEUE, 15, index=1)
 
     # Frame
     d.rectangle([18, 18, W - 18, H - 22], outline=INK, width=3)
 
-    # Name
-    d.text((52, 70), NAME, font=f_name, fill=INK)
+    # Name, stacked and scaled to fill the frame
+    d.text((52, 58), NAME_1, font=f_name, fill=INK)
+    d.text((52, 174), NAME_2, font=f_name, fill=INK)
 
     # Hard rule
-    d.rectangle([56, 194, 176, 203], fill=INK)
+    d.rectangle([56, 328, 236, 340], fill=INK)
 
     # Description
-    y = 230
-    for line in wrap(DESC, f_desc, W - 220):
+    y = 366
+    for line in wrap(DESC, f_desc, W - 112):
         d.text((56, y), line, font=f_desc, fill=INK)
-        y += 34
+        y += 37
 
     # Footer line (tracked uppercase, link part in accent blue + underlined)
     fx = tracked(d, (56, H - 55), FOOTER_A, f_foot, GRAY, spacing=2.0)

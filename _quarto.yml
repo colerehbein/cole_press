@@ -22,12 +22,12 @@ website:
   search: true
   open-graph:
     image: og-image.png
-    image-alt: "Cole Rehbein. White card, black text, rainbow stripe."
+    image-alt: "Cole Rehbein, MS, LMHC. White card, black text, rainbow stripe."
   twitter-card:
     card-style: summary_large_image
     creator: "@colerehbein"
     site: "@colerehbein"
-    image-alt: "Cole Rehbein. White card, black text, rainbow stripe."
+    image-alt: "Cole Rehbein, MS, LMHC. White card, black text, rainbow stripe."
   navbar:
     left:
       - href: index.qmd
