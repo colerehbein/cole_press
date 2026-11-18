@@ -21,6 +21,13 @@ _site/
 *.icloud
 Thumbs.db
 
+# Agent tooling (not site content)
+.opencode/
+
+# Application-specific résumés (kept local on purpose; never deploy)
+cv/resume-mpathic.qmd
+cv/cole-rehbein-resume-mpathic.pdf
+
 # Editor
 *.swp
 *.swo
