@@ -1,0 +1,8 @@
+<div class="post-now">
+<div class="post-now-head"><span class="post-now-label">Now</span><span class="post-now-time">TUE 17 NOV 2026 · 17:31 MST</span></div>
+<dl class="post-now-rows">
+<div class="post-now-row"><dt>Reading</dt><dd>Spinoza, Beck, Dōgen, Skinner</dd></div>
+<div class="post-now-row"><dt>Sitting</dt><dd>Thu 09:15 · Sat 07:30, No Gate</dd></div>
+<div class="post-now-row"><dt>Building</dt><dd><a href="https://github.com/colerehbein/dsh-hermes-kit">dsh-hermes-kit</a> · <a href="https://github.com/colerehbein/reflow">reflow</a> · <a href="https://github.com/colerehbein/celtic-knots">celtic-knots</a></dd></div>
+</dl>
+</div>

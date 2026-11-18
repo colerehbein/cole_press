@@ -3,6 +3,9 @@ name: Build & Deploy to Netlify
 on:
   push:
     branches: [main]
+  schedule:
+    # 13:00 UTC = 07:00 MDT: daily rebuild refreshes the NOW bar
+    - cron: "0 13 * * *"
 
 jobs:
   build:
@@ -11,6 +14,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      # Generate _status.qmd (the NOW bar) from live weather + GitHub data.
+      # Fails soft: a network hiccup leaves the committed snapshot in place.
+      - name: Generate NOW bar
+        run: node scripts/status-bar.mjs
 
       # Quarto CLI with TinyTeX (needed for the CV + résumé PDFs via
       # quarto-cv). No R toolchain: the site has zero R chunks, and the only

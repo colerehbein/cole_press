@@ -1,0 +1,13 @@
+# NOW bar — the dateline at the top of every blog post.
+#
+# The weather line, the dateline, and the "Building" row are pulled
+# automatically at build time (Open-Meteo + the GitHub API; see
+# scripts/status-bar.mjs). The rows below are yours to edit. Empty rows are
+# omitted from the bar. Preview locally with:
+#   node scripts/status-bar.mjs
+
+reading: "Spinoza, Beck, Dōgen, Skinner"
+listening: ""
+sitting: "Thu 09:15 · Sat 07:30, No Gate"
+# cats: "Angus: asleep. Tim: at the window."
+cats: ""

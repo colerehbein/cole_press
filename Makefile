@@ -1,7 +1,7 @@
 # Makefile for cole_press
 # Quarto-based personal website at cole.press
 
-.PHONY: help preview build render setup clean install-r-deps install-tinytex check cv-sync
+.PHONY: help preview build render setup clean install-tinytex check status cv-sync
 
 # Default target
 help:
@@ -15,8 +15,7 @@ help:
 	@echo "  render        Alias for build"
 	@echo ""
 	@echo "Setup:"
-	@echo "  setup         Install R packages and TinyTeX"
-	@echo "  install-r-deps  Install R packages from DESCRIPTION"
+	@echo "  setup         Install TinyTeX (for the CV PDFs)"
 	@echo "  install-tinytex Install TinyTeX for PDF generation"
 	@echo ""
 	@echo "Maintenance:"
@@ -28,18 +27,19 @@ help:
 preview:
 	quarto preview --port 4200
 
-build:
+build: status
 	quarto render
+
+# Refresh the NOW bar (_status.qmd) before rendering. Fails soft: no network
+# leaves the committed snapshot in place (same contract as CI).
+status:
+	node scripts/status-bar.mjs || true
 
 render: build
 
 # Setup
-setup: install-r-deps install-tinytex
+setup: install-tinytex
 	@echo "✅ Setup complete!"
-
-install-r-deps:
-	@echo "Installing R packages from DESCRIPTION..."
-	R -e "dir.create(Sys.getenv('R_LIBS_USER'), recursive=TRUE, showWarnings=FALSE); install.packages(c('knitr', 'rmarkdown'), repos='https://cloud.r-project.org', lib=Sys.getenv('R_LIBS_USER'))"
 
 install-tinytex:
 	@echo "Installing TinyTeX for PDF generation..."
@@ -64,13 +64,6 @@ check:
 	@echo ""
 	@echo "Quarto:"
 	@quarto --version || echo "❌ Quarto not found"
-	@echo ""
-	@echo "R:"
-	@R --version | head -1 || echo "❌ R not found"
-	@echo ""
-	@echo "R packages:"
-	@R -e "cat('knitr:', as.character(packageVersion('knitr')), '\n')" 2>/dev/null || echo "❌ knitr not installed"
-	@R -e "cat('rmarkdown:', as.character(packageVersion('rmarkdown')), '\n')" 2>/dev/null || echo "❌ rmarkdown not installed"
 	@echo ""
 	@echo "TinyTeX:"
 	@quarto list tools | grep -i tinytex || echo "TinyTeX status unknown"
