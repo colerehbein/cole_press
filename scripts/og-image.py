@@ -2,8 +2,8 @@
 """
 og-image.py — regenerates og-image.png (the 1200x630 social card) from the
 site's public copy. Layout is Academic Brutalism: white card, black frame,
-uppercase kicker, big name, hard rule, one description line, footer line,
-and the deliberately garish five-color header stripe at the bottom.
+big name, hard rule, one description line, footer line, and the deliberately
+garish five-color header stripe at the bottom.
 
 Usage: python3 scripts/og-image.py   (writes og-image.png in the repo root)
 """
@@ -12,7 +12,6 @@ from PIL import Image, ImageDraw, ImageFont
 W, H = 1200, 630
 NEUE = "/System/Library/Fonts/HelveticaNeue.ttc"
 
-KICKER = "CRISIS CLINICIAN & PSYCHOTHERAPIST · CLINICAL PSYCHOLOGY RESEARCHER"
 NAME = "Cole Rehbein"
 DESC = (
     "Crisis clinician and psychotherapist (LMHC) on the 988 Suicide & Crisis "
@@ -57,7 +56,6 @@ def main():
     img = Image.new("RGB", (W, H), "#ffffff")
     d = ImageDraw.Draw(img)
 
-    f_kick = ImageFont.truetype(NEUE, 15, index=1)
     f_name = ImageFont.truetype(NEUE, 76, index=1)
     f_desc = ImageFont.truetype(NEUE, 23, index=0)
     f_foot = ImageFont.truetype(NEUE, 14, index=1)
@@ -65,17 +63,14 @@ def main():
     # Frame
     d.rectangle([18, 18, W - 18, H - 22], outline=INK, width=3)
 
-    # Kicker
-    tracked(d, (56, 44), KICKER, f_kick, GRAY, spacing=2.5)
-
     # Name
-    d.text((52, 82), NAME, font=f_name, fill=INK)
+    d.text((52, 70), NAME, font=f_name, fill=INK)
 
     # Hard rule
-    d.rectangle([56, 206, 176, 215], fill=INK)
+    d.rectangle([56, 194, 176, 203], fill=INK)
 
     # Description
-    y = 242
+    y = 230
     for line in wrap(DESC, f_desc, W - 220):
         d.text((56, y), line, font=f_desc, fill=INK)
         y += 34
